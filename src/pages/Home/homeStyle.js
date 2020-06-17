@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { getTheme } from '@fluentui/react';
 import { PrimaryButton, ActionButton } from 'office-ui-fabric-react';
 import { FontIcon } from 'office-ui-fabric-react/lib/Icon';
-import { mergeStyles, registerIcons } from 'office-ui-fabric-react/lib/Styling';
+import { mergeStyles, registerIcons, FontSizes } from 'office-ui-fabric-react/lib/Styling';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 import BackgroundImage from 'gatsby-background-image';
 
@@ -34,8 +34,8 @@ const BackgroundSection = ({ className }) => (
             });
 
             const downloadiconClass = mergeStyles({
-                height: 40,
-                width: 40,
+                height: 45,
+                width: 45,
                 margin: '13px 0 0 0',
                 stroke: 'white'
             });
@@ -43,8 +43,15 @@ const BackgroundSection = ({ className }) => (
             const mediaButtonStyles = {
                 rootHovered: {
                     background: theme.palette.themePrimary,
-                    boxShadow: Depths.depth8
+                    boxShadow: Depths.depth16
                 },
+            }
+
+            const downloadButtonStyles = {
+                root: {
+                    boxShadow: Depths.depth8,
+                    height: '2.5rem',
+                }
             }
 
             return (
@@ -60,11 +67,9 @@ const BackgroundSection = ({ className }) => (
                         <h1 class='home'>I'm Mikihisa Yuasa</h1><br />
                         <p class="shortIntro"> An engineering undergraduate at the University of Wisconsin-Madison.</p>
 
-                        <PrimaryButton href="http://bing.com" target="_blank" title="Download CV" allowDisabledFocus style={{
-                            boxShadow: Depths.depth16
-                        }}>
+                        <PrimaryButton href="http://bing.com" target="_blank" title="Download CV" allowDisabledFocus styles={downloadButtonStyles}>
                             <FontIcon iconName="download-svg" className={downloadiconClass} />
-                            <strong>Download CV</strong>
+                            <strong style={{ fontSize: '1.1rem' }}>Download CV</strong>
                         </PrimaryButton>
                         <br /><br />
 
