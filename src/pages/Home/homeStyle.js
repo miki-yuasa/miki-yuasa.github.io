@@ -40,7 +40,7 @@ const BackgroundSection = ({ className }) => (
 
             const mediaButtonStyles = {
                 rootHovered: {
-                    background: 'blue'
+                    background: '#0078d4'
                 },
             }
             const mediaButtonStyle = {
@@ -54,11 +54,11 @@ const BackgroundSection = ({ className }) => (
                     fluid={imageData}
                     backgroundColor={`#040e18`}>
 
-                    <div class='backgroundedSection'>
+                    <div class='homeBackgroundedSection'>
 
-                        <h2 class="home">Hi there!</h2><br />
-                        <h1 class="home">I'm Mikihisa Yuasa</h1><br />
-                        <p class='shortIntro'> An engineering undergraduate at the University of Wisconsin-Madison.</p>
+                        <h2 class='home'>Hi there!</h2><br />
+                        <h1 class='home'>I'm Mikihisa Yuasa</h1><br />
+                        <p class="shortIntro"> An engineering undergraduate at the University of Wisconsin-Madison.</p>
 
                         <PrimaryButton href="http://bing.com" target="_blank" title="Download CV" allowDisabledFocus style={{
                             boxShadow: Depths.depth16
@@ -86,7 +86,7 @@ const BackgroundSection = ({ className }) => (
 
 const StyledBackgroundSection = styled(BackgroundSection)`
     width: 100%;
-    background-position: center center;
+    background-position: top top;
     background-repeat: repeat-y;
     background-size: cover;
   `
