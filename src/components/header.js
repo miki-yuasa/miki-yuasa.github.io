@@ -1,6 +1,7 @@
 import React from "react"
 import { Pivot, PivotItem, PivotLinkSize, } from 'office-ui-fabric-react/lib/Pivot';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
+import { getTheme } from '@fluentui/react';
 
 import "./layout.css"
 
@@ -14,18 +15,16 @@ const pivotStyles = {
   },
 };
 
+const theme = getTheme();
+
 const Header = ({ siteTitle }) => (
   <header
     style={{
       boxShadow: Depths.depth16,
+      background: theme.palette.neutralLight
     }}
   >
-    <div
-      style={{
-        margin: `0`,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+    <div class='headerPivot'>
       <Pivot
         aria-label="Basic Pivot Example"
         styles={pivotStyles}

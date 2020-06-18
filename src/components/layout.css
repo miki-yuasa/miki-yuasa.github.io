@@ -12,6 +12,10 @@ div.layoutBody{
   margin: 0 auto;
   position: relative;
 }
+.headerPivot{
+  margin: 0;
+  padding: 1.7rem 1.0875rem 1.3rem ;
+}
 .homeParent{
   margin-bottom:50px;
   margin-top:-8px;
@@ -50,7 +54,6 @@ header {
   -ms-backdrop-filter: blur(4px);
   -o-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
-  background-color: rgba(250, 250, 250, 0.951);
 }
 main,
 menu,
