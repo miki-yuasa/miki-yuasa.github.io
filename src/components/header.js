@@ -20,8 +20,7 @@ const theme = getTheme();
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      boxShadow: Depths.depth16,
-      background: theme.palette.neutralLight
+      boxShadow: Depths.depth64,
     }}
   >
     <div class='headerPivot'>

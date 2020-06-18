@@ -77,6 +77,7 @@ figcaption,
 figure,
 footer,
 header {
+  background: #eaeaeaf8;
   text-align : center;
   position: fixed;
   width: 100%;
@@ -310,6 +311,22 @@ h1 {
   font-size: 2.25rem;
   line-height: 1.1;
 }
+h1.home {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1rem;
+  color: inherit;
+  font-family:'Noto Sans JP', Arial,Helvetica, sans-serif;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  font-size: 5.5vmax;
+  line-height: 1.5; 
+}
 h2 {
   margin-left: 0;
   margin-right: 0;
@@ -346,6 +363,7 @@ h2.home {
 h2.sectionHeader{
   border-bottom: 4px solid #0078d4;
   padding-bottom: 4px;
+  font-weight: 400;
   display: inline-block;
 }
 h3 {
@@ -425,23 +443,6 @@ hgroup {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-}
-
-h1.home {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1rem;
-  color: inherit;
-  font-family:'Noto Sans JP', Arial,Helvetica, sans-serif;
-  font-weight: 400;
-  text-rendering: optimizeLegibility;
-  font-size: 5.5vmax;
-  line-height: 1.5; 
 }
 b.home {
   margin-bottom: 1rem;

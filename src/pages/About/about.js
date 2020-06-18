@@ -12,9 +12,8 @@ export default function About() {
             <div class='sectionHeader'
                 style={{
                     color: theme.palette.neutralLight,
-                    width: 'auto',
                 }}>
-                <h2 class='sectionHeader'>About Me</h2>
+                <h2 class='sectionHeader'>About</h2>
             </div>
             <div class='sectionBody'
                 style={{ color: theme.palette.neutralSecondaryAlt }}>
@@ -28,8 +27,6 @@ export default function About() {
                         <tr><td>CV:</td><td><Link to="../page-2" style={{ color: theme.palette.neutralLight }}><strong>Download from Here!</strong></Link></td></tr>
                     </tbody>
                 </table>
-                < Link to="/page-2/" > Go to page 2 </Link> <br />
-                <Link to="/using-typescript/" > Go to "Using TypeScript" </Link>
             </div>
 
 
