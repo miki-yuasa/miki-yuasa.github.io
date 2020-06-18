@@ -31,7 +31,6 @@ div.layoutBody{
   text-align: center;
  }
 .homeBackgroundedSection{
-  backdrop-filter: brightness(65%);
   position: 'relative';
   min-height: 350px;
   margin-top: 90px;
