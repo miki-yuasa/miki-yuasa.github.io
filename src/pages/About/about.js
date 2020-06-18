@@ -10,8 +10,11 @@ export default function About() {
             class='sectionParent'
             style={{ background: theme.palette.neutralDark }}>
             <div class='sectionHeader'
-                style={{ color: theme.palette.neutralLight }}>
-                <h2 >About Me</h2>
+                style={{
+                    color: theme.palette.neutralLight,
+                    width: 'auto',
+                }}>
+                <h2 class='sectionHeader'>About Me</h2>
             </div>
             <div class='sectionBody'
                 style={{ color: theme.palette.neutralSecondaryAlt }}>
