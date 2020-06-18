@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Home from "./Home/home"
 import About from "./About/about"
+import Research from "./Research/research"
 
 loadTheme({
   defaultFontStyle: { fontFamily: 'Noto Sans JP, Helvetica', fontWeight: 'regular' },
@@ -40,6 +41,7 @@ const IndexPage = () => (
     <SEO title="Mikihisa Yuasa" />
     <Home />
     <About />
+    <Research />
   </Layout>
 )
 

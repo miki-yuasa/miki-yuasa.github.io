@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import { getTheme } from '@fluentui/react';
-const theme = getTheme();
 
+const theme = getTheme();
 
 export default function About() {
     return (
@@ -28,9 +28,6 @@ export default function About() {
                     </tbody>
                 </table>
             </div>
-
-
         </div>
     )
-
 }

@@ -20,7 +20,7 @@ const theme = getTheme();
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      boxShadow: Depths.depth64,
+      boxShadow: Depths.depth16,
     }}
   >
     <div class='headerPivot'>
@@ -37,13 +37,13 @@ const Header = ({ siteTitle }) => (
           headerButtonProps={{ href: "/#about" }} />
         <PivotItem
           headerText="Research"
-          headerButtonProps={{ href: "/#about" }} />
+          headerButtonProps={{ href: "/#research" }} />
         <PivotItem
           headerText="Software"
-          headerButtonProps={{ href: "/#about" }} />
+          headerButtonProps={{ href: "/#software" }} />
         <PivotItem
           headerText="Links"
-          headerButtonProps={{ href: "/#about" }} />
+          headerButtonProps={{ href: "/#links" }} />
       </Pivot>
     </div>
   </header >
