@@ -7,7 +7,7 @@ import Home from "./Home/home"
 import About from "./About/about"
 
 loadTheme({
-  defaultFontStyle: { fontFamily: 'Arial,Helvetica', fontWeight: 'regular' },
+  defaultFontStyle: { fontFamily: 'Noto Sans JP, Helvetica', fontWeight: 'regular' },
   palette: {
     themePrimary: '#0078d4',
     themeLighterAlt: '#eff6fc',

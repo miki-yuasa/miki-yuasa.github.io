@@ -9,20 +9,26 @@ export default function About() {
         <div id='about'
             class='sectionParent'
             style={{ background: theme.palette.neutralDark }}>
-            <div class='sectionHeading'
+            <div class='sectionHeader'
                 style={{ color: theme.palette.neutralLight }}>
                 <h2 >About Me</h2>
             </div>
             <div class='sectionBody'
                 style={{ color: theme.palette.neutralSecondaryAlt }}>
                 <table >
-                    <tr valign='top'><td>Name:</td><td>Mikihisa Yuasa</td></tr>
-                    <tr valign='top'><td>College:</td><td>Department of Engineering-Mechanics, College of Engineering, University of Wisconsin-Madison </td></tr>
-                    <tr valign='top'><td>Labs:</td><td>J. Franck Computational Fluid Dynamics Lab<br /> B. Ran Connected Automated Vehicles and Highway Lab</td></tr>
+                    <tbody valign='top'>
+                        <tr ><td>Name:</td><td>Mikihisa Yuasa</td></tr>
+                        <tr ><td>School:</td><td>Junior undergraduate at the Department of Engineering-Mechanics, College of Engineering, University of Wisconsin-Madison </td></tr>
+                        <tr ><td>Labs:</td><td>J. Franck Computational Fluid Dynamics Lab<br /> B. Ran Connected Automated Vehicles and Highway Lab</td></tr>
+                        <tr><td>Keywords:</td><td>Computational fluid dynamics, Mesh generation, Connected automated vehicles and highway, Aerial/ground unmanned vehicles, Intelligent transportation, Computing, Harbor seal whisker, Conformal mapping</td></tr>
+                        <tr><td>Email:</td><td>mikihisa(dot)yuasa(at)wisc(dot)edu</td></tr>
+                        <tr><td>CV:</td><td><Link to="../page-2" style={{ color: theme.palette.neutralLight }}><strong>Download from Here!</strong></Link></td></tr>
+                    </tbody>
                 </table>
                 < Link to="/page-2/" > Go to page 2 </Link> <br />
                 <Link to="/using-typescript/" > Go to "Using TypeScript" </Link>
             </div>
+
 
         </div>
     )
