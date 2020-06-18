@@ -8,7 +8,7 @@ import About from "./About/about"
 import Research from "./Research/research"
 
 loadTheme({
-  defaultFontStyle: { fontFamily: 'Noto Sans JP, Helvetica', fontWeight: 'regular' },
+  defaultFontStyle: { fontFamily: 'Roboto, Helvetica', fontWeight: 'regular' },
   palette: {
     themePrimary: '#0078d4',
     themeLighterAlt: '#eff6fc',

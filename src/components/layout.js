@@ -34,9 +34,10 @@ const Layout = ({ children }) => {
       <div class="layoutBody">
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          Last update: August 2020<br />
+          © {new Date().getFullYear()} Mikihisa Yuasa<br />
+          Built with {` `} <a class='footer' href="https://www.gatsbyjs.org" target="_blank">Gatsby</a> and {' '}
+          <a class='footer' href="https://www.microsoft.com/design/fluent/#/" target="_blank">Fluent Design System</a>.
         </footer>
       </div>
     </>
