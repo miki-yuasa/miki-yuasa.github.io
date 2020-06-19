@@ -11,16 +11,15 @@ export default function About() {
         <div id='about'
             class='sectionParent'
             style={{ background: theme.palette.neutralDark }}>
-            <div style={{ maxWidth: `150px`, margin: '0 auto' }}>
-                <Image />
-            </div>
             <div class='sectionHeader'
                 style={{
                     color: theme.palette.neutralLight,
                 }}>
                 <h2 class='sectionHeader'>About</h2>
             </div>
-
+            <div class='profile'>
+                <Image />
+            </div>
             <div class='sectionBody'
                 style={{ color: theme.palette.neutralSecondaryAlt }}>
                 <table >
