@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { getTheme } from '@fluentui/react';
 import { PrimaryButton, ActionButton } from 'office-ui-fabric-react';
 import { FontIcon } from 'office-ui-fabric-react/lib/Icon';
-import { mergeStyles, registerIcons, FontSizes } from 'office-ui-fabric-react/lib/Styling';
+import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 import BackgroundImage from 'gatsby-background-image';
 
@@ -67,16 +67,16 @@ const BackgroundSection = ({ className }) => (
                         <h1 class='home'>I'm Mikihisa Yuasa</h1><br />
                         <p class="shortIntro"> An engineering undergraduate at the University of Wisconsin-Madison.</p>
 
-                        <PrimaryButton href="http://bing.com" target="_blank" title="Download CV" allowDisabledFocus styles={downloadButtonStyles}>
+                        <PrimaryButton href="http://bing.com" target="_blank" title="Download CV" rel="noreferrer" allowDisabledFocus styles={downloadButtonStyles}>
                             <FontIcon iconName="download-svg" className={downloadiconClass} />
                             <strong style={{ fontSize: '1.1rem' }}>Download CV</strong>
                         </PrimaryButton>
                         <br /><br />
 
-                        <ActionButton href="mailto:mikihisa.yuasa@wisc.edu" target="_blank" allowDisabledFocus title="E-mail Address" styles={mediaButtonStyles} >
+                        <ActionButton href="mailto:mikihisa.yuasa@wisc.edu" target="_blank" rel="noreferrer" allowDisabledFocus title="E-mail Address" styles={mediaButtonStyles} >
                             <FontIcon iconName="mailoutline-svg" className={iconClass} />
                         </ActionButton>
-                        <ActionButton href="https://bitbucket.org/mikyu/" target="_blank" allowDisabledFocus title="Bitbucket Repositories" styles={mediaButtonStyles} >
+                        <ActionButton href="https://bitbucket.org/mikyu/" target="_blank" rel="noreferrer" allowDisabledFocus title="Bitbucket Repositories" styles={mediaButtonStyles} >
                             <FontIcon iconName="bitbucket-svg" className={iconClass} />
                         </ActionButton>
                         <ActionButton href="https://www.linkedin.com/in/mikihisa-yuasa-3b7199132/" target="_blank" allowDisabledFocus title="LinkedIn Profile" styles={mediaButtonStyles} >

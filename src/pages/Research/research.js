@@ -1,8 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-import { getTheme } from '@fluentui/react';
-
-const theme = getTheme();
 
 export default function Research() {
     return (
