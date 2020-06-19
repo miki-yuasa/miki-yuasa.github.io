@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <footer>
           Last update: August 2020<br />
-          © {new Date().getFullYear()} Mikihisa Yuasa<br />
+          Copyright © {new Date().getFullYear()} Mikihisa Yuasa | All Rights Reserved<br />
           Built with {` `} <a class='footer' href="https://www.gatsbyjs.org" target="_blank" rel="noreferrer">Gatsby</a> and {' '}
           <a class='footer' href="https://www.microsoft.com/design/fluent/#/" target="_blank" rel="noreferrer">Fluent Design System</a>.
         </footer>
