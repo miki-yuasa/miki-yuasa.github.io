@@ -17,7 +17,8 @@ export default function About() {
                 }}>
                 <h2 class='sectionHeader'>About</h2>
             </div>
-            <div class='profile'>
+            <div class='profile'
+            >
                 <Image />
             </div>
             <div class='sectionBody'

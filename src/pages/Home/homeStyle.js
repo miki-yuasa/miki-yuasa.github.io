@@ -28,9 +28,9 @@ const BackgroundSection = ({ className }) => (
             const iconClass = mergeStyles({
                 height: 45,
                 width: 45,
-                margin: '11px 0 0 10px',
+                margin: '11px 0 0 12px',
                 stroke: 'white',
-                fill: 'white'
+                fill: 'white',
             });
 
             const downloadiconClass = mergeStyles({
