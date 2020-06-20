@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@fluentui/react": "^7.120.2",
+    "@fluentui/react": "^7.121.1",
     "@types/react": "^16.9.36",
     "@types/react-dom": "^16.9.8",
     "@uifabric/fluent-theme": "^7.1.96",
