@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import Home from "./Home/home"
 import About from "./About/about"
 import Research from "./Research/research"
+import Software from "./Software/software"
 
 loadTheme({
   defaultFontStyle: { fontFamily: 'Roboto, Helvetica', fontWeight: 'regular' },
@@ -42,6 +43,7 @@ const IndexPage = () => (
     <Home />
     <About />
     <Research />
+    <Software />
   </Layout>
 )
 

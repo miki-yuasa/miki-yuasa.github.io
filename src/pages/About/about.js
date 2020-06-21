@@ -30,7 +30,7 @@ export default function About() {
                         <tr ><td>Labs:</td><td>J. Franck Computational Fluid Dynamics (CFD) Lab<br /> B. Ran Connected Automated Vehicles and Highway (CAVH) Lab</td></tr>
                         <tr><td>Keywords:</td><td>Dynamic Control, Computational Fluid Dynamics, Mesh Generation, Flow Control, Connected Automated Vehicles and Highway, Aerial/Ground Unmanned Vehicles, Intelligent Transportation, Computing, Biomimicry, Harbor Seal Whisker, Conformal Mapping</td></tr>
                         <tr><td>Email:</td><td>mikihisa(dot)yuasa(at)wisc(dot)edu</td></tr>
-                        <tr><td>CV:</td><td><Link to="../page-2" style={{ color: theme.palette.neutralLight }}><strong>Download from Here!</strong></Link></td></tr>
+                        <tr><td>CV:</td><td><Link to="../page-2" target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralLight }}><strong>Download from Here!</strong></Link></td></tr>
                     </tbody>
                 </table>
             </div>
