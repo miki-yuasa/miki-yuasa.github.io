@@ -81,7 +81,7 @@ const BackgroundSection = ({ className }) => (
                         <ActionButton href="https://bitbucket.org/mikyu/" target="_blank" rel="noreferrer" allowDisabledFocus title="Bitbucket Repositories" styles={mediaButtonStyles} >
                             <FontIcon iconName="bitbucket-svg" className={iconClass} />
                         </ActionButton>
-                        <ActionButton href="https://www.linkedin.com/in/mikihisa-yuasa-3b7199132/" target="_blank" allowDisabledFocus title="LinkedIn Profile" styles={mediaButtonStyles} >
+                        <ActionButton href="https://www.linkedin.com/in/mikihisa-yuasa-3b7199132/" target="_blank" rel="noreferrer" allowDisabledFocus title="LinkedIn Profile" styles={mediaButtonStyles} >
                             <FontIcon iconName="linkedin-svg" className={iconClass} />
                         </ActionButton>
                     </div>
