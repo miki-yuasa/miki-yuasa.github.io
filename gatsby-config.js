@@ -3,6 +3,7 @@ module.exports = {
     title: `Mikihisa Yuasa・湯淺 幹久・ユアサ ミキヒサ`,
     description: `Personal website of Mikihisa Yuasa`,
     author: `Mikihisa Yuasa`,
+    url: "https://mikyu.bitbucket.io"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
