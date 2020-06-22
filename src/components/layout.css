@@ -55,6 +55,12 @@ div.layoutBody{
 .sectionBody{
   padding: 0 10%;
 }
+.sectionSeparator{
+text-align: center;
+margin: -25px auto 0 auto;
+width: 60%;
+background: #f3f2f1;
+}
 .profile{
   max-width: 110px;
   margin: 0.4rem auto 1rem auto;
@@ -213,7 +219,7 @@ hr.separator{
   width:100%;
   display: inline-block;
   margin: 0;
-  border:4px 0px 0px 0px ; 
+  border:1px 0px 0px 0px ; 
 }
 button,
 input,

@@ -4,8 +4,6 @@ import {
     DocumentCardTitle,
 } from 'office-ui-fabric-react/lib/DocumentCard';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
-import { Separator } from 'office-ui-fabric-react/lib/Separator';
-
 
 const cardStyles = {
     root: {
@@ -21,9 +19,8 @@ const cardStyles = {
 
 export default function Software() {
     return (
-        <div class='sectionMaster'>
-            <div id='software'
-                class='sectionParent'>
+        <div id='software' class='sectionMaster'>
+            <div class='sectionParent'>
                 <div class='sectionHeader'>
                     <h2 class='sectionHeader'>Software</h2>
                 </div>
@@ -156,13 +153,10 @@ export default function Software() {
                         </DocumentCard>
                     </div>
                 </div>
-
             </div>
-            <div style={{ textAlign: 'center', margin: '0 auto', width: '60%', background: '#f3f2f1' }} >
+            <div class='sectionSeparator' >
                 <hr class='separator' />
             </div>
-
-
         </div>
     )
 }
