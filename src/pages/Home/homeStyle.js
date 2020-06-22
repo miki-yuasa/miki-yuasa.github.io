@@ -8,6 +8,8 @@ import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 import BackgroundImage from 'gatsby-background-image';
 
+import CV from '../academic-cv.pdf'
+
 const BackgroundSection = ({ className }) => (
     <StaticQuery
         query={graphql`
@@ -67,7 +69,7 @@ const BackgroundSection = ({ className }) => (
                         <h1 class='home'>I'm Mikihisa Yuasa</h1><br />
                         <p class="shortIntro"> An engineering undergraduate at the University of Wisconsin-Madison.</p>
 
-                        <PrimaryButton href="http://bing.com" target="_blank" title="Download CV" rel="noreferrer" allowDisabledFocus styles={downloadButtonStyles}>
+                        <PrimaryButton href={CV} target="_blank" title="Download CV" rel="noreferrer" allowDisabledFocus styles={downloadButtonStyles}>
                             <FontIcon iconName="download-svg" className={downloadiconClass} />
                             <strong style={{ fontSize: '1.1rem' }}>Download CV</strong>
                         </PrimaryButton>
