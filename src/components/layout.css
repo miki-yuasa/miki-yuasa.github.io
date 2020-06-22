@@ -11,7 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 div.layoutBody{
-  margin: 0 auto;
+  margin: auto;
   position: relative;
 }
 .headerPivot{
@@ -36,6 +36,9 @@ div.layoutBody{
   margin-top: 90px;
   padding-top: 11%;
   padding-bottom: 11%;
+}
+.sectionMaster{
+  background: #f3f2f1
 }
 .sectionParent{
   font-family: Roboto, Helvetica, sans-serif; 
@@ -205,6 +208,12 @@ hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
+}
+hr.separator{
+  width:100%;
+  display: inline-block;
+  margin: 0;
+  border:4px 0px 0px 0px ; 
 }
 button,
 input,
