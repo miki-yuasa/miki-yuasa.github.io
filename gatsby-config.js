@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Mikihisa Yuasa`,
+    title: `Mikihisa Yuasa・湯淺 幹久・ユアサ ミキヒサ`,
     description: `Personal website of Mikihisa Yuasa`,
     author: `Mikihisa Yuasa`,
   },
