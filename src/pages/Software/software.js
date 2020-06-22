@@ -11,10 +11,9 @@ const cardStyles = {
         display: 'inline-block',
         margin: 10,
         width: 320,
-        height: 320,
         boxShadow: Depths.depth8,
-        paddingTop: 10,
-        paddingBottom: 15
+        paddingTop: 18,
+        paddingBottom: 10
 
     },
 };
@@ -27,7 +26,7 @@ export default function Software() {
                 <h2 class='sectionHeader'>Software</h2>
             </div>
             <div class='sectionBody'>
-                <p>These links are for the software repositories of my past research and personal projects hosted on Bitbucket. The codes for the on-going project will be released upon the completion. In case a links is not available, that repository is likely to be limited to private access.</p>
+                <p>These links are for the software repositories of my past research and personal projects hosted on Bitbucket. The codes for some on-going projects have restricted access for internal use.</p>
                 <div style={{ textAlign: 'center' }}>
                     <DocumentCard
                         aria-label={
@@ -35,7 +34,8 @@ export default function Software() {
                         }
                         styles={cardStyles}
                         onClickHref="https://bitbucket.org/mikyu/mikyu.bitbucket.io/"
-                        onClickTarget="_blank">
+                        onClickTarget="_blank"
+                        type='1'>
                         <div >
                             <DocumentCardTitle
                                 title="mikyu.bitbucket.io" />
@@ -44,6 +44,7 @@ export default function Software() {
                                     'Hosting repository for this static website for my personal portfolio.'
                                 }
                                 showAsSecondaryTitle />
+                            <DocumentCardTitle title={' '} showAsSecondaryTitle />
                         </div>
                     </DocumentCard>
                     <DocumentCard
@@ -58,6 +59,7 @@ export default function Software() {
                                     'Development repository for this personal portfolio website.'
                                 }
                                 showAsSecondaryTitle />
+                            <DocumentCardTitle title={' '} showAsSecondaryTitle />
                         </div>
                     </DocumentCard>
                     <DocumentCard
@@ -69,9 +71,85 @@ export default function Software() {
                                 title="modSealDisplacement" />
                             <DocumentCardTitle
                                 title={
-                                    'Library for dynamic mesh generation around harbor seal whiskers for OpenFOAM\'s PIMPLE solver (no open access yet).'
+                                    'Dynamic mesh-generation around harbor seal whiskers for OpenFOAM\'s PIMPLE solver.'
                                 }
                                 showAsSecondaryTitle />
+                            <DocumentCardTitle title={'No open access yet'} showAsSecondaryTitle />
+                        </div>
+                    </DocumentCard>
+                    <DocumentCard
+                        styles={cardStyles}
+                        //onClickHref="https://bitbucket.org/mikyu/mikyu_portfolio_dev/"
+                        onClickTarget="_blank">
+                        <div >
+                            <DocumentCardTitle
+                                title="modSeal_sample_case" />
+                            <DocumentCardTitle
+                                title={
+                                    'Sample case for dynamic mesh-generation by modSealDisplacement library.'
+                                }
+                                showAsSecondaryTitle />
+                            <DocumentCardTitle title={'No open access yet'} showAsSecondaryTitle />
+                        </div>
+                    </DocumentCard>
+                    <DocumentCard
+                        styles={cardStyles}
+                        //onClickHref="https://bitbucket.org/mikyu/mikyu_portfolio_dev/"
+                        onClickTarget="_blank">
+                        <div >
+                            <DocumentCardTitle
+                                title="sc_airfoil" />
+                            <DocumentCardTitle
+                                title={
+                                    'Optimization project for Schwartz-Cristoffel mapping and mesh-generation for airfoil.'
+                                }
+                                showAsSecondaryTitle />
+                            <DocumentCardTitle title={'No open access yet'} showAsSecondaryTitle />
+                        </div>
+                    </DocumentCard>
+                    <DocumentCard
+                        styles={cardStyles}
+                        onClickHref="https://bitbucket.org/mikyu/sc_py/"
+                        onClickTarget="_blank">
+                        <div >
+                            <DocumentCardTitle
+                                title="sc_py" />
+                            <DocumentCardTitle
+                                title={
+                                    'Porting Schwartz-Cristoffle toolbox for airfoils witten in MATLAB to Python.'
+                                }
+                                showAsSecondaryTitle />
+                            <DocumentCardTitle title={'No open access yet'} showAsSecondaryTitle />
+                        </div>
+                    </DocumentCard>
+                    <DocumentCard
+                        styles={cardStyles}
+                        //onClickHref="https://bitbucket.org/mikyu/mikyu_portfolio_dev/"
+                        onClickTarget="_blank">
+                        <div >
+                            <DocumentCardTitle
+                                title="platooning_beltline_sim" />
+                            <DocumentCardTitle
+                                title={
+                                    'Script used for platooning simulation for Belitline highway on Vissim.'
+                                }
+                                showAsSecondaryTitle />
+                            <DocumentCardTitle title={'No open access yet'} showAsSecondaryTitle />
+                        </div>
+                    </DocumentCard>
+                    <DocumentCard
+                        styles={cardStyles}
+                        //onClickHref="https://bitbucket.org/mikyu/mikyu_portfolio_dev/"
+                        onClickTarget="_blank">
+                        <div >
+                            <DocumentCardTitle
+                                title="beltline_simulation" />
+                            <DocumentCardTitle
+                                title={
+                                    'Vissim project used for Beltline simulation under snow.'
+                                }
+                                showAsSecondaryTitle />
+                            <DocumentCardTitle title={'No open access yet'} showAsSecondaryTitle />
                         </div>
                     </DocumentCard>
                 </div>
