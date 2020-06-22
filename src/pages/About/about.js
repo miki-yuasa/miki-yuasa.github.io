@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { getTheme } from '@fluentui/react';
 
 import Image from '../../components/image'
+import CV from '../academic-cv.pdf'
 
 const theme = getTheme();
 
@@ -32,7 +33,7 @@ export default function About() {
                             <Link to="https://topslab.wisc.edu/about/people/bin-ran/" target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralSecondaryAlt }}>Bin Ran</Link>  Connected Automated Vehicles and Highway (CAVH) Lab</td></tr>
                         <tr><td>Keywords:</td><td>Dynamic Control, Computational Fluid Dynamics, Mesh Generation, Flow Control, Connected Automated Vehicles and Highway, Aerial/Ground Unmanned Vehicles, Intelligent Transportation, Computing, Biomimicry, Harbor Seal Whisker, Conformal Mapping</td></tr>
                         <tr><td>Email:</td><td>mikihisa(dot)yuasa(at)wisc(dot)edu</td></tr>
-                        <tr><td>CV:</td><td><Link to="../page-2" target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralLight }}><strong>Download from Here!</strong></Link></td></tr>
+                        <tr><td>CV:</td><td><a href={CV} target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralLight }}><strong>Download from Here!</strong></a></td></tr>
                     </tbody>
                 </table>
             </div>
