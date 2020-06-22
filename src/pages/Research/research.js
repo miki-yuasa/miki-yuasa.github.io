@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Research() {
     return (
-        <div id='research' class='sectionMaster'>
+        <div id='research' class='sectionMasterResearch'>
             <div class='sectionParent'>
                 <div class='sectionHeader'>
                     <h2 class='sectionHeader'>Research</h2>

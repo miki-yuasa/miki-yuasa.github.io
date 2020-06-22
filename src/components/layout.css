@@ -19,10 +19,8 @@ div.layoutBody{
   padding: 1.7rem 1.0875rem 1.3rem ;
 }
 .homeParent{
-  margin-top:-8px;
   margin-right: 0;
   margin-left: 0;
-  padding-top:8px; 
   color: #eaeaea;
   height: auto;
   min-height: 350;
@@ -33,20 +31,39 @@ div.layoutBody{
 .homeBackgroundedSection{
   position: 'relative';
   min-height: 350px;
-  margin-top: 90px;
-  padding-top: 11%;
-  padding-bottom: 11%;
+  margin-top: 0px;
+  padding-top: 13%;
+  padding-bottom: 13%;
 }
 .sectionMaster{
-  background: #f3f2f1
+  background: #f3f2f1;
+  margin-top: -80px; 
+  padding-top: 80px;
+}
+.sectionMasterAbout{
+  background: red;
+  z-index: 20;
+  margin-top: -80px; 
+  padding-top: 80px; 
+}
+.sectionMasterResearch{
+  background: #f3f2f1;
+  margin-top: -80px; 
+  padding-top: 80px; 
 }
 .sectionParent{
   font-family: Roboto, Helvetica, sans-serif; 
   font-size: 1rem ;
-  padding-top:100px;
-  padding-bottom: 80px;
-  margin-top: -20px;
+  padding-top:60px;
+  padding-bottom: 60px;
   background: #f3f2f1;
+}
+.sectionParentAbout{
+  font-family: Roboto, Helvetica, sans-serif; 
+  font-size: 1rem ;
+  padding-top:60px;
+  padding-bottom: 120px;
+  background: #272727;
 }
 .sectionHeader{
   text-align: center;
@@ -57,10 +74,16 @@ div.layoutBody{
 }
 .sectionSeparator{
 text-align: center;
-margin: -25px auto 0 auto;
+margin:  0 auto;
 width: 60%;
 background: #f3f2f1;
 }
+.sectionSeparatorAbout{
+  text-align: center;
+  margin: 0 auto;
+  width: 60%;
+  background: #272727;
+  }
 .profile{
   max-width: 110px;
   margin: 0.4rem auto 1rem auto;
