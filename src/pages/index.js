@@ -7,6 +7,7 @@ import Home from "./Home/home"
 import About from "./About/about"
 import Research from "./Research/research"
 import Software from "./Software/software"
+import Contact from "./Contact/contact"
 
 loadTheme({
   defaultFontStyle: { fontFamily: 'Roboto, Helvetica', fontWeight: 'regular' },
@@ -39,11 +40,12 @@ loadTheme({
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Mikihisa Yuasa" />
+    <SEO title="Mikihisa Yuasa・湯淺 幹久・ユアサ ミキヒサ" />
     <Home />
     <About />
     <Research />
     <Software />
+    <Contact />
   </Layout>
 )
 
