@@ -78,7 +78,7 @@ export default function Software() {
                         </DocumentCard>
                         <DocumentCard
                             styles={cardStyles}
-                            //onClickHref="https://bitbucket.org/mikyu/mikyu_portfolio_dev/"
+                            onClickHref="https://bitbucket.org/mikyu/modseal_sample_case/"
                             onClickTarget="_blank">
                             <div >
                                 <DocumentCardTitle
@@ -88,7 +88,7 @@ export default function Software() {
                                         'Sample case for dynamic mesh-generation by modSealDisplacement library.'
                                     }
                                     showAsSecondaryTitle />
-                                <DocumentCardTitle title={'No open access yet'} showAsSecondaryTitle />
+                                <DocumentCardTitle title={' '} showAsSecondaryTitle />
                             </div>
                         </DocumentCard>
                         <DocumentCard
