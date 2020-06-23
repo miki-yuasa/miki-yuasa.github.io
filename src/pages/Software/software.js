@@ -100,7 +100,7 @@ export default function Software() {
                                     title="sc_airfoil" />
                                 <DocumentCardTitle
                                     title={
-                                        'Optimization project for Schwartz-Cristoffel mapping and mesh-generation for airfoil.'
+                                        'Optimization project for Schwartz-Christoffel mapping and mesh-generation for airfoil.'
                                     }
                                     showAsSecondaryTitle />
                                 <DocumentCardTitle title={'No open access yet'} showAsSecondaryTitle />
@@ -115,7 +115,7 @@ export default function Software() {
                                     title="sc_py" />
                                 <DocumentCardTitle
                                     title={
-                                        'Porting Schwartz-Cristoffle toolbox for airfoils witten in MATLAB to Python.'
+                                        'Porting Schwartz-Christoffle toolbox for airfoils witten in MATLAB to Python.'
                                     }
                                     showAsSecondaryTitle />
                                 <DocumentCardTitle title={' '} showAsSecondaryTitle />
