@@ -26,8 +26,8 @@ export default function About() {
                             <tr ><td>Name:</td><td>Mikihisa Yuasa</td></tr>
                             <tr ><td>School:</td><td>Senior undergraduate at the Department of Engineering-Mechanics, College of Engineering, University of Wisconsin-Madison </td></tr>
                             <tr ><td>Labs:</td><td>
-                                <Link to="https://directory.engr.wisc.edu/ep/Faculty/Franck_Jennifer/" target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralSecondaryAlt }}>Professor Jennifer Franck's</Link> Computational Fluid Dynamics (CFD) Lab<br />
-                                <Link to="https://topslab.wisc.edu/about/people/bin-ran/" target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralSecondaryAlt }}>Professor Bin Ran's</Link>  Connected Automated Vehicles and Highway (CAVH) Lab</td></tr>
+                                Professor <Link to="https://directory.engr.wisc.edu/ep/Faculty/Franck_Jennifer/" target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralSecondaryAlt }}>Jennifer Franck</Link>'s Computational Fluid Dynamics (CFD) Lab<br />
+                                Professor <Link to="https://topslab.wisc.edu/about/people/bin-ran/" target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralSecondaryAlt }}>Bin Ran</Link>'s Connected Automated Vehicles and Highway (CAVH) Lab</td></tr>
                             <tr><td>Keywords:</td><td>Dynamic Control, Computational Fluid Dynamics, Mesh Generation, Flow Control, Connected Automated Vehicles and Highway, Aerial/Ground Unmanned Vehicles, Intelligent Transportation, Computing, Biomimicry, Harbor Seal Whisker, Conformal Mapping</td></tr>
                             <tr><td>Email:</td><td>mikihisa(dot)yuasa(at)wisc(dot)edu</td></tr>
                             <tr><td>CV:</td><td><a href={CV} target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralLight }}><strong>Download from Here!</strong></a></td></tr>
