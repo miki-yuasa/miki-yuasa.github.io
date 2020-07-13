@@ -8,7 +8,7 @@ import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 import BackgroundImage from 'gatsby-background-image';
 
-import CV from '../academic-cv.pdf'
+import CV from '../CV_Mikihisa_Yuasa_2020.pdf'
 
 const BackgroundSection = ({ className }) => (
     <StaticQuery

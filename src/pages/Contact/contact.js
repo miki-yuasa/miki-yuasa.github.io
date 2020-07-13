@@ -1,7 +1,7 @@
 import React from "react"
 import { getTheme } from '@fluentui/react';
 
-import CV from '../academic-cv.pdf'
+import CV from '../CV_Mikihisa_Yuasa_2020.pdf'
 
 const theme = getTheme();
 
