@@ -2,6 +2,7 @@ import React from "react"
 import {
     DocumentCard,
     DocumentCardTitle,
+    DocumentCardType
 } from 'office-ui-fabric-react/lib/DocumentCard';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 
@@ -13,7 +14,6 @@ const cardStyles = {
         boxShadow: Depths.depth8,
         paddingTop: 18,
         paddingBottom: 10
-
     },
 };
 
@@ -28,13 +28,10 @@ export default function Software() {
                     <p>These links are for the software repositories of my past research and personal projects hosted on Bitbucket. The codes for some on-going projects have restricted access for internal use.</p>
                     <div style={{ textAlign: 'center' }}>
                         <DocumentCard
-                            aria-label={
-                                'Document Card for mikyu.bitbucket.io'
-                            }
                             styles={cardStyles}
                             onClickHref="https://bitbucket.org/mikyu/mikyu.bitbucket.io/"
                             onClickTarget="_blank"
-                            type='1'>
+                            type={DocumentCardType.normal}>
                             <div >
                                 <DocumentCardTitle
                                     title="mikyu.bitbucket.io" />

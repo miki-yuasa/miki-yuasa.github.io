@@ -20,19 +20,19 @@ export default function About() {
                     <Image />
                 </div>
                 <div class='sectionBody'
-                    style={{ color: theme.palette.neutralTertiary }}>
-                    <table >
-                        <tbody valign='top'>
-                            <tr ><td>Name:</td><td>Mikihisa Yuasa</td></tr>
-                            <tr ><td>School:</td><td>Senior undergraduate at the Department of Engineering-Mechanics, College of Engineering, University of Wisconsin-Madison </td></tr>
-                            <tr ><td>Labs:</td><td>
-                                Professor <Link to="https://directory.engr.wisc.edu/ep/Faculty/Franck_Jennifer/" target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralTertiary }}>Jennifer Franck</Link>'s Computational Fluid Dynamics (CFD) Lab<br />
-                                Professor <Link to="https://topslab.wisc.edu/about/people/bin-ran/" target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralTertiary }}>Bin Ran</Link>'s Connected Automated Vehicles and Highway (CAVH) Lab</td></tr>
-                            <tr><td>Keywords:</td><td>Dynamic Control, Computational Fluid Dynamics, Mesh Generation, Flow Control, Connected Automated Vehicles and Highway, Aerial/Ground Unmanned Vehicles, Intelligent Transportation, Computing, Biomimicry, Harbor Seal Whisker, Conformal Mapping</td></tr>
-                            <tr><td>Email:</td><td>mikihisa(dot)yuasa(at)wisc(dot)edu</td></tr>
-                            <tr><td>CV:</td><td><a href={CV} target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralLight }}><strong>Download from Here!</strong></a></td></tr>
-                        </tbody>
-                    </table>
+                    style={{ color: theme.palette.neutralQuaternary }}>
+                    <form>
+                        <dl>
+                            <dt>Name:</dt><dd>Mikihisa Yuasa</dd>
+                            <dt>School:</dt><dd>Senior undergraduate at the Department of Engineering-Mechanics, College of Engineering, University of Wisconsin-Madison </dd>
+                            <dt>Labs:</dt><dd>
+                                Professor <Link to="https://directory.engr.wisc.edu/ep/Faculty/Franck_Jennifer/" target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralQuaternary }}>Jennifer Franck</Link>'s Computational Fluid Dynamics (CFD) Lab<br />
+                                Professor <Link to="https://topslab.wisc.edu/about/people/bin-ran/" target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralQuaternary }}>Bin Ran</Link>'s Connected Automated Vehicles and Highway (CAVH) Lab</dd>
+                            <dt>Keywords:</dt><dd>Dynamic Control, Computational Fluid Dynamics, Mesh Generation, Flow Control, Connected Automated Vehicles and Highway, Aerial/Ground Unmanned Vehicles, Intelligent Transportation, Computing, Biomimicry, Harbor Seal Whisker, Conformal Mapping</dd>
+                            <dt>Email:</dt><dd>mikihisa(dot)yuasa(at)wisc(dot)edu</dd>
+                            <dt>CV:</dt><dd><a href={CV} target="_blank" rel="noreferrer" style={{ color: theme.palette.neutralLight }}><strong>Download from Here!</strong></a></dd>
+                        </dl>
+                    </form>
                 </div>
             </div>
         </div>

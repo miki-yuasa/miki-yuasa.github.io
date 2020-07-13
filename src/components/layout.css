@@ -10,6 +10,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+form{
+  padding:30px 50px;
+}
+form dl dt{
+  width: 100px;
+  padding:5px 0;
+  float:top;
+}
+form dl dd{
+  padding:5px 0;
+}
+
 div.layoutBody{
   margin: auto;
   position: relative;
@@ -72,6 +84,7 @@ div.layoutBody{
 }
 .sectionBody{
   padding: 0 10%;
+  box-sizing: border-box;
 }
 .sectionSeparator{
 text-align: center;
@@ -649,7 +662,8 @@ table {
   line-height: 1.45rem;
   border-collapse: collapse;
   width: 100%;
-  word-break:break-word;
+  box-sizing: border-box;
+  word-wrap:break-word;
 }
 fieldset {
   margin-left: 0;
