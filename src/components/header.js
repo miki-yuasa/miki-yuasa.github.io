@@ -38,9 +38,11 @@ const Header = ({ siteTitle }) => (
         <PivotItem
           headerText="Software"
           headerButtonProps={{ href: "/#software" }} />
+        {/*
         <PivotItem
           headerText="Contact"
           headerButtonProps={{ href: "/#contact" }} />
+           */}
       </Pivot>
     </div>
   </header >
