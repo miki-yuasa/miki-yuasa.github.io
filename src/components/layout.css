@@ -649,6 +649,7 @@ table {
   line-height: 1.45rem;
   border-collapse: collapse;
   width: 100%;
+  word-break:break-word;
 }
 fieldset {
   margin-left: 0;
