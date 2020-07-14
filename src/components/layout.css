@@ -102,6 +102,16 @@ background: #f3f2f1;
   max-width: 110px;
   margin: 0.4rem auto 1rem auto;
 }
+.docCard{
+  text-align: center;
+  margin:0 auto;
+}
+@media (min-width:700px){
+  div.docCard{
+    text-align: center;
+    margin:0 18%;
+  }
+}
 @media (min-width: 1000px) {
   div.sectionHeader{
     text-align: left;
