@@ -26,7 +26,7 @@ export default function Software() {
                 </div>
                 <div class='sectionBody'>
                     <p>These links are for the software repositories of my past research and personal projects hosted on Bitbucket. The codes for some on-going projects have restricted access for internal use.</p>
-                    <div style={{ textAlign: 'center' }}>
+                    <div style={{ textAlign: 'center', margin: '0 auto' }}>
                         <DocumentCard
                             styles={cardStyles}
                             onClickHref="https://bitbucket.org/mikyu/mikyu.bitbucket.io/"
