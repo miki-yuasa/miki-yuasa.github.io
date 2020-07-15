@@ -36,8 +36,8 @@ const Layout = ({ children }) => {
         <footer>
           Last update: July 2020<br />
           Copyright © {new Date().getFullYear()} Mikihisa Yuasa | All Rights Reserved<br />
-          Built with {` `} <a class='footer' href="https://www.gatsbyjs.org" target="_blank" rel="noreferrer">Gatsby</a> and {' '}
-          <a class='footer' href="https://www.microsoft.com/design/fluent/#/" target="_blank" rel="noreferrer">Fluent Design System</a>.
+          Built with {` `} <a class='footer' href="https://www.gatsbyjs.org" target="_blank" rel="noreferrer"><em>Gatsby</em></a> and {' '}
+          <a class='footer' href="https://www.microsoft.com/design/fluent/#/" target="_blank" rel="noreferrer"><em>Fluent Design System</em></a>.
         </footer>
       </div>
     </>

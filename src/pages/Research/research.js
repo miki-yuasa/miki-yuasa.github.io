@@ -8,7 +8,7 @@ export default function Research() {
                     <h2 class='sectionHeader'>Research</h2>
                 </div>
                 <div class='sectionBody'>
-                    <p>I was widely interested in aerodynamics and collaborative unmanned vehicles in the context of integrated intelligent transportation where both aerial, ground, and marine automated vehicles require optimizations of the design in terms of fluid dynamics and controls on the interactions of vehicles. This interest led me to work in two laboratories: one is computational fluid dynamics lab, and the other is connected automated vehicles and highway lab.</p>
+                    <p>I was widely interested in aerodynamics and collaborative unmanned vehicles in the context of integrated intelligent transportation where all the aerial, ground, and marine automated vehicles require optimizations of the design in terms of fluid dynamics and controls on the interactions of vehicles. This interest led me to work in two laboratories: one is computational fluid dynamics lab, and the other is connected automated vehicles and highway lab.</p>
                     <p>Some topics on which I have worked with Professor Jennifer Franck in the CFD lab are:</p>
                     <ol>
                         <li>Dynamic Mesh Generation: developed and implemented a dynamic mesh generation library for harbor seal whiskers for a CFD solver (OpenFOAM).</li>
