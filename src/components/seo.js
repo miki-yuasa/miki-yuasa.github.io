@@ -69,7 +69,9 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <meta name="google-site-verification" content="tzF2_DyfEXHKGCEugl6gKsG3x_TALojEYEmkj_rlcLA" />
+    </Helmet>
   )
 }
 
