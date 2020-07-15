@@ -109,7 +109,7 @@ background: #f3f2f1;
 @media (min-width:700px){
   div.docCard{
     text-align: center;
-    margin:0 18%;
+    margin:0 16%;
   }
 }
 @media (min-width: 1000px) {

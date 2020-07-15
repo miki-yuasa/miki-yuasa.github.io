@@ -59,7 +59,7 @@ const BackgroundSection = () => (
             return (
                 <BackgroundImage
                     Tag="section"
-                    className={className}
+                    //className={className}
                     fluid={imageData}
                     backgroundColor={`#040e18`}>
 

@@ -2,11 +2,12 @@ import React from "react"
 import {
     DocumentCard,
     DocumentCardTitle,
-    DocumentCardType
+    DocumentCardType,
+    IDocumentCardStyles
 } from 'office-ui-fabric-react/lib/DocumentCard';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 
-const cardStyles = {
+const cardStyles: IDocumentCardStyles = {
     root: {
         display: 'inline-block',
         margin: 10,
@@ -19,15 +20,15 @@ const cardStyles = {
 
 export default function Software() {
     return (
-        <div id='software' class='sectionMaster'>
-            <div class='sectionParent'>
-                <div class='sectionHeader'>
-                    <h2 class='sectionHeader'>Software</h2>
+        <div id='software' className='sectionMaster'>
+            <div className='sectionParent'>
+                <div className='sectionHeader'>
+                    <h2 className='sectionHeader'>Software</h2>
                 </div>
-                <div class='sectionBody'>
+                <div className='sectionBody'>
                     <p>These links are for the software repositories of my past research and personal projects hosted on Bitbucket. The codes for some on-going projects have restricted access for internal use.</p>
                 </div>
-                <div class='docCard'>
+                <div className='docCard'>
                     <DocumentCard
                         styles={cardStyles}
                         onClickHref="https://bitbucket.org/mikyu/mikyu.bitbucket.io/"
@@ -166,8 +167,8 @@ export default function Software() {
                     </DocumentCard>
                 </div>
             </div>
-            <div class='sectionSeparator' >
-                <hr class='separator' />
+            <div className='sectionSeparator' >
+                <hr className='separator' />
             </div>
         </div>
     )
