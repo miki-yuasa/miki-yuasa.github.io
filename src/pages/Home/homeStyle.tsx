@@ -8,6 +8,8 @@ import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 import BackgroundImage from 'gatsby-background-image';
 
+import MediaButton from '../../components/fluentui/mediabutton'
+import DownloadButton from '../../components/fluentui/dlbutton'
 import CV from '../CV_Mikihisa_Yuasa_2020.pdf'
 
 const BackgroundSection = () => (
@@ -27,34 +29,6 @@ const BackgroundSection = () => (
             // Set ImageData.
             const theme = getTheme();
             const imageData = data.desktop.childImageSharp.fluid
-            const iconClass = mergeStyles({
-                height: 45,
-                width: 45,
-                margin: '11px 0 0 12px',
-                stroke: 'white',
-                fill: 'white',
-            });
-
-            const downloadiconClass = mergeStyles({
-                height: 45,
-                width: 45,
-                margin: '13px 0 0 0',
-                stroke: 'white'
-            });
-
-            const mediaButtonStyles: IButtonStyles = {
-                rootHovered: {
-                    background: theme.palette.themePrimary,
-                    boxShadow: Depths.depth16
-                },
-            }
-
-            const downloadButtonStyles: IButtonStyles = {
-                root: {
-                    boxShadow: Depths.depth8,
-                    height: '2.5rem',
-                }
-            }
 
             return (
                 <BackgroundImage
@@ -69,21 +43,24 @@ const BackgroundSection = () => (
                         <h1 className='home'>I'm Mikihisa Yuasa</h1><br />
                         <p className="shortIntro"> An engineering undergraduate at the University of Wisconsin-Madison.</p>
 
-                        <PrimaryButton href={CV} target="_blank" title="Download CV" rel="noreferrer" allowDisabledFocus styles={downloadButtonStyles}>
-                            <FontIcon iconName="download-svg" className={downloadiconClass} />
-                            <strong style={{ fontSize: '1.1rem' }}>Download CV</strong>
-                        </PrimaryButton>
+                        <DownloadButton
+                            href={CV}
+                            title="Download CV" />
+
                         <br /><br />
 
-                        <ActionButton href="mailto:mikihisa.yuasa@wisc.edu" target="_blank" rel="noreferrer" allowDisabledFocus title="E-mail Address" styles={mediaButtonStyles} >
-                            <FontIcon iconName="mailoutline-svg" className={iconClass} />
-                        </ActionButton>
-                        <ActionButton href="https://bitbucket.org/mikyu/" target="_blank" rel="noreferrer" allowDisabledFocus title="Bitbucket Repositories" styles={mediaButtonStyles} >
-                            <FontIcon iconName="bitbucket-svg" className={iconClass} />
-                        </ActionButton>
-                        <ActionButton href="https://www.linkedin.com/in/mikihisa-yuasa-3b7199132/" target="_blank" rel="noreferrer" allowDisabledFocus title="LinkedIn Profile" styles={mediaButtonStyles} >
-                            <FontIcon iconName="linkedin-svg" className={iconClass} />
-                        </ActionButton>
+                        <MediaButton
+                            href="mailto:mikihisa.yuasa@wisc.edu"
+                            title="E-mail Address"
+                            name="mailoutline" />
+                        <MediaButton
+                            href="https://bitbucket.org/mikyu/"
+                            title="Bitbucket"
+                            name="bitbucket" />
+                        <MediaButton
+                            href="https://www.linkedin.com/in/mikihisa-yuasa-3b7199132/"
+                            title="LinkedIn Profile"
+                            name="linkedin" />
                     </div>
                 </BackgroundImage >
             )
