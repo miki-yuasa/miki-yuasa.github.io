@@ -8,8 +8,8 @@ import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 import BackgroundImage from 'gatsby-background-image';
 
-import MediaButton from '../../components/fluentui/mediabutton'
-import DownloadButton from '../../components/fluentui/dlbutton'
+import MediaButton from '../../components/buttons/mediabutton'
+import DownloadButton from '../../components/buttons/dlbutton'
 import CV from '../CV_Mikihisa_Yuasa_2020.pdf'
 
 const BackgroundSection = () => (
