@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import { getTheme } from '@fluentui/react';
-import { PrimaryButton, ActionButton } from 'office-ui-fabric-react';
+import { PrimaryButton, ActionButton, IButtonStyles } from 'office-ui-fabric-react';
 import { FontIcon } from 'office-ui-fabric-react/lib/Icon';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
@@ -10,7 +10,7 @@ import BackgroundImage from 'gatsby-background-image';
 
 import CV from '../CV_Mikihisa_Yuasa_2020.pdf'
 
-const BackgroundSection = ({ className }) => (
+const BackgroundSection = () => (
     <StaticQuery
         query={graphql`
         query {
@@ -42,14 +42,14 @@ const BackgroundSection = ({ className }) => (
                 stroke: 'white'
             });
 
-            const mediaButtonStyles = {
+            const mediaButtonStyles: IButtonStyles = {
                 rootHovered: {
                     background: theme.palette.themePrimary,
                     boxShadow: Depths.depth16
                 },
             }
 
-            const downloadButtonStyles = {
+            const downloadButtonStyles: IButtonStyles = {
                 root: {
                     boxShadow: Depths.depth8,
                     height: '2.5rem',
@@ -63,11 +63,11 @@ const BackgroundSection = ({ className }) => (
                     fluid={imageData}
                     backgroundColor={`#040e18`}>
 
-                    <div class='homeBackgroundedSection'>
+                    <div className='homeBackgroundedSection'>
 
-                        <h2 class='home'>Hi there!</h2><br />
-                        <h1 class='home'>I'm Mikihisa Yuasa</h1><br />
-                        <p class="shortIntro"> An engineering undergraduate at the University of Wisconsin-Madison.</p>
+                        <h2 className='home'>Hi there!</h2><br />
+                        <h1 className='home'>I'm Mikihisa Yuasa</h1><br />
+                        <p className="shortIntro"> An engineering undergraduate at the University of Wisconsin-Madison.</p>
 
                         <PrimaryButton href={CV} target="_blank" title="Download CV" rel="noreferrer" allowDisabledFocus styles={downloadButtonStyles}>
                             <FontIcon iconName="download-svg" className={downloadiconClass} />

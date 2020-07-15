@@ -42,7 +42,7 @@ export default function Home() {
     });
 
     return (
-        <div class='homeParent'
+        <div className='homeParent'
             id="home">
             <StyledBackgroundSection />
         </div>
