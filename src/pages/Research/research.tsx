@@ -2,12 +2,12 @@ import React from "react"
 
 export default function Research() {
     return (
-        <div id='research' class='sectionMasterResearch'>
-            <div class='sectionParent'>
-                <div class='sectionHeader'>
-                    <h2 class='sectionHeader'>Research</h2>
+        <div id='research' className='sectionMasterResearch'>
+            <div className='sectionParent'>
+                <div className='sectionHeader'>
+                    <h2 className='sectionHeader'>Research</h2>
                 </div>
-                <div class='sectionBody'>
+                <div className='sectionBody'>
                     <p>I was widely interested in aerodynamics and collaborative unmanned vehicles in the context of integrated intelligent transportation where all the aerial, ground, and marine automated vehicles require optimizations of the design in terms of fluid dynamics and controls on the interactions of vehicles. This interest led me to work in two laboratories: one is computational fluid dynamics lab, and the other is connected automated vehicles and highway lab.</p>
                     <p>Some topics on which I have worked with Professor Jennifer Franck in the CFD lab are:</p>
                     <ol>
@@ -23,8 +23,8 @@ export default function Research() {
                     </ol>
                 </div>
             </div>
-            <div class='sectionSeparator' >
-                <hr class='separator' />
+            <div className='sectionSeparator' >
+                <hr className='separator' />
             </div>
         </div>
     )

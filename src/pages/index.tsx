@@ -9,7 +9,7 @@ import Research from "./Research/research"
 import Software from "./Software/software"
 
 loadTheme({
-  defaultFontStyle: { fontFamily: 'Lato, Helvetica', fontWeight: 'regular' },
+  defaultFontStyle: { fontFamily: 'Lato, Helvetica' },
   palette: {
     themePrimary: '#0078d4',
     themeLighterAlt: '#eff6fc',

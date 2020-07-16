@@ -31,13 +31,13 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div class="layoutBody">
+      <div className="layoutBody">
         <main>{children}</main>
         <footer>
           Last updated: July 2020<br />
           Copyright © {new Date().getFullYear()} Mikihisa Yuasa | All Rights Reserved<br />
-          Built with {` `} <a class='footer' href="https://www.gatsbyjs.org" target="_blank" rel="noreferrer"><em>Gatsby</em></a> and {' '}
-          <a class='footer' href="https://www.microsoft.com/design/fluent/#/" target="_blank" rel="noreferrer"><em>Fluent Design System</em></a>.
+          Built with {` `} <a className='footer' href="https://www.gatsbyjs.org" target="_blank" rel="noreferrer"><em>Gatsby</em></a> and {' '}
+          <a className='footer' href="https://www.microsoft.com/design/fluent/#/" target="_blank" rel="noreferrer"><em>Fluent Design System</em></a>.
         </footer>
       </div>
     </>

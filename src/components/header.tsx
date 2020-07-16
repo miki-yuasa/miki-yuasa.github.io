@@ -1,20 +1,24 @@
 import React from "react"
-import { Pivot, PivotItem, PivotLinkSize, } from 'office-ui-fabric-react/lib/Pivot';
+import { Pivot, PivotItem, PivotLinkSize, IPivotStyles } from 'office-ui-fabric-react/lib/Pivot';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 
 import "./layout.css"
 
-const pivotStyles = {
+const pivotStyles: IPivotStyles = {
   linkIsSelected: {
     selectors: {
       ':before': {
         height: '4px',   // was previously defaulted at 2px
       }
-    }
+    },
   },
+  root: {},
+  link: {},
+  count: {},
+  linkContent: {},
+  text: {},
+  icon: {}
 };
-
-
 
 const Header = ({ siteTitle }) => (
   <header
@@ -22,12 +26,12 @@ const Header = ({ siteTitle }) => (
       boxShadow: Depths.depth16,
     }}
   >
-    <div class='headerPivot'>
+    <div className='headerPivot'>
       <Pivot
         aria-label="Basic Pivot Example"
         styles={pivotStyles}
         linkSize={PivotLinkSize.large}
-        headersOnly='true'>
+        headersOnly>
         <PivotItem
           headerText="Home"
           headerButtonProps={{ href: "/#home" }} />

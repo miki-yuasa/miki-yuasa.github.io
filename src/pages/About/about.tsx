@@ -9,17 +9,17 @@ const theme = getTheme();
 
 export default function About() {
     return (
-        <div class="sectionMaster"
+        <div className="sectionMaster"
             id='about'>
-            <div class='sectionParentAbout'>
-                <div class='sectionHeader'
+            <div className='sectionParentAbout'>
+                <div className='sectionHeader'
                     style={{ color: theme.palette.neutralLight }}>
-                    <h2 class='sectionHeader'>About</h2>
+                    <h2 className='sectionHeader'>About</h2>
                 </div>
-                <div class='profile'>
+                <div className='profile'>
                     <Image />
                 </div>
-                <div class='sectionBody'
+                <div className='sectionBody'
                     style={{ color: theme.palette.neutralQuaternary }}>
                     <form>
                         <dl>
