@@ -10,8 +10,14 @@ const pivotStyles: IPivotStyles = {
       ':before': {
         height: '4px',   // was previously defaulted at 2px
       }
-    }
+    },
   },
+  root: {},
+  link: {},
+  count: {},
+  linkContent: {},
+  text: {},
+  icon: {}
 };
 
 const Header = ({ siteTitle }) => (

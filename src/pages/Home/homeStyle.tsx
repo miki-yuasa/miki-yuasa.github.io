@@ -2,14 +2,10 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import { getTheme } from '@fluentui/react';
-import { PrimaryButton, ActionButton, IButtonStyles } from 'office-ui-fabric-react';
-import { FontIcon } from 'office-ui-fabric-react/lib/Icon';
-import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
-import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 import BackgroundImage from 'gatsby-background-image';
 
-import MediaButton from '../../components/buttons/mediabutton'
-import DownloadButton from '../../components/buttons/dlbutton'
+import MediaButton from '../../components/buttons/mediaButton'
+import DownloadButton from '../../components/buttons/dlButton'
 import CV from '../CV_Mikihisa_Yuasa_2020.pdf'
 
 const BackgroundSection = () => (
