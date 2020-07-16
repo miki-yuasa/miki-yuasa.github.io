@@ -46,16 +46,16 @@ function Header() {
   }
 
   function activateIndex(element) {
-    if (element.id === 'home') {
+    if (element.id == 'home') {
       setSelectedKey(0);
     }
-    else if (element.id === 'about') {
+    else if (element.id == 'about') {
       setSelectedKey(1);
     }
-    else if (element.id === 'research') {
+    else if (element.id == 'research') {
       setSelectedKey(2);
     }
-    else if (element.id === 'software') {
+    else if (element.id == 'software') {
       setSelectedKey(3);
     }
   }
