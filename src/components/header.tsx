@@ -20,46 +20,47 @@ const pivotStyles: IPivotStyles = {
   icon: {}
 };
 
-const boxes = document.querySelectorAll(".idBox");
-const options = {
-  root: null, // 今回はビューポートをルート要素とする
-  rootMargin: "-80% 0px", // ビューポートの中心を判定基準にする
-  threshold: 0 // 閾値は0
-};
-
 function Header() {
   const [selectedKey, setSelectedKey] = React.useState({});
 
-  const observer = new IntersectionObserver(doWhenIntersect, options);
-  // それぞれのboxを監視する
-  boxes.forEach(box => {
-    observer.observe(box);
-  });
+  const options = {
+    root: null, // 今回はビューポートをルート要素とする
+    rootMargin: "-50% 0px", // ビューポートの中心を判定基準にする
+    threshold: 0 // 閾値は0
+  };
 
-  function doWhenIntersect(entries) {
-    // 交差検知をしたもののなかで、isIntersectingがtrueのDOMを色を変える関数に渡す
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        activateIndex(entry.target);
-      }
+  if (typeof document !== 'undefined') {
+    const boxes = document.querySelectorAll(".idBox");
+    const observer = new IntersectionObserver(doWhenIntersect, options);
+    boxes.forEach(box => {
+      observer.observe(box);
     });
-  }
+    // それぞれのboxを監視する
 
-  function activateIndex(element) {
-    if (element.id == 'home') {
-      setSelectedKey(0);
+    function doWhenIntersect(entries) {
+      // 交差検知をしたもののなかで、isIntersectingがtrueのDOMを色を変える関数に渡す
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          activateIndex(entry.target);
+        }
+      });
     }
-    else if (element.id == 'about') {
-      setSelectedKey(1);
-    }
-    else if (element.id == 'research') {
-      setSelectedKey(2);
-    }
-    else if (element.id == 'software') {
-      setSelectedKey(3);
+
+    function activateIndex(element) {
+      if (element.id == 'home') {
+        setSelectedKey(0);
+      }
+      else if (element.id == 'about') {
+        setSelectedKey(1);
+      }
+      else if (element.id == 'research') {
+        setSelectedKey(2);
+      }
+      else if (element.id == 'software') {
+        setSelectedKey(3);
+      }
     }
   }
-
 
   return (
     <header
