@@ -6,7 +6,7 @@ import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 import { registerIcons } from 'office-ui-fabric-react/lib/Styling';
 
-export default function DownloadButton(props) {
+export default function DownloadButton(props: { href: string, title: string }) {
     registerIcons({
         icons: {
             'download': (
