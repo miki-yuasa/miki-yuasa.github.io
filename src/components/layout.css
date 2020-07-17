@@ -21,8 +21,8 @@ form dl dt{
 form dl dd{
   padding:5px 0;
 }
-
-div.layoutBody{
+div.idBox
+.layoutBody{
   margin: auto;
   position: relative;
 }
@@ -52,12 +52,6 @@ div.layoutBody{
   background: #f3f2f1;
   margin-top: -80px; 
   padding-top: 80px;
-}
-.sectionMasterAbout{
-  background: red;
-  z-index: 20;
-  margin-top: -80px; 
-  padding-top: 80px; 
 }
 .sectionMasterResearch{
   background: #f3f2f1;
