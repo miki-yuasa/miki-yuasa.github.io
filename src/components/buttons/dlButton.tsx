@@ -22,7 +22,7 @@ export default function DownloadButton(props: { href: string, title: string }) {
     });
 
     const theme = getTheme();
-    const downloadiconClass = mergeStyles({
+    const downloadIconClass = mergeStyles({
         height: 45,
         width: 45,
         margin: '13px 0 0 0',
@@ -43,7 +43,7 @@ export default function DownloadButton(props: { href: string, title: string }) {
             rel="noreferrer"
             allowDisabledFocus
             styles={downloadButtonStyles}>
-            <FontIcon iconName="download" className={downloadiconClass} />
+            <FontIcon iconName="download" className={downloadIconClass} />
             <strong style={{ fontSize: '1.1rem' }}>{props.title}</strong>
         </PrimaryButton>
     )

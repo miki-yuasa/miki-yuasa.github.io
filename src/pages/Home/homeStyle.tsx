@@ -9,8 +9,8 @@ import DownloadButton from '../../components/buttons/dlButton'
 import CV from '../CV_Mikihisa_Yuasa_2020.pdf'
 
 const BackgroundSection = () => (
-    <StaticQuery
-        query={graphql`
+  <StaticQuery
+    query={graphql`
         query {
           desktop: file(relativePath: { eq: "homebg_fhd_filtered.png" }) {
             childImageSharp {
@@ -21,47 +21,45 @@ const BackgroundSection = () => (
           }
         }
       `}
-        render={data => {
-            // Set ImageData.
-            const theme = getTheme();
-            const imageData = data.desktop.childImageSharp.fluid
+    render={data => {
+      // Set ImageData.
+      const imageData = data.desktop.childImageSharp.fluid
 
-            return (
-                <BackgroundImage
-                    Tag="section"
-                    //className={className}
-                    fluid={imageData}
-                    backgroundColor={`#040e18`}>
+      return (
+        <BackgroundImage
+          Tag="section"
+          fluid={imageData}
+          backgroundColor={`#040e18`}>
 
-                    <div className='homeBackgroundedSection'>
+          <div className='homeBackgroundedSection'>
 
-                        <h2 className='home'>Hi there!</h2><br />
-                        <h1 className='home'>I'm Mikihisa Yuasa</h1><br />
-                        <p className="shortIntro"> An engineering undergraduate at the University of Wisconsin-Madison.</p>
+            <h2 className='home'>Hi there!</h2><br />
+            <h1 className='home'>I'm Mikihisa Yuasa</h1><br />
+            <p className="shortIntro"> An engineering undergraduate at the University of Wisconsin-Madison.</p>
 
-                        <DownloadButton
-                            href={CV}
-                            title="Download CV" />
+            <DownloadButton
+              href={CV}
+              title="Download CV" />
 
-                        <br /><br />
+            <br /><br />
 
-                        <MediaButton
-                            href="mailto:mikihisa.yuasa@wisc.edu"
-                            title="E-mail Address"
-                            name="mailoutline" />
-                        <MediaButton
-                            href="https://bitbucket.org/mikyu/"
-                            title="Bitbucket"
-                            name="bitbucket" />
-                        <MediaButton
-                            href="https://www.linkedin.com/in/mikihisa-yuasa-3b7199132/"
-                            title="LinkedIn Profile"
-                            name="linkedin" />
-                    </div>
-                </BackgroundImage >
-            )
-        }}
-    />
+            <MediaButton
+              href="mailto:mikihisa.yuasa@wisc.edu"
+              title="E-mail Address"
+              name="mailoutline" />
+            <MediaButton
+              href="https://bitbucket.org/mikyu/"
+              title="Bitbucket"
+              name="bitbucket" />
+            <MediaButton
+              href="https://www.linkedin.com/in/mikihisa-yuasa-3b7199132/"
+              title="LinkedIn Profile"
+              name="linkedin" />
+          </div>
+        </BackgroundImage >
+      )
+    }}
+  />
 )
 
 const StyledBackgroundSection = styled(BackgroundSection)`

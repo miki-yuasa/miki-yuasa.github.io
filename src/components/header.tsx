@@ -2,7 +2,8 @@ import React from "react"
 import { Pivot, PivotItem, PivotLinkSize, IPivotStyles } from 'office-ui-fabric-react/lib/Pivot';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 
-import "./layout.css"
+import NavPivot from '../components/navs/navPivot';
+import NavCompact from '../components/navs/navCompact'
 
 const pivotStyles: IPivotStyles = {
   linkIsSelected: {
@@ -60,46 +61,29 @@ function Header() {
         setSelectedKey(3);
       }
     }
-  }
 
+    let width: number = document.body.clientWidth;
+    if (width <= 700) {
+      return (
+        <header className='compact'
+          style={{
+            boxShadow: Depths.depth16,
+          }}>
+          <NavCompact />
+        </header >
+      )
+    }
+  }
   return (
-    <header
+    <header className='wide'
       style={{
         boxShadow: Depths.depth16,
-      }}
-    >
+      }}>
       <div className='headerPivot'>
-        <Pivot
-          aria-label="Basic Pivot Example"
-          styles={pivotStyles}
-          linkSize={PivotLinkSize.large}
-          headersOnly
-          selectedKey={String(selectedKey)}>
-          <PivotItem
-            headerText="Home"
-            headerButtonProps={{ href: "/#home" }}
-            itemKey="0" />
-          <PivotItem
-            headerText="About"
-            headerButtonProps={{ href: "/#about" }}
-            itemKey="1" />
-          <PivotItem
-            headerText="Research"
-            headerButtonProps={{ href: "/#research" }}
-            itemKey="2" />
-          <PivotItem
-            headerText="Software"
-            headerButtonProps={{ href: "/#software" }}
-            itemKey="3" />
-          {/*
-        <PivotItem
-          headerText="Contact"
-          headerButtonProps={{ href: "/#contact" }} />
-           */}
-        </Pivot>
+        <NavPivot
+          selectedKey={String(selectedKey)} />
       </div>
     </header >
   )
 }
-
 export default Header

@@ -21,7 +21,6 @@ form dl dt{
 form dl dd{
   padding:5px 0;
 }
-
 div.idBox
 .layoutBody{
   margin: auto;
@@ -34,7 +33,7 @@ div.idBox
 .homeParent{
   margin-right: 0;
   margin-left: 0;
-  padding-top: 80px;
+  padding-top: 0px;
   color: #eaeaea;
   height: auto;
   min-height: 500px;
@@ -44,7 +43,7 @@ div.idBox
  }
 .homeBackgroundedSection{
   position: 'relative';
-  min-height: 350px;
+  min-height: 500px;
   margin-top: 0px;
   padding-top: 13%;
   padding-bottom: 13%;
@@ -78,7 +77,7 @@ div.idBox
   padding: 0 0;
 }
 .sectionBody{
-  padding: 0 10%;
+  padding: 0 15%;
   box-sizing: border-box;
 }
 .sectionSeparator{
@@ -106,6 +105,17 @@ background: #f3f2f1;
     text-align: center;
     margin:0 16%;
   }
+  .homeParent{
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 80px;
+    color: #eaeaea;
+    height: auto;
+    min-height: 500px;
+    width:auto;
+    font-family: Lato, Helvetica, sans-serif;
+    text-align: center;
+   }
 }
 @media (min-width: 1000px) {
   div.sectionHeader{
@@ -160,7 +170,7 @@ footer{
   font-family: 'Lato', Helvetica, sans-serif;
   padding:30px;
 }
-header {
+header.wide {
   background: white;
   text-align : center;
   top: 0;
@@ -173,6 +183,16 @@ header {
   -ms-backdrop-filter: blur(4px);
   -o-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
+}
+.compact{
+  top: 0;
+  position: fixed;
+  overflow: hidden;
+  z-index: 20; 
+  align-content: right;
+  align-self: right;
+  align-items: right;
+  right: 0px;
 }
 main,
 menu,

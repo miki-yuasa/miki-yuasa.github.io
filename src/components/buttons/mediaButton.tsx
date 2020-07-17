@@ -10,15 +10,6 @@ export default function MediaButton(props: { name: string, href: string, title: 
 
     registerIcons({
         icons: {
-            'download': (
-                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0,0,800,800'>
-                    <g fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="40px">
-                        <path d='M336,176h40a40,40,0,0,1,40,40V424a40,40,0,0,1-40,40H136a40,40,0,0,1-40-40V216a40,40,0,0,1,40-40h40' />
-                        <polyline points='176 272 256 352 336 272' />
-                        <line x1='256' y1='48' x2='256' y2='336' />
-                    </g>
-                </svg>
-            ),
             'mailoutline': (
                 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0,0,700,700'>
                     <g fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32px">
@@ -48,7 +39,7 @@ export default function MediaButton(props: { name: string, href: string, title: 
     const iconClass = mergeStyles({
         height: 45,
         width: 45,
-        margin: '11px 0 0 12px',
+        margin: '18px 0 0 12px',
         stroke: 'white',
         fill: 'white',
     });
@@ -66,7 +57,9 @@ export default function MediaButton(props: { name: string, href: string, title: 
             rel="noreferrer"
             allowDisabledFocus
             styles={mediaButtonStyles}>
-            <FontIcon iconName={props.name} className={iconClass} />
+            <span style={{ textAlign: 'center', verticalAlign: 'center' }}>
+                <FontIcon iconName={props.name} className={iconClass} />
+            </span>
         </ActionButton>
     )
 
