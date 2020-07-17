@@ -18,7 +18,7 @@ export default function Software() {
     }
 
     return (
-        <div className='idBpx' id='software'>
+        <div className='idBox' id='software'>
             <div className='sectionMaster'>
                 <div className='sectionParent'>
                     <div className='sectionHeader'>
