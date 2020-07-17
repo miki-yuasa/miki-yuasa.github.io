@@ -26,7 +26,7 @@ function Header() {
 
   const options = {
     root: null, // 今回はビューポートをルート要素とする
-    rootMargin: "-50% 0px", // ビューポートの中心を判定基準にする
+    rootMargin: "-40% 0px", // ビューポートの中心を判定基準にする
     threshold: 0 // 閾値は0
   };
 

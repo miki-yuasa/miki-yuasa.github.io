@@ -11,7 +11,9 @@ let pageData: { name: string }[] = [
     {
         name: "Software",
     },
-
+    {
+        name: "Contact",
+    },
 ]
 
 export function getPageData() {
