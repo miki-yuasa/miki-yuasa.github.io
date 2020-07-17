@@ -1,25 +1,10 @@
 import React from "react"
-import { Pivot, PivotItem, PivotLinkSize, IPivotStyles } from 'office-ui-fabric-react/lib/Pivot';
+import { IPivotStyles } from 'office-ui-fabric-react/lib/Pivot';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 
 import NavPivot from '../components/navs/navPivot';
-import NavCompact from '../components/navs/navCompact'
-
-const pivotStyles: IPivotStyles = {
-  linkIsSelected: {
-    selectors: {
-      ':before': {
-        height: '4px',   // was previously defaulted at 2px
-      }
-    },
-  },
-  root: {},
-  link: {},
-  count: {},
-  linkContent: {},
-  text: {},
-  icon: {}
-};
+import NavCompact from '../components/navs/navCompact';
+import '../components/layout.css'
 
 function Header() {
   const [selectedKey, setSelectedKey] = React.useState({});
