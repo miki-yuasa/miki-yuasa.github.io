@@ -40,11 +40,11 @@ const menuProps: IContextualMenuProps = {
 
 const menuButtonStyles: IButtonStyles = {
   root: {
-    boxShadow: Depths.depth64,
+    boxShadow: Depths.depth16,
     width: '45px',
-    padding: '6px 0 0 8px',
+    padding: '0px 0 0 5px',
     background: theme.palette.white,
-    stroke: theme.palette.neutralPrimary,
+    stroke: theme.palette.black,
   },
   rootHovered: {
     stroke: theme.palette.themePrimary,
@@ -57,11 +57,16 @@ const menuButtonStyles: IButtonStyles = {
   }
 }
 
+const menuIconClass = mergeStyles({
+  height: 35,
+  width: 35,
+});
+
 registerIcons({
   icons: {
     'hamburger': (
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0,0,512,512'>
-        <g fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32px" strokeMiterlimit='10'>
+        <g fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32px" strokeMiterlimit='10' >
           <line x1='80' y1='160' x2='432' y2='160' />
           <line x1='80' y1='256' x2='432' y2='256' />
           <line x1='80' y1='352' x2='432' y2='352' />
@@ -138,12 +143,12 @@ function Header() {
 
   return (
     <>
-      <header className='compact' style={{ boxShadow: Depths.depth64 }}>
+      <header className='compact'>
         <ActionButton
           menuProps={menuProps}
           styles={menuButtonStyles}
           title="Menu" >
-          <FontIcon iconName="hamburger" />
+          <FontIcon iconName="hamburger" className={menuIconClass} />
         </ActionButton>
       </header >
       <header className='wide' style={{ boxShadow: Depths.depth64 }}>
