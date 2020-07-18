@@ -78,6 +78,7 @@ registerIcons({
 });
 
 const pageData = getPageData();
+let pivotItemList = [];
 
 for (let i in pageData) {
   menuProps.items.push(
@@ -85,7 +86,15 @@ for (let i in pageData) {
       key: pageData[i].name,
       text: pageData[i].name,
       href: "/#" + pageData[i].name.toLowerCase()
-    })
+    });
+
+  let hrefStr: string = "/#" + pageData[i].name.toLowerCase();
+  pivotItemList.push(
+    <PivotItem
+      headerText={pageData[i].name}
+      headerButtonProps={{ href: hrefStr }}
+      itemKey={String(i)} />
+  );
 }
 
 function Header() {
@@ -143,6 +152,8 @@ function Header() {
           linkSize={PivotLinkSize.large}
           headersOnly
           selectedKey={String(selectedKey)}>
+          {pivotItemList}
+          {/*
           <PivotItem
             headerText="Home"
             headerButtonProps={{ href: "/#home" }}
@@ -159,7 +170,6 @@ function Header() {
             headerText="Software"
             headerButtonProps={{ href: "/#software" }}
             itemKey="3" />
-          {/*
         <PivotItem
           headerText="Contact"
           headerButtonProps={{ href: "/#contact" }} />
