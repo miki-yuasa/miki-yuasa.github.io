@@ -26,10 +26,6 @@ div.idBox
   margin: auto;
   position: relative;
 }
-.headerPivot{
-  margin: 0;
-  padding: 0.8rem 1.0875rem 0.8rem ;
-}
 .homeParent{
   margin-right: 0;
   margin-left: 0;
@@ -192,6 +188,7 @@ header.wide {
     position: fixed;
     width: 100%;
     overflow: hidden;
+    padding: 0.8rem 1.0875rem 0.8rem ;
     z-index: 20;
     -webkit-backdrop-filter: blur(4px);
     -moz-backdrop-filter: blur(4px);
