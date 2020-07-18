@@ -42,7 +42,6 @@ const menuButtonStyles: IButtonStyles = {
   root: {
     boxShadow: Depths.depth16,
     width: '45px',
-    padding: '0px 0 0 5px',
     background: theme.palette.white,
     stroke: theme.palette.black,
   },
@@ -58,8 +57,9 @@ const menuButtonStyles: IButtonStyles = {
 }
 
 const menuIconClass = mergeStyles({
-  height: 35,
-  width: 35,
+  height: 30,
+  width: 30,
+  margin: '0px -5px 0px 2px'
 });
 
 registerIcons({
