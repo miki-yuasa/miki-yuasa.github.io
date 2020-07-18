@@ -142,10 +142,46 @@ function Header() {
     }
   }
 
+  if (typeof document !== 'undefined') {
+
+    let width: number = document.body.clientWidth;
+
+    if (width <= 700) {
+      return (
+        <header
+          style={{
+            boxShadow: Depths.depth16,
+            top: '0',
+            position: 'fixed',
+            overflow: 'hidden',
+            zIndex: 20,
+            right: '0px',
+          }}>
+          <ActionButton
+            menuProps={menuProps}
+            styles={menuButtonStyles}
+            title="Menu" >
+            <span style={{ textAlign: 'center' }}>
+              <FontIcon iconName="hamburger" className={menuIconClass} />
+            </span>
+          </ActionButton>
+        </header >
+      )
+    }
+  }
+
   return (
     <header
       style={{
         boxShadow: Depths.depth16,
+        background: theme.palette.white,
+        textAlign: 'center',
+        top: '0',
+        position: 'fixed',
+        width: '100%',
+        overflow: 'hidden',
+        zIndex: 20,
+        backdropFilter: 'blur(4px)'
       }}
     >
       <div className='headerPivot'>

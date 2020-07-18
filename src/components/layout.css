@@ -33,7 +33,7 @@ div.idBox
 .homeParent{
   margin-right: 0;
   margin-left: 0;
-  padding-top: 75px;
+  padding-top: 0;
   color: #eaeaea;
   height: auto;
   min-height: 500px;
@@ -105,6 +105,17 @@ background: #f3f2f1;
     text-align: center;
     margin:0 16%;
   }
+  .homeParent{
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 75px;
+    color: #eaeaea;
+    height: auto;
+    min-height: 500px;
+    width:auto;
+    font-family: Lato, Helvetica, sans-serif;
+    text-align: center;
+   }
 }
 @media (min-width: 1000px) {
   div.sectionHeader{
@@ -159,7 +170,7 @@ footer{
   font-family: 'Lato', Helvetica, sans-serif;
   padding:30px;
 }
-header {
+header.wide {
   background: white;
   text-align : center;
   top: 0;
@@ -172,6 +183,16 @@ header {
   -ms-backdrop-filter: blur(4px);
   -o-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
+}
+.compact{
+  top: 0;
+  position: fixed;
+  overflow: hidden;
+  z-index: 20; 
+  align-content: right;
+  align-self: right;
+  align-items: right;
+  right: 0px;
 }
 main,
 menu,
