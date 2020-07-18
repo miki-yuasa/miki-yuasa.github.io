@@ -1,24 +1,9 @@
 import React from "react"
-import { Pivot, PivotItem, PivotLinkSize, IPivotStyles } from 'office-ui-fabric-react/lib/Pivot';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 
+import NavWide from '../components/navs/navWide'
+import NavCompact from '../components/navs/navCompact'
 import "./layout.css"
-
-const pivotStyles: IPivotStyles = {
-  linkIsSelected: {
-    selectors: {
-      ':before': {
-        height: '4px',   // was previously defaulted at 2px
-      }
-    },
-  },
-  root: {},
-  link: {},
-  count: {},
-  linkContent: {},
-  text: {},
-  icon: {}
-};
 
 function Header() {
   const [selectedKey, setSelectedKey] = React.useState({});
@@ -59,46 +44,21 @@ function Header() {
       else if (element.id == 'software') {
         setSelectedKey(3);
       }
+      else if (element.id == 'contact') {
+        setSelectedKey(4);
+      }
     }
   }
 
   return (
-    <header
-      style={{
-        boxShadow: Depths.depth16,
-      }}
-    >
-      <div className='headerPivot'>
-        <Pivot
-          aria-label="Basic Pivot Example"
-          styles={pivotStyles}
-          linkSize={PivotLinkSize.large}
-          headersOnly
-          selectedKey={String(selectedKey)}>
-          <PivotItem
-            headerText="Home"
-            headerButtonProps={{ href: "/#home" }}
-            itemKey="0" />
-          <PivotItem
-            headerText="About"
-            headerButtonProps={{ href: "/#about" }}
-            itemKey="1" />
-          <PivotItem
-            headerText="Research"
-            headerButtonProps={{ href: "/#research" }}
-            itemKey="2" />
-          <PivotItem
-            headerText="Software"
-            headerButtonProps={{ href: "/#software" }}
-            itemKey="3" />
-          {/*
-        <PivotItem
-          headerText="Contact"
-          headerButtonProps={{ href: "/#contact" }} />
-           */}
-        </Pivot>
-      </div>
-    </header >
+    <>
+      <header className='compact'>
+        <NavCompact />
+      </header >
+      <header className='wide' style={{ boxShadow: Depths.depth64 }}>
+        <NavWide selectedKey={String(selectedKey)} />
+      </header >
+    </>
   )
 }
 

@@ -1,5 +1,4 @@
 import React from "react"
-import { registerIcons } from 'office-ui-fabric-react/lib/Styling';
 
 import StyledBackgroundSection from './homeStyle'
 
