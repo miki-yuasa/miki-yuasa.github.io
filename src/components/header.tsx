@@ -136,6 +136,9 @@ function Header() {
       else if (element.id == 'software') {
         setSelectedKey(3);
       }
+      else if (element.id == 'contact') {
+        setSelectedKey(4);
+      }
     }
   }
 
@@ -153,27 +156,6 @@ function Header() {
           headersOnly
           selectedKey={String(selectedKey)}>
           {pivotItemList}
-          {/*
-          <PivotItem
-            headerText="Home"
-            headerButtonProps={{ href: "/#home" }}
-            itemKey="0" />
-          <PivotItem
-            headerText="About"
-            headerButtonProps={{ href: "/#about" }}
-            itemKey="1" />
-          <PivotItem
-            headerText="Research"
-            headerButtonProps={{ href: "/#research" }}
-            itemKey="2" />
-          <PivotItem
-            headerText="Software"
-            headerButtonProps={{ href: "/#software" }}
-            itemKey="3" />
-        <PivotItem
-          headerText="Contact"
-          headerButtonProps={{ href: "/#contact" }} />
-           */}
         </Pivot>
       </div>
     </header >

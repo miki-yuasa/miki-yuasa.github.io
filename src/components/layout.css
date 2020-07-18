@@ -33,7 +33,7 @@ div.idBox
 .homeParent{
   margin-right: 0;
   margin-left: 0;
-  padding-top: 78px;
+  padding-top: 75px;
   color: #eaeaea;
   height: auto;
   min-height: 500px;
@@ -83,13 +83,13 @@ div.idBox
 .sectionSeparator{
 text-align: center;
 margin:  0 auto;
-width: 60%;
+width: 70%;
 background: #f3f2f1;
 }
 .sectionSeparatorAbout{
   text-align: center;
   margin: 0 auto;
-  width: 60%;
+  width: 70%;
   background: #272727;
   }
 .profile{
