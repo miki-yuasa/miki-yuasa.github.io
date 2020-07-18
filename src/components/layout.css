@@ -36,7 +36,6 @@ div.idBox
   padding-top: 0;
   color: #eaeaea;
   height: auto;
-  min-height: 500px;
   width:auto;
   font-family: Lato, Helvetica, sans-serif;
   text-align: center;
@@ -171,20 +170,10 @@ footer{
   padding:30px;
 }
 header.wide {
-  background: white;
-  text-align : center;
-  top: 0;
-  position: fixed;
-  width: 100%;
-  overflow: hidden;
-  z-index: 20;
-  -webkit-backdrop-filter: blur(4px);
-  -moz-backdrop-filter: blur(4px);
-  -ms-backdrop-filter: blur(4px);
-  -o-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+  display: none;
 }
 .compact{
+  display: block;
   top: 0;
   position: fixed;
   overflow: hidden;
@@ -193,6 +182,26 @@ header.wide {
   align-self: right;
   align-items: right;
   right: 0px;
+}
+@media (min-width:700px){
+  header.wide {
+    display: block;
+    background: white;
+    text-align : center;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    z-index: 20;
+    -webkit-backdrop-filter: blur(4px);
+    -moz-backdrop-filter: blur(4px);
+    -ms-backdrop-filter: blur(4px);
+    -o-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+  .compact{
+    display: none;
+  }
 }
 main,
 menu,

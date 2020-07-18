@@ -28,12 +28,6 @@ const pivotStyles: IPivotStyles = {
 
 const theme = getTheme();
 
-const menuIconClass = mergeStyles({
-  height: 35,
-  width: 35,
-  padding: '7px 7px 0 -5px',
-});
-
 const menuProps: IContextualMenuProps = {
   items: [],
   styles: {
@@ -47,9 +41,9 @@ const menuProps: IContextualMenuProps = {
 const menuButtonStyles: IButtonStyles = {
   root: {
     boxShadow: Depths.depth64,
-    padding: '0 auto',
     width: '45px',
-    background: theme.palette.neutralLighterAlt,
+    padding: '6px 0 0 8px',
+    background: theme.palette.white,
     stroke: theme.palette.neutralPrimary,
   },
   rootHovered: {
@@ -142,59 +136,29 @@ function Header() {
     }
   }
 
-  if (typeof document !== 'undefined') {
-
-    let width: number = document.body.clientWidth;
-
-    if (width <= 700) {
-      return (
-        <header
-          style={{
-            boxShadow: Depths.depth16,
-            top: '0',
-            position: 'fixed',
-            overflow: 'hidden',
-            zIndex: 20,
-            right: '0px',
-          }}>
-          <ActionButton
-            menuProps={menuProps}
-            styles={menuButtonStyles}
-            title="Menu" >
-            <span style={{ textAlign: 'center' }}>
-              <FontIcon iconName="hamburger" className={menuIconClass} />
-            </span>
-          </ActionButton>
-        </header >
-      )
-    }
-  }
-
   return (
-    <header
-      style={{
-        boxShadow: Depths.depth16,
-        background: theme.palette.white,
-        textAlign: 'center',
-        top: '0',
-        position: 'fixed',
-        width: '100%',
-        overflow: 'hidden',
-        zIndex: 20,
-        backdropFilter: 'blur(4px)'
-      }}
-    >
-      <div className='headerPivot'>
-        <Pivot
-          aria-label="Basic Pivot Example"
-          styles={pivotStyles}
-          linkSize={PivotLinkSize.large}
-          headersOnly
-          selectedKey={String(selectedKey)}>
-          {pivotItemList}
-        </Pivot>
-      </div>
-    </header >
+    <>
+      <header className='compact' style={{ boxShadow: Depths.depth64 }}>
+        <ActionButton
+          menuProps={menuProps}
+          styles={menuButtonStyles}
+          title="Menu" >
+          <FontIcon iconName="hamburger" />
+        </ActionButton>
+      </header >
+      <header className='wide' style={{ boxShadow: Depths.depth64 }}>
+        <div className='headerPivot'>
+          <Pivot
+            aria-label="Basic Pivot Example"
+            styles={pivotStyles}
+            linkSize={PivotLinkSize.large}
+            headersOnly
+            selectedKey={String(selectedKey)}>
+            {pivotItemList}
+          </Pivot>
+        </div>
+      </header >
+    </>
   )
 }
 
