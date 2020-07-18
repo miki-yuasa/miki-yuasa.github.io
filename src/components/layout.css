@@ -189,6 +189,7 @@ header.wide {
     width: 100%;
     overflow: hidden;
     padding: 0.8rem 1.0875rem 0.8rem ;
+    border-radius: 0% 0% 4px 4px;
     z-index: 20;
     -webkit-backdrop-filter: blur(4px);
     -moz-backdrop-filter: blur(4px);
