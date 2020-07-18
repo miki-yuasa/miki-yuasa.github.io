@@ -59,7 +59,7 @@ const menuButtonStyles: IButtonStyles = {
 const menuIconClass = mergeStyles({
   height: 30,
   width: 30,
-  margin: '0px -5px 0px 2px'
+  margin: '0px -6px 0px 3px'
 });
 
 registerIcons({
