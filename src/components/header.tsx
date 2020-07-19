@@ -3,6 +3,7 @@ import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 
 import NavWide from '../components/navs/navWide'
 import NavCompact from '../components/navs/navCompact'
+import { getPageData } from '../data/pageData'
 import "./layout.css"
 
 function Header() {
@@ -13,6 +14,12 @@ function Header() {
     rootMargin: "-50% 0px", // ビューポートの中心を判定基準にする
     threshold: 0 // 閾値は0
   };
+
+  const pageData = getPageData();
+  let pageIndexNames: string[] = [];
+  for (let i in pageData) {
+    pageIndexNames[i] = pageData[i].name.toLowerCase();
+  }
 
   if (typeof document !== 'undefined') {
     const boxes = document.querySelectorAll(".idBox");
@@ -32,21 +39,8 @@ function Header() {
     }
 
     function activateIndex(element) {
-      if (element.id == 'home') {
-        setSelectedKey(0);
-      }
-      else if (element.id == 'about') {
-        setSelectedKey(1);
-      }
-      else if (element.id == 'research') {
-        setSelectedKey(2);
-      }
-      else if (element.id == 'software') {
-        setSelectedKey(3);
-      }
-      else if (element.id == 'contact') {
-        setSelectedKey(4);
-      }
+      let pageKey: number = pageIndexNames.indexOf(element.id);
+      setSelectedKey(pageKey)
     }
   }
 
