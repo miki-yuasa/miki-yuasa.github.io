@@ -7,9 +7,10 @@ import Home from "./Home/home"
 import About from "./About/about"
 import Research from "./Research/research"
 import Software from "./Software/software"
+import Contact from "./Contact/contact"
 
 loadTheme({
-  defaultFontStyle: { fontFamily: 'Lato, Helvetica', fontWeight: 'regular' },
+  defaultFontStyle: { fontFamily: 'Lato, Helvetica' },
   palette: {
     themePrimary: '#0078d4',
     themeLighterAlt: '#eff6fc',
@@ -44,6 +45,7 @@ const IndexPage = () => (
     <About />
     <Research />
     <Software />
+    <Contact />
   </Layout>
 )
 

@@ -21,22 +21,17 @@ form dl dt{
 form dl dd{
   padding:5px 0;
 }
-
-div.layoutBody{
+div.idBox
+.layoutBody{
   margin: auto;
   position: relative;
-}
-.headerPivot{
-  margin: 0;
-  padding: 0.8rem 1.0875rem 0.8rem ;
 }
 .homeParent{
   margin-right: 0;
   margin-left: 0;
-  padding-top: 80px;
+  padding-top: 0;
   color: #eaeaea;
   height: auto;
-  min-height: 500px;
   width:auto;
   font-family: Lato, Helvetica, sans-serif;
   text-align: center;
@@ -52,12 +47,6 @@ div.layoutBody{
   background: #f3f2f1;
   margin-top: -80px; 
   padding-top: 80px;
-}
-.sectionMasterAbout{
-  background: red;
-  z-index: 20;
-  margin-top: -80px; 
-  padding-top: 80px; 
 }
 .sectionMasterResearch{
   background: #f3f2f1;
@@ -89,13 +78,13 @@ div.layoutBody{
 .sectionSeparator{
 text-align: center;
 margin:  0 auto;
-width: 60%;
+width: 70%;
 background: #f3f2f1;
 }
 .sectionSeparatorAbout{
   text-align: center;
   margin: 0 auto;
-  width: 60%;
+  width: 70%;
   background: #272727;
   }
 .profile{
@@ -109,8 +98,19 @@ background: #f3f2f1;
 @media (min-width:700px){
   div.docCard{
     text-align: center;
-    margin:0 18%;
+    margin:0 16%;
   }
+  .homeParent{
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 75px;
+    color: #eaeaea;
+    height: auto;
+    min-height: 500px;
+    width:auto;
+    font-family: Lato, Helvetica, sans-serif;
+    text-align: center;
+   }
 }
 @media (min-width: 1000px) {
   div.sectionHeader{
@@ -165,19 +165,41 @@ footer{
   font-family: 'Lato', Helvetica, sans-serif;
   padding:30px;
 }
-header {
-  background: white;
-  text-align : center;
+header.wide {
+  display: none;
+}
+.compact{
+  display: block;
   top: 0;
   position: fixed;
-  width: 100%;
   overflow: hidden;
-  z-index: 20;
-  -webkit-backdrop-filter: blur(4px);
-  -moz-backdrop-filter: blur(4px);
-  -ms-backdrop-filter: blur(4px);
-  -o-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+  z-index: 20;  
+  right: 0px;
+  text-align: right;
+  height: 60px;
+  width: 60px;
+}
+@media (min-width:700px){
+  header.wide {
+    display: block;
+    background: white;
+    text-align : center;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    padding: 0.8rem 1.0875rem 0.8rem ;
+    border-radius: 0% 0% 4px 4px;
+    z-index: 20;
+    -webkit-backdrop-filter: blur(4px);
+    -moz-backdrop-filter: blur(4px);
+    -ms-backdrop-filter: blur(4px);
+    -o-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+  .compact{
+    display: none;
+  }
 }
 main,
 menu,
