@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { getTheme } from '@fluentui/react';
 
-import Image from '../../components/image_new'
+import Image from '../../components/image'
 import CV from '../CV_Mikihisa_Yuasa_2020.pdf'
 
 const theme = getTheme();
