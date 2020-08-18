@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function SectionTemplate(props: { title: string, children: any }) {
+export default function SectionTemplate(props: { title: string, children: React.ReactNode }) {
 
     let sectionID: string = props.title.toLowerCase();
 
