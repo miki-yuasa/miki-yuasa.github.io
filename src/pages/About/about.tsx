@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { getTheme } from '@fluentui/react';
 
-import Image from '../../components/image'
+import Image from '../../components/image_new'
 import CV from '../CV_Mikihisa_Yuasa_2020.pdf'
 
 const theme = getTheme();
@@ -18,7 +18,7 @@ export default function About() {
                         <h2 className='sectionHeader'>About</h2>
                     </div>
                     <div className='profile'>
-                        <Image />
+                        <Image filename="profile.jpg" style={{ borderRadius: "40px" }} />
                     </div>
                     <div className='sectionBody'
                         style={{ color: theme.palette.neutralQuaternary }}>
