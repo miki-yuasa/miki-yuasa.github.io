@@ -26,9 +26,9 @@ export default function Software() {
                     </div>
                     <div className='sectionBody'>
                         <p>These links are for the software repositories of my past research and personal projects hosted on Bitbucket. The codes for some on-going projects have restricted access for internal use.</p>
-                    </div>
-                    <div className='docCard'>
-                        {repoList}
+                        <div className='docCard'>
+                            {repoList}
+                        </div>
                     </div>
                 </div>
                 <div className='sectionSeparator' >

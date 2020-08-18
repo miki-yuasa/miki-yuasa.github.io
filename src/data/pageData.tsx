@@ -12,6 +12,9 @@ let pageData: { name: string }[] = [
         name: "Software",
     },
     {
+        name: "Blog",
+    },
+    {
         name: "Contact",
     },
 ]

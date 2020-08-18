@@ -7,6 +7,7 @@ import Home from "./Home/home"
 import About from "./About/about"
 import Research from "./Research/research"
 import Software from "./Software/software"
+import Blog from "./Blog/blog"
 import Contact from "./Contact/contact"
 
 loadTheme({
@@ -45,6 +46,7 @@ const IndexPage = () => (
     <About />
     <Research />
     <Software />
+    <Blog />
     <Contact />
   </Layout>
 )
