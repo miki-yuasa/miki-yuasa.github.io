@@ -1,5 +1,6 @@
 import React from "react"
 
+import SectionTemplate from '../../components/templates/sectionTemplate'
 import RepoCard from '../../components/cards/repoCard';
 import { getRepoData } from '../../data/repoData'
 
@@ -18,23 +19,13 @@ export default function Software() {
     }
 
     return (
-        <div className='idBox' id='software'>
-            <div className='sectionMaster'>
-                <div className='sectionParent'>
-                    <div className='sectionHeader'>
-                        <h2 className='sectionHeader'>Software</h2>
-                    </div>
-                    <div className='sectionBody'>
-                        <p>These links are for the software repositories of my past research and personal projects hosted on Bitbucket. The codes for some on-going projects have restricted access for internal use.</p>
-                        <div className='docCard'>
-                            {repoList}
-                        </div>
-                    </div>
-                </div>
-                <div className='sectionSeparator' >
-                    <hr className='separator' />
-                </div>
+        <SectionTemplate title='Software'>
+            <p>
+                These links are for the software repositories of my past research and personal projects hosted on Bitbucket. The codes for some on-going projects have restricted access for internal use.
+            </p>
+            <div className='docCard'>
+                {repoList}
             </div>
-        </div>
+        </SectionTemplate>
     )
 }
