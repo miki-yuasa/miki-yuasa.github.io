@@ -108,7 +108,7 @@ background: #f3f2f1;
     text-align: center;
    }
 }
-@media (min-width: 1000px) {
+@media (min-width: 900px) {
   div.sectionHeader{
     text-align: left;
     padding: 0 20%
