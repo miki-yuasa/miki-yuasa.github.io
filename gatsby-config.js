@@ -30,6 +30,12 @@ module.exports = {
         path: `${__dirname}/src/pages/Blog/blog-articles`,
       }
     },
+    {
+      resolve: 'gatsby-plugin-graphql-codegen',
+      options: {
+        fileName: `@types/graphql-types.d.ts`
+      }
+    },
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

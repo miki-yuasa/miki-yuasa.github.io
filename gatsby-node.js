@@ -36,8 +36,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         return
     }
 
+    const articles = result.data.allMarkdownRemark.edges
     // individual article
-    const articles = result.data.allmarkdownRemark.edges
     articles.forEach(({ node }) => {
         createPage({
             path: node.frontmatter.slug,
