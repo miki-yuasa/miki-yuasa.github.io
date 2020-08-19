@@ -18,7 +18,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           edges {
             node {
               frontmatter {
+                title
+                date(formatString: "YYYY-MM-DD")
+                tags
                 slug
+                keyword
+                language
               }
             }
           }
@@ -30,7 +35,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         reporter.panicOnBuild(`Error while running GraphQL query.`)
         return
     }
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+
+    // individual article
+    const articles = result.data.allmarkdownRemark.edges
+    articles.forEach(({ node }) => {
         createPage({
             path: node.frontmatter.slug,
             component: blogPostTemplate,
