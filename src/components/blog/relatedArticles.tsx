@@ -1,16 +1,17 @@
-export const defaultConfig: ArticleConfig = {
+exports.defaultConfig = {
     keywords: 100,
     tags: 50,
     threshold: 50,
     number: 5,
 }
+exports.extractRelatedArticles = extractRelatedArticles
 
-export function extractRelatedarticles(articles, article, config: ArticleConfig) {
+function extractRelatedArticles(articles, article, config) {
     const tags = article.node.frontmatter.tags
     const keywords = article.node.frontmatter.keywords
     const temp_arr = []
     articles.map(e => {
-        let score: number = 0
+        let score = 0
         const frontmatter = e.node.frontmatter
         const temp_keywords = frontmatter.keywords
         const temp_tags = frontmatter.tags
@@ -44,8 +45,8 @@ export function extractRelatedarticles(articles, article, config: ArticleConfig)
     })
     // sort based on the score and date
     temp_arr.sort(function (a, b) {
-        const temp_date_a: number = new Date(a.date).getTime()
-        const temp_date_b: number = new Date(b.date).getTime()
+        const temp_date_a = new Date(a.date).getTime()
+        const temp_date_b = new Date(b.date).getTime()
         // the first sort key is the relevance
         if (a.score > b.score) {
             return -1
