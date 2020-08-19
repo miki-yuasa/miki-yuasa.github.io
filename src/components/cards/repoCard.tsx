@@ -7,7 +7,7 @@ import {
 } from 'office-ui-fabric-react/lib/DocumentCard';
 import { Depths } from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 
-export default function RepoCard(props: { name: string, description: string, onClickHref?: string, noAccess: boolean }) {
+export default function RepoCard(props: Repo) {
 
     const cardStyles: IDocumentCardStyles = {
         root: {
@@ -21,7 +21,6 @@ export default function RepoCard(props: { name: string, description: string, onC
     };
 
     let accessText: string | null = null;
-    let href: string | null = null;
 
     props.noAccess ? accessText = 'No open access yet' : accessText = ' '
 

@@ -1,4 +1,4 @@
-let pageData: { name: string }[] = [
+const pageData: Page[] = [
     {
         name: "Home",
     },
@@ -10,6 +10,9 @@ let pageData: { name: string }[] = [
     },
     {
         name: "Software",
+    },
+    {
+        name: "Blog",
     },
     {
         name: "Contact",

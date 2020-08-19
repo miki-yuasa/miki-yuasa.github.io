@@ -96,11 +96,7 @@ background: #f3f2f1;
   margin:0 auto;
 }
 @media (min-width:700px){
-  div.docCard{
-    text-align: center;
-    margin:0 16%;
-  }
-  .homeParent{
+  div.homeParent{
     margin-right: 0;
     margin-left: 0;
     padding-top: 75px;
@@ -135,6 +131,10 @@ background: #f3f2f1;
     font-family: Lato, Helvetica, sans-serif;
     text-align: center;
    }
+   .docCard{
+    text-align: center;
+    margin:0 -8%;
+  }
 }
 @media (min-width: 1300px)
 {

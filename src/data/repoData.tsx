@@ -1,4 +1,4 @@
-let repoData: { name: string, onClickHref?: string, description: string, noAccess: boolean }[] = [
+const repoData: Repo[] = [
     {
         name: "mikyu.bitbucket.io",
         onClickHref: "https://bitbucket.org/mikyu/mikyu.bitbucket.io/",

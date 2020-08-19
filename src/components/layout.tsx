@@ -14,11 +14,14 @@ import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query infoAndSiteTitleQuery {
       site {
         siteMetadata {
           title
         }
+      }
+      site {
+        buildTime(formatString: "MM/DD/YYYY")
       }
     }
   `)
@@ -34,7 +37,7 @@ const Layout = ({ children }) => {
       <div className="layoutBody">
         <main>{children}</main>
         <footer>
-          Last updated: July 2020<br />
+          Last updated: {data.site.buildTime}<br />
           Copyright © {new Date().getFullYear()} Mikihisa Yuasa | All Rights Reserved<br />
           Built with {` `} <a className='footer' href="https://www.gatsbyjs.org" target="_blank" rel="noreferrer"><em>Gatsby</em></a> and {' '}
           <a className='footer' href="https://www.microsoft.com/design/fluent/#/" target="_blank" rel="noreferrer"><em>Fluent Design System</em></a>.
