@@ -9,3 +9,10 @@ type Repo = {
     noAccess: boolean;
 }
 type Page = { name: string }
+
+type ArticleConfig = {
+    keywords: number,
+    tags: number,
+    threshold: number,
+    number: number
+}

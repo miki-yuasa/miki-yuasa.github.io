@@ -20,9 +20,7 @@ export default function RepoCard(props: Repo) {
         },
     };
 
-    let accessText: string | null = null;
-
-    props.noAccess ? accessText = 'No open access yet' : accessText = ' '
+    const accessText: string = props.noAccess ? 'No open access yet' : ' ';
 
     if (props.noAccess) {
         return (

@@ -1,6 +1,6 @@
 import React from "react"
 
-import SectionTemplate from '../../components/templates/sectionTemplate'
+import SectionTemplate from '../../templates/sectionTemplate'
 import RepoCard from '../../components/cards/repoCard';
 import { getRepoData } from '../../data/repoData'
 

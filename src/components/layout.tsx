@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header />
       <div className="layoutBody">
         <main>{children}</main>
         <footer>
