@@ -2,16 +2,9 @@ import React from "react"
 
 export default function SectionTemplate(props: { title: string, children: React.ReactNode }) {
 
-    let sectionID: string = props.title.toLowerCase();
+    const sectionID: string = props.title.toLowerCase();
 
-    let masterName: string;
-
-    if (sectionID == 'research') {
-        masterName = 'sectionMasterResearch'
-    }
-    else {
-        masterName = 'sectionMaster'
-    }
+    const masterName: string = sectionID === 'research' ? 'sectionMasterResearch' : 'sectionMaster';
 
     return (
         <div className='idBox' id={sectionID}>

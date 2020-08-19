@@ -39,7 +39,7 @@ function Header() {
     }
 
     function activateIndex(element) {
-      let pageKey: number = pageIndexNames.indexOf(element.id);
+      const pageKey: number = pageIndexNames.indexOf(element.id);
       setSelectedKey(pageKey)
     }
   }
