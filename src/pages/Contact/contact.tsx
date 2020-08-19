@@ -2,7 +2,7 @@ import React from "react"
 import { getTheme } from '@fluentui/react';
 
 import CV from '../CV_Mikihisa_Yuasa_2020.pdf'
-import SectionTemplate from '../../components/templates/sectionTemplate'
+import SectionTemplate from '../../templates/sectionTemplate'
 
 const theme = getTheme();
 
