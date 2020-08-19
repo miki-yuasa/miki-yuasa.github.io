@@ -4,7 +4,9 @@ export default function SectionTemplate(props: { title: string, children: React.
 
     const sectionID: string = props.title.toLowerCase();
 
-    const masterName: string = sectionID === 'research' ? 'sectionMasterResearch' : 'sectionMaster';
+    const masterName: string = sectionID === 'research'
+        ? 'sectionMasterResearch'
+        : 'sectionMaster';
 
     return (
         <div className='idBox' id={sectionID}>

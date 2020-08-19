@@ -11,9 +11,10 @@ const pageData: Page[] = [
     {
         name: "Software",
     },
-    {
+    /*{
         name: "Blog",
     },
+    */
     {
         name: "Contact",
     },
