@@ -1,5 +1,6 @@
 import React from "react"
 import { loadTheme } from '@fluentui/react';
+import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -38,10 +39,9 @@ loadTheme({
   },
 });
 
-
 const IndexPage = () => (
   <Layout>
-    <SEO title="Mikihisa Yuasa・湯淺 幹久・ユアサ ミキヒサ" />
+    <SEO title="Home" />
     <Home />
     <About />
     <Research />
