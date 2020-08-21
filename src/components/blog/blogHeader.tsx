@@ -6,7 +6,7 @@ import NavCompact from "../navs/navCompact";
 
 export function BlogHeader() {
   return (
-    <header className="wide">
+    <header>
       <div>Miki's Blog</div>
     </header>
   );
