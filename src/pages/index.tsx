@@ -41,7 +41,7 @@ loadTheme({
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title={data.site.siteMetadata.description} />
+    <SEO title={data.site.siteMetadata.title} />
     <Home />
     <About />
     <Research />
@@ -57,7 +57,7 @@ export const query = graphql`
   query IndexPageQuery {
     site {
       siteMetadata {
-        description
+        title
       }
     }
   }
