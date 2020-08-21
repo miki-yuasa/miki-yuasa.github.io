@@ -5,7 +5,6 @@ module.exports = {
     author: `Mikihisa Yuasa`,
     url: "https://mikyu.bitbucket.io",
     siteUrl: "https://mikyu.bitbucket.io",
-
   },
   plugins: [
     {
@@ -13,7 +12,7 @@ module.exports = {
       options: {
         isTSX: true, // defaults to false
         allExtensions: true, // defaults to false
-      }
+      },
     },
     `gatsby-plugin-react-helmet`,
     {
@@ -27,14 +26,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
-        path: `${__dirname}/src/pages/Blog/blog-articles`,
-      }
+        path: `${__dirname}/src/pages/blog/blog-articles`,
+      },
     },
     {
-      resolve: 'gatsby-plugin-graphql-codegen',
+      resolve: "gatsby-plugin-graphql-codegen",
       options: {
-        fileName: `@types/graphql-types.d.ts`
-      }
+        fileName: `@types/graphql-types.d.ts`,
+      },
     },
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
@@ -56,4 +55,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
   ],
-}
+};
