@@ -2899,7 +2899,7 @@ export type Unnamed_3_Query = { desktop?: Maybe<{ childImageSharp?: Maybe<{ flui
 export type IndexPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type IndexPageQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
+export type IndexPageQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
 
