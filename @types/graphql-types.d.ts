@@ -1,4 +1,4 @@
-export type Maybe<T> = T | null;
+export type Maybe<T> = T | undefined;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -2461,6 +2461,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___fileName'
+  | 'pluginCreator___pluginOptions___codegenConfig___maybeValue'
   | 'pluginCreator___pluginOptions___short_name'
   | 'pluginCreator___pluginOptions___start_url'
   | 'pluginCreator___pluginOptions___background_color'
@@ -2665,6 +2666,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___name'
   | 'pluginOptions___path'
   | 'pluginOptions___fileName'
+  | 'pluginOptions___codegenConfig___maybeValue'
   | 'pluginOptions___short_name'
   | 'pluginOptions___start_url'
   | 'pluginOptions___background_color'
@@ -2797,6 +2799,7 @@ export type SitePluginPluginOptions = {
   name?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   fileName?: Maybe<Scalars['String']>;
+  codegenConfig?: Maybe<SitePluginPluginOptionsCodegenConfig>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
   background_color?: Maybe<Scalars['String']>;
@@ -2811,12 +2814,21 @@ export type SitePluginPluginOptions = {
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
+export type SitePluginPluginOptionsCodegenConfig = {
+  maybeValue?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsCodegenConfigFilterInput = {
+  maybeValue?: Maybe<StringQueryOperatorInput>;
+};
+
 export type SitePluginPluginOptionsFilterInput = {
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   fileName?: Maybe<StringQueryOperatorInput>;
+  codegenConfig?: Maybe<SitePluginPluginOptionsCodegenConfigFilterInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
   background_color?: Maybe<StringQueryOperatorInput>;
@@ -2870,12 +2882,12 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+export type ImageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_1_Query = { images: { edges: Array<{ node: (
+export type ImageQuery = { images: { edges: Array<{ node: (
         Pick<File, 'relativePath' | 'name'>
-        & { childImageSharp?: Maybe<{ sizes?: Maybe<GatsbyImageSharpSizesFragment> }> }
+        & { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }
       ) }> } };
 
 export type InfoAndSiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2886,32 +2898,32 @@ export type InfoAndSiteTitleQueryQuery = { site?: Maybe<(
     & { siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }
   )> };
 
+export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author' | 'url'>> }> };
+
 export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author' | 'url'>> }> };
-
-export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_3_Query = { desktop?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_WithWebpFragment> }> }> };
+export type Unnamed_2_Query = { desktop?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_WithWebpFragment> }> }> };
 
 export type IndexPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type IndexPageQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
+export type IndexPageQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_4_Query = { site?: Maybe<Pick<Site, 'buildTime'>> };
+export type Unnamed_3_Query = { site?: Maybe<Pick<Site, 'buildTime'>> };
 
-export type Unnamed_5_QueryVariables = Exact<{
+export type BlogArticleBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type Unnamed_5_Query = { markdownRemark?: Maybe<(
+export type BlogArticleBySlugQuery = { markdownRemark?: Maybe<(
     Pick<MarkdownRemark, 'html'>
     & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'slug' | 'title' | 'tags' | 'keyword'>> }
   )> };
