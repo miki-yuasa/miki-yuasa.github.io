@@ -94,6 +94,12 @@ div.idBox .layoutBody {
   text-align: center;
   margin: 0 auto;
 }
+.searchWide {
+  display: none;
+}
+.searchCompact {
+  display: block;
+}
 @media (min-width: 700px) {
   div.homeParent {
     margin-right: 0;
@@ -105,6 +111,12 @@ div.idBox .layoutBody {
     width: auto;
     font-family: Lato, Helvetica, sans-serif;
     text-align: center;
+  }
+  .searchWide {
+    display: block;
+  }
+  .searchCompact {
+    display: none;
   }
 }
 @media (min-width: 1000px) {

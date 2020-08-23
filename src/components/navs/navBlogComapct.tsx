@@ -2,36 +2,14 @@ import React from "react";
 import {
   DefaultPalette,
   CommandButton,
-  initializeIcons,
   Stack,
   IButtonStyles,
   IStackStyles,
   IStackTokens,
   IStackItemStyles,
 } from "office-ui-fabric-react";
-import { SearchBox } from "office-ui-fabric-react/lib/SearchBox";
-import { IIconProps } from "office-ui-fabric-react/lib/Icon";
-import { mergeStyles, registerIcons } from "office-ui-fabric-react/lib/Styling";
 
-registerIcons({
-  icons: {
-    searchIon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-        <g fill="none" strokeWidth="32px">
-          <path d="M221.09,64A157.09,157.09,0,1,0,378.18,221.09,157.1,157.1,0,0,0,221.09,64Z" />
-          <line x1="338.29" y1="338.29" x2="448" y2="448" />
-        </g>
-      </svg>
-    ),
-  },
-});
-
-initializeIcons();
-
-const searchIcon: IIconProps = {
-  iconName: "searchIon",
-  color: DefaultPalette.themePrimary,
-};
+import { ResponsiveSearchBox } from "../search/responsiveSearchBox";
 
 const textColor: string = DefaultPalette.themePrimary;
 
@@ -46,7 +24,7 @@ const blogHomeButtonStyles: IButtonStyles = {
 
 const returnHomeButtonStyles: IButtonStyles = {
   root: {
-    fontSize: "0.9rem",
+    fontSize: "medium",
   },
 };
 
@@ -118,7 +96,7 @@ export function NavBlogCompact() {
         />
       </Stack.Item>
       <Stack.Item disableShrink styles={nonShrinkingStackItemStylesSearch}>
-        <SearchBox placeholder="Search by Keywords" />
+        <ResponsiveSearchBox />
       </Stack.Item>
       <Stack.Item grow styles={stackItemStyles}>
         {" "}
