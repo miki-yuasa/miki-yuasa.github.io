@@ -1,10 +1,8 @@
 import React from "react";
-import { getTheme } from "@fluentui/react";
+import { DefaultPalette } from "office-ui-fabric-react";
 
 import CV from "./CV_Mikihisa_Yuasa_2020.pdf";
 import SectionTemplate from "../templates/sectionTemplate";
-
-const theme = getTheme();
 
 export default function Contact() {
   return (
@@ -16,7 +14,7 @@ export default function Contact() {
           href={CV}
           target="_blank"
           rel="noreferrer"
-          style={{ color: theme.palette.neutralPrimary }}
+          style={{ color: DefaultPalette.neutralPrimary }}
         >
           <strong>here!</strong>
         </a>

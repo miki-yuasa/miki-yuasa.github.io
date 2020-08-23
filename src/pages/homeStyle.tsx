@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
 import styled from "styled-components";
-import { getTheme } from "@fluentui/react";
+import { DefaultPalette } from "office-ui-fabric-react";
 import BackgroundImage from "gatsby-background-image";
 
 import MediaButton from "../components/buttons/mediaButton";
@@ -23,7 +23,6 @@ const BackgroundSection = () => (
     `}
     render={(data) => {
       // Set ImageData.
-      const theme = getTheme();
       const imageData = data.desktop.childImageSharp.fluid;
 
       return (

@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
-import { getTheme } from "@fluentui/react";
+import { DefaultPalette } from "office-ui-fabric-react";
 
 import Image from "../components/image";
 import CV from "./CV_Mikihisa_Yuasa_2020.pdf";
-
-const theme = getTheme();
 
 export default function About() {
   return (
@@ -14,7 +12,7 @@ export default function About() {
         <div className="sectionParentAbout">
           <div
             className="sectionHeader"
-            style={{ color: theme.palette.neutralLight }}
+            style={{ color: DefaultPalette.neutralLight }}
           >
             <h2 className="sectionHeader">About</h2>
           </div>
@@ -23,7 +21,7 @@ export default function About() {
           </div>
           <div
             className="sectionBody"
-            style={{ color: theme.palette.neutralQuaternary }}
+            style={{ color: DefaultPalette.neutralQuaternary }}
           >
             <form>
               <dl>
@@ -42,7 +40,7 @@ export default function About() {
                     to="https://directory.engr.wisc.edu/ep/Faculty/Franck_Jennifer/"
                     target="_blank"
                     rel="noreferrer"
-                    style={{ color: theme.palette.neutralQuaternary }}
+                    style={{ color: DefaultPalette.neutralQuaternary }}
                   >
                     Jennifer Franck
                   </Link>
@@ -53,7 +51,7 @@ export default function About() {
                     to="https://topslab.wisc.edu/about/people/bin-ran/"
                     target="_blank"
                     rel="noreferrer"
-                    style={{ color: theme.palette.neutralQuaternary }}
+                    style={{ color: DefaultPalette.neutralQuaternary }}
                   >
                     Bin Ran
                   </Link>
@@ -75,7 +73,7 @@ export default function About() {
                     href={CV}
                     target="_blank"
                     rel="noreferrer"
-                    style={{ color: theme.palette.neutralLight }}
+                    style={{ color: DefaultPalette.neutralLight }}
                   >
                     <strong>Download from Here!</strong>
                   </a>
