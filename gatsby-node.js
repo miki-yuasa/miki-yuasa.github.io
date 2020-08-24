@@ -26,7 +26,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               date(formatString: "YYYY-MM-DD")
               tags
               slug
-              keyword
+              keywords
               language
             }
           }

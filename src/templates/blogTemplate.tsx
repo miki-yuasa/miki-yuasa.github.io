@@ -42,7 +42,7 @@ export const pageQuery = graphql`
         slug
         title
         tags
-        keyword
+        keywords
       }
     }
   }
