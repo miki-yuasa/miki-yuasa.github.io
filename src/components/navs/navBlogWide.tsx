@@ -34,7 +34,7 @@ const nonShrinkingStackItemStylesOuter: IStackItemStyles = {
     height: itemHeight,
     justifyContent: "center",
     overflow: "hidden",
-    width: 1000,
+    width: 1150,
   },
 };
 
