@@ -1,13 +1,5 @@
 import React from "react";
 import { Depths } from "@uifabric/fluent-theme/lib/fluent/FluentDepths";
-import {
-  DefaultPalette,
-  Slider,
-  Stack,
-  IStackStyles,
-  IStackTokens,
-  IStackItemStyles,
-} from "office-ui-fabric-react";
 
 import { NavBlogWide } from "../navs/navBlogWide";
 import { NavBlogCompact } from "../navs/navBlogComapct";
