@@ -1,16 +1,15 @@
 import React from "react";
-import { Link } from "gatsby";
-import { DefaultPalette } from "office-ui-fabric-react";
 
 import { MarkdownRemarkFrontmatter } from "../../../@types/graphql-types";
+import { PublishedDate, HashTags } from "../blog/blogArticleInfo";
 
 export function BlogTopListItem(props: {
   frontmatter: MarkdownRemarkFrontmatter;
 }) {
   const description = props.frontmatter.description;
   const content =
-    description?.length! >= 105
-      ? `${description?.substr(0, 105)!}...`
+    description?.length! >= 210
+      ? `${description?.substr(0, 210)!}...`
       : description;
   return (
     <>
@@ -27,6 +26,10 @@ export function BlogTopListItem(props: {
             __html: content!,
           }}
         />
+        <div>
+          <PublishedDate date={props.frontmatter.date} />
+          {props.frontmatter.tags}
+        </div>
       </section>
     </>
   );

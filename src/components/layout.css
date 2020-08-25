@@ -302,12 +302,15 @@ a {
 }
 a.blogList:link {
   color: #201f1e;
+  text-decoration: none;
 }
 a.blogList:visited {
   color: #a19f9d;
+  text-decoration: none;
 }
 a.blogList:hover {
   color: #0078d4;
+  text-decoration: none;
 }
 a:hover {
   outline-width: 0;
