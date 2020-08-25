@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { DefaultPalette } from "office-ui-fabric-react";
 import { graphql, useStaticQuery } from "gatsby";
 

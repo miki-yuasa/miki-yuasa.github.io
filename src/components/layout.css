@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+
+@font-face {
+  font-family: en_num;
+  src: url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+  unicode-range: U+0000-00ff;
+  font-size: 1rem;
+}
 
 html {
   font-family: sans-serif;
@@ -264,7 +272,10 @@ header.wide {
 main,
 menu,
 nav,
-section,
+section {
+  font-family: en_num, "Noto Sans JP", sans-serif;
+  font-size: 0.9rem;
+}
 summary {
   display: block;
 }
@@ -289,7 +300,15 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
-a:active,
+a.blogList:link {
+  color: #201f1e;
+}
+a.blogList:visited {
+  color: #a19f9d;
+}
+a.blogList:hover {
+  color: #0078d4;
+}
 a:hover {
   outline-width: 0;
 }

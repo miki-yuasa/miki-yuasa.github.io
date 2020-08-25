@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
+import { DefaultPalette } from "office-ui-fabric-react";
+
 import { MarkdownRemarkFrontmatter } from "../../../@types/graphql-types";
 
 export function BlogTopListItem(props: {
@@ -13,11 +15,11 @@ export function BlogTopListItem(props: {
   return (
     <>
       <div>
-        <h2>
-          <Link to={`/${props.frontmatter.slug}/`}>
+        <h3>
+          <a className="blogList" href={props.frontmatter.slug!}>
             {props.frontmatter.title}
-          </Link>
-        </h2>
+          </a>
+        </h3>
       </div>
       <section>
         <p
