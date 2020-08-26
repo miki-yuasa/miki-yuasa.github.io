@@ -12,9 +12,10 @@ export function BlogListArticles(props: {
       ? `${description?.substr(0, 210)!}...`
       : description;
   return (
-    <>
+    <div className="articleListItem">
       <div>
-        <h3>
+        <HashTags tags={props.frontmatter.tags!} />
+        <h3 style={{ marginTop: "8px" }}>
           <a className="articleList" href={props.frontmatter.slug!}>
             {props.frontmatter.title}
           </a>
@@ -28,9 +29,8 @@ export function BlogListArticles(props: {
         />
         <div className="articleInfo">
           <PublishedDate date={props.frontmatter.date} />
-          <HashTags tags={props.frontmatter.tags!} />
         </div>
       </section>
-    </>
+    </div>
   );
 }

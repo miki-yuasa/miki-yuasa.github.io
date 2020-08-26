@@ -129,6 +129,10 @@ div.idBox .layoutBody {
   display: flex;
   justify-content: space-between;
 }
+.articleListItem {
+  border-bottom: 2px solid #eaeaea;
+  padding: 30px 0 30px 0;
+}
 @media (min-width: 700px) {
   div.homeParent {
     margin-right: 0;
@@ -311,7 +315,7 @@ a.articleList:link {
   text-decoration: none;
 }
 a.articleList:visited {
-  color: #a19f9d;
+  color: #8a8886;
   text-decoration: none;
 }
 a.articleList:hover {

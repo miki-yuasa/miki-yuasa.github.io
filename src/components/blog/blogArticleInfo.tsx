@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { initializeIcons } from "office-ui-fabric-react";
-import { FontIcon } from "office-ui-fabric-react/lib/Icon";
+import { initializeIcons, DefaultPalette } from "office-ui-fabric-react";
 
 import { CalendarIcon, TagIcon } from "../icons/infoIcons";
 import { Maybe } from "../../../@types/graphql-types";
@@ -20,10 +19,21 @@ export function PublishedDate(props: { date: Date }) {
 export function HashTags(props: { tags: Maybe<string>[] }) {
   const tags =
     props.tags.length !== 0 ? (
-      <div>
+      <div
+        style={{
+          color: DefaultPalette.neutralSecondaryAlt,
+        }}
+      >
         <TagIcon />
         {props.tags.map((e) => (
-          <Link to={`/tags/${e}/`} key={e} style={{ textDecoration: "none" }}>
+          <Link
+            to={`/tags/${e}/`}
+            key={e}
+            style={{
+              textDecoration: "none",
+              color: DefaultPalette.neutralSecondaryAlt,
+            }}
+          >
             {e}
           </Link>
         ))}

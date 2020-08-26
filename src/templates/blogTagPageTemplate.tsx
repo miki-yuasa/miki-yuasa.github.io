@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { mergeStyles } from "office-ui-fabric-react/lib/Styling";
 
 import { BlogPageTemplate } from "./blogPageTemplate";
 import {
@@ -7,6 +8,7 @@ import {
   SitePageContext,
 } from "../../@types/graphql-types";
 import { BlogListArticles } from "../components/blog/blogListArticles";
+import { TagIcon } from "../components/icons/infoIcons";
 
 const blogTagPageTemplate = ({
   data,
@@ -24,11 +26,19 @@ const blogTagPageTemplate = ({
     return <BlogListArticles frontmatter={frontmatter!} />;
   });
 
+  const iconClass = mergeStyles({
+    fontSize: "1.2rem",
+    margin: "0px 15px 0px 0",
+  });
+
   const body = (
     <>
-      <h3>{tagName}</h3>
+      <h3>
+        <TagIcon iconClass={iconClass} />
+        {tagName}
+      </h3>
       <section>
-        <b>{articles.length}</b> articles in total
+        <b>{articles.length}</b> articles are found.
       </section>
       {articleList}
     </>

@@ -15,7 +15,7 @@ export function CalendarIcon(props: { iconClass: string }) {
 }
 
 export function TagIcon(props: { iconClass: string }) {
-  return <FontIcon iconName="Tag" className={props.iconClass} />;
+  return <FontIcon iconName="TagSolid" className={props.iconClass} />;
 }
 
 CalendarIcon.defaultProps = { iconClass };
