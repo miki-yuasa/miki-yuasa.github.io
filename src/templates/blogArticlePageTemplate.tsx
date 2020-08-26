@@ -21,10 +21,12 @@ const blogArticleTemplate = ({
       <div dangerouslySetInnerHTML={{ __html: html! }} />
     </>
   );
+  const lang = frontmatter?.language?.toLocaleLowerCase().substr(0, 2);
   return (
     <BlogPageTemplate
       title={frontmatter?.title}
       description={frontmatter?.description}
+      lang={lang}
       body={body}
       side={<div> this is the side</div>}
     />
@@ -44,6 +46,7 @@ export const pageQuery = graphql`
         tags
         keywords
         description
+        language
       }
     }
   }

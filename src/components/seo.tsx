@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 function SEO(props: {
   description?: string;
-  lang?: string;
+  lang: string;
   meta?: [];
   title?: string;
 }) {

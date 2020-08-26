@@ -3073,7 +3073,7 @@ export type BlogArticleBySlugQueryVariables = Exact<{
 
 export type BlogArticleBySlugQuery = { markdownRemark?: Maybe<(
     Pick<MarkdownRemark, 'html'>
-    & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'slug' | 'title' | 'tags' | 'keywords' | 'description'>> }
+    & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'slug' | 'title' | 'tags' | 'keywords' | 'description' | 'language'>> }
   )> };
 
 export type BlogTagArticleListQueryVariables = Exact<{

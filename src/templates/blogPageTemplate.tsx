@@ -8,12 +8,17 @@ import SEO from "../components/seo";
 export const BlogPageTemplate = (props: {
   title?: string;
   description?: string;
+  lang?: string;
   body: JSX.Element | JSX.Element[];
   side: JSX.Element;
 }) => {
   return (
     <Layout header={<BlogHeader />}>
-      <SEO title={props.title!} description={props.description} />
+      <SEO
+        title={props.title!}
+        description={props.description}
+        lang={props.lang}
+      />
       <div style={{ background: DefaultPalette.neutralLighter }}>
         <div
           className="articleFrame"
