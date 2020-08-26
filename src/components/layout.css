@@ -125,6 +125,10 @@ div.idBox .layoutBody {
   width: 250px;
   padding: 20px;
 }
+.articleInfo {
+  display: flex;
+  justify-content: space-between;
+}
 @media (min-width: 700px) {
   div.homeParent {
     margin-right: 0;
@@ -302,15 +306,15 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
-a.blogList:link {
+a.articleList:link {
   color: #201f1e;
   text-decoration: none;
 }
-a.blogList:visited {
+a.articleList:visited {
   color: #a19f9d;
   text-decoration: none;
 }
-a.blogList:hover {
+a.articleList:hover {
   color: #0078d4;
   text-decoration: none;
 }
