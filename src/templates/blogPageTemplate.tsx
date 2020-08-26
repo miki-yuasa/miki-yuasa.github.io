@@ -1,5 +1,6 @@
 import React from "react";
 import { DefaultPalette } from "office-ui-fabric-react";
+import { Depths } from "@uifabric/fluent-theme/lib/fluent/FluentDepths";
 
 import { BlogHeader } from "../components/blog/blogHeader";
 import Layout from "../components/layout";
@@ -13,26 +14,18 @@ export const BlogPageTemplate = (props: {
   side: JSX.Element;
 }) => {
   return (
-    <Layout header={<BlogHeader />}>
-      <SEO
-        title={props.title!}
-        description={props.description}
-        lang={props.lang}
-      />
-      <div style={{ background: DefaultPalette.neutralLighter }}>
-        <div
-          className="articleFrame"
-          style={{ background: DefaultPalette.neutralLighter }}
-        >
+    <div style={{ background: DefaultPalette.neutralLighter }}>
+      <Layout header={<BlogHeader />}>
+        <SEO
+          title={props.title!}
+          description={props.description}
+          lang={props.lang}
+        />
+        <div className="articleFrame">
           <div className="articleBody">{props.body}</div>
-          <div
-            className="articleSide"
-            style={{ background: DefaultPalette.neutralLighter }}
-          >
-            {props.side}
-          </div>
+          <div className="articleSide">{props.side}</div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </div>
   );
 };

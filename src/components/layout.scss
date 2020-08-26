@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+@import "../../node_modules/@fluentui/react/dist/sass/References";
 
 @font-face {
   font-family: en_num;
@@ -32,12 +33,13 @@ form dl dd {
 div.idBox .layoutBody {
   margin: auto;
   position: relative;
+  background: $ms-color-neutralLighter;
 }
 .homeParent {
   margin-right: 0;
   margin-left: 0;
   padding-top: 0;
-  color: #eaeaea;
+  color: $ms-color-neutralLight;
   height: auto;
   width: auto;
   font-family: Lato, Helvetica, sans-serif;
@@ -51,12 +53,12 @@ div.idBox .layoutBody {
   padding-bottom: 13%;
 }
 .sectionMaster {
-  background: #f3f2f1;
+  background: $ms-color-neutralLighter;
   margin-top: -80px;
   padding-top: 80px;
 }
 .sectionMasterResearch {
-  background: #f3f2f1;
+  background: $ms-color-neutralLighter;
   margin-top: -80px;
   padding-top: 80px;
 }
@@ -65,14 +67,14 @@ div.idBox .layoutBody {
   font-size: 1rem;
   padding-top: 60px;
   padding-bottom: 60px;
-  background: #f3f2f1;
+  background: $ms-color-neutralLighter;
 }
 .sectionParentAbout {
   font-family: Lato, Helvetica, sans-serif;
   font-size: 1rem;
   padding-top: 60px;
   padding-bottom: 120px;
-  background: #272727;
+  background: $ms-color-neutralDark;
 }
 .sectionHeader {
   text-align: center;
@@ -86,13 +88,13 @@ div.idBox .layoutBody {
   text-align: center;
   margin: 0 auto;
   width: 70%;
-  background: #f3f2f1;
+  background: $ms-color-neutralLighter;
 }
 .sectionSeparatorAbout {
   text-align: center;
   margin: 0 auto;
   width: 70%;
-  background: #272727;
+  background: $ms-color-neutralDark;
 }
 .profile {
   max-width: 110px;
@@ -119,18 +121,22 @@ div.idBox .layoutBody {
   display: table-cell;
   padding: 40px;
   background: white;
+  border-radius: 6px;
+  box-shadow: $ms-depth-shadow-4;
 }
 .articleSide {
   display: table-cell;
   width: 250px;
   padding: 20px;
+  border-radius: 6px;
+  margin-left: 10px;
 }
 .articleInfo {
   display: flex;
   justify-content: space-between;
 }
 .articleListItem {
-  border-bottom: 2px solid #eaeaea;
+  border-bottom: 2px solid $ms-color-neutralLight;
   padding: 30px 0 30px 0;
 }
 @media (min-width: 700px) {
@@ -138,7 +144,7 @@ div.idBox .layoutBody {
     margin-right: 0;
     margin-left: 0;
     padding-top: 75px;
-    color: #eaeaea;
+    color: $ms-color-neutralLight;
     height: auto;
     min-height: 500px;
     width: auto;
@@ -168,7 +174,7 @@ div.idBox .layoutBody {
     margin-right: 0;
     margin-left: 0;
     padding-top: 60px;
-    color: #eaeaea;
+    color: $ms-color-neutralLight;
     height: auto;
     min-height: 500px;
     width: auto;
@@ -202,8 +208,7 @@ details,
 figcaption,
 figure,
 footer {
-  background: #f3f2f1;
-  color: #a19f9d;
+  color: $ms-color-neutralTertiary;
   text-align: center;
   font-family: "Lato", Helvetica, sans-serif;
   padding: 30px;
@@ -234,6 +239,7 @@ header.wide {
   text-align: right;
   width: 100%;
   border-radius: 0% 0% 4px 4px;
+  box-shadow: $ms-depth-shadow-8;
 }
 @media (min-width: 700px) {
   header.wide {
@@ -253,6 +259,7 @@ header.wide {
     -ms-backdrop-filter: blur(4px);
     -o-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
+    box-shadow: $ms-depth-shadow-16;
   }
   .compact {
     display: none;
@@ -267,13 +274,14 @@ header.wide {
     width: 100%;
     height: 80px;
     overflow: hidden;
-    border-radius: 0% 0% 4px 4px;
+    border-radius: 0% 0% 8px 8px;
     z-index: 20;
     -webkit-backdrop-filter: blur(4px);
     -moz-backdrop-filter: blur(4px);
     -ms-backdrop-filter: blur(4px);
     -o-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
+    box-shadow: $ms-depth-shadow-8;
   }
   .compactBlog {
     display: none;
@@ -311,22 +319,22 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 a.articleList:link {
-  color: #201f1e;
+  color: $ms-color-neutralDark;
   text-decoration: none;
 }
 a.articleList:visited {
-  color: #8a8886;
+  color: $ms-color-neutralSecondary;
   text-decoration: none;
 }
 a.articleList:hover {
-  color: #0078d4;
+  color: $ms-color-themePrimary;
   text-decoration: none;
 }
 a:hover {
   outline-width: 0;
 }
 a.footer {
-  color: #a19f9d;
+  color: $ms-color-neutralTertiary;
   text-decoration: none;
   font-weight: 500;
 }
@@ -576,7 +584,7 @@ h2.home {
   line-height: 1.3;
 }
 h2.sectionHeader {
-  border-bottom: 4px solid #0078d4;
+  border-bottom: 4px solid $ms-color-themePrimary;
   padding-bottom: 4px;
   font-weight: 400;
   display: inline-block;

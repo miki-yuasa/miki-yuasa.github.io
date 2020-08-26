@@ -8,9 +8,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
+import { DefaultPalette } from "office-ui-fabric-react";
 
 import Header from "./header";
-import "./layout.css";
+import "./layout.scss";
 
 const Layout = (props: { children: React.ReactNode; header: JSX.Element }) => {
   const data = useStaticQuery(graphql`
@@ -32,7 +33,7 @@ const Layout = (props: { children: React.ReactNode; header: JSX.Element }) => {
   }
 
   return (
-    <>
+    <div style={{ background: DefaultPalette.neutralLighter }}>
       {props.header}
       <div className="layoutBody">
         <main>{props.children}</main>
@@ -63,7 +64,7 @@ const Layout = (props: { children: React.ReactNode; header: JSX.Element }) => {
           .
         </footer>
       </div>
-    </>
+    </div>
   );
 };
 

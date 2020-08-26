@@ -4,7 +4,6 @@ import { Depths } from "@uifabric/fluent-theme/lib/fluent/FluentDepths";
 import NavWide from "../components/navs/navWide";
 import NavCompact from "../components/navs/navCompact";
 import { getPageData } from "../data/pageData";
-import "./layout.css";
 
 const Header = () => {
   const [selectedKey, setSelectedKey] = React.useState({});
@@ -49,7 +48,7 @@ const Header = () => {
       <header className="compact">
         <NavCompact />
       </header>
-      <header className="wide" style={{ boxShadow: Depths.depth64 }}>
+      <header className="wide">
         <NavWide selectedKey={String(selectedKey)} />
       </header>
     </>
