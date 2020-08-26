@@ -2,26 +2,32 @@ import React from "react";
 import { DefaultPalette } from "office-ui-fabric-react";
 
 import { BlogHeader } from "../components/blog/blogHeader";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 export const BlogPageTemplate = (props: {
+  title?: string;
+  description?: string;
   body: JSX.Element | JSX.Element[];
   side: JSX.Element;
 }) => {
   return (
-    <div style={{ background: DefaultPalette.neutralLight }}>
-      <BlogHeader />
-      <div
-        className="articleFrame"
-        style={{ background: DefaultPalette.white }}
-      >
-        <div className="articleBody">{props.body}</div>
+    <Layout header={<BlogHeader />}>
+      <SEO title={props.title!} description={props.description} />
+      <div style={{ background: DefaultPalette.neutralLighter }}>
         <div
-          className="articleSide"
+          className="articleFrame"
           style={{ background: DefaultPalette.neutralLighter }}
         >
-          {props.side}
+          <div className="articleBody">{props.body}</div>
+          <div
+            className="articleSide"
+            style={{ background: DefaultPalette.neutralLighter }}
+          >
+            {props.side}
+          </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };

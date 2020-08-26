@@ -1,6 +1,6 @@
 import React from "react";
 import { loadTheme } from "@fluentui/react";
-import { useStaticQuery, graphql } from "gatsby";
+import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -10,6 +10,7 @@ import Research from "./research";
 import Software from "./software";
 import Blog from "./blog";
 import Contact from "./contact";
+import { IndexPageQuery } from "../../@types/graphql-types";
 
 loadTheme({
   defaultFontStyle: { fontFamily: "Lato, Helvetica" },
@@ -39,9 +40,9 @@ loadTheme({
   },
 });
 
-const IndexPage = ({ data }) => (
+const IndexPage = (props: { data: IndexPageQuery }) => (
   <Layout>
-    <SEO title={data.site.siteMetadata.title} />
+    <SEO title={props.data.site?.siteMetadata?.title!} />
     <Home />
     <About />
     <Research />
@@ -54,10 +55,11 @@ const IndexPage = ({ data }) => (
 export default IndexPage;
 
 export const query = graphql`
-  query IndexPageQuery {
+  query IndexPage {
     site {
       siteMetadata {
         title
+        description
       }
     }
   }

@@ -2,10 +2,21 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import { BlogPageTemplate } from "./blogPageTemplate";
-import { BlogTagArticleListQuery } from "../../@types/graphql-types";
+import {
+  BlogTagArticleListQuery,
+  SitePageContext,
+} from "../../@types/graphql-types";
 import { BlogListArticles } from "../components/blog/blogListArticles";
 
-const blogTagPageTemplate = ({ data }: { data: BlogTagArticleListQuery }) => {
+const blogTagPageTemplate = ({
+  data,
+  pageContext,
+}: {
+  data: BlogTagArticleListQuery;
+  pageContext: SitePageContext;
+}) => {
+  const tagName = pageContext.slug;
+
   const articles = data.allMarkdownRemark.edges;
 
   const articleList = articles.map(({ node }) => {
@@ -15,13 +26,21 @@ const blogTagPageTemplate = ({ data }: { data: BlogTagArticleListQuery }) => {
 
   const body = (
     <>
+      <h3>{tagName}</h3>
       <section>
         <b>{articles.length}</b> articles in total
       </section>
       {articleList}
     </>
   );
-  return <BlogPageTemplate body={body} side={<div> this is the side</div>} />;
+  return (
+    <BlogPageTemplate
+      title={`tag: ${tagName}`}
+      description={`List of articles including ${tagName} tags.`}
+      body={body}
+      side={<div> this is the side</div>}
+    />
+  );
 };
 
 export default blogTagPageTemplate;

@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { BlogHeader } from "../components/blog/blogHeader";
 import { BlogArticleBySlugQuery } from "../../@types/graphql-types";
+import { BlogPageTemplate } from "./blogPageTemplate";
 
 const blogArticleTemplate = ({
   data,
@@ -14,20 +14,20 @@ const blogArticleTemplate = ({
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const frontmatter = markdownRemark?.frontmatter;
   const html = markdownRemark?.html;
-  return (
+  const body = (
     <>
-      <BlogHeader />
-      <div className="blog-post-container">
-        <div className="blog-post">
-          <h1>{frontmatter?.title}</h1>
-          <h2>{frontmatter?.date}</h2>
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html! }}
-          />
-        </div>
-      </div>
+      <h1>{frontmatter?.title}</h1>
+      <h2>{frontmatter?.date}</h2>
+      <div dangerouslySetInnerHTML={{ __html: html! }} />
     </>
+  );
+  return (
+    <BlogPageTemplate
+      title={frontmatter?.title}
+      description={frontmatter?.description}
+      body={body}
+      side={<div> this is the side</div>}
+    />
   );
 };
 
@@ -43,6 +43,7 @@ export const pageQuery = graphql`
         title
         tags
         keywords
+        description
       }
     }
   }

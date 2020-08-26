@@ -38,6 +38,8 @@ const BlogTop = () => {
 
   return (
     <BlogPageTemplate
+      title={`Miki's Blog Top Page`}
+      description={`The top page of Miki's blog`}
       body={articles.map(({ node }) => {
         const frontmatter = node.frontmatter;
         return <BlogListArticles frontmatter={frontmatter!} />;
