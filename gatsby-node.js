@@ -10,7 +10,12 @@ const path = require("path");
 const relatedArticle = require("./src/components/blog/relatedArticles.jsx");
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const blogArticleTemplate = path.resolve("./src/templates/blogTemplate.tsx");
+  const blogArticleTemplate = path.resolve(
+    "./src/templates/blogArticlePageTemplate.tsx"
+  );
+  const blogTagPageTemplate = path.resolve(
+    "./src/templates/blogTagPageTemplate.tsx"
+  );
 
   const { createPage } = actions;
   const result = await graphql(`
@@ -83,4 +88,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+  const tagListTemp = [];
+  articles.forEach((article) => {
+    const tags = article.node.frontmatter.tags;
+    tags.forEach((tag) => {
+      tagListTemp.push(tag);
+    });
+  });
+  // delete duplicate tags
+  const tagSet = new Set(tagListTemp);
+  const tagList = Array.from(tagSet);
+  // generate tag pages
+
+  if (tagList.length !== 0) {
+    tagList.forEach((tag) => {
+      createPage({
+        path: `/tags/${tag}/`,
+        component: blogTagPageTemplate,
+        context: {
+          slug: tag,
+        },
+      });
+    });
+  }
 };

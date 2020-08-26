@@ -1,9 +1,9 @@
 import React from "react";
 
 import { MarkdownRemarkFrontmatter } from "../../../@types/graphql-types";
-import { PublishedDate, HashTags } from "../blog/blogArticleInfo";
+import { PublishedDate, HashTags } from "./blogArticleInfo";
 
-export function BlogTopListItem(props: {
+export function BlogListArticles(props: {
   frontmatter: MarkdownRemarkFrontmatter;
 }) {
   const description = props.frontmatter.description;

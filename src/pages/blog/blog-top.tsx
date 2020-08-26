@@ -1,9 +1,8 @@
 import React from "react";
-import { DefaultPalette } from "office-ui-fabric-react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { BlogHeader } from "../../components/blog/blogHeader";
-import { BlogTopListItem } from "../../components/blog/blogTopListItem";
+import { BlogPageTemplate } from "../../templates/blogPageTemplate";
+import { BlogListArticles } from "../../components/blog/blogListArticles";
 import { BlogArticleListQuery } from "../../../@types/graphql-types";
 
 const BlogTop = () => {
@@ -38,26 +37,13 @@ const BlogTop = () => {
   const articles = data.allMarkdownRemark.edges;
 
   return (
-    <div style={{ background: DefaultPalette.neutralLight }}>
-      <BlogHeader />
-      <div
-        className="articleFrame"
-        style={{ background: DefaultPalette.white }}
-      >
-        <div className="articleBody">
-          {articles.map(({ node }) => {
-            const frontmatter = node.frontmatter;
-            return <BlogTopListItem frontmatter={frontmatter!} />;
-          })}
-        </div>
-        <div
-          className="articleSide"
-          style={{ background: DefaultPalette.neutralLighter }}
-        >
-          this is the side
-        </div>
-      </div>
-    </div>
+    <BlogPageTemplate
+      body={articles.map(({ node }) => {
+        const frontmatter = node.frontmatter;
+        return <BlogListArticles frontmatter={frontmatter!} />;
+      })}
+      side={<div> this is the side</div>}
+    />
   );
 };
 
