@@ -18,6 +18,10 @@ export function TagIcon(props: { iconClass: string }) {
   return <FontIcon iconName="TagSolid" className={props.iconClass} />;
 }
 
-CalendarIcon.defaultProps = { iconClass };
+export function FolderIcon(props: { iconClass: string }) {
+  return <FontIcon iconName="FabricFolder" className={props.iconClass} />;
+}
 
+CalendarIcon.defaultProps = { iconClass };
 TagIcon.defaultProps = { iconClass };
+FolderIcon.defaultProps = { iconClass };

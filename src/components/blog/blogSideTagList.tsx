@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { sepCategTag } from "./sepCategTag";
 import { BlogTagListQuery } from "../../../@types/graphql-types";
-import { string } from "prop-types";
 
 export const blogSideTagList = () => {
   const data: BlogTagListQuery = useStaticQuery(graphql`
@@ -57,12 +56,16 @@ export const blogSideTagList = () => {
 
   const categorizedObjList: CategTagObj[] = [];
   categorizedObjListTemp.forEach((categorizedObjTemp) => {
-    const ind = categorizedObjList.findIndex(
+    const ind: number = categorizedObjList.findIndex(
       (element) => element.category === categorizedObjTemp.category
     );
-    if (ind) {
+    if (ind !== -1) {
       categorizedObjList[ind].tags.concat(categorizedObjTemp.tags);
     } else {
+      categorizedObjList.push({
+        category: categorizedObjTemp.category,
+        tags: [categorizedObjTemp.tags],
+      });
     }
   });
 };
