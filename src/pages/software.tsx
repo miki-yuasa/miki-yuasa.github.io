@@ -5,19 +5,19 @@ import RepoCard from "../components/cards/repoCard";
 import { getRepoData } from "../data/repoData";
 
 export default function Software() {
-  let repoData = getRepoData();
-  let repoList = [];
+  const repoData = getRepoData();
+  const repoList: React.ReactNode[] = [];
 
-  for (var i in repoData) {
+  repoData.forEach((repoDataItem) => {
     repoList.push(
       <RepoCard
-        name={repoData[i].name}
-        onClickHref={repoData[i].onClickHref}
-        description={repoData[i].description}
-        noAccess={repoData[i].noAccess}
+        name={repoDataItem.name}
+        onClickHref={repoDataItem.onClickHref}
+        description={repoDataItem.description}
+        noAccess={repoDataItem.noAccess}
       />
     );
-  }
+  });
 
   return (
     <SectionTemplate title="Software">
