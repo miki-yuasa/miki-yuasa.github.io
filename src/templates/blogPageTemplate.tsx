@@ -23,6 +23,7 @@ export const BlogPageTemplate = (props: {
         />
         <div className="articleFrame">
           <div className="articleBody">{props.body}</div>
+          <div className="articleSpace"> </div>
           <div className="articleSide">{props.side}</div>
         </div>
       </Layout>

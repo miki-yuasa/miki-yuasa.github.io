@@ -114,7 +114,7 @@ div.idBox .layoutBody {
   display: table;
   margin: 0 auto;
   padding-top: 50px;
-  width: 1100px;
+  width: 1110px;
   z-index: -20;
 }
 .articleBody {
@@ -124,12 +124,13 @@ div.idBox .layoutBody {
   border-radius: 6px;
   box-shadow: $ms-depth-shadow-4;
 }
+.articleSpace {
+  display: table-cell;
+  width: 20px;
+}
 .articleSide {
   display: table-cell;
   width: 250px;
-  padding: 20px;
-  border-radius: 6px;
-  margin-left: 10px;
 }
 .articleInfo {
   display: flex;
