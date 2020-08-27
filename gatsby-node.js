@@ -88,6 +88,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
+  //tag page
   const tagListTemp = [];
   articles.forEach((article) => {
     const tags = article.node.frontmatter.tags;
@@ -103,7 +105,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   if (tagList.length !== 0) {
     tagList.forEach((tag) => {
       createPage({
-        path: `/tags/${tag}/`,
+        path: `/tags/${tag.toLowerCase()}/`,
         component: blogTagPageTemplate,
         context: {
           slug: tag,

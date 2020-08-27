@@ -1,6 +1,5 @@
 import React from "react";
 import { DefaultPalette } from "office-ui-fabric-react";
-import { Depths } from "@uifabric/fluent-theme/lib/fluent/FluentDepths";
 
 import { BlogHeader } from "../components/blog/blogHeader";
 import Layout from "../components/layout";
