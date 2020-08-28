@@ -1,3 +1,5 @@
+import { MarkdownRemarkFrontmatter } from "./graphql-types";
+
 declare module "*.ico";
 declare module "*.png";
 declare module "*.pdf";
@@ -26,4 +28,20 @@ type InObj = {
 type OutObj = {
   key: string;
   items: string[];
+};
+
+type GroupedInfo = {
+  key: string;
+  items: string[];
+};
+
+type Article = {
+  node: {
+    frontmatter?: Maybe<
+      Pick<
+        MarkdownRemarkFrontmatter,
+        "date" | "title" | "description" | "tags" | "slug"
+      >
+    >;
+  };
 };

@@ -106,7 +106,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const tagSet = new Set(tagListTemp);
   const tagList = Array.from(tagSet);
   const catSet = new Set(catListTemp);
-  const catList = Array.from(tagSet);
+  const catList = Array.from(catSet);
 
   // generate tag pages
 
@@ -116,7 +116,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         path: `/blog/tags/${tag.toLowerCase()}/`,
         component: blogTagPageTemplate,
         context: {
-          slug: tag.toLowerCase(),
+          slug: tag,
           kind: "tag",
         },
       });
@@ -129,7 +129,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         path: `/blog/tags/${cat.toLowerCase()}/`,
         component: blogTagPageTemplate,
         context: {
-          slug: tag.toLowerCase(),
+          slug: cat,
           kind: "cat",
         },
       });

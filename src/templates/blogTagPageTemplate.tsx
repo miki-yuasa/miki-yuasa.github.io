@@ -8,9 +8,10 @@ import {
   SitePageContext,
 } from "../../@types/graphql-types";
 import { BlogListArticles } from "../components/blog/blogListArticles";
-import { TagIcon, FolderIcon } from "../components/icons/infoIcons";
+import { TagIcon } from "../components/icons/infoIcons";
 import { BlogSideTagList } from "../components/blog/blogSideTagList";
 import { BlogSideArchiveList } from "../components/blog/blogSideArchiveList";
+import { Article } from "../../@types";
 
 const blogTagPageTemplate = ({
   data,
@@ -21,7 +22,7 @@ const blogTagPageTemplate = ({
 }) => {
   const tagName = pageContext.slug;
 
-  const articles = data.allMarkdownRemark.edges;
+  const articles: Article[] = data.allMarkdownRemark.edges;
 
   const articleList = articles.map(({ node }) => {
     const frontmatter = node.frontmatter;

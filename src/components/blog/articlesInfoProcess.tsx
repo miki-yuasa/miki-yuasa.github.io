@@ -7,6 +7,7 @@ import {
   TagIcon,
   CalendarIcon,
 } from "../../components/icons/infoIcons";
+import { OutObj, InObj } from "../../../@types";
 
 export function sepCatTag(catTag: string) {
   const strArray: string[] = catTag.split("/");
@@ -74,7 +75,16 @@ export function getFormattedList({
     outList.push(
       <li>
         <FolderIcon />
-        {inObj.key}
+        <Link
+          to={`/blog/tags/${inObj.key.toLowerCase()}/`}
+          style={{
+            textDecoration: "none",
+            color: DefaultPalette.neutralDark,
+          }}
+        >
+          {inObj.key}
+        </Link>
+
         <ul className="sidePane">{itemList}</ul>
       </li>
     );

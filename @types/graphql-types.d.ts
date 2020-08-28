@@ -2321,6 +2321,7 @@ export type SitePageContext = {
   latestArticles?: Maybe<Array<Maybe<SitePageContextLatestArticles>>>;
   previous?: Maybe<SitePageContextPrevious>;
   next?: Maybe<SitePageContextNext>;
+  kind?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextFilterInput = {
@@ -2329,6 +2330,7 @@ export type SitePageContextFilterInput = {
   latestArticles?: Maybe<SitePageContextLatestArticlesFilterListInput>;
   previous?: Maybe<SitePageContextPreviousFilterInput>;
   next?: Maybe<SitePageContextNextFilterInput>;
+  kind?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageContextLatestArticles = {
@@ -2538,6 +2540,7 @@ export type SitePageFieldsEnum =
   | 'context___next___frontmatter___slug'
   | 'context___next___frontmatter___keywords'
   | 'context___next___frontmatter___language'
+  | 'context___kind'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'

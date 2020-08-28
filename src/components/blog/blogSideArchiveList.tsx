@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { getFormattedList, group } from "./articlesInfoProcess";
 import { BlogArchiveListQuery } from "../../../@types/graphql-types";
+import { InObj } from "../../../@types";
 
 export const BlogSideArchiveList = () => {
   const data: BlogArchiveListQuery = useStaticQuery(graphql`
