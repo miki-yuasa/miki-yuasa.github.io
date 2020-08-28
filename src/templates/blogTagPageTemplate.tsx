@@ -8,7 +8,9 @@ import {
   SitePageContext,
 } from "../../@types/graphql-types";
 import { BlogListArticles } from "../components/blog/blogListArticles";
-import { TagIcon } from "../components/icons/infoIcons";
+import { TagIcon, FolderIcon } from "../components/icons/infoIcons";
+import { BlogSideTagList } from "../components/blog/blogSideTagList";
+import { BlogSideArchiveList } from "../components/blog/blogSideArchiveList";
 
 const blogTagPageTemplate = ({
   data,
@@ -48,7 +50,16 @@ const blogTagPageTemplate = ({
       title={`tag: ${tagName}`}
       description={`List of articles including ${tagName} tags.`}
       body={body}
-      side={<div> this is the side</div>}
+      side={
+        <>
+          <div className="articleSidePane">
+            <BlogSideTagList />
+          </div>
+          <div className="articleSidePane">
+            <BlogSideArchiveList />
+          </div>
+        </>
+      }
     />
   );
 };

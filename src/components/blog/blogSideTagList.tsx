@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { sepCategTag, getFormattedList, group } from "./articlesInfoProcess";
+import { sepCatTag, getFormattedList, group } from "./articlesInfoProcess";
 import { BlogTagListQuery } from "../../../@types/graphql-types";
 
 export const BlogSideTagList = () => {
@@ -24,29 +24,29 @@ export const BlogSideTagList = () => {
 
   const articles = data.allMarkdownRemark.edges;
 
-  const categTagListTemp: string[] = [];
+  const catTagListTemp: string[] = [];
 
   articles.forEach((article) => {
-    const categTags = article.node.frontmatter?.tags!;
-    categTags.forEach((categTag) => {
-      categTagListTemp.push(categTag!);
+    const catTags = article.node.frontmatter?.tags!;
+    catTags.forEach((catTag) => {
+      catTagListTemp.push(catTag!);
     });
   });
 
-  // delete duplicate categTags
-  const categTagSet = new Set(categTagListTemp);
-  const categTagList = Array.from(categTagSet);
+  // delete duplicate catTags
+  const catTagSet = new Set(catTagListTemp);
+  const catTagList = Array.from(catTagSet);
 
-  // create an object array of sets of category and tags.
-  const categTagObjListTemp: InObj[] = [];
+  // create an object array of sets of catory and tags.
+  const catTagObjListTemp: InObj[] = [];
 
-  categTagList.forEach((categTag) => {
-    const { key, item }: { key: string; item: string } = sepCategTag(categTag);
-    categTagObjListTemp.push({ key: key, item: item });
-    return categTagObjListTemp;
+  catTagList.forEach((catTag) => {
+    const { key, item }: { key: string; item: string } = sepCatTag(catTag);
+    catTagObjListTemp.push({ key: key, item: item });
+    return catTagObjListTemp;
   });
 
-  const inObjArray = group(categTagObjListTemp!);
+  const inObjArray = group(catTagObjListTemp!);
   const tagged: boolean = true;
 
   return (

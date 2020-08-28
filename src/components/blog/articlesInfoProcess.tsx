@@ -1,12 +1,15 @@
 import React from "react";
+import { Link } from "gatsby";
+import { DefaultPalette } from "office-ui-fabric-react";
+
 import {
   FolderIcon,
   TagIcon,
   CalendarIcon,
 } from "../../components/icons/infoIcons";
 
-export function sepCategTag(categTag: string) {
-  const strArray: string[] = categTag.split("/");
+export function sepCatTag(catTag: string) {
+  const strArray: string[] = catTag.split("/");
   const key: string = strArray[0];
   const item: string = strArray.slice(-1)[0];
 
@@ -49,7 +52,15 @@ export function getFormattedList({
       const itemSet = tagged ? (
         <li>
           <TagIcon />
-          {item}
+          <Link
+            to={`/blog/tags/${inObj.key.toLowerCase()}/${item}`}
+            style={{
+              textDecoration: "none",
+              color: DefaultPalette.neutralDark,
+            }}
+          >
+            {item}
+          </Link>
         </li>
       ) : (
         <li>

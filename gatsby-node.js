@@ -89,26 +89,48 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  //tag page
+  // category and tag pages
   const tagListTemp = [];
+  const catListTemp = [];
+
   articles.forEach((article) => {
     const tags = article.node.frontmatter.tags;
     tags.forEach((tag) => {
       tagListTemp.push(tag);
+
+      const category = tag.split("/")[0];
+      catListTemp.push(category);
     });
   });
   // delete duplicate tags
   const tagSet = new Set(tagListTemp);
   const tagList = Array.from(tagSet);
+  const catSet = new Set(catListTemp);
+  const catList = Array.from(tagSet);
+
   // generate tag pages
 
   if (tagList.length !== 0) {
     tagList.forEach((tag) => {
       createPage({
-        path: `/tags/${tag.toLowerCase()}/`,
+        path: `/blog/tags/${tag.toLowerCase()}/`,
         component: blogTagPageTemplate,
         context: {
-          slug: tag,
+          slug: tag.toLowerCase(),
+          kind: "tag",
+        },
+      });
+    });
+  }
+
+  if (catList.length !== 0) {
+    catList.forEach((cat) => {
+      createPage({
+        path: `/blog/tags/${cat.toLowerCase()}/`,
+        component: blogTagPageTemplate,
+        context: {
+          slug: tag.toLowerCase(),
+          kind: "cat",
         },
       });
     });

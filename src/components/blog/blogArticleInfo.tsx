@@ -27,7 +27,7 @@ export function HashTags(props: { tags: Maybe<string>[] }) {
         <TagIcon />
         {props.tags.map((e) => (
           <Link
-            to={`/tags/${e}/`}
+            to={`/blog/tags/${e?.toLocaleLowerCase()}/`}
             key={e}
             style={{
               textDecoration: "none",
