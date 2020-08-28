@@ -34,7 +34,7 @@ export function HashTags(props: { tags: Maybe<string>[] }) {
               color: DefaultPalette.neutralSecondaryAlt,
             }}
           >
-            {e}
+            {`${e}, `}
           </Link>
         ))}
       </div>

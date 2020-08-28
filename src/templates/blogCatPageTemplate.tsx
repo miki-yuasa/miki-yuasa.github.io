@@ -20,7 +20,7 @@ const blogTagPageTemplate = ({
 export default blogTagPageTemplate;
 
 export const pageQuery = graphql`
-  query BlogTagArticleList($slug: String!) {
+  query BlogCatArticleList($slug: String!) {
     site {
       siteMetadata {
         title
@@ -28,7 +28,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { tags: { eq: $slug } } }
+      filter: { frontmatter: { categories: { eq: $slug } } }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 1000
     ) {

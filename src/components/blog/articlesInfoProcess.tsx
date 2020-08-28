@@ -50,11 +50,11 @@ export function getFormattedList({
     const itemList: React.ReactNode[] = [];
 
     const toKey: string = tagged
-      ? `/blog/tags/${inObj.key.toLowerCase()}/`
-      : `/blog/archives/${inObj.key.toLowerCase()}/`;
+      ? `/blog/tags/${inObj.key.toLowerCase()}`
+      : `/blog/archives/${inObj.key.toLowerCase()}`;
 
     inObj.items.forEach((item) => {
-      const toItem: string = `${toKey}/${item}/`;
+      const toItem: string = `${toKey}/${item.toLowerCase()}/`;
 
       const itemIcon = tagged ? <TagIcon /> : <CalendarIcon />;
 

@@ -16,6 +16,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogTagPageTemplate = path.resolve(
     "./src/templates/blogTagPageTemplate.tsx"
   );
+  const blogCatPageTemplate = path.resolve(
+    "./src/templates/blogCatPageTemplate.tsx"
+  );
 
   const { createPage } = actions;
   const result = await graphql(`
@@ -117,7 +120,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         component: blogTagPageTemplate,
         context: {
           slug: tag,
-          kind: "tag",
+          isCat: false,
         },
       });
     });
@@ -127,10 +130,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     catList.forEach((cat) => {
       createPage({
         path: `/blog/tags/${cat.toLowerCase()}/`,
-        component: blogTagPageTemplate,
+        component: blogCatPageTemplate,
         context: {
-          slug: cat,
-          kind: "cat",
+          slug: `${cat}`,
+          isCat: true,
         },
       });
     });
