@@ -44,21 +44,15 @@ export function getFormattedList({
   inObjArray: OutObj[];
   tagged: boolean;
 }) {
-  const outList: React.ReactNode[] = [];
-
-  inObjArray.forEach((inObj) => {
-    const itemList: React.ReactNode[] = [];
-
+  const outList: React.ReactNode[] = inObjArray.map((inObj) => {
     const toKey: string = tagged
       ? `/blog/tags/${inObj.key.toLowerCase()}`
       : `/blog/archives/${inObj.key.toLowerCase()}`;
 
-    inObj.items.forEach((item) => {
+    const itemList: React.ReactNode[] = inObj.items.map((item) => {
       const toItem: string = `${toKey}/${item.toLowerCase()}/`;
-
       const itemIcon = tagged ? <TagIcon /> : <CalendarIcon />;
-
-      const itemSet = (
+      return (
         <li>
           {itemIcon}
           <Link
@@ -72,10 +66,9 @@ export function getFormattedList({
           </Link>
         </li>
       );
-      itemList.push(itemSet);
     });
 
-    outList.push(
+    return (
       <li>
         <FolderIcon />
         <Link

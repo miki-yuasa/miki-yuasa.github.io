@@ -25,14 +25,12 @@ export const BlogSideArchiveList = () => {
 
   const articles = data.allMarkdownRemark.edges;
 
-  const yearMonObjListTemp: InObj[] = [];
-
-  articles.forEach((article) => {
+  const yearMonObjListTemp: InObj[] = articles.map((article) => {
     const dateStr: string[] = article.node.frontmatter?.date.split("-");
-    yearMonObjListTemp.push({
+    return {
       key: dateStr[0],
       item: dateStr[1],
-    });
+    };
   });
 
   const inObjArray = group(yearMonObjListTemp!);

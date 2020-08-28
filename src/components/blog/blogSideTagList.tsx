@@ -39,12 +39,9 @@ export const BlogSideTagList = () => {
   const catTagList = Array.from(catTagSet);
 
   // create an object array of sets of catory and tags.
-  const catTagObjListTemp: InObj[] = [];
-
-  catTagList.forEach((catTag) => {
+  const catTagObjListTemp: InObj[] = catTagList.map((catTag) => {
     const { key, item }: { key: string; item: string } = sepCatTag(catTag);
-    catTagObjListTemp.push({ key: key, item: item });
-    return catTagObjListTemp;
+    return { key: key, item: item };
   });
 
   const inObjArray = group(catTagObjListTemp!);

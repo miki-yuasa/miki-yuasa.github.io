@@ -6,10 +6,8 @@ import { getRepoData } from "../data/repoData";
 
 export default function Software() {
   const repoData = getRepoData();
-  const repoList: React.ReactNode[] = [];
-
-  repoData.forEach((repoDataItem) => {
-    repoList.push(
+  const repoList: React.ReactNode[] = repoData.map((repoDataItem) => {
+    return (
       <RepoCard
         name={repoDataItem.name}
         onClickHref={repoDataItem.onClickHref}
