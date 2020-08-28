@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { sepCategTag } from "./sepCategTag";
+import { sepCategTag, getFormattedList, group } from "./articlesInfoProcess";
 import { BlogTagListQuery } from "../../../@types/graphql-types";
 
-export const blogSideTagList = () => {
+export const BlogSideTagList = () => {
   const data: BlogTagListQuery = useStaticQuery(graphql`
     query BlogTagList {
       allMarkdownRemark(
@@ -21,6 +21,7 @@ export const blogSideTagList = () => {
       }
     }
   `);
+
   const articles = data.allMarkdownRemark.edges;
 
   const categTagListTemp: string[] = [];
@@ -37,35 +38,21 @@ export const blogSideTagList = () => {
   const categTagList = Array.from(categTagSet);
 
   // create an object array of sets of category and tags.
-  type CategTagObjTemp = {
-    category: string;
-    tags: string;
-  };
-  type CategTagObj = {
-    category: string;
-    tags: string[];
-  };
+  const categTagObjListTemp: InObj[] = [];
 
-  const categorizedObjListTemp: CategTagObjTemp[] = [];
   categTagList.forEach((categTag) => {
-    const { category, tag }: { category: string; tag: string } = sepCategTag(
-      categTag
-    );
-    categorizedObjListTemp.push({ category: category, tags: tag });
+    const { key, item }: { key: string; item: string } = sepCategTag(categTag);
+    categTagObjListTemp.push({ key: key, item: item });
+    return categTagObjListTemp;
   });
 
-  const categorizedObjList: CategTagObj[] = [];
-  categorizedObjListTemp.forEach((categorizedObjTemp) => {
-    const ind: number = categorizedObjList.findIndex(
-      (element) => element.category === categorizedObjTemp.category
-    );
-    if (ind !== -1) {
-      categorizedObjList[ind].tags.concat(categorizedObjTemp.tags);
-    } else {
-      categorizedObjList.push({
-        category: categorizedObjTemp.category,
-        tags: [categorizedObjTemp.tags],
-      });
-    }
-  });
+  const inObjArray = group(categTagObjListTemp!);
+  const tagged: boolean = true;
+
+  return (
+    <div className="articleSidePaneItem">
+      <b>Category/Tag</b>
+      {getFormattedList({ inObjArray, tagged })}
+    </div>
+  );
 };

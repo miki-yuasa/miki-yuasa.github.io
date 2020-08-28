@@ -4,6 +4,8 @@ import { graphql, useStaticQuery } from "gatsby";
 import { BlogPageTemplate } from "../../templates/blogPageTemplate";
 import { BlogListArticles } from "../../components/blog/blogListArticles";
 import { BlogArticleListQuery } from "../../../@types/graphql-types";
+import { BlogSideTagList } from "../../components/blog/blogSideTagList";
+import { BlogSideArchiveList } from "../../components/blog/blogSideArchiveList";
 
 const BlogTop = () => {
   const data: BlogArticleListQuery = useStaticQuery(graphql`
@@ -44,7 +46,16 @@ const BlogTop = () => {
         const frontmatter = node.frontmatter;
         return <BlogListArticles frontmatter={frontmatter!} />;
       })}
-      side={<div> this is the side</div>}
+      side={
+        <>
+          <div className="articleSidePane">
+            <BlogSideTagList />
+          </div>
+          <div className="articleSidePane">
+            <BlogSideArchiveList />
+          </div>
+        </>
+      }
     />
   );
 };

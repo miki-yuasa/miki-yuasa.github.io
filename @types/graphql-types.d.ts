@@ -3005,6 +3005,11 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
+export type BlogArchiveListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type BlogArchiveListQuery = { allMarkdownRemark: { edges: Array<{ node: { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date'>> } }> } };
+
 export type BlogTagListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
