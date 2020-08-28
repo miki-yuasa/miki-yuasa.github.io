@@ -49,12 +49,20 @@ export function getFormattedList({
   inObjArray.forEach((inObj) => {
     const itemList: React.ReactNode[] = [];
 
+    const toKey: string = tagged
+      ? `/blog/tags/${inObj.key.toLowerCase()}/`
+      : `/blog/archives/${inObj.key.toLowerCase()}/`;
+
     inObj.items.forEach((item) => {
-      const itemSet = tagged ? (
+      const toItem: string = `${toKey}/${item}/`;
+
+      const itemIcon = tagged ? <TagIcon /> : <CalendarIcon />;
+
+      const itemSet = (
         <li>
-          <TagIcon />
+          {itemIcon}
           <Link
-            to={`/blog/tags/${inObj.key.toLowerCase()}/${item}`}
+            to={toItem}
             style={{
               textDecoration: "none",
               color: DefaultPalette.neutralDark,
@@ -62,11 +70,6 @@ export function getFormattedList({
           >
             {item}
           </Link>
-        </li>
-      ) : (
-        <li>
-          <CalendarIcon />
-          {item}
         </li>
       );
       itemList.push(itemSet);
@@ -76,7 +79,7 @@ export function getFormattedList({
       <li>
         <FolderIcon />
         <Link
-          to={`/blog/tags/${inObj.key.toLowerCase()}/`}
+          to={toKey}
           style={{
             textDecoration: "none",
             color: DefaultPalette.neutralDark,
@@ -84,7 +87,6 @@ export function getFormattedList({
         >
           {inObj.key}
         </Link>
-
         <ul className="sidePane">{itemList}</ul>
       </li>
     );
