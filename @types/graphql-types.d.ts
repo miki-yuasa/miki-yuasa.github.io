@@ -3314,6 +3314,14 @@ export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author' | 'url'>> }> };
 
+export type BlogCardListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type BlogCardListQuery = { allMarkdownRemark: { edges: Array<{ node: { frontmatter?: Maybe<(
+          Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>
+          & { image?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_WithWebp_TracedSvgFragment> }> }> }
+        )> } }> } };
+
 export type BlogArticleListQueryVariables = Exact<{ [key: string]: never; }>;
 
 

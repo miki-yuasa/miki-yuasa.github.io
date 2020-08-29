@@ -1,9 +1,45 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 
 import SectionTemplate from "../templates/sectionTemplate";
+import { ArticleCard } from "../components/cards/articleCard";
+import { BlogCardListQuery } from "../../@types/graphql-types";
 
 export default function Blog() {
+  const data: BlogCardListQuery = useStaticQuery(graphql`
+    query BlogCardList {
+      allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        limit: 5
+      ) {
+        edges {
+          node {
+            frontmatter {
+              date(formatString: "YYYY-MM-DD")
+              title
+              description
+              tags
+              slug
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 320, maxHeight: 200, quality: 30) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const articleCards: JSX.Element[] = data.allMarkdownRemark.edges.map(
+    (edge) => {
+      return <ArticleCard frontmatter={edge.node.frontmatter!} />;
+    }
+  );
+
   return (
     <SectionTemplate title="Blog">
       <p>
@@ -11,6 +47,7 @@ export default function Blog() {
         personal projects hosted on Bitbucket. The codes for some on-going
         projects have restricted access for internal use.
       </p>
+      <div>{articleCards}</div>
       <Link to="/blog/blog-top">about</Link>
     </SectionTemplate>
   );
