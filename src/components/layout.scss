@@ -114,34 +114,38 @@ div.idBox .layoutBody {
   display: table;
   margin: 0 auto;
   padding-top: 50px;
-  width: 1110px;
+  width: auto;
   z-index: -20;
 }
 .articleBody {
-  display: table-cell;
+  display: block;
   padding: 40px;
   background: white;
   border-radius: 6px;
-  box-shadow: $ms-depth-shadow-4;
-  width: 840px;
+  box-shadow: $ms-depth-shadow-8;
+  width: auto;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 .articleSpace {
-  display: table-cell;
-  width: 20px;
+  display: none;
 }
 .articleSide {
-  display: table-cell;
-  width: 250px;
-  position: absolute;
+  display: block;
+  width: auto;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 20px;
 }
 .articleSidePane {
-  box-shadow: $ms-depth-shadow-4;
+  box-shadow: $ms-depth-shadow-8;
   background: white;
   border-radius: 6px;
   margin-bottom: 20px;
 }
 .articleSidePaneItem {
-  padding: 10px 2px 2.5px 18px;
+  display: flexbox;
+  padding: 20px 20px 10px 40px;
 }
 .articleInfo {
   display: flex;
@@ -170,6 +174,28 @@ div.idBox .layoutBody {
     display: none;
   }
 }
+@media (min-width: 900px) {
+  .articleBody {
+    display: block;
+    padding: 40px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: $ms-depth-shadow-8;
+    width: 840px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .articleSpace {
+    display: none;
+  }
+  .articleSide {
+    display: block;
+    width: 840px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+}
 @media (min-width: 1000px) {
   div.sectionHeader {
     text-align: left;
@@ -196,6 +222,38 @@ div.idBox .layoutBody {
   .docCard {
     text-align: center;
     margin: 0 -8%;
+  }
+}
+@media (min-width: 1170px) {
+  .articleFrame {
+    display: table;
+    margin: 0 auto;
+    padding-top: 50px;
+    width: 1110px;
+    z-index: -20;
+  }
+  .articleBody {
+    display: table-cell;
+    padding: 40px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: $ms-depth-shadow-8;
+    width: 840px;
+  }
+  .articleSpace {
+    display: table-cell;
+    width: 20px;
+  }
+  .articleSide {
+    display: table-cell;
+    width: 250px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+  }
+  .articleSidePaneItem {
+    display: absolute;
+    padding: 20px 20px 13px 20px;
   }
 }
 @media (min-width: 1300px) {
@@ -251,7 +309,7 @@ header.wide {
   text-align: right;
   width: 100%;
   border-radius: 0% 0% 4px 4px;
-  box-shadow: $ms-depth-shadow-8;
+  box-shadow: $ms-depth-shadow-16;
 }
 @media (min-width: 700px) {
   header.wide {
@@ -277,7 +335,7 @@ header.wide {
     display: none;
   }
 }
-@media (min-width: 1010px) {
+@media (min-width: 1170px) {
   .wideBlog {
     display: block;
     background: white;
@@ -293,7 +351,7 @@ header.wide {
     -ms-backdrop-filter: blur(4px);
     -o-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
-    box-shadow: $ms-depth-shadow-8;
+    box-shadow: $ms-depth-shadow-16;
   }
   .compactBlog {
     display: none;
@@ -730,6 +788,7 @@ ul {
 }
 .sidePane {
   list-style-type: none;
+  margin-left: 0rem;
 }
 ol {
   margin-left: 1.45rem;
@@ -916,6 +975,7 @@ li > ol {
 }
 li > ul {
   margin-left: 1.45rem;
+  list-style-type: none;
   // margin-bottom: calc(1.45rem / 2);
   // margin-top: calc(1.45rem / 2);
 }

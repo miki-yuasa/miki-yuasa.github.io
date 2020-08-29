@@ -28,7 +28,7 @@ const blogArticleTemplate = ({
       description={frontmatter?.description}
       lang={lang}
       body={body}
-      side={<div> this is the side</div>}
+      side={<div> </div>}
     />
   );
 };

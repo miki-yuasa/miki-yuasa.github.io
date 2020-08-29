@@ -49,8 +49,16 @@ export const BlogSideTagList = () => {
 
   return (
     <div className="articleSidePaneItem">
-      <b>Category/Tag</b>
-      {getFormattedList({ inObjArray, tagged })}
+      <div
+        style={{
+          marginTop: "0.25rem",
+          marginBottom: "0.5rem",
+          fontWeight: "bold",
+        }}
+      >
+        Category/Tag
+      </div>
+      <div> {getFormattedList({ inObjArray, tagged })}</div>
     </div>
   );
 };

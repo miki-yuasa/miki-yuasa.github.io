@@ -80,7 +80,7 @@ export function getFormattedList({
         >
           {inObj.key}
         </Link>
-        <ul className="sidePane">{itemList}</ul>
+        <ul style={{ marginLeft: "1.45rem" }}>{itemList}</ul>
       </li>
     );
   });

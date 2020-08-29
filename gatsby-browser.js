@@ -8,7 +8,9 @@
 
 // IntersectionObserver polyfill (Safari, IE)
 export const onClientEntry = async () => {
-    if (typeof IntersectionObserver === `undefined`) {
-        await import(`intersection-observer`);
-    }
-}
+  if (typeof IntersectionObserver === `undefined`) {
+    await import(`intersection-observer`);
+  }
+};
+
+require("prismjs/themes/prism.css");
