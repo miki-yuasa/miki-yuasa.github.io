@@ -1,3 +1,5 @@
+import { Page } from "../../@types";
+
 const pageData: Page[] = [
   {
     name: "Home",

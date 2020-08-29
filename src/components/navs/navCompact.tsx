@@ -4,15 +4,19 @@ import { Depths } from "@uifabric/fluent-theme/lib/fluent/FluentDepths";
 import {
   ActionButton,
   IContextualMenuProps,
+  IIconProps,
   IButtonStyles,
   DefaultPalette,
 } from "office-ui-fabric-react";
 import { registerIcons } from "office-ui-fabric-react/lib/Styling";
 import { FontIcon } from "office-ui-fabric-react/lib/Icon";
+import { initializeIcons } from "@uifabric/icons";
+import { IContextualMenuItem } from "@fluentui/react";
 
 import { getPageData } from "../../data/pageData";
 
 export default function navCompact() {
+  initializeIcons();
   const pageData = getPageData();
 
   const menuButtonStyles: IButtonStyles = {
@@ -37,10 +41,19 @@ export default function navCompact() {
     height: 30,
     width: 30,
     margin: "0px -6px 0px 3px",
+    background: DefaultPalette.white,
+  });
+
+  const item: IContextualMenuItem[] = pageData.map((page) => {
+    return {
+      key: page.name,
+      text: page.name,
+      href: "/#" + page.name.toLocaleLowerCase(),
+    };
   });
 
   const menuProps: IContextualMenuProps = {
-    items: [],
+    items: item,
     styles: {
       root: {
         marginRight: "-90px",
@@ -69,16 +82,14 @@ export default function navCompact() {
     },
   });
 
-  for (let i in pageData) {
-    menuProps.items.push({
-      key: pageData[i].name,
-      text: pageData[i].name,
-      href: "/#" + pageData[i].name.toLowerCase(),
-    });
-  }
-
+  const dummyIcon: IIconProps = { iconName: "banana" };
   return (
-    <ActionButton menuProps={menuProps} styles={menuButtonStyles} title="Menu">
+    <ActionButton
+      menuProps={menuProps}
+      styles={menuButtonStyles}
+      menuIconProps={dummyIcon}
+      title="Menu"
+    >
       <FontIcon iconName="hamburger" className={menuIconClass} />
     </ActionButton>
   );
