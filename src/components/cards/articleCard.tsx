@@ -6,3 +6,5 @@ import {
   IDocumentCardStyles,
 } from "office-ui-fabric-react/lib/DocumentCard";
 import { Depths } from "@uifabric/fluent-theme/lib/fluent/FluentDepths";
+
+export function ArticleCard() {}
