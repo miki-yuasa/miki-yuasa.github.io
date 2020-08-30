@@ -7,6 +7,7 @@ module.exports = {
     siteUrl: "https://mikyu.bitbucket.io",
   },
   plugins: [
+    `gatsby-plugin-fabric-ui`,
     {
       resolve: `gatsby-plugin-typescript`,
       options: {

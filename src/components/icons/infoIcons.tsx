@@ -34,9 +34,14 @@ export function DoubleChevronRightIcon(props: { iconClass: string }) {
   return <FontIcon iconName="DoubleChevronRight" className={props.iconClass} />;
 }
 
+export function DownloadIcon(props: { iconClass: string }) {
+  return <FontIcon iconName="Download" className={props.iconClass} />;
+}
+
 CalendarIcon.defaultProps = { iconClass };
 TagIcon.defaultProps = { iconClass };
 FolderIcon.defaultProps = { iconClass };
 ChevronRightIcon.defaultProps = { iconClass };
 ChevronLeftIcon.defaultProps = { iconClass };
 DoubleChevronRightIcon.defaultProps = { iconClass };
+DownloadIcon.defaultProps = { iconClass };

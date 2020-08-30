@@ -1765,7 +1765,7 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-2.0.0-next.7.tgz#b1c52e7622917d7601b2c9ba2f132aaf8d4224fc"
   integrity sha512-gsid2rh63B7/U1gPLXz9N5bfWR+n5GYxAcVCJDf8H+XfCC7NHsEX9ZHL9IdmXndOPT4ZTSW6V/jD8VeQdvnzLQ==
 
-"@microsoft/load-themed-styles@^1.10.26":
+"@microsoft/load-themed-styles@^1.10.26", "@microsoft/load-themed-styles@^1.8.33":
   version "1.10.80"
   resolved "https://registry.yarnpkg.com/@microsoft/load-themed-styles/-/load-themed-styles-1.10.80.tgz#cb40bd6ed7b79d71d9ab9aea1d7595f9ceb927a5"
   integrity sha512-dxlU1LFOyhyeQuFAIFDUbRO4EONpD4TyEklebCrYEbZf8A3xDiSkZTIqhDe9s3VRmghMtnfkdxW7zhUGgP9lug==
@@ -7046,6 +7046,13 @@ gatsby-page-utils@^0.2.22:
     glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
+
+gatsby-plugin-fabric-ui@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-fabric-ui/-/gatsby-plugin-fabric-ui-1.0.4.tgz#8f767a2c0ad78e606cc4b73a873fec333a738de3"
+  integrity sha512-YL17bOz9EF7XfVE7ECPsx8ejK/sxGSLVFb3PV7yoJTo1dnBKPjvri0J2rv5Xs/NaWtNHiEQgv/Ugl8cE54dFnw==
+  dependencies:
+    "@microsoft/load-themed-styles" "^1.8.33"
 
 gatsby-plugin-graphql-codegen@^2.7.1:
   version "2.7.1"

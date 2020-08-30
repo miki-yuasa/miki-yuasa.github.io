@@ -1,7 +1,7 @@
 import React from "react";
 import {
   PrimaryButton,
-  DefaultPalette,
+  initializeIcons,
   IButtonStyles,
 } from "office-ui-fabric-react";
 import { FontIcon } from "office-ui-fabric-react/lib/Icon";
@@ -9,7 +9,10 @@ import { mergeStyles } from "office-ui-fabric-react/lib/Styling";
 import { Depths } from "@uifabric/fluent-theme/lib/fluent/FluentDepths";
 import { registerIcons } from "office-ui-fabric-react/lib/Styling";
 
+import { DownloadIcon } from "../icons/infoIcons";
+
 export default function DownloadButton(props: { href: string; title: string }) {
+  initializeIcons();
   registerIcons({
     icons: {
       download: (
@@ -30,10 +33,8 @@ export default function DownloadButton(props: { href: string; title: string }) {
   });
 
   const downloadIconClass = mergeStyles({
-    height: 45,
-    width: 45,
-    margin: "13px 0 0 0",
-    stroke: "white",
+    fontSize: "1rem",
+    margin: "0px 10px 0px 0",
   });
   const downloadButtonStyles: IButtonStyles = {
     root: {
@@ -51,8 +52,10 @@ export default function DownloadButton(props: { href: string; title: string }) {
       allowDisabledFocus
       styles={downloadButtonStyles}
     >
-      <FontIcon iconName="download" className={downloadIconClass} />
-      <strong style={{ fontSize: "1.1rem" }}>{props.title}</strong>
+      <strong style={{ fontSize: "1.1rem" }}>
+        <DownloadIcon iconClass={downloadIconClass} />
+        {props.title}
+      </strong>
     </PrimaryButton>
   );
 }
