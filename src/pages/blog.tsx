@@ -1,8 +1,11 @@
 import React from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
+import { CommandButton } from "@fluentui/react";
 
 import SectionTemplate from "../templates/sectionTemplate";
 import { ArticleCard } from "../components/cards/articleCard";
+import { DoubleChevronRightIcon } from "../components/icons/infoIcons";
+import { NavCommandButton } from "../components/buttons/navCommandButton";
 import { BlogCardListQuery } from "../../@types/graphql-types";
 
 export default function Blog() {
@@ -36,11 +39,20 @@ export default function Blog() {
 
   const articleCards: JSX.Element[] = data.allMarkdownRemark.edges.map(
     (edge) => {
+      const frontmatter = edge.node.frontmatter;
+
+      const simpleTags: string[] = frontmatter?.tags?.map((tag) => {
+        const simpleTag: string = tag?.split("/")[1]!;
+        return simpleTag;
+      })!;
+
       return (
         <ArticleCard
-          title={edge.node.frontmatter?.title!}
-          href={edge.node.frontmatter?.slug!}
-          imageSrc={edge.node.frontmatter?.image?.childImageSharp?.fluid?.src!}
+          title={frontmatter?.title!}
+          href={frontmatter?.slug!}
+          imageSrc={frontmatter?.image?.childImageSharp?.fluid?.src!}
+          date={frontmatter?.date}
+          tags={simpleTags.join(",")!}
         />
       );
     }
@@ -49,12 +61,16 @@ export default function Blog() {
   return (
     <SectionTemplate title="Blog">
       <p>
-        These links are for the software repositories of my past research and
-        personal projects hosted on Bitbucket. The codes for some on-going
-        projects have restricted access for internal use.
+        <b>New Articles:</b>
       </p>
       <div className="docCard">{articleCards}</div>
-      <Link to="/blog/blog-top">about</Link>
+      <p style={{ marginTop: 20 }}>
+        <NavCommandButton href="/blog/blog-top">
+          <b>
+            <DoubleChevronRightIcon /> Find out more......
+          </b>
+        </NavCommandButton>
+      </p>
     </SectionTemplate>
   );
 }

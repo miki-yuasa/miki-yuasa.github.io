@@ -10,6 +10,7 @@ import {
 } from "office-ui-fabric-react";
 
 import { ResponsiveSearchBox } from "../search/responsiveSearchBox";
+import { NavCommandButton } from "../buttons/navCommandButton";
 
 const textColor: string = DefaultPalette.themePrimary;
 
@@ -19,12 +20,6 @@ const blogHomeButtonStyles: IButtonStyles = {
   root: {
     fontSize: "xx-large",
     color: DefaultPalette.themePrimary,
-  },
-};
-
-const returnHomeButtonStyles: IButtonStyles = {
-  root: {
-    fontSize: "medium",
   },
 };
 
@@ -102,11 +97,10 @@ export function NavBlogCompact() {
         {" "}
       </Stack.Item>
       <Stack.Item disableShrink styles={nonShrinkingStackItemStylesReturnHome}>
-        <CommandButton
-          text="Site Home"
-          title="Return to the site home"
+        <NavCommandButton
+          text="Landing Page"
+          title="Return to the landing page"
           href="/"
-          styles={returnHomeButtonStyles}
         />
       </Stack.Item>
     </Stack>

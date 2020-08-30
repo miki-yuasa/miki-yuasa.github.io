@@ -22,6 +22,11 @@ export function FolderIcon(props: { iconClass: string }) {
   return <FontIcon iconName="FabricFolder" className={props.iconClass} />;
 }
 
+export function DoubleChevronRightIcon(props: { iconClass: string }) {
+  return <FontIcon iconName="DoubleChevronRight" className={props.iconClass} />;
+}
+
 CalendarIcon.defaultProps = { iconClass };
 TagIcon.defaultProps = { iconClass };
 FolderIcon.defaultProps = { iconClass };
+DoubleChevronRightIcon.defaultProps = { iconClass };
