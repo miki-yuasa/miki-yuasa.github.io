@@ -1,20 +1,50 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-import { BlogArticleBySlugQuery } from "../../@types/graphql-types";
-import { BlogPageTemplate } from "./blogPageTemplate";
 import Image from "gatsby-image";
+
+import {
+  BlogArticleBySlugQuery,
+  MarkdownRemarkFrontmatter,
+  SitePageContext,
+} from "../../@types/graphql-types";
+import { BlogPageTemplate } from "./blogPageTemplate";
+import {
+  ChevronRightIcon,
+  ChevronLeftIcon,
+} from "../components/icons/infoIcons";
+import { NavCommandButton } from "../components/buttons/navCommandButton";
 
 const blogArticleTemplate = ({
   data,
   pageContext,
 }: {
   data: BlogArticleBySlugQuery;
-  pageContext: any;
+  pageContext: SitePageContext;
 }) => {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const frontmatter = markdownRemark?.frontmatter;
   const html = markdownRemark?.html;
+  const nextFrontmatter: MarkdownRemarkFrontmatter = pageContext.next
+    ?.frontmatter!;
+  const prevFrontmatter: MarkdownRemarkFrontmatter = pageContext.previous
+    ?.frontmatter!;
+
+  const nextButton = nextFrontmatter ? (
+    <NavCommandButton href={nextFrontmatter.slug!}>
+      Next <ChevronRightIcon />
+    </NavCommandButton>
+  ) : (
+    <NavCommandButton href=""> </NavCommandButton>
+  );
+
+  const prevButton = prevFrontmatter ? (
+    <NavCommandButton href={prevFrontmatter.slug!}>
+      <ChevronLeftIcon /> Previous
+    </NavCommandButton>
+  ) : (
+    <NavCommandButton href=""> </NavCommandButton>
+  );
+
   const body = (
     <>
       <div
@@ -32,6 +62,10 @@ const blogArticleTemplate = ({
       <h1>{frontmatter?.title}</h1>
       <h2>{frontmatter?.date}</h2>
       <div dangerouslySetInnerHTML={{ __html: html! }} />
+      <div className="articlePreviousNext">
+        {prevButton}
+        {nextButton}
+      </div>
     </>
   );
   const lang = frontmatter?.language?.toLocaleLowerCase().substr(0, 2);

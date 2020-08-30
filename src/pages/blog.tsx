@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { CommandButton } from "@fluentui/react";
+import { IButtonStyles } from "@fluentui/react";
 
 import SectionTemplate from "../templates/sectionTemplate";
 import { ArticleCard } from "../components/cards/articleCard";
@@ -58,6 +58,12 @@ export default function Blog() {
     }
   );
 
+  const buttonStyles: IButtonStyles = {
+    root: {
+      fontSize: "large",
+    },
+  };
+
   return (
     <SectionTemplate title="Blog">
       <p>
@@ -65,7 +71,7 @@ export default function Blog() {
       </p>
       <div className="docCard">{articleCards}</div>
       <p style={{ marginTop: 20 }}>
-        <NavCommandButton href="/blog/blog-top">
+        <NavCommandButton href="/blog/blog-top" styles={buttonStyles}>
           <b>
             <DoubleChevronRightIcon /> Find out more......
           </b>

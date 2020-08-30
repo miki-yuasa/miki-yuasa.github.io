@@ -156,6 +156,10 @@ div.idBox .layoutBody {
   border-bottom: 2px solid $ms-color-neutralLight;
   padding: 30px 0 30px 0;
 }
+.articlePreviousNext {
+  display: flex;
+  justify-content: space-between;
+}
 @media (min-width: 700px) {
   div.homeParent {
     margin-right: 0;
