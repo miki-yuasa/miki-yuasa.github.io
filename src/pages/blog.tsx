@@ -36,7 +36,13 @@ export default function Blog() {
 
   const articleCards: JSX.Element[] = data.allMarkdownRemark.edges.map(
     (edge) => {
-      return <ArticleCard frontmatter={edge.node.frontmatter!} />;
+      return (
+        <ArticleCard
+          title={edge.node.frontmatter?.title!}
+          href={edge.node.frontmatter?.slug!}
+          imageSrc={edge.node.frontmatter?.image?.childImageSharp?.fluid?.src!}
+        />
+      );
     }
   );
 
@@ -47,7 +53,7 @@ export default function Blog() {
         personal projects hosted on Bitbucket. The codes for some on-going
         projects have restricted access for internal use.
       </p>
-      <div>{articleCards}</div>
+      <div className="docCard">{articleCards}</div>
       <Link to="/blog/blog-top">about</Link>
     </SectionTemplate>
   );

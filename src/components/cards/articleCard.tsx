@@ -15,7 +15,11 @@ import {
   Maybe,
 } from "../../../@types/graphql-types";
 
-export function ArticleCard(props: { frontmatter: MarkdownRemarkFrontmatter }) {
+export function ArticleCard(props: {
+  title: string;
+  href: string;
+  imageSrc: string;
+}) {
   const cardStyles: IDocumentCardStyles = {
     root: {
       display: "inline-block",
@@ -32,10 +36,10 @@ export function ArticleCard(props: { frontmatter: MarkdownRemarkFrontmatter }) {
       {
         name: "Redirect to this blog article.",
         linkProps: {
-          href: props.frontmatter?.slug,
+          href: props.href,
           target: "_blank",
         },
-        previewImageSrc: props.frontmatter?.image?.childImageSharp?.fluid?.src,
+        previewImageSrc: props.imageSrc,
         imageFit: ImageFit.cover,
         //width: 320,
         height: 140,
@@ -47,10 +51,10 @@ export function ArticleCard(props: { frontmatter: MarkdownRemarkFrontmatter }) {
     <DocumentCard
       aria-label="Default Document Card."
       styles={cardStyles}
-      onClickHref={props.frontmatter?.slug}
+      onClickHref={props.href}
     >
       <DocumentCardPreview {...previewProps} />
-      <DocumentCardTitle title={props.frontmatter?.title!} />
+      <DocumentCardTitle title={props.title} />
     </DocumentCard>
   );
 }
