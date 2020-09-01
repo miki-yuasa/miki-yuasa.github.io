@@ -1,9 +1,9 @@
 import React from "react";
-import { Depths } from "@uifabric/fluent-theme/lib/fluent/FluentDepths";
 
 import NavWide from "../components/navs/navWide";
 import NavCompact from "../components/navs/navCompact";
 import { getPageData } from "../data/pageData";
+import "./layout.scss";
 
 const Header = () => {
   const [selectedKey, setSelectedKey] = React.useState({});

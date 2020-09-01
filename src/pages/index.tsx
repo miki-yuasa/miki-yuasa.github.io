@@ -11,6 +11,7 @@ import Software from "./software";
 import Blog from "./blog";
 import Contact from "./contact";
 import { IndexPageQuery } from "../../@types/graphql-types";
+import "../components/layout.scss";
 
 loadTheme({
   defaultFontStyle: { fontFamily: "Lato, Helvetica" },

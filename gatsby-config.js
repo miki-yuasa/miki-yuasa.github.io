@@ -7,6 +7,8 @@ module.exports = {
     siteUrl: "https://mikyu.bitbucket.io",
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
+
     `gatsby-plugin-fabric-ui`,
     {
       resolve: `gatsby-plugin-typescript`,
@@ -144,9 +146,8 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sitemap`,
-    //`gatsby-plugin-graphql-codegen`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
+    //`gatsby-plugin-offline`,
   ],
 };

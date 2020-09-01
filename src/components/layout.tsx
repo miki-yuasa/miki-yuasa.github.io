@@ -13,7 +13,7 @@ import { DefaultPalette } from "office-ui-fabric-react";
 import Header from "./header";
 import "./layout.scss";
 
-const Layout = (props: { children: React.ReactNode; header: JSX.Element }) => {
+const Layout = (props: { children: React.ReactNode; header?: JSX.Element }) => {
   const data = useStaticQuery(graphql`
     query infoAndSiteTitleQuery {
       site {

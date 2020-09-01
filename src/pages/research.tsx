@@ -1,6 +1,7 @@
 import React from "react";
 
 import SectionTemplate from "../templates/sectionTemplate";
+import "../components/layout.scss";
 
 export default function Research() {
   return (
