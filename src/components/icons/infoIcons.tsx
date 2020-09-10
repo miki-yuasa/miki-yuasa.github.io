@@ -1,9 +1,7 @@
 import React from "react";
-import { initializeIcons } from "office-ui-fabric-react";
 import { FontIcon } from "office-ui-fabric-react/lib/Icon";
 import { mergeStyles } from "office-ui-fabric-react/lib/Styling";
 
-initializeIcons();
 
 const iconClass = mergeStyles({
   fontSize: "0.8rem",

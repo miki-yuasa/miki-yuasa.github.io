@@ -2,15 +2,12 @@ import React from "react";
 import { useConstCallback, useConst } from "@uifabric/react-hooks";
 import {
   DefaultPalette,
-  initializeIcons,
   IconButton,
   IIconProps,
   IButtonStyles,
 } from "office-ui-fabric-react";
 import { SearchBox } from "office-ui-fabric-react/lib/SearchBox";
 import { IContextualMenuItem } from "@fluentui/react";
-
-initializeIcons();
 
 const searchIcon: IIconProps = {
   iconName: "Search",

@@ -81,7 +81,7 @@ div.idBox .layoutBody {
   padding: 0 0;
 }
 .sectionBody {
-  padding: 0 10%;
+  padding: 0 5%;
   box-sizing: border-box;
 }
 .sectionSeparator {
@@ -171,6 +171,10 @@ div.idBox .layoutBody {
     width: auto;
     font-family: Lato, Helvetica, sans-serif;
     text-align: center;
+  }
+  .sectionBody {
+    padding: 0 10%;
+    box-sizing: border-box;
   }
   .searchWide {
     display: block;

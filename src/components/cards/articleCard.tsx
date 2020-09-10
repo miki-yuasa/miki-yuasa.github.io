@@ -10,7 +10,6 @@ import {
 } from "office-ui-fabric-react/lib/DocumentCard";
 import { ImageFit } from "office-ui-fabric-react/lib/Image";
 import { Depths } from "@uifabric/fluent-theme/lib/fluent/FluentDepths";
-import { initializeIcons } from "office-ui-fabric-react";
 
 export function ArticleCard(props: {
   title: string;
@@ -19,7 +18,6 @@ export function ArticleCard(props: {
   imageSrc: string;
   tags: string;
 }) {
-  initializeIcons();
 
   const cardStyles: IDocumentCardStyles = {
     root: {

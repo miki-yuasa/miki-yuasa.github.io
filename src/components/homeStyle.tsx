@@ -50,17 +50,17 @@ const BackgroundSection = () => (
             <MediaButton
               href="mailto:mikihisa.yuasa@wisc.edu"
               title="E-mail Address"
-              name="mailoutline"
+              name="Mail"
             />
             <MediaButton
               href="https://bitbucket.org/mikyu/"
               title="Bitbucket"
-              name="bitbucket"
+              name="GitGraph"
             />
             <MediaButton
               href="https://www.linkedin.com/in/mikihisa-yuasa-3b7199132/"
               title="LinkedIn Profile"
-              name="linkedin"
+              name="LinkedInLogo"
             />
           </div>
         </BackgroundImage>

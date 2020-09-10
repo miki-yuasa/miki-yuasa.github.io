@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "gatsby";
-import { initializeIcons, DefaultPalette } from "office-ui-fabric-react";
+import {  DefaultPalette } from "office-ui-fabric-react";
 
 import { CalendarIcon, TagIcon } from "../icons/infoIcons";
 import { Maybe } from "../../../@types/graphql-types";
 
-initializeIcons();
 
 export function PublishedDate(props: { date: Date }) {
   return (

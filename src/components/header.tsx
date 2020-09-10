@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import NavWide from "../components/navs/navWide";
 import NavCompact from "../components/navs/navCompact";
@@ -6,7 +6,7 @@ import { getPageData } from "../data/pageData";
 import "./layout.scss";
 
 const Header = () => {
-  const [selectedKey, setSelectedKey] = React.useState({});
+  const [selectedKey, setSelectedKey] = useState({});
 
   const options = {
     root: null, // 今回はビューポートをルート要素とする
@@ -15,23 +15,15 @@ const Header = () => {
   };
 
   const pageData = getPageData();
-  let pageIndexNames: string[] = [];
-  for (let i in pageData) {
-    pageIndexNames[i] = pageData[i].name.toLowerCase();
-  }
-
-  if (typeof document !== "undefined") {
-    const boxes = document.querySelectorAll(".idBox");
-    const observer = new IntersectionObserver(doWhenIntersect, options);
-    boxes.forEach((box) => {
-      observer.observe(box);
-    });
-    // それぞれのboxを監視する
-  }
+  const pageIndexNames = pageData.map((pageDataItem) => {
+    return pageDataItem.name.toLocaleLowerCase();
+  });
+  console.log("page data");
 
   function doWhenIntersect(entries: IntersectionObserverEntry[]) {
     // 交差検知をしたもののなかで、isIntersectingがtrueのDOMを色を変える関数に渡す
     entries.forEach((entry) => {
+      console.log("this is doWhenIntersect");
       if (entry.isIntersecting) {
         activateIndex(entry.target);
       }
@@ -40,8 +32,28 @@ const Header = () => {
 
   function activateIndex(element: Element) {
     let pageKey: number = pageIndexNames.indexOf(element.id);
+    console.log(element.id);
     setSelectedKey(pageKey);
   }
+
+  useEffect(() => {
+    console.log("this is inside document");
+
+    const boxes = document.querySelectorAll("div.idBox");
+    console.log("new observer");
+
+    const observer = new IntersectionObserver(doWhenIntersect, options);
+    console.log("for each box");
+    console.log(boxes);
+
+    boxes.forEach((box) => {
+      console.log("observe a box");
+
+      observer.observe(box);
+      console.log("after observe a box");
+      // それぞれのboxを監視する
+    });
+  });
 
   return (
     <>
