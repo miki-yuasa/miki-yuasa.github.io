@@ -53,7 +53,7 @@ export function ArticleCard(props: {
         },
         previewImageSrc: props.imageSrc,
         imageFit: ImageFit.cover,
-        //width: 320,
+        width: 320,
         height: 150,
       },
     ],

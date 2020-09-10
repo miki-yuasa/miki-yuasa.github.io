@@ -8,7 +8,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-styled-components`,
-
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-fabric-ui`,
     {
       resolve: `gatsby-plugin-typescript`,
@@ -33,6 +33,12 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/gatsby-config.js`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-graphql-codegen",
       options: {
         fileName: `@types/graphql-types.d.ts`,
@@ -40,7 +46,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,

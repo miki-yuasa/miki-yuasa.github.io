@@ -39,7 +39,7 @@ const Header = () => {
   }
 
   function activateIndex(element: Element) {
-    const pageKey: number = pageIndexNames.indexOf(element.id);
+    let pageKey: number = pageIndexNames.indexOf(element.id);
     setSelectedKey(pageKey);
   }
 
