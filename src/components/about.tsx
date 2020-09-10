@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { DefaultPalette } from "office-ui-fabric-react";
 
-import Image from "../components/image";
+import Image from "./image";
 import CV from "./CV_Mikihisa_Yuasa_2020.pdf";
 import "../components/layout.scss";
 

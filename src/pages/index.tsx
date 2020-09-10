@@ -4,12 +4,12 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Home from "./home";
-import About from "./about";
-import Research from "./research";
-import Software from "./software";
-import Blog from "./blog";
-import Contact from "./contact";
+import Home from "../components/home";
+import About from "../components/about";
+import Research from "../components/research";
+import Software from "../components/software";
+import Blog from "../components/blog";
+import Contact from "../components/contact";
 import { IndexPageQuery } from "../../@types/graphql-types";
 import "../components/layout.scss";
 
