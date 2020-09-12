@@ -1945,6 +1945,8 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2055,6 +2057,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2259,6 +2263,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___author'
   | 'siteMetadata___url'
   | 'siteMetadata___siteUrl'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2351,6 +2357,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2413,6 +2421,10 @@ export type SitePageContext = {
   previous?: Maybe<SitePageContextPrevious>;
   next?: Maybe<SitePageContextNext>;
   isCat?: Maybe<Scalars['Boolean']>;
+  displayYear?: Maybe<Scalars['Date']>;
+  displayMonth?: Maybe<Scalars['String']>;
+  periodStartDate?: Maybe<Scalars['Date']>;
+  periodEndDate?: Maybe<Scalars['Date']>;
 };
 
 export type SitePageContextFilterInput = {
@@ -2422,6 +2434,10 @@ export type SitePageContextFilterInput = {
   previous?: Maybe<SitePageContextPreviousFilterInput>;
   next?: Maybe<SitePageContextNextFilterInput>;
   isCat?: Maybe<BooleanQueryOperatorInput>;
+  displayYear?: Maybe<DateQueryOperatorInput>;
+  displayMonth?: Maybe<StringQueryOperatorInput>;
+  periodStartDate?: Maybe<DateQueryOperatorInput>;
+  periodEndDate?: Maybe<DateQueryOperatorInput>;
 };
 
 export type SitePageContextLatestArticles = {
@@ -2451,6 +2467,8 @@ export type SitePageContextNextFilterInput = {
 export type SitePageContextNextFrontmatter = {
   title?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
+  year?: Maybe<Scalars['Date']>;
+  month?: Maybe<Scalars['String']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   slug?: Maybe<Scalars['String']>;
   keywords?: Maybe<Array<Maybe<Scalars['String']>>>;
@@ -2460,6 +2478,8 @@ export type SitePageContextNextFrontmatter = {
 export type SitePageContextNextFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
+  year?: Maybe<DateQueryOperatorInput>;
+  month?: Maybe<StringQueryOperatorInput>;
   tags?: Maybe<StringQueryOperatorInput>;
   slug?: Maybe<StringQueryOperatorInput>;
   keywords?: Maybe<StringQueryOperatorInput>;
@@ -2477,6 +2497,8 @@ export type SitePageContextPreviousFilterInput = {
 export type SitePageContextPreviousFrontmatter = {
   title?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
+  year?: Maybe<Scalars['Date']>;
+  month?: Maybe<Scalars['String']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   slug?: Maybe<Scalars['String']>;
   keywords?: Maybe<Array<Maybe<Scalars['String']>>>;
@@ -2486,6 +2508,8 @@ export type SitePageContextPreviousFrontmatter = {
 export type SitePageContextPreviousFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
+  year?: Maybe<DateQueryOperatorInput>;
+  month?: Maybe<StringQueryOperatorInput>;
   tags?: Maybe<StringQueryOperatorInput>;
   slug?: Maybe<StringQueryOperatorInput>;
   keywords?: Maybe<StringQueryOperatorInput>;
@@ -2621,17 +2645,25 @@ export type SitePageFieldsEnum =
   | 'context___latestArticles___date'
   | 'context___previous___frontmatter___title'
   | 'context___previous___frontmatter___date'
+  | 'context___previous___frontmatter___year'
+  | 'context___previous___frontmatter___month'
   | 'context___previous___frontmatter___tags'
   | 'context___previous___frontmatter___slug'
   | 'context___previous___frontmatter___keywords'
   | 'context___previous___frontmatter___language'
   | 'context___next___frontmatter___title'
   | 'context___next___frontmatter___date'
+  | 'context___next___frontmatter___year'
+  | 'context___next___frontmatter___month'
   | 'context___next___frontmatter___tags'
   | 'context___next___frontmatter___slug'
   | 'context___next___frontmatter___keywords'
   | 'context___next___frontmatter___language'
   | 'context___isCat'
+  | 'context___displayYear'
+  | 'context___displayMonth'
+  | 'context___periodStartDate'
+  | 'context___periodEndDate'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -3353,6 +3385,14 @@ export type BlogCatArticleListQueryVariables = Exact<{
 
 
 export type BlogCatArticleListQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, allMarkdownRemark: { edges: Array<{ node: { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
+
+export type BlogDateArticleListQueryVariables = Exact<{
+  periodStartDate?: Maybe<Scalars['Date']>;
+  periodEndDate?: Maybe<Scalars['Date']>;
+}>;
+
+
+export type BlogDateArticleListQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, allMarkdownRemark: { edges: Array<{ node: { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
 
 export type BlogTagArticleListQueryVariables = Exact<{
   slug: Scalars['String'];

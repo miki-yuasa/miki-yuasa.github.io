@@ -5,7 +5,7 @@ import {
   BlogTagArticleListQuery,
   SitePageContext,
 } from "../../@types/graphql-types";
-import { BlogResPageTemplate } from "./blogResPageTemplate";
+import { BlogResPageTemplate } from "../components/blog/blogResultTag";
 
 const blogTagPageTemplate = ({
   data,

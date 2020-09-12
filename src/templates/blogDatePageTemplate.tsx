@@ -2,25 +2,25 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import {
-  BlogTagArticleListQuery,
+  BlogDateArticleListQuery,
   SitePageContext,
 } from "../../@types/graphql-types";
-import { BlogResPageTemplate } from "../components/blog/blogResultTag";
+import { BlogResDatePageTemplate } from "../components/blog/blogResultDate";
 
 const blogTagPageTemplate = ({
   data,
   pageContext,
 }: {
-  data: BlogTagArticleListQuery;
+  data: BlogDateArticleListQuery;
   pageContext: SitePageContext;
 }) => {
-  return <BlogResPageTemplate data={data} pageContext={pageContext} />;
+  return <BlogResDatePageTemplate data={data} pageContext={pageContext} />;
 };
 
 export default blogTagPageTemplate;
 
 export const pageQuery = graphql`
-  query BlogTagArticleList($slug: String!) {
+  query BlogDateArticleList($periodStartDate: Date, $periodEndDate: Date) {
     site {
       siteMetadata {
         title
@@ -28,7 +28,9 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { tags: { eq: $slug } } }
+      filter: {
+        frontmatter: { date: { gte: $periodStartDate, lt: $periodEndDate } }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 1000
     ) {

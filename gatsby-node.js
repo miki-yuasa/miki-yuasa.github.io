@@ -20,6 +20,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "./src/templates/blogCatPageTemplate.tsx"
   );
 
+  const blogDatePageTemplate = path.resolve(
+    "./src/templates/blogDatePageTemplate.tsx"
+  );
+
   const { createPage } = actions;
   const result = await graphql(`
     {
@@ -32,6 +36,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             frontmatter {
               title
               date(formatString: "YYYY-MM-DD")
+              year: date(formatString: "YYYY")
+              month: date(formatString: "MM")
               tags
               slug
               keywords
@@ -93,6 +99,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   // category and tag pages
+
   const tagListTemp = [];
   const catListTemp = [];
 
@@ -105,11 +112,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       catListTemp.push(category);
     });
   });
+
   // delete duplicate tags
-  const tagSet = new Set(tagListTemp);
-  const tagList = Array.from(tagSet);
-  const catSet = new Set(catListTemp);
-  const catList = Array.from(catSet);
+  const tagList = Array.from(new Set(tagListTemp));
+  const catList = Array.from(new Set(catListTemp));
 
   // generate tag pages
 
@@ -138,4 +144,47 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       });
     });
   }
+
+  // year & month pages
+  const years = new Set();
+  const yearMonths = new Set();
+
+  articles.forEach((article) => {
+    const { year, month } = article.node.frontmatter;
+    years.add(year);
+    yearMonths.add(`${year}/${month}`);
+  });
+
+  yearMonths.forEach((yearMonth) => {
+    const [year, month] = yearMonth.split("/");
+    const startDate = `${year}-${month}-01T00:00:00.000Z`;
+    const newStartDate = new Date(startDate);
+    // 月末日を取得
+    const endDate = new Date(
+      new Date(newStartDate.setMonth(newStartDate.getMonth() + 1)).getTime() - 1
+    ).toISOString();
+
+    createPage({
+      path: `/blog/archives/${year}/${month}/`,
+      component: blogDatePageTemplate,
+      context: {
+        displayYear: year,
+        displayMonth: month,
+        periodStartDate: startDate,
+        periodEndDate: endDate,
+      },
+    });
+  });
+
+  years.forEach((year) => {
+    createPage({
+      path: `/blog/archives/${year}/`,
+      component: blogDatePageTemplate,
+      context: {
+        displayYear: year,
+        periodStartDate: `${year}-01-01T00:00:00.000Z`,
+        periodEndDate: `${year}-12-31T23:59:59.999Z`,
+      },
+    });
+  });
 };
