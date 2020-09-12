@@ -13,6 +13,7 @@ import {
   ChevronLeftIcon,
 } from "../components/icons/infoIcons";
 import { NavCommandButton } from "../components/buttons/navCommandButton";
+import { HashTags } from "../components/blog/blogArticleInfo";
 
 const blogArticleTemplate = ({
   data,
@@ -60,7 +61,10 @@ const blogArticleTemplate = ({
       </div>
       <p> </p>
       <h1>{frontmatter?.title}</h1>
-      <h2>{frontmatter?.date}</h2>
+      <h3>{frontmatter?.date}</h3>
+      <p>
+        <HashTags tags={frontmatter?.tags!} />
+      </p>
       <div dangerouslySetInnerHTML={{ __html: html! }} />
       <div className="articlePreviousNext">
         {prevButton}
