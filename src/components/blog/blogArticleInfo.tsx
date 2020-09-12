@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
-import {  DefaultPalette } from "office-ui-fabric-react";
+import { DefaultPalette } from "office-ui-fabric-react";
 
 import { CalendarIcon, TagIcon } from "../icons/infoIcons";
 import { Maybe } from "../../../@types/graphql-types";
-
 
 export function PublishedDate(props: { date: Date }) {
   return (
@@ -16,6 +15,11 @@ export function PublishedDate(props: { date: Date }) {
 }
 
 export function HashTags(props: { tags: Maybe<string>[] }) {
+  const linkStyle: React.CSSProperties = {
+    textDecoration: "none",
+    color: DefaultPalette.neutralSecondaryAlt,
+  };
+
   const tags =
     props.tags.length !== 0 ? (
       <div
@@ -24,18 +28,30 @@ export function HashTags(props: { tags: Maybe<string>[] }) {
         }}
       >
         <TagIcon />
-        {props.tags.map((e) => (
-          <Link
-            to={`/blog/tags/${e?.toLocaleLowerCase()}/`}
-            key={e}
-            style={{
-              textDecoration: "none",
-              color: DefaultPalette.neutralSecondaryAlt,
-            }}
-          >
-            {`${e}, `}
-          </Link>
-        ))}
+        {props.tags.map((e) => {
+          const [cat, tag] = e?.split("/")!;
+
+          return (
+            <>
+              <Link
+                to={`/blog/tags/${cat?.toLocaleLowerCase()}/`}
+                key={cat}
+                style={linkStyle}
+              >
+                {`${cat}`}
+              </Link>
+              {" / "}
+              <Link
+                to={`/blog/tags/${e?.toLocaleLowerCase()}/`}
+                key={e}
+                style={linkStyle}
+              >
+                {`${tag}`}
+              </Link>
+              {", "}
+            </>
+          );
+        })}
       </div>
     ) : (
       <div>""</div>
