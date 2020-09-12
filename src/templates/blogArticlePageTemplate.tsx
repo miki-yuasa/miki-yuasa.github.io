@@ -1,6 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Image from "gatsby-image";
+import {
+  Stack,
+  IStackStyles,
+  IStackItemStyles,
+  IStackTokens,
+} from "@fluentui/react";
 
 import {
   BlogArticleBySlugQuery,
@@ -23,10 +29,14 @@ const blogArticleTemplate = ({
   pageContext: SitePageContext;
 }) => {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
+
   const frontmatter = markdownRemark?.frontmatter;
+
   const html = markdownRemark?.html;
+
   const nextFrontmatter: MarkdownRemarkFrontmatter = pageContext.next
     ?.frontmatter!;
+
   const prevFrontmatter: MarkdownRemarkFrontmatter = pageContext.previous
     ?.frontmatter!;
 
@@ -35,7 +45,7 @@ const blogArticleTemplate = ({
       Next <ChevronRightIcon />
     </NavCommandButton>
   ) : (
-    <NavCommandButton href=""> </NavCommandButton>
+    <> </>
   );
 
   const prevButton = prevFrontmatter ? (
@@ -43,8 +53,43 @@ const blogArticleTemplate = ({
       <ChevronLeftIcon /> Previous
     </NavCommandButton>
   ) : (
-    <NavCommandButton href=""> </NavCommandButton>
+    <> </>
   );
+
+  const blogTopButton = (
+    <NavCommandButton href="/blog/blog-top">Blog Top</NavCommandButton>
+  );
+
+  const stackStyles: IStackStyles = {
+    root: {
+      overflow: "hidden",
+      width: `100%`,
+    },
+  };
+
+  const stackItemStyles: IStackItemStyles = {
+    root: {
+      alignItems: "center",
+      display: "flex",
+      justifyContent: "center",
+      overflow: "hidden",
+    },
+  };
+
+  const nonShrinkingStackItemStylesButtons: IStackItemStyles = {
+    root: {
+      alignItems: "center",
+      display: "flex",
+      justifyContent: "center",
+      overflow: "hidden",
+      width: 80,
+    },
+  };
+
+  const stackTokens: IStackTokens = {
+    childrenGap: 0,
+    padding: 0,
+  };
 
   const body = (
     <>
@@ -66,10 +111,23 @@ const blogArticleTemplate = ({
         <HashTags tags={frontmatter?.tags!} />
       </p>
       <div dangerouslySetInnerHTML={{ __html: html! }} />
-      <div className="articlePreviousNext">
-        {prevButton}
-        {nextButton}
-      </div>
+      <Stack horizontal styles={stackStyles} tokens={stackTokens}>
+        <Stack.Item disableShrink styles={nonShrinkingStackItemStylesButtons}>
+          {prevButton}
+        </Stack.Item>
+        <Stack.Item grow styles={stackItemStyles}>
+          {" "}
+        </Stack.Item>
+        <Stack.Item disableShrink styles={nonShrinkingStackItemStylesButtons}>
+          {blogTopButton}
+        </Stack.Item>
+        <Stack.Item grow styles={stackItemStyles}>
+          {" "}
+        </Stack.Item>
+        <Stack.Item disableShrink styles={nonShrinkingStackItemStylesButtons}>
+          {nextButton}
+        </Stack.Item>
+      </Stack>
     </>
   );
   const lang = frontmatter?.language?.toLocaleLowerCase().substr(0, 2);

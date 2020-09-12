@@ -6,7 +6,7 @@ import { BlogListArticles } from "./blogListArticles";
 
 export const BlogResultBody = (props: {
   iconName: string;
-  resultName: string;
+  resultHeader: JSX.Element;
   articles: Article[];
 }) => {
   const articleList = props.articles.map(({ node }) => {
@@ -25,7 +25,7 @@ export const BlogResultBody = (props: {
     <>
       <h3>
         {icon}
-        {props.resultName}
+        {props.resultHeader}
       </h3>
       <section>
         <b>{props.articles.length}</b> articles are found.

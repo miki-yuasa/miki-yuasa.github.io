@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "gatsby";
+import { DefaultPalette } from "office-ui-fabric-react";
 
 import { BlogPageTemplate } from "../../templates/blogPageTemplate";
 import {
@@ -17,14 +19,36 @@ export const BlogResPageTemplate = (props: {
 
   const articles: Article[] = props.data.allMarkdownRemark.edges;
 
-  const iconName: string = ~tagName?.indexOf("/")!
-    ? "tagSolid"
-    : "FabricFolder";
+  const iconName: string = "tagSolid";
+
+  const resultLinkStyle: React.CSSProperties = {
+    textDecoration: "none",
+    color: DefaultPalette.neutralDark,
+  };
+
+  const resultHeader = ~tagName?.indexOf("/")! ? (
+    <>
+      <Link
+        to={`/blog/tags/${tagName?.split("/")[0].toLowerCase()}`}
+        style={resultLinkStyle}
+      >
+        {tagName?.split("/")[0]}
+      </Link>
+      {" / "}
+      <Link to={`/blog/tags/${tagName?.toLowerCase()}`} style={resultLinkStyle}>
+        {tagName?.split("/")[1]}
+      </Link>
+    </>
+  ) : (
+    <Link to={`/blog/tags/${tagName?.toLowerCase()}`} style={resultLinkStyle}>
+      {tagName}
+    </Link>
+  );
 
   const body = (
     <BlogResultBody
       iconName={iconName}
-      resultName={tagName!}
+      resultHeader={resultHeader}
       articles={articles}
     />
   );
