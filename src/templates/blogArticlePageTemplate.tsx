@@ -96,6 +96,7 @@ const blogArticleTemplate = ({
   const itemsWithHref: CrumbItem[] = [
     { text: "Landing Page", href: "/" },
     { text: "Blog Top", href: "/blog/blog-top" },
+    { text: "Articles" },
     { text: frontmatter?.title! },
   ];
 
