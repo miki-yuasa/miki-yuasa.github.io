@@ -9,7 +9,8 @@ import {
 } from "../../../@types/graphql-types";
 import { BlogSidePanes } from "./blogSidePanes";
 import { BlogResultBody } from "./blogResultBody";
-import { Article } from "../../../@types";
+import { Article, CrumbItem } from "../../../@types";
+import { BlogBreadCrumb } from "./blogBreadCrumb";
 
 export const BlogResPageTemplate = (props: {
   data: BlogTagArticleListQuery;
@@ -26,7 +27,8 @@ export const BlogResPageTemplate = (props: {
     color: DefaultPalette.neutralDark,
   };
 
-  const resultHeader = ~tagName?.indexOf("/")! ? (
+  const isTag = ~tagName?.indexOf("/")!;
+  const resultHeader = isTag ? (
     <>
       <Link
         to={`/blog/tags/${tagName?.split("/")[0].toLowerCase()}`}
@@ -45,19 +47,39 @@ export const BlogResPageTemplate = (props: {
     </Link>
   );
 
+  const itemsFirst: CrumbItem[] = [
+    { text: "Landing Page", href: "/" },
+    { text: "Blog Top", href: "/blog/blog-top" },
+    { text: "Tags" },
+  ];
+
+  const itemsWithHref: CrumbItem[] = isTag
+    ? [
+        ...itemsFirst,
+        {
+          text: tagName?.split("/")[0]!,
+          href: `/blog/tags/${tagName?.split("/")[0].toLowerCase()}`,
+        },
+        { text: tagName?.split("/")[1]! },
+      ]
+    : [...itemsFirst, { text: tagName! }];
+
   const body = (
-    <BlogResultBody
-      iconName={iconName}
-      resultHeader={resultHeader}
-      articles={articles}
-    />
+    <>
+      <p>
+        <BlogBreadCrumb crumbItems={itemsWithHref} />
+      </p>
+      <BlogResultBody
+        iconName={iconName}
+        resultHeader={resultHeader}
+        articles={articles}
+      />
+    </>
   );
 
-  const title = ~tagName?.indexOf("/")!
-    ? `tag: ${tagName}`
-    : `category: ${tagName}`;
+  const title = isTag ? `tag: ${tagName}` : `category: ${tagName}`;
 
-  const description = ~tagName?.indexOf("/")!
+  const description = isTag
     ? `List of articles including ${tagName} tag.`
     : `List of articles under ${tagName} category.`;
 

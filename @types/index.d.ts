@@ -45,3 +45,8 @@ type Article = {
     >;
   };
 };
+
+type CrumbItem = {
+  text: string;
+  href?: string;
+};

@@ -9,7 +9,8 @@ import {
 } from "../../../@types/graphql-types";
 import { BlogSidePanes } from "./blogSidePanes";
 import { BlogResultBody } from "./blogResultBody";
-import { Article } from "../../../@types";
+import { Article, CrumbItem } from "../../../@types";
+import { BlogBreadCrumb } from "./blogBreadCrumb";
 
 export const BlogResDatePageTemplate = (props: {
   data: BlogTagArticleListQuery;
@@ -17,57 +18,73 @@ export const BlogResDatePageTemplate = (props: {
 }) => {
   const year: string = props.pageContext.displayYear;
 
-  const resName =
-    props.pageContext.displayMonth !== undefined
-      ? year + "/" + props.pageContext.displayMonth
-      : year;
+  const isMonth: boolean = props.pageContext.displayMonth !== undefined;
+
+  const resName = isMonth ? year + "/" + props.pageContext.displayMonth : year;
 
   const resultLinkStyle: React.CSSProperties = {
     textDecoration: "none",
     color: DefaultPalette.neutralDark,
   };
 
-  const resultHeader =
-    props.pageContext.displayMonth !== undefined ? (
-      <>
-        <Link to={`/blog/archives/${year}`} style={resultLinkStyle}>
-          {year}
-        </Link>
-        {" / "}
-        <Link
-          to={`/blog/archives/${year}/${props.pageContext.displayMonth}`}
-          style={resultLinkStyle}
-        >
-          {props.pageContext.displayMonth}
-        </Link>
-      </>
-    ) : (
+  const resultHeader = isMonth ? (
+    <>
       <Link to={`/blog/archives/${year}`} style={resultLinkStyle}>
         {year}
       </Link>
-    );
+      {" / "}
+      <Link
+        to={`/blog/archives/${year}/${props.pageContext.displayMonth}`}
+        style={resultLinkStyle}
+      >
+        {props.pageContext.displayMonth}
+      </Link>
+    </>
+  ) : (
+    <Link to={`/blog/archives/${year}`} style={resultLinkStyle}>
+      {year}
+    </Link>
+  );
 
   const articles: Article[] = props.data.allMarkdownRemark.edges;
 
   const iconName: string = "Calendar";
 
+  const itemsFirst: CrumbItem[] = [
+    { text: "Landing Page", href: "/" },
+    { text: "Blog Top", href: "/blog/blog-top" },
+    { text: "Archives" },
+  ];
+
+  const itemsWithHref: CrumbItem[] = isMonth
+    ? [
+        ...itemsFirst,
+        {
+          text: year,
+          href: `/blog/archives/${year}`,
+        },
+        { text: props.pageContext.displayMonth! },
+      ]
+    : [...itemsFirst, { text: year }];
+
   const body = (
-    <BlogResultBody
-      iconName={iconName}
-      resultHeader={resultHeader}
-      articles={articles}
-    />
+    <>
+      <p>
+        <BlogBreadCrumb crumbItems={itemsWithHref} />
+      </p>
+      <BlogResultBody
+        iconName={iconName}
+        resultHeader={resultHeader}
+        articles={articles}
+      />
+    </>
   );
 
-  const title =
-    props.pageContext.displayMonth !== undefined
-      ? `month: ${resName}`
-      : `year: ${resName}`;
+  const title = isMonth ? `month: ${resName}` : `year: ${resName}`;
 
-  const description =
-    props.pageContext.displayMonth !== undefined
-      ? `List of articles in ${resName}.`
-      : `List of articles in ${resName}.`;
+  const description = isMonth
+    ? `List of articles in ${resName}.`
+    : `List of articles in ${resName}.`;
 
   return (
     <BlogPageTemplate

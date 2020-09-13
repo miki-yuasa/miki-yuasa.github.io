@@ -20,6 +20,8 @@ import {
 } from "../components/icons/infoIcons";
 import { NavCommandButton } from "../components/buttons/navCommandButton";
 import { HashTags } from "../components/blog/blogArticleInfo";
+import { CrumbItem } from "../../@types";
+import { BlogBreadCrumb } from "../components/blog/blogBreadCrumb";
 
 const blogArticleTemplate = ({
   data,
@@ -91,8 +93,17 @@ const blogArticleTemplate = ({
     padding: 0,
   };
 
+  const itemsWithHref: CrumbItem[] = [
+    { text: "Landing Page", href: "/" },
+    { text: "Blog Top", href: "/blog/blog-top" },
+    { text: frontmatter?.title! },
+  ];
+
   const body = (
     <>
+      <p>
+        <BlogBreadCrumb crumbItems={itemsWithHref} />
+      </p>
       <div
         style={{
           maxWidth: "760px",
