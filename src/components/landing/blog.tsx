@@ -2,11 +2,11 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { IButtonStyles } from "@fluentui/react";
 
-import SectionTemplate from "../templates/sectionTemplate";
-import { ArticleCard } from "../components/cards/articleCard";
-import { DoubleChevronRightIcon } from "../components/icons/infoIcons";
-import { NavCommandButton } from "../components/buttons/navCommandButton";
-import { BlogCardListQuery } from "../../@types/graphql-types";
+import SectionTemplate from "../../templates/sectionTemplate";
+import { ArticleCard } from "../cards/articleCard";
+import { DoubleChevronRightIcon } from "../icons/infoIcons";
+import { NavCommandButton } from "../buttons/navCommandButton";
+import { BlogCardListQuery } from "../../../@types/graphql-types";
 import "../components/layout.scss";
 
 export default function Blog() {

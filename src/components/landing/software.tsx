@@ -1,8 +1,8 @@
 import React from "react";
 
-import SectionTemplate from "../templates/sectionTemplate";
-import RepoCard from "../components/cards/repoCard";
-import { getRepoData } from "../data/repoData";
+import SectionTemplate from "../../templates/sectionTemplate";
+import RepoCard from "../cards/repoCard";
+import { getRepoData } from "../../data/repoData";
 import "../components/layout.scss";
 
 export default function Software() {

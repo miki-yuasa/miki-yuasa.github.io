@@ -4,12 +4,12 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Home from "../components/home";
-import About from "../components/about";
-import Research from "../components/research";
-import Software from "../components/software";
-import Blog from "../components/blog";
-import Contact from "../components/contact";
+import Home from "../components/landing/home";
+import About from "../components/landing/about";
+import Research from "../components/landing/research";
+import Software from "../components/landing/software";
+import Blog from "../components/landing/blog";
+import Contact from "../components/landing/contact";
 import { IndexPageQuery } from "../../@types/graphql-types";
 import "../components/layout.scss";
 

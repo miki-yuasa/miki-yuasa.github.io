@@ -1,11 +1,10 @@
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
 import styled from "styled-components";
-import { DefaultPalette } from "office-ui-fabric-react";
 import BackgroundImage from "gatsby-background-image";
 
-import MediaButton from "../components/buttons/mediaButton";
-import DownloadButton from "../components/buttons/dlButton";
+import MediaButton from "../buttons/mediaButton";
+import DownloadButton from "../buttons/dlButton";
 import CV from "./CV_Mikihisa_Yuasa_2020.pdf";
 
 const BackgroundSection = () => (
