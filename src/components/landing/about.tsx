@@ -4,7 +4,7 @@ import { DefaultPalette } from "office-ui-fabric-react";
 
 import Image from "../image";
 import CV from "./CV_Mikihisa_Yuasa_2020.pdf";
-import "../components/layout.scss";
+import "../layout.scss";
 
 export default function About() {
   return (

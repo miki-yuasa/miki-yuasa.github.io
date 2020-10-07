@@ -1,7 +1,7 @@
 import React from "react";
 
 import StyledBackgroundSection from "./homeStyle";
-import "../components/layout.scss";
+import "../layout.scss";
 
 export default function Home() {
   return (

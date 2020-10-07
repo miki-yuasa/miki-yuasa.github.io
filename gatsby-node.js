@@ -6,6 +6,7 @@
 
 // You can delete this file if you're not using it
 
+const fs = require("fs");
 const path = require("path");
 const relatedArticle = require("./src/components/blog/relatedArticles.jsx");
 
@@ -42,6 +43,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               slug
               keywords
               language
+              categories
             }
           }
         }
@@ -65,7 +67,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const latestArticles_tmp = [];
 
     articles.map((e) => {
-      if (e.node.frontmatter.slug !== article.node.frontmatter.slug) {
+      const articleSlug = article.node.frontmatter.slug;
+      if (e.node.frontmatter.slug !== articleSlug) {
         const frontmatter = e.node.frontmatter;
         const tmp = {
           title: frontmatter.title,
@@ -84,12 +87,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       relatedArticle.defaultConfig
     );
 
+    const articleSlug = article.node.frontmatter.slug;
+
     createPage({
-      path: article.node.frontmatter.slug,
+      path: `/blog/articles/${articleSlug}`,
       component: blogArticleTemplate,
       context: {
         // additional data can be passed via context
-        slug: article.node.frontmatter.slug,
+        slug: articleSlug,
         relatedArticles,
         latestArticles,
         previous,
@@ -187,4 +192,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
+  const searchJSON = articles.map((article) => {
+    const articleNode = article.node;
+    const { slug, title, tags } = articleNode;
+    return {
+      title,
+      tags,
+      path: `/blog/articles/${slug}`,
+    };
+  });
+
+  // fs.writeFileSync("./static/search.json", JSON.stringify(searchJSON, null, 2));
 };

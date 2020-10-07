@@ -16,7 +16,10 @@ export function BlogListArticles(props: {
       <div>
         <HashTags tags={props.frontmatter.tags!} />
         <h3 style={{ marginTop: "8px" }}>
-          <a className="articleList" href={props.frontmatter.slug!}>
+          <a
+            className="articleList"
+            href={`articles/${props.frontmatter.slug!}`}
+          >
             {props.frontmatter.title}
           </a>
         </h3>

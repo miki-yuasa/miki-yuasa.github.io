@@ -7,7 +7,7 @@ import { ArticleCard } from "../cards/articleCard";
 import { DoubleChevronRightIcon } from "../icons/infoIcons";
 import { NavCommandButton } from "../buttons/navCommandButton";
 import { BlogCardListQuery } from "../../../@types/graphql-types";
-import "../components/layout.scss";
+import "../layout.scss";
 
 export default function Blog() {
   const data: BlogCardListQuery = useStaticQuery(graphql`
@@ -26,7 +26,7 @@ export default function Blog() {
               slug
               image {
                 childImageSharp {
-                  fluid(maxWidth: 320, maxHeight: 200, quality: 30) {
+                  fluid(maxWidth: 320, maxHeight: 200, quality: 50) {
                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
                   }
                 }
@@ -50,7 +50,7 @@ export default function Blog() {
       return (
         <ArticleCard
           title={frontmatter?.title!}
-          href={frontmatter?.slug!}
+          href={`blog/articles/${frontmatter?.slug!}`}
           imageSrc={frontmatter?.image?.childImageSharp?.fluid?.src!}
           date={frontmatter?.date}
           tags={simpleTags.join(",")!}
