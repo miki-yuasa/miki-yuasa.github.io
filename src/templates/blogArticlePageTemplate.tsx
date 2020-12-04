@@ -22,6 +22,7 @@ import { NavCommandButton } from "../components/buttons/navCommandButton";
 import { HashTags } from "../components/blog/blogArticleInfo";
 import { CrumbItem } from "../../@types";
 import { BlogBreadCrumb } from "../components/blog/blogBreadCrumb";
+import { BlogSidePanes} from "../components/blog/blogSidePanes"
 
 const blogArticleTemplate = ({
   data,
@@ -149,7 +150,7 @@ const blogArticleTemplate = ({
       description={frontmatter?.description}
       lang={lang}
       body={body}
-      side={<div> </div>}
+      side={<BlogSidePanes/>}
     />
   );
 };

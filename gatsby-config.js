@@ -6,6 +6,10 @@ module.exports = {
     url: "https://mikyu.bitbucket.io",
     siteUrl: "https://mikyu.bitbucket.io",
   },
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+    QUERY_ON_DEMAND: true
+  },
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
