@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { sepCatTag, getFormattedList, group } from "./articlesInfoProcess";
 import { BlogTagListQuery } from "../../../@types/graphql-types";
-import { InObj } from "../../../@types";
+import { itemObj } from "../../../@types";
 
 export const BlogSideTagList = () => {
   const data: BlogTagListQuery = useStaticQuery(graphql`
@@ -39,12 +39,12 @@ export const BlogSideTagList = () => {
   const catTagList = Array.from(catTagSet);
 
   // create an object array of sets of catory and tags.
-  const catTagObjListTemp: InObj[] = catTagList.map((catTag) => {
+  const catTagObjListTemp: itemObj[] = catTagList.map((catTag) => {
     const { key, item }: { key: string; item: string } = sepCatTag(catTag);
     return { key: key, item: item };
   });
 
-  const inObjArray = group(catTagObjListTemp!);
+  const itemObjArray = group(catTagObjListTemp!);
   const tagged: boolean = true;
 
   return (
@@ -58,7 +58,7 @@ export const BlogSideTagList = () => {
       >
         Category/Tag
       </div>
-      <div> {getFormattedList({ inObjArray, tagged })}</div>
+      <div> {getFormattedList({ itemObjArray, tagged })}</div>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { getFormattedList, group } from "./articlesInfoProcess";
 import { BlogArchiveListQuery } from "../../../@types/graphql-types";
-import { InObj } from "../../../@types";
+import { itemObj } from "../../../@types";
 
 export const BlogSideArchiveList = () => {
   const data: BlogArchiveListQuery = useStaticQuery(graphql`
@@ -25,7 +25,7 @@ export const BlogSideArchiveList = () => {
 
   const articles = data.allMarkdownRemark.edges;
 
-  const yearMonObjListTemp: InObj[] = articles.map((article) => {
+  const yearMonObjListTemp: itemObj[] = articles.map((article) => {
     const dateStr: string[] = article.node.frontmatter?.date.split("-");
     return {
       key: dateStr[0],
@@ -33,13 +33,13 @@ export const BlogSideArchiveList = () => {
     };
   });
 
-  const inObjArray = group(yearMonObjListTemp!);
+  const itemObjArray = group(yearMonObjListTemp!);
   const tagged: boolean = false;
 
   return (
     <div className="articleSidePaneItem">
       <b>Archives</b>
-      {getFormattedList({ inObjArray, tagged })}
+      {getFormattedList({ itemObjArray, tagged })}
     </div>
   );
 };

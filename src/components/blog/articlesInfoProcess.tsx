@@ -7,7 +7,7 @@ import {
   TagIcon,
   CalendarIcon,
 } from "../../components/icons/infoIcons";
-import { OutObj, InObj } from "../../../@types";
+import { itemsObj, itemObj } from "../../../@types";
 
 export function sepCatTag(catTag: string) {
   const strArray: string[] = catTag.split("/");
@@ -17,8 +17,8 @@ export function sepCatTag(catTag: string) {
   return { key, item };
 }
 
-export function group(objArray: InObj[]) {
-  const groupedArray: OutObj[] = [];
+export function group(objArray: itemObj[]) {
+  const groupedArray: itemsObj[] = [];
 
   objArray.forEach((obj) => {
     const ind: number = groupedArray.findIndex(
@@ -38,18 +38,23 @@ export function group(objArray: InObj[]) {
 }
 
 export function getFormattedList({
-  inObjArray,
+  itemObjArray,
   tagged,
 }: {
-  inObjArray: OutObj[];
+  itemObjArray: itemsObj[];
   tagged: boolean;
 }) {
-  const outList: React.ReactNode[] = inObjArray.map((inObj) => {
-    const toKey: string = tagged
-      ? `/blog/tags/${inObj.key.toLowerCase()}`
-      : `/blog/archives/${inObj.key.toLowerCase()}`;
 
-    const itemList: React.ReactNode[] = inObj.items.map((item) => {
+  const outList: React.ReactNode[] = itemObjArray
+  .sort((a,b)=>{
+    return a.key>b.key ? 1 : -1;
+  })
+  .map((itemObj) => {
+    const toKey: string = tagged
+      ? `/blog/tags/${itemObj.key.toLowerCase()}`
+      : `/blog/archives/${itemObj.key.toLowerCase()}`;
+
+    const itemList: React.ReactNode[] = itemObj.items.map((item) => {
       const toItem: string = `${toKey}/${item.toLowerCase()}/`;
       const itemIcon = tagged ? <TagIcon /> : <CalendarIcon />;
       return (
@@ -78,7 +83,7 @@ export function getFormattedList({
             color: DefaultPalette.neutralDark,
           }}
         >
-          {inObj.key}
+          {itemObj.key}
         </Link>
         <ul style={{ marginLeft: "1.45rem" }}>{itemList}</ul>
       </li>

@@ -8,7 +8,7 @@ module.exports = {
   },
   flags: {
     PRESERVE_WEBPACK_CACHE: true,
-    QUERY_ON_DEMAND: true
+    QUERY_ON_DEMAND: true,
   },
   plugins: [
     `gatsby-plugin-styled-components`,

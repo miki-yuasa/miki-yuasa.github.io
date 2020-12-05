@@ -21,11 +21,11 @@ type ArticleConfig = {
 
 type TagOrDate = "tag" | "date";
 
-type InObj = {
+type itemObj = {
   key: string;
   item: string;
 };
-type OutObj = {
+type itemsObj = {
   key: string;
   items: string[];
 };
