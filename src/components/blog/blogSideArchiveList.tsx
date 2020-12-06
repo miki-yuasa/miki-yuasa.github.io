@@ -33,7 +33,7 @@ export const BlogSideArchiveList = () => {
     };
   });
 
-  const itemObjArray = group(Array.from(new Map(yearMonObjListTemp.map(yearMonObj => [`${yearMonObj.key}${String.fromCharCode("31")}${yearMonObj.item}`,yearMonObj])).values()));
+  const itemObjArray = group(Array.from(new Map(yearMonObjListTemp.map(yearMonObj => [`${yearMonObj.key}${String.fromCharCode(31)}${yearMonObj.item}`,yearMonObj])).values()));
   const tagged: boolean = false;
 
   return (
