@@ -26,7 +26,7 @@ export function group(objArray: itemObj[]) {
     );
 
     if (ind !== -1) {
-      groupedArray[ind].items.concat(obj.item);
+      groupedArray[ind].items.push(obj.item);
     } else {
       groupedArray.push({
         key: obj.key,
@@ -34,6 +34,7 @@ export function group(objArray: itemObj[]) {
       });
     }
   });
+
   return groupedArray;
 }
 
@@ -54,7 +55,11 @@ export function getFormattedList({
       ? `/blog/tags/${itemObj.key.toLowerCase()}`
       : `/blog/archives/${itemObj.key.toLowerCase()}`;
 
-    const itemList: React.ReactNode[] = itemObj.items.map((item) => {
+    const itemList: React.ReactNode[] = itemObj.items
+    .sort((a,b)=>{
+      return a>b ? 1 : -1;
+    })
+    .map((item) => {
       const toItem: string = `${toKey}/${item.toLowerCase()}/`;
       const itemIcon = tagged ? <TagIcon /> : <CalendarIcon />;
       return (

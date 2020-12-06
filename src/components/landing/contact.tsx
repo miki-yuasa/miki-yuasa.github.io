@@ -1,7 +1,7 @@
 import React from "react";
 import { DefaultPalette } from "office-ui-fabric-react";
 
-import CV from "./CV_Mikihisa_Yuasa_2020.pdf";
+import CV from "./CV_Mikihisa_Yuasa.pdf";
 import SectionTemplate from "../../templates/sectionTemplate";
 import "../layout.scss";
 

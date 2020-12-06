@@ -5,7 +5,7 @@ import BackgroundImage from "gatsby-background-image";
 
 import MediaButton from "../buttons/mediaButton";
 import DownloadButton from "../buttons/dlButton";
-import CV from "./CV_Mikihisa_Yuasa_2020.pdf";
+import CV from "./CV_Mikihisa_Yuasa.pdf";
 
 const BackgroundSection = () => (
   <StaticQuery

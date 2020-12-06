@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { DefaultPalette } from "office-ui-fabric-react";
 
 import Image from "../image";
-import CV from "./CV_Mikihisa_Yuasa_2020.pdf";
+import CV from "./CV_Mikihisa_Yuasa.pdf";
 import "../layout.scss";
 
 export default function About() {
