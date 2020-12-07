@@ -1,11 +1,17 @@
 import React from "react";
 
+import WhiskMorphMp4 from "../../assets/aps_vor_2x.mp4"
 import SectionTemplate from "../../templates/sectionTemplate";
 import "../layout.scss";
 
 export default function Research() {
   return (
     <SectionTemplate title="Research">
+      <div className="docCard">
+        <video controls width="auto">
+          <source src={WhiskMorphMp4} type="video/mp4" />
+        </video>
+      </div>
       <p>
         I was widely interested in aerodynamics and collaborative unmanned
         vehicles in the context of integrated intelligent transportation where
@@ -21,13 +27,12 @@ export default function Research() {
       </p>
       <ol>
         <li>
-          Dynamic Mesh Generation: developed and implemented a dynamic mesh
+          Dynamic Mesh Morphing: developed and implemented a dynamic mesh
           generation library for harbor seal whiskers for a CFD solver
           (OpenFOAM).
         </li>
         <li>
-          Flow Control: evaluated the influece of geometry transformation of
-          harbor seal whiskers on hydrodynamic reactions.
+          Flow Control: evaluated the parametric influences of harbor seal whiskers on hydrodynamics and frequency response.
         </li>
         <li>
           Comformal Mapping: developed a mesh-generation library using
@@ -42,11 +47,11 @@ export default function Research() {
       <ol>
         <li>
           Mixed Traffic: built simulation models to evaluate how platooned
-          automated vehicles can improve the network capacity
+          automated vehicles can improve the network capacity on highways between Madison, WI and Chicago O'Hare Airport.
         </li>
         <li>
           Car-following Model: investigated the way to dynamically assign costs
-          for indivicual vehicles to join and leave platoons.
+          for individual vehicles to join and leave platoons.
         </li>
         <li>
           Weather Condition: simulated how the network capacity of highway can

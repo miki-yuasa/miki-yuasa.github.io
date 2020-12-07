@@ -81,7 +81,7 @@ div.idBox .layoutBody {
   padding: 0 0;
 }
 .sectionBody {
-  padding: 0 5%;
+  padding: 0 2%;
   box-sizing: border-box;
 }
 .sectionSeparator {
@@ -183,6 +183,9 @@ div.idBox .layoutBody {
     display: none;
   }
 }
+video.research {
+  width: 600;
+}
 @media (min-width: 900px) {
   .articleBody {
     display: block;
@@ -231,6 +234,9 @@ div.idBox .layoutBody {
   .docCard {
     text-align: center;
     margin: 0 -8%;
+  }
+  video.research {
+    width: 600;
   }
 }
 @media (min-width: 1170px) {
@@ -381,6 +387,9 @@ canvas,
 progress,
 video {
   display: inline-block;
+}
+.research {
+  width: 200;
 }
 audio:not([controls]) {
   display: none;
