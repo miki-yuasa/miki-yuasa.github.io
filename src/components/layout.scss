@@ -105,6 +105,11 @@ div.idBox .layoutBody {
   margin: 0 auto;
   vertical-align: middle;
 }
+.video {
+  text-align: center;
+  margin: 1.2rem auto;
+  vertical-align: middle;
+}
 .searchWide {
   display: none;
 }
@@ -183,9 +188,7 @@ div.idBox .layoutBody {
     display: none;
   }
 }
-video.research {
-  width: 600;
-}
+
 @media (min-width: 900px) {
   .articleBody {
     display: block;
@@ -234,9 +237,6 @@ video.research {
   .docCard {
     text-align: center;
     margin: 0 -8%;
-  }
-  video.research {
-    width: 600;
   }
 }
 @media (min-width: 1170px) {
@@ -387,6 +387,8 @@ canvas,
 progress,
 video {
   display: inline-block;
+  width: 100%;
+  max-width: 800px;
 }
 .research {
   width: 200;

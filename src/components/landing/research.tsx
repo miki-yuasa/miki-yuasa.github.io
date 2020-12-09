@@ -7,11 +7,11 @@ import "../layout.scss";
 export default function Research() {
   return (
     <SectionTemplate title="Research">
-      <div className="docCard">
-        <video controls width="auto">
-          <source src={WhiskMorphMp4} type="video/mp4" />
-        </video>
-      </div>
+       <div className="video">
+          <video controls>
+            <source src={WhiskMorphMp4} type="video/mp4" />
+          </video>
+        </div>
       <p>
         I was widely interested in aerodynamics and collaborative unmanned
         vehicles in the context of integrated intelligent transportation where
