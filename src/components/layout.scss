@@ -423,8 +423,13 @@ a.articleList:hover {
 a:hover {
   outline-width: 0;
 }
-a.footer {
+a.footer:link {
   color: $ms-color-neutralTertiary;
+  text-decoration: none;
+  font-weight: 500;
+}
+a.footer:hover {
+  color: $ms-color-themePrimary;
   text-decoration: none;
   font-weight: 500;
 }
