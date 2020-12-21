@@ -1,5 +1,5 @@
 import React from "react";
-import { registerIcons } from "@fluentui/reactg";
+import { registerIcons } from "@fluentui/react";
 
 export function registerCustomIcons() {
   registerIcons({

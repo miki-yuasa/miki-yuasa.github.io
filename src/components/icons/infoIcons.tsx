@@ -1,7 +1,5 @@
 import React from "react";
-import { FontIcon } from "@fluentui/react";
-import { mergeStyles } from "@fluentui/react";
-
+import { FontIcon, mergeStyles } from "@fluentui/react";
 
 const iconClass = mergeStyles({
   fontSize: "0.8rem",

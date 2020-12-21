@@ -3,9 +3,9 @@ import {
   ActionButton,
   IButtonStyles,
   DefaultPalette,
+  FontIcon,
+  mergeStyles
 } from "@fluentui/react";
-import { FontIcon } from "@fluentui/react";
-import { mergeStyles } from "@fluentui/react";
 import { Depths } from "@fluentui/theme";
 
 export default function MediaButton(props: {

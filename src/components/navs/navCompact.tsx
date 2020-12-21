@@ -7,9 +7,9 @@ import {
   IIconProps,
   IButtonStyles,
   DefaultPalette,
+  FontIcon,
+  IContextualMenuItem
 } from "@fluentui/react";
-import { FontIcon } from "@fluentui/react";
-import { IContextualMenuItem } from "@fluentui/react";
 
 import { getPageData } from "../../data/pageData";
 

@@ -1,7 +1,6 @@
 import React from "react";
 import {
   DefaultPalette,
-  Slider,
   Stack,
   IStackStyles,
   IStackTokens,

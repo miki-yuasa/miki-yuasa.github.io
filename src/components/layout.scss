@@ -42,7 +42,7 @@ div.idBox .layoutBody {
   color: $ms-color-neutralLight;
   height: auto;
   width: auto;
-  font-family: Lato, Helvetica, sans-serif;
+  font-family: "Lato", Helvetica, sans-serif;
   text-align: center;
 }
 .homeBackgroundedSection {
@@ -63,14 +63,14 @@ div.idBox .layoutBody {
   padding-top: 80px;
 }
 .sectionParent {
-  font-family: Lato, Helvetica, sans-serif;
+  font-family: "Lato", Helvetica, sans-serif;
   font-size: 1rem;
   padding-top: 60px;
   padding-bottom: 60px;
   background: $ms-color-neutralLighter;
 }
 .sectionParentAbout {
-  font-family: Lato, Helvetica, sans-serif;
+  font-family: "Lato", Helvetica, sans-serif;
   font-size: 1rem;
   padding-top: 60px;
   padding-bottom: 120px;
@@ -148,11 +148,11 @@ div.idBox .layoutBody {
   background: white;
   border-radius: 6px;
   margin-bottom: 20px;
-  flex-basis:calc(50% - 10px);
+  flex-basis:calc(50% - 5px);
 }
 .articleSidePaneItem {
   display: flexbox;
-  padding: 20px 20px 10px 40px;
+  padding: 20px 10px 10px 20px;
 }
 .articleInfo {
   display: flex;
@@ -166,7 +166,7 @@ div.idBox .layoutBody {
   display: flex;
   justify-content: space-between;
 }
-@media (min-width: 700px) {
+@media (min-width: 600px) {
   div.homeParent {
     margin-right: 0;
     margin-left: 0;
@@ -175,7 +175,7 @@ div.idBox .layoutBody {
     height: auto;
     min-height: 500px;
     width: auto;
-    font-family: Lato, Helvetica, sans-serif;
+    font-family: "Lato", Helvetica, sans-serif;
     text-align: center;
   }
   .sectionBody {
@@ -194,6 +194,13 @@ div.idBox .layoutBody {
   }
   .articleSide {
     padding: 10px;
+  }
+  .articleSidePane {
+    flex-basis:calc(50% - 10px);
+  }
+  .articleSidePaneItem {
+    display: flexbox;
+    padding: 20px 20px 10px 40px;
   }
 }
 
@@ -240,7 +247,7 @@ div.idBox .layoutBody {
     height: auto;
     min-height: 500px;
     width: auto;
-    font-family: Lato, Helvetica, sans-serif;
+    font-family: "Lato", Helvetica, sans-serif;
     text-align: center;
   }
   .docCard {
@@ -298,12 +305,12 @@ div.idBox .layoutBody {
 }
 p.shortIntro {
   font-size: 1em;
-  font-family: Lato, Helvetica, sans-serif;
+  font-family: "Lato", Helvetica, sans-serif;
 }
 @media (min-width: 1000px) {
   p.shortIntro {
     font-size: 1.5em;
-    font-family: Lato, Helvetica, sans-serif;
+    font-family: "Lato", Helvetica, sans-serif;
   }
 }
 article,
@@ -345,7 +352,7 @@ header.wide {
   border-radius: 0% 0% 4px 4px;
   box-shadow: $ms-depth-shadow-16;
 }
-@media (min-width: 700px) {
+@media (min-width: 600px) {
   header.wide {
     display: block;
     background: white;
@@ -646,7 +653,7 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Lato, Oxygen, Ubuntu,
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Lato", Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -679,7 +686,7 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Lato, Oxygen, Ubuntu,
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "Lato", Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -752,7 +759,7 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Lato, Oxygen, Ubuntu,
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "Lato", Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -769,7 +776,7 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Lato, Oxygen, Ubuntu,
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "Lato", Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -786,7 +793,7 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Lato, Oxygen, Ubuntu,
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "Lato", Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -803,7 +810,7 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Lato, Oxygen, Ubuntu,
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "Lato", Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;

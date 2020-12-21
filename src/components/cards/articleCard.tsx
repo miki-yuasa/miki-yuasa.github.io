@@ -7,8 +7,8 @@ import {
   DocumentCardPreview,
   IDocumentCardPreviewProps,
   IDocumentCardStatusStyles,
+  ImageFit
 } from "@fluentui/react";
-import { ImageFit } from "@fluentui/react";
 import { Depths } from "@fluentui/theme";
 
 export function ArticleCard(props: {

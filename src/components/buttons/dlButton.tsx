@@ -2,8 +2,8 @@ import React from "react";
 import {
   PrimaryButton,
   IButtonStyles,
+  mergeStyles,
 } from "@fluentui/react";
-import { mergeStyles } from "@fluentui/react";
 import { Depths } from "@fluentui/theme";
 
 import { DownloadIcon } from "../icons/infoIcons";

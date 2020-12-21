@@ -5,9 +5,9 @@ import {
   IconButton,
   IIconProps,
   IButtonStyles,
+  SearchBox,
+  IContextualMenuItem
 } from "@fluentui/react";
-import { SearchBox } from "@fluentui/react";
-import { IContextualMenuItem } from "@fluentui/react";
 
 const searchIcon: IIconProps = {
   iconName: "Search",
