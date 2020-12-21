@@ -125,29 +125,30 @@ div.idBox .layoutBody {
 }
 .articleBody {
   display: block;
-  padding: 20px;
+  padding: 10px;
   background: white;
   border-radius: 6px;
   box-shadow: $ms-depth-shadow-8;
   width: auto;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .articleSpace {
   display: none;
 }
 .articleSide {
-  display: block;
-  width: auto;
-  margin-left: 10px;
-  margin-right: 10px;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
   margin-top: 20px;
+  padding: 5px;
 }
 .articleSidePane {
   box-shadow: $ms-depth-shadow-8;
   background: white;
   border-radius: 6px;
   margin-bottom: 20px;
+  flex-basis:calc(50% - 10px);
 }
 .articleSidePaneItem {
   display: flexbox;
@@ -187,6 +188,13 @@ div.idBox .layoutBody {
   .searchCompact {
     display: none;
   }
+  .articleBody {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .articleSide {
+    padding: 10px;
+  }
 }
 
 @media (min-width: 900px) {
@@ -204,11 +212,12 @@ div.idBox .layoutBody {
     display: none;
   }
   .articleSide {
-    display: block;
+    display: flex;
     width: 840px;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
+    padding: 0;
   }
 }
 @media (min-width: 1000px) {
@@ -265,6 +274,16 @@ div.idBox .layoutBody {
     position: absolute;
     margin: 0;
     padding: 0;
+  }
+  .articleSidePane {
+    display: block;
+    box-shadow: $ms-depth-shadow-8;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  .articleSidePaneSpace {
+    display: none;
   }
   .articleSidePaneItem {
     display: absolute;
@@ -424,6 +443,11 @@ a:hover {
   outline-width: 0;
 }
 a.footer:link {
+  color: $ms-color-neutralTertiary;
+  text-decoration: none;
+  font-weight: 500;
+}
+a.footer:visited {
   color: $ms-color-neutralTertiary;
   text-decoration: none;
   font-weight: 500;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { DefaultPalette } from "office-ui-fabric-react";
+import { DefaultPalette } from "@fluentui/react";
 
 import { CrumbItem } from "../../../@types";
 
@@ -24,15 +24,15 @@ export function BlogBreadCrumb(props: { crumbItems: CrumbItem[] }) {
     const linkComplete = isLast ? (
       <>{crumb.text}</>
     ) : (
-      <>
-        <Link to={crumb.href!} style={linkStyle}>
-          {crumb.text}
-        </Link>
-        <span style={{ color: DefaultPalette.neutralSecondaryAlt }}>
-          {" > "}
-        </span>
-      </>
-    );
+        <>
+          <Link to={crumb.href!} style={linkStyle}>
+            {crumb.text}
+          </Link>
+          <span style={{ color: DefaultPalette.neutralSecondaryAlt }}>
+            {" > "}
+          </span>
+        </>
+      );
 
     return linkComplete;
   });

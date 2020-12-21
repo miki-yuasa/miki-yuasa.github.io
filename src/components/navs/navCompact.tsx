@@ -1,14 +1,14 @@
 import React from "react";
-import { mergeStyles } from "office-ui-fabric-react/lib/Styling";
-import { Depths } from "@uifabric/fluent-theme/lib/fluent/FluentDepths";
+import { mergeStyles } from "@fluentui/react";
+import { Depths } from "@fluentui/theme";
 import {
   ActionButton,
   IContextualMenuProps,
   IIconProps,
   IButtonStyles,
   DefaultPalette,
-} from "office-ui-fabric-react";
-import { FontIcon } from "office-ui-fabric-react/lib/Icon";
+} from "@fluentui/react";
+import { FontIcon } from "@fluentui/react";
 import { IContextualMenuItem } from "@fluentui/react";
 
 import { getPageData } from "../../data/pageData";

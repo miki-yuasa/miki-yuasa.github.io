@@ -7,7 +7,7 @@ import {
   IStackStyles,
   IStackTokens,
   IStackItemStyles,
-} from "office-ui-fabric-react";
+} from "@fluentui/react";
 
 import { ResponsiveSearchBox } from "../search/responsiveSearchBox";
 import { NavCommandButton } from "../buttons/navCommandButton";

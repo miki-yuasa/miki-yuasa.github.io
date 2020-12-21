@@ -4,8 +4,8 @@ import {
   DocumentCardTitle,
   DocumentCardType,
   IDocumentCardStyles,
-} from "office-ui-fabric-react/lib/DocumentCard";
-import { Depths } from "@uifabric/fluent-theme/lib/fluent/FluentDepths";
+} from "@fluentui/react";
+import { Depths } from "@fluentui/theme";
 
 import { Repo } from "../../../@types";
 

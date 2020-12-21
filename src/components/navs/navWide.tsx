@@ -4,7 +4,7 @@ import {
   PivotItem,
   PivotLinkSize,
   IPivotStyles,
-} from "office-ui-fabric-react/lib/Pivot";
+} from "@fluentui/react";
 
 import { getPageData } from "../../data/pageData";
 

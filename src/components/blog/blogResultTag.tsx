@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { DefaultPalette } from "office-ui-fabric-react";
+import { DefaultPalette } from "@fluentui/react";
 
 import { BlogPageTemplate } from "../../templates/blogPageTemplate";
 import {
@@ -42,10 +42,10 @@ export const BlogResPageTemplate = (props: {
       </Link>
     </>
   ) : (
-    <Link to={`/blog/tags/${tagName?.toLowerCase()}`} style={resultLinkStyle}>
-      {tagName}
-    </Link>
-  );
+      <Link to={`/blog/tags/${tagName?.toLowerCase()}`} style={resultLinkStyle}>
+        {tagName}
+      </Link>
+    );
 
   const itemsFirst: CrumbItem[] = [
     { text: "Landing Page", href: "/" },
@@ -55,13 +55,13 @@ export const BlogResPageTemplate = (props: {
 
   const itemsWithHref: CrumbItem[] = isTag
     ? [
-        ...itemsFirst,
-        {
-          text: tagName?.split("/")[0]!,
-          href: `/blog/tags/${tagName?.split("/")[0].toLowerCase()}`,
-        },
-        { text: tagName?.split("/")[1]! },
-      ]
+      ...itemsFirst,
+      {
+        text: tagName?.split("/")[0]!,
+        href: `/blog/tags/${tagName?.split("/")[0].toLowerCase()}`,
+      },
+      { text: tagName?.split("/")[1]! },
+    ]
     : [...itemsFirst, { text: tagName! }];
 
   const body = (

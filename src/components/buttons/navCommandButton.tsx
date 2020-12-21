@@ -1,5 +1,5 @@
 import React from "react";
-import { CommandButton, IButtonStyles } from "office-ui-fabric-react";
+import { CommandButton, IButtonStyles } from "@fluentui/react";
 
 export function NavCommandButton(props: {
   text?: string;

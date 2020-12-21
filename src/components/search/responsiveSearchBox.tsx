@@ -1,12 +1,12 @@
 import React from "react";
-import { useConstCallback, useConst } from "@uifabric/react-hooks";
+import { useConstCallback, useConst } from "@fluentui/react-hooks";
 import {
   DefaultPalette,
   IconButton,
   IIconProps,
   IButtonStyles,
-} from "office-ui-fabric-react";
-import { SearchBox } from "office-ui-fabric-react/lib/SearchBox";
+} from "@fluentui/react";
+import { SearchBox } from "@fluentui/react";
 import { IContextualMenuItem } from "@fluentui/react";
 
 const searchIcon: IIconProps = {

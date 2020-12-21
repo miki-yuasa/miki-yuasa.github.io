@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { DefaultPalette } from "office-ui-fabric-react";
+import { DefaultPalette } from "@fluentui/react";
 
 import { BlogPageTemplate } from "../../templates/blogPageTemplate";
 import {
@@ -41,10 +41,10 @@ export const BlogResDatePageTemplate = (props: {
       </Link>
     </>
   ) : (
-    <Link to={`/blog/archives/${year}`} style={resultLinkStyle}>
-      {year}
-    </Link>
-  );
+      <Link to={`/blog/archives/${year}`} style={resultLinkStyle}>
+        {year}
+      </Link>
+    );
 
   const articles: Article[] = props.data.allMarkdownRemark.edges;
 
@@ -58,13 +58,13 @@ export const BlogResDatePageTemplate = (props: {
 
   const itemsWithHref: CrumbItem[] = isMonth
     ? [
-        ...itemsFirst,
-        {
-          text: year,
-          href: `/blog/archives/${year}`,
-        },
-        { text: props.pageContext.displayMonth! },
-      ]
+      ...itemsFirst,
+      {
+        text: year,
+        href: `/blog/archives/${year}`,
+      },
+      { text: props.pageContext.displayMonth! },
+    ]
     : [...itemsFirst, { text: year }];
 
   const body = (

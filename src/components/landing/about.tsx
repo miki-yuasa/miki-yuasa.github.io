@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { DefaultPalette } from "office-ui-fabric-react";
+import { DefaultPalette } from "@fluentui/react";
 
 import Image from "../image";
 import CV from "./CV_Mikihisa_Yuasa.pdf";

@@ -6,7 +6,7 @@ import {
   IStackStyles,
   IStackTokens,
   IStackItemStyles,
-} from "office-ui-fabric-react";
+} from "@fluentui/react";
 
 import { NavBlogCompact } from "../navs/navBlogComapct";
 

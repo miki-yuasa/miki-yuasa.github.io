@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { DefaultPalette } from "office-ui-fabric-react";
+import { DefaultPalette } from "@fluentui/react";
 
 import {
   FolderIcon,
@@ -47,53 +47,53 @@ export function getFormattedList({
 }) {
 
   const outList: React.ReactNode[] = itemObjArray
-  .sort((a,b)=>{
-    return a.key>b.key ? 1 : -1;
-  })
-  .map((itemObj) => {
-    const toKey: string = tagged
-      ? `/blog/tags/${itemObj.key.toLowerCase()}`
-      : `/blog/archives/${itemObj.key.toLowerCase()}`;
-
-    const itemList: React.ReactNode[] = itemObj.items
-    .sort((a,b)=>{
-      return a>b ? 1 : -1;
+    .sort((a, b) => {
+      return a.key > b.key ? 1 : -1;
     })
-    .map((item) => {
-      const toItem: string = `${toKey}/${item.toLowerCase()}/`;
-      const itemIcon = tagged ? <TagIcon /> : <CalendarIcon />;
+    .map((itemObj) => {
+      const toKey: string = tagged
+        ? `/blog/tags/${itemObj.key.toLowerCase()}`
+        : `/blog/archives/${itemObj.key.toLowerCase()}`;
+
+      const itemList: React.ReactNode[] = itemObj.items
+        .sort((a, b) => {
+          return a > b ? 1 : -1;
+        })
+        .map((item) => {
+          const toItem: string = `${toKey}/${item.toLowerCase()}/`;
+          const itemIcon = tagged ? <TagIcon /> : <CalendarIcon />;
+          return (
+            <li>
+              {itemIcon}
+              <Link
+                to={toItem}
+                style={{
+                  textDecoration: "none",
+                  color: DefaultPalette.neutralDark,
+                }}
+              >
+                {item}
+              </Link>
+            </li>
+          );
+        });
+
       return (
         <li>
-          {itemIcon}
+          <FolderIcon />
           <Link
-            to={toItem}
+            to={toKey}
             style={{
               textDecoration: "none",
               color: DefaultPalette.neutralDark,
             }}
           >
-            {item}
+            {itemObj.key}
           </Link>
+          <ul style={{ marginLeft: "1.45rem" }}>{itemList}</ul>
         </li>
       );
     });
-
-    return (
-      <li>
-        <FolderIcon />
-        <Link
-          to={toKey}
-          style={{
-            textDecoration: "none",
-            color: DefaultPalette.neutralDark,
-          }}
-        >
-          {itemObj.key}
-        </Link>
-        <ul style={{ marginLeft: "1.45rem" }}>{itemList}</ul>
-      </li>
-    );
-  });
 
   return <ul className="sidePane">{outList}</ul>;
 }

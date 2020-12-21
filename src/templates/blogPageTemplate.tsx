@@ -1,5 +1,5 @@
 import React from "react";
-import { DefaultPalette } from "office-ui-fabric-react";
+import { DefaultPalette } from "@fluentui/react";
 
 import { BlogHeader } from "../components/blog/blogHeader";
 import Layout from "../components/layout";

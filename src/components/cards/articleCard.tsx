@@ -7,9 +7,9 @@ import {
   DocumentCardPreview,
   IDocumentCardPreviewProps,
   IDocumentCardStatusStyles,
-} from "office-ui-fabric-react/lib/DocumentCard";
-import { ImageFit } from "office-ui-fabric-react/lib/Image";
-import { Depths } from "@uifabric/fluent-theme/lib/fluent/FluentDepths";
+} from "@fluentui/react";
+import { ImageFit } from "@fluentui/react";
+import { Depths } from "@fluentui/theme";
 
 export function ArticleCard(props: {
   title: string;

@@ -2,9 +2,9 @@ import React from "react";
 import {
   PrimaryButton,
   IButtonStyles,
-} from "office-ui-fabric-react";
-import { mergeStyles } from "office-ui-fabric-react/lib/Styling";
-import { Depths } from "@uifabric/fluent-theme/lib/fluent/FluentDepths";
+} from "@fluentui/react";
+import { mergeStyles } from "@fluentui/react";
+import { Depths } from "@fluentui/theme";
 
 import { DownloadIcon } from "../icons/infoIcons";
 
