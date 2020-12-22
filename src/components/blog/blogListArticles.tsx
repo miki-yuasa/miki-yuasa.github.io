@@ -18,7 +18,7 @@ export function BlogListArticles(props: {
         <h3 style={{ marginTop: "8px" }}>
           <a
             className="articleList"
-            href={`articles/${props.frontmatter.slug!}`}
+            href={`/blog/articles/${props.frontmatter.slug!}`}
           >
             {props.frontmatter.title}
           </a>

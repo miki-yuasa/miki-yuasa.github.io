@@ -7,8 +7,8 @@ module.exports = {
     siteUrl: "https://mikyu.bitbucket.io",
   },
   flags: {
-    PRESERVE_WEBPACK_CACHE: true,
-    QUERY_ON_DEMAND: true,
+    //PRESERVE_WEBPACK_CACHE: true,
+    //QUERY_ON_DEMAND: true,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
