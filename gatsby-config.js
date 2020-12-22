@@ -152,6 +152,19 @@ module.exports = {
         icon: `src/assets/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-remark-external-links",
+      options: {
+        target: "_self",  // リンクを開くときの target
+        rel: "noopener"   // rel(relation) 指定
+      }
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `mikyu-bitbucket-io`
+      }
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sitemap`,

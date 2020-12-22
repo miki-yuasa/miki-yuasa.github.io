@@ -22,7 +22,8 @@ import { NavCommandButton } from "../components/buttons/navCommandButton";
 import { HashTags } from "../components/blog/blogArticleInfo";
 import { CrumbItem } from "../../@types";
 import { BlogBreadCrumb } from "../components/blog/blogBreadCrumb";
-import { BlogSidePanes} from "../components/blog/blogSidePanes"
+import { BlogSidePanes } from "../components/blog/blogSidePanes"
+import { CommentHosting } from "../components/comment/commentHosting";
 
 const blogArticleTemplate = ({
   data,
@@ -48,16 +49,16 @@ const blogArticleTemplate = ({
       Next <ChevronRightIcon />
     </NavCommandButton>
   ) : (
-    <> </>
-  );
+      <> </>
+    );
 
   const prevButton = prevFrontmatter ? (
     <NavCommandButton href={prevFrontmatter.slug!}>
       <ChevronLeftIcon /> Previous
     </NavCommandButton>
   ) : (
-    <> </>
-  );
+      <> </>
+    );
 
   const blogTopButton = (
     <NavCommandButton href="/blog/blog-top">Blog Top</NavCommandButton>
@@ -141,16 +142,19 @@ const blogArticleTemplate = ({
           {nextButton}
         </Stack.Item>
       </Stack>
+      <CommentHosting data={data} />
     </>
   );
+
   const lang = frontmatter?.language?.toLocaleLowerCase().substr(0, 2);
+
   return (
     <BlogPageTemplate
       title={frontmatter?.title}
       description={frontmatter?.description}
       lang={lang}
       body={body}
-      side={<BlogSidePanes/>}
+      side={<BlogSidePanes />}
     />
   );
 };
