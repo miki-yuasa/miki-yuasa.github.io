@@ -75,7 +75,7 @@ export const BlogResDatePageTemplate = (props: {
     </>
   );
 
-  const title = isMonth ? `month: ${resName}` : `year: ${resName}`;
+  const title = isMonth ? `Month: ${resName}` : `Year: ${resName}`;
 
   const description = isMonth
     ? `List of articles in ${resName}.`

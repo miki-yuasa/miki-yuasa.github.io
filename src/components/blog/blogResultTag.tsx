@@ -75,7 +75,7 @@ export const BlogResPageTemplate = (props: {
     </>
   );
 
-  const title = isTag ? `tag: ${tagName}` : `category: ${tagName}`;
+  const title = isTag ? `Tag: ${tagName}` : `Category: ${tagName}`;
 
   const description = isTag
     ? `List of articles including ${tagName} tag.`
