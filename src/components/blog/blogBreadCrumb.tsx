@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { DefaultPalette } from "@fluentui/react";
 
 import { CrumbItem } from "../../../@types";
@@ -16,18 +15,19 @@ export function BlogBreadCrumb(props: { crumbItems: CrumbItem[] }) {
 
     const decoration = crumb.href === undefined ? "none" : "underline";
 
-    const linkStyle: React.CSSProperties = {
-      textDecoration: decoration,
-      color: linkColor,
-    };
+    const linkStyle = isLast
+      ? "crumbLast"
+      : crumb.href === undefined
+        ? "crumbNone"
+        : "crumb";
 
     const linkComplete = isLast ? (
       <>{crumb.text}</>
     ) : (
         <>
-          <Link to={crumb.href!} style={linkStyle}>
+          <a href={crumb.href!} className={linkStyle}>
             {crumb.text}
-          </Link>
+          </a>
           <span style={{ color: DefaultPalette.neutralSecondaryAlt }}>
             {" > "}
           </span>

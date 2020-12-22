@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { getFormattedList, group } from "./articlesInfoProcess";
+import { BlogSidePaneTitle } from "./blogSidePaneTitle";
 import { BlogArchiveListQuery } from "../../../@types/graphql-types";
 import { itemObj } from "../../../@types";
 
@@ -33,13 +34,12 @@ export const BlogSideArchiveList = () => {
     };
   });
 
-  const itemObjArray = group(Array.from(new Map(yearMonObjListTemp.map(yearMonObj => [`${yearMonObj.key}${String.fromCharCode(31)}${yearMonObj.item}`,yearMonObj])).values()));
+  const itemObjArray = group(Array.from(new Map(yearMonObjListTemp.map(yearMonObj => [`${yearMonObj.key}${String.fromCharCode(31)}${yearMonObj.item}`, yearMonObj])).values()));
   const tagged: boolean = false;
 
   return (
-    <div className="articleSidePaneItem">
-      <b>Archives</b>
-      {getFormattedList({ itemObjArray, tagged })}
-    </div>
+    <BlogSidePaneTitle
+      title="Archive"
+      children={getFormattedList({ itemObjArray, tagged })} />
   );
 };

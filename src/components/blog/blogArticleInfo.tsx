@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { DefaultPalette } from "@fluentui/react";
 
 import { CalendarIcon, TagIcon } from "../icons/infoIcons";
@@ -15,10 +14,6 @@ export function PublishedDate(props: { date: Date }) {
 }
 
 export function HashTags(props: { tags: Maybe<string>[] }) {
-  const linkStyle: React.CSSProperties = {
-    textDecoration: "none",
-    color: DefaultPalette.neutralSecondaryAlt,
-  };
 
   const tags =
     props.tags.length !== 0 ? (
@@ -33,21 +28,19 @@ export function HashTags(props: { tags: Maybe<string>[] }) {
 
           return (
             <>
-              <Link
-                to={`/blog/tags/${cat?.toLocaleLowerCase()}/`}
+              <a className="articleInfo"
+                href={`/blog/tags/${cat?.toLocaleLowerCase()}/`}
                 key={cat}
-                style={linkStyle}
               >
                 {`${cat}`}
-              </Link>
+              </a>
               {" / "}
-              <Link
-                to={`/blog/tags/${e?.toLocaleLowerCase()}/`}
+              <a className="articleInfo"
+                href={`/blog/tags/${e?.toLocaleLowerCase()}/`}
                 key={e}
-                style={linkStyle}
               >
                 {`${tag}`}
-              </Link>
+              </a>
               {", "}
             </>
           );

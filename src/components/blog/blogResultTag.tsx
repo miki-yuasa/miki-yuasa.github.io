@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
-import { DefaultPalette } from "@fluentui/react";
 
 import { BlogPageTemplate } from "../../templates/blogPageTemplate";
 import {
@@ -22,29 +20,29 @@ export const BlogResPageTemplate = (props: {
 
   const iconName: string = "tagSolid";
 
-  const resultLinkStyle: React.CSSProperties = {
-    textDecoration: "none",
-    color: DefaultPalette.neutralDark,
-  };
+  const resultLinkStyle = "neutralDark";
 
   const isTag = ~tagName?.indexOf("/")!;
   const resultHeader = isTag ? (
     <>
-      <Link
-        to={`/blog/tags/${tagName?.split("/")[0].toLowerCase()}`}
-        style={resultLinkStyle}
-      >
+      <a
+        className={resultLinkStyle}
+        href={`/blog/tags/${tagName?.split("/")[0].toLowerCase()}`}>
         {tagName?.split("/")[0]}
-      </Link>
+      </a>
       {" / "}
-      <Link to={`/blog/tags/${tagName?.toLowerCase()}`} style={resultLinkStyle}>
+      <a
+        className={resultLinkStyle}
+        href={`/blog/tags/${tagName?.toLowerCase()}`} >
         {tagName?.split("/")[1]}
-      </Link>
+      </a>
     </>
   ) : (
-      <Link to={`/blog/tags/${tagName?.toLowerCase()}`} style={resultLinkStyle}>
+      <a
+        className={resultLinkStyle}
+        href={`/blog/tags/${tagName?.toLowerCase()}`}>
         {tagName}
-      </Link>
+      </a>
     );
 
   const itemsFirst: CrumbItem[] = [

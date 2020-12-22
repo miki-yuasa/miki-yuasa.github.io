@@ -25,6 +25,7 @@ export const BlogPageTemplate = (props: {
           <div className="articleSpace"> </div>
           <div className="articleSide">{props.side}</div>
         </div>
+        <div style={{ height: "150px" }} />
       </Layout>
     </div>
   );

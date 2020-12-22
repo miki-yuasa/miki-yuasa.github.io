@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { DefaultPalette } from "@fluentui/react";
 
 import {
@@ -65,15 +64,12 @@ export function getFormattedList({
           return (
             <li>
               {itemIcon}
-              <Link
-                to={toItem}
-                style={{
-                  textDecoration: "none",
-                  color: DefaultPalette.neutralDark,
-                }}
+              <a
+                href={toItem}
+                className="neutralDark"
               >
                 {item}
-              </Link>
+              </a>
             </li>
           );
         });
@@ -81,15 +77,12 @@ export function getFormattedList({
       return (
         <li>
           <FolderIcon />
-          <Link
-            to={toKey}
-            style={{
-              textDecoration: "none",
-              color: DefaultPalette.neutralDark,
-            }}
+          <a
+            href={toKey}
+            className="neutralDark"
           >
             {itemObj.key}
-          </Link>
+          </a>
           <ul style={{ marginLeft: "1.45rem" }}>{itemList}</ul>
         </li>
       );

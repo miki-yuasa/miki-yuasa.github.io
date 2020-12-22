@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { sepCatTag, getFormattedList, group } from "./articlesInfoProcess";
+import { BlogSidePaneTitle } from "./blogSidePaneTitle";
 import { BlogTagListQuery } from "../../../@types/graphql-types";
 import { itemObj } from "../../../@types";
 
@@ -48,17 +49,8 @@ export const BlogSideTagList = () => {
   const tagged: boolean = true;
 
   return (
-    <div className="articleSidePaneItem">
-      <div
-        style={{
-          marginTop: "0.25rem",
-          marginBottom: "0.5rem",
-          fontWeight: "bold",
-        }}
-      >
-        Category/Tag
-      </div>
-      <div> {getFormattedList({ itemObjArray, tagged })}</div>
-    </div>
+    <BlogSidePaneTitle
+      title="Category / Tag"
+      children={getFormattedList({ itemObjArray, tagged })} />
   );
 };

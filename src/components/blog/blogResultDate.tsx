@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
-import { DefaultPalette } from "@fluentui/react";
 
 import { BlogPageTemplate } from "../../templates/blogPageTemplate";
 import {
@@ -22,28 +20,25 @@ export const BlogResDatePageTemplate = (props: {
 
   const resName = isMonth ? year + "/" + props.pageContext.displayMonth : year;
 
-  const resultLinkStyle: React.CSSProperties = {
-    textDecoration: "none",
-    color: DefaultPalette.neutralDark,
-  };
+  const resultLinkStyle = "neutralDark";
 
   const resultHeader = isMonth ? (
     <>
-      <Link to={`/blog/archives/${year}`} style={resultLinkStyle}>
+      <a href={`/blog/archives/${year}`} className={resultLinkStyle}>
         {year}
-      </Link>
+      </a>
       {" / "}
-      <Link
-        to={`/blog/archives/${year}/${props.pageContext.displayMonth}`}
-        style={resultLinkStyle}
+      <a
+        href={`/blog/archives/${year}/${props.pageContext.displayMonth}`}
+        className={resultLinkStyle}
       >
         {props.pageContext.displayMonth}
-      </Link>
+      </a>
     </>
   ) : (
-      <Link to={`/blog/archives/${year}`} style={resultLinkStyle}>
+      <a href={`/blog/archives/${year}`} className={resultLinkStyle}>
         {year}
-      </Link>
+      </a>
     );
 
   const articles: Article[] = props.data.allMarkdownRemark.edges;
