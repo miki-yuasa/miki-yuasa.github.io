@@ -142,6 +142,7 @@ const blogArticleTemplate = ({
           {nextButton}
         </Stack.Item>
       </Stack>
+      <br />
       <CommentHosting data={data} />
     </>
   );
