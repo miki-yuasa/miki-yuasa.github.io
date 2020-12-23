@@ -2795,6 +2795,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___stripMetadata'
   | 'pluginCreator___pluginOptions___defaultQuality'
   | 'pluginCreator___pluginOptions___failOnError'
+  | 'pluginCreator___pluginOptions___staticFolderName'
   | 'pluginCreator___pluginOptions___linkImagesToOriginal'
   | 'pluginCreator___pluginOptions___maxWidth'
   | 'pluginCreator___pluginOptions___showCaptions'
@@ -2807,7 +2808,10 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___loading'
   | 'pluginCreator___pluginOptions___disableBgImageOnAlpha'
   | 'pluginCreator___pluginOptions___disableBgImage'
-  | 'pluginCreator___pluginOptions___staticFolderName'
+  | 'pluginCreator___pluginOptions___styleAttributes'
+  | 'pluginCreator___pluginOptions___dataAttributes'
+  | 'pluginCreator___pluginOptions___classMap___heading_depth_1_'
+  | 'pluginCreator___pluginOptions___classMap___heading_depth_2_'
   | 'pluginCreator___pluginOptions___offsetY'
   | 'pluginCreator___pluginOptions___className'
   | 'pluginCreator___pluginOptions___classPrefix'
@@ -3038,6 +3042,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___plugins___id'
   | 'pluginOptions___plugins___name'
   | 'pluginOptions___plugins___version'
+  | 'pluginOptions___plugins___pluginOptions___staticFolderName'
   | 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal'
   | 'pluginOptions___plugins___pluginOptions___maxWidth'
   | 'pluginOptions___plugins___pluginOptions___showCaptions'
@@ -3050,7 +3055,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___plugins___pluginOptions___loading'
   | 'pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha'
   | 'pluginOptions___plugins___pluginOptions___disableBgImage'
-  | 'pluginOptions___plugins___pluginOptions___staticFolderName'
+  | 'pluginOptions___plugins___pluginOptions___styleAttributes'
+  | 'pluginOptions___plugins___pluginOptions___dataAttributes'
   | 'pluginOptions___plugins___pluginOptions___offsetY'
   | 'pluginOptions___plugins___pluginOptions___className'
   | 'pluginOptions___plugins___pluginOptions___classPrefix'
@@ -3075,6 +3081,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___stripMetadata'
   | 'pluginOptions___defaultQuality'
   | 'pluginOptions___failOnError'
+  | 'pluginOptions___staticFolderName'
   | 'pluginOptions___linkImagesToOriginal'
   | 'pluginOptions___maxWidth'
   | 'pluginOptions___showCaptions'
@@ -3087,7 +3094,10 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___loading'
   | 'pluginOptions___disableBgImageOnAlpha'
   | 'pluginOptions___disableBgImage'
-  | 'pluginOptions___staticFolderName'
+  | 'pluginOptions___styleAttributes'
+  | 'pluginOptions___dataAttributes'
+  | 'pluginOptions___classMap___heading_depth_1_'
+  | 'pluginOptions___classMap___heading_depth_2_'
   | 'pluginOptions___offsetY'
   | 'pluginOptions___className'
   | 'pluginOptions___classPrefix'
@@ -3256,6 +3266,7 @@ export type SitePluginPluginOptions = {
   stripMetadata?: Maybe<Scalars['Boolean']>;
   defaultQuality?: Maybe<Scalars['Int']>;
   failOnError?: Maybe<Scalars['Boolean']>;
+  staticFolderName?: Maybe<Scalars['String']>;
   linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
   maxWidth?: Maybe<Scalars['Int']>;
   showCaptions?: Maybe<Scalars['Boolean']>;
@@ -3268,7 +3279,9 @@ export type SitePluginPluginOptions = {
   loading?: Maybe<Scalars['String']>;
   disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
   disableBgImage?: Maybe<Scalars['Boolean']>;
-  staticFolderName?: Maybe<Scalars['String']>;
+  styleAttributes?: Maybe<Scalars['Boolean']>;
+  dataAttributes?: Maybe<Scalars['Boolean']>;
+  classMap?: Maybe<SitePluginPluginOptionsClassMap>;
   offsetY?: Maybe<Scalars['Int']>;
   className?: Maybe<Scalars['String']>;
   classPrefix?: Maybe<Scalars['String']>;
@@ -3305,6 +3318,16 @@ export type SitePluginPluginOptions = {
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
+export type SitePluginPluginOptionsClassMap = {
+  heading_depth_1_?: Maybe<Scalars['String']>;
+  heading_depth_2_?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsClassMapFilterInput = {
+  heading_depth_1_?: Maybe<StringQueryOperatorInput>;
+  heading_depth_2_?: Maybe<StringQueryOperatorInput>;
+};
+
 export type SitePluginPluginOptionsCodegenConfig = {
   maybeValue?: Maybe<Scalars['String']>;
 };
@@ -3329,6 +3352,7 @@ export type SitePluginPluginOptionsFilterInput = {
   stripMetadata?: Maybe<BooleanQueryOperatorInput>;
   defaultQuality?: Maybe<IntQueryOperatorInput>;
   failOnError?: Maybe<BooleanQueryOperatorInput>;
+  staticFolderName?: Maybe<StringQueryOperatorInput>;
   linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
   maxWidth?: Maybe<IntQueryOperatorInput>;
   showCaptions?: Maybe<BooleanQueryOperatorInput>;
@@ -3341,7 +3365,9 @@ export type SitePluginPluginOptionsFilterInput = {
   loading?: Maybe<StringQueryOperatorInput>;
   disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
   disableBgImage?: Maybe<BooleanQueryOperatorInput>;
-  staticFolderName?: Maybe<StringQueryOperatorInput>;
+  styleAttributes?: Maybe<BooleanQueryOperatorInput>;
+  dataAttributes?: Maybe<BooleanQueryOperatorInput>;
+  classMap?: Maybe<SitePluginPluginOptionsClassMapFilterInput>;
   offsetY?: Maybe<IntQueryOperatorInput>;
   className?: Maybe<StringQueryOperatorInput>;
   classPrefix?: Maybe<StringQueryOperatorInput>;
@@ -3421,6 +3447,7 @@ export type SitePluginPluginOptionsPluginsFilterListInput = {
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptions = {
+  staticFolderName?: Maybe<Scalars['String']>;
   linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
   maxWidth?: Maybe<Scalars['Int']>;
   showCaptions?: Maybe<Scalars['Boolean']>;
@@ -3433,7 +3460,9 @@ export type SitePluginPluginOptionsPluginsPluginOptions = {
   loading?: Maybe<Scalars['String']>;
   disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
   disableBgImage?: Maybe<Scalars['Boolean']>;
-  staticFolderName?: Maybe<Scalars['String']>;
+  styleAttributes?: Maybe<Scalars['Boolean']>;
+  dataAttributes?: Maybe<Scalars['Boolean']>;
+  classMap?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsClassMap>;
   offsetY?: Maybe<Scalars['Int']>;
   className?: Maybe<Scalars['String']>;
   classPrefix?: Maybe<Scalars['String']>;
@@ -3443,7 +3472,18 @@ export type SitePluginPluginOptionsPluginsPluginOptions = {
   prompt?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsPrompt>;
 };
 
+export type SitePluginPluginOptionsPluginsPluginOptionsClassMap = {
+  heading_depth_1_?: Maybe<Scalars['String']>;
+  heading_depth_2_?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsClassMapFilterInput = {
+  heading_depth_1_?: Maybe<StringQueryOperatorInput>;
+  heading_depth_2_?: Maybe<StringQueryOperatorInput>;
+};
+
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
+  staticFolderName?: Maybe<StringQueryOperatorInput>;
   linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
   maxWidth?: Maybe<IntQueryOperatorInput>;
   showCaptions?: Maybe<BooleanQueryOperatorInput>;
@@ -3456,7 +3496,9 @@ export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   loading?: Maybe<StringQueryOperatorInput>;
   disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
   disableBgImage?: Maybe<BooleanQueryOperatorInput>;
-  staticFolderName?: Maybe<StringQueryOperatorInput>;
+  styleAttributes?: Maybe<BooleanQueryOperatorInput>;
+  dataAttributes?: Maybe<BooleanQueryOperatorInput>;
+  classMap?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsClassMapFilterInput>;
   offsetY?: Maybe<IntQueryOperatorInput>;
   className?: Maybe<StringQueryOperatorInput>;
   classPrefix?: Maybe<StringQueryOperatorInput>;

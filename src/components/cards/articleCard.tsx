@@ -4,6 +4,7 @@ import {
   DocumentCardTitle,
   DocumentCardStatus,
   IDocumentCardStyles,
+  IDocumentCardTitleStyles,
   DocumentCardPreview,
   IDocumentCardPreviewProps,
   IDocumentCardStatusStyles,
@@ -23,12 +24,19 @@ export function ArticleCard(props: {
     root: {
       display: "inline-block",
       margin: 10,
-      width: 320,
+      width: 400,
       boxShadow: Depths.depth8,
       paddingTop: 0,
       paddingBottom: 10,
     },
   };
+
+  const cardTitleStyles: IDocumentCardTitleStyles = {
+    root: {
+      marginTop: 10,
+      height: 50,
+    }
+  }
 
   const statusStyles: IDocumentCardStatusStyles = {
     root: {
@@ -51,7 +59,7 @@ export function ArticleCard(props: {
         },
         previewImageSrc: props.imageSrc,
         imageFit: ImageFit.cover,
-        width: 320,
+        width: 400,
         height: 150,
       },
     ],
@@ -64,7 +72,7 @@ export function ArticleCard(props: {
       onClickHref={props.href}
     >
       <DocumentCardPreview {...previewProps} />
-      <DocumentCardTitle title={props.title} />
+      <DocumentCardTitle title={props.title} styles={cardTitleStyles} />
       <DocumentCardTitle title={props.date} showAsSecondaryTitle />
       <DocumentCardStatus
         statusIcon="Tag"

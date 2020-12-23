@@ -723,7 +723,7 @@ h1 {
   font-size: 2.25rem;
   line-height: 1.1;
 }
-h1.home {
+.home {   
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -738,6 +738,16 @@ h1.home {
   text-rendering: optimizeLegibility;
   font-size: 3rem;
   line-height: 1.5;
+}
+.h1Blog {
+  font-size: x-large;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
 }
 h2 {
   margin-left: 0;
@@ -777,6 +787,16 @@ h2.sectionHeader {
   padding-bottom: 4px;
   font-weight: 400;
   display: inline-block;
+}
+.h2Blog {
+  font-size: large;
+  padding-bottom: .5rem;
+  //border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
 }
 @media (min-width: 1000px) {
   h1.home {
