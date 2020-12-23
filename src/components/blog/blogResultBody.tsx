@@ -21,6 +21,12 @@ export const BlogResultBody = (props: {
 
   const icon = <FontIcon iconName={props.iconName} className={iconClass} />;
 
+  const articles: number = props.articles.length;
+
+  const articleText: string = articles == 1
+    ? 'article was'
+    : 'articles were';
+
   const body = (
     <>
       <h3>
@@ -28,7 +34,7 @@ export const BlogResultBody = (props: {
         {props.resultHeader}
       </h3>
       <section>
-        <b>{props.articles.length}</b> articles are found.
+        <b>{props.articles.length}</b> {articleText} found.
       </section>
       {articleList}
     </>

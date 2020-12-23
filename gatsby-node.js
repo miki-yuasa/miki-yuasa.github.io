@@ -43,7 +43,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               slug
               keywords
               language
-              categories
             }
           }
         }
