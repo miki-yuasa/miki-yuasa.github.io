@@ -9,6 +9,8 @@
   font-size: 1rem;
 }
 
+$theme-color: $ms-color-themePrimary;
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -447,7 +449,7 @@ a.articleList:visited {
   text-decoration: none;
 }
 a.articleList:hover {
-  color: $ms-color-themePrimary;
+  color: $theme-color;
   text-decoration: none;
 }
 a:hover {
@@ -462,7 +464,7 @@ a.footer:visited {
   text-decoration: none;
 }
 a.footer:hover {
-  color: $ms-color-themePrimary;
+  color: $theme-color;
   text-decoration: none;
 }
 a.neutralDark:link{
@@ -474,7 +476,7 @@ a.neutralDark:visited{
   text-decoration: none;
 }
 a.neutralDark:hover{
-  color: $ms-color-themePrimary;
+  color: $theme-color;
   text-decoration: none;
 }
 a.articleInfo:link{
@@ -488,7 +490,7 @@ a.articleInfo:visited{
   display: inline;
 }
 a.articleInfo:hover{
-  color: $ms-color-themePrimary;
+  color: $theme-color;
   text-decoration: none;
   display: inline;
 }
@@ -503,7 +505,7 @@ a.crumb:visited{
   display: inline;
 }
 a.crumb:hover{
-  color: $ms-color-themePrimary;
+  color: $theme-color;
   text-decoration: underline;
   display: inline;
 }
@@ -518,12 +520,27 @@ a.crumbLast:visited{
   display: inline;
 }
 a.crumbLast:hover{
-  color: $ms-color-themePrimary;
+  color: $theme-color;
   text-decoration: none;
   display: inline;
 }
 a.crumbNone{
   color: $ms-color-neutralSecondaryAlt;
+  text-decoration: none;
+  display: inline;
+}
+a.linkBlog:link{
+  color: $theme-color;
+  text-decoration: none;
+  display: inline;
+}
+a.linkBlog:visited{
+  color: $ms-color-neutralSecondary;
+  text-decoration: none;
+  display: inline;
+}
+a.linkBlog:hover{
+  color: $theme-color;
   text-decoration: none;
   display: inline;
 }
@@ -783,7 +800,7 @@ h2.home {
   line-height: 1.3;
 }
 h2.sectionHeader {
-  border-bottom: 4px solid $ms-color-themePrimary;
+  border-bottom: 4px solid $theme-color;
   padding-bottom: 4px;
   font-weight: 400;
   display: inline-block;

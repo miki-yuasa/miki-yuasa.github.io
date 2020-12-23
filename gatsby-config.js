@@ -93,6 +93,7 @@ module.exports = {
               classMap: {
                 "heading[depth=1]": "h1Blog",
                 "heading[depth=2]": "h2Blog",
+                "link": "linkBlog"
                 // paragraph: "para",
               }
             }
