@@ -10,11 +10,14 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
+import defaultOGImage from "../pages/blog/blog-articles/2020/taiyaki.jpg"
+
 function SEO(props: {
   description?: string;
   lang: string;
   meta?: [];
   title?: string;
+  image?: string;
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -32,6 +35,9 @@ function SEO(props: {
   );
 
   const metaDescription = props.description || site.siteMetadata.description;
+
+  const ogImageUrl = site.siteMetadata.url + (props.image || defaultOGImage);
+
 
   return (
     <Helmet
@@ -58,21 +64,33 @@ function SEO(props: {
           content: `website`,
         },
         {
-          name: `twitter:card`,
+          property: `og:image`,
+          content: ogImageUrl,
+        },
+        {
+          property: `twitter:card`,
           content: `summary`,
         },
         {
-          name: `twitter:creator`,
+          property: `twitter:creator`,
           content: site.siteMetadata.author,
         },
         {
-          name: `twitter:title`,
+          property: `twitter:title`,
           content: props.title,
         },
         {
-          name: `twitter:description`,
+          property: `twitter:description`,
           content: metaDescription,
         },
+        {
+          property: `twitter:image`,
+          content: ogImageUrl,
+        },
+        {
+          property: `image`,
+          content: ogImageUrl,
+        }
       ].concat(props.meta!)}
     >
       <meta

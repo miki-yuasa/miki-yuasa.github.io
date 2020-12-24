@@ -26,6 +26,8 @@ const blogArticleTemplate = ({
 
   const frontmatter = markdownRemark?.frontmatter;
 
+  const imagePath = frontmatter?.image && frontmatter?.image?.childImageSharp?.fluid?.src!;
+
   const html = markdownRemark?.html;
 
   const itemsWithHref: CrumbItem[] = [
@@ -74,6 +76,7 @@ const blogArticleTemplate = ({
       lang={lang}
       body={body}
       side={<BlogSidePanes />}
+      image={imagePath!}
     />
   );
 };
@@ -95,6 +98,7 @@ export const pageQuery = graphql`
         image {
           childImageSharp {
             fluid(maxWidth: 760, maxHeight: 450, quality: 50) {
+              src,
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }

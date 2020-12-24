@@ -11,6 +11,7 @@ export const BlogPageTemplate = (props: {
   lang?: string;
   body: JSX.Element | JSX.Element[];
   side: JSX.Element;
+  image: string;
 }) => {
   return (
     <div style={{ background: DefaultPalette.neutralLighter }}>
@@ -19,6 +20,7 @@ export const BlogPageTemplate = (props: {
           title={props.title!}
           description={props.description}
           lang={props.lang}
+          image={props.image}
         />
         <div className="articleFrame">
           <div className="articleBody">{props.body}</div>
