@@ -23,6 +23,7 @@ import { HashTags } from "../components/blog/blogArticleInfo";
 import { CrumbItem } from "../../@types";
 import { BlogBreadCrumb } from "../components/blog/blogBreadCrumb";
 import { BlogSidePanes } from "../components/blog/blogSidePanes"
+import { BlogArticleNav } from "../components/navs/blogArticleNav"
 import { CommentHosting } from "../components/comment/commentHosting";
 
 const blogArticleTemplate = ({
@@ -37,63 +38,6 @@ const blogArticleTemplate = ({
   const frontmatter = markdownRemark?.frontmatter;
 
   const html = markdownRemark?.html;
-
-  const nextFrontmatter: MarkdownRemarkFrontmatter = pageContext.next
-    ?.frontmatter!;
-
-  const prevFrontmatter: MarkdownRemarkFrontmatter = pageContext.previous
-    ?.frontmatter!;
-
-  const nextButton = nextFrontmatter ? (
-    <NavCommandButton href={nextFrontmatter.slug!}>
-      Next <ChevronRightIcon />
-    </NavCommandButton>
-  ) : (
-      <> </>
-    );
-
-  const prevButton = prevFrontmatter ? (
-    <NavCommandButton href={prevFrontmatter.slug!}>
-      <ChevronLeftIcon /> Previous
-    </NavCommandButton>
-  ) : (
-      <> </>
-    );
-
-  const blogTopButton = (
-    <NavCommandButton href="/blog/blog-top">Blog Top</NavCommandButton>
-  );
-
-  const stackStyles: IStackStyles = {
-    root: {
-      overflow: "hidden",
-      width: `100%`,
-    },
-  };
-
-  const stackItemStyles: IStackItemStyles = {
-    root: {
-      alignItems: "center",
-      display: "flex",
-      justifyContent: "center",
-      overflow: "hidden",
-    },
-  };
-
-  const nonShrinkingStackItemStylesButtons: IStackItemStyles = {
-    root: {
-      alignItems: "center",
-      display: "flex",
-      justifyContent: "center",
-      overflow: "hidden",
-      width: 80,
-    },
-  };
-
-  const stackTokens: IStackTokens = {
-    childrenGap: 0,
-    padding: 0,
-  };
 
   const itemsWithHref: CrumbItem[] = [
     { text: "Landing Page", href: "/" },
@@ -125,23 +69,7 @@ const blogArticleTemplate = ({
         <HashTags tags={frontmatter?.tags!} />
       </p>
       <div dangerouslySetInnerHTML={{ __html: html! }} />
-      <Stack horizontal styles={stackStyles} tokens={stackTokens}>
-        <Stack.Item disableShrink styles={nonShrinkingStackItemStylesButtons}>
-          {prevButton}
-        </Stack.Item>
-        <Stack.Item grow styles={stackItemStyles}>
-          {" "}
-        </Stack.Item>
-        <Stack.Item disableShrink styles={nonShrinkingStackItemStylesButtons}>
-          {blogTopButton}
-        </Stack.Item>
-        <Stack.Item grow styles={stackItemStyles}>
-          {" "}
-        </Stack.Item>
-        <Stack.Item disableShrink styles={nonShrinkingStackItemStylesButtons}>
-          {nextButton}
-        </Stack.Item>
-      </Stack>
+      <BlogArticleNav pageContext={pageContext} />
       <br />
       <CommentHosting data={data} />
     </>
