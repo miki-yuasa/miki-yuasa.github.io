@@ -1,29 +1,18 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Image from "gatsby-image";
-import {
-  Stack,
-  IStackStyles,
-  IStackItemStyles,
-  IStackTokens,
-} from "@fluentui/react";
 
 import {
   BlogArticleBySlugQuery,
-  MarkdownRemarkFrontmatter,
   SitePageContext,
 } from "../../@types/graphql-types";
 import { BlogPageTemplate } from "./blogPageTemplate";
-import {
-  ChevronRightIcon,
-  ChevronLeftIcon,
-} from "../components/icons/infoIcons";
-import { NavCommandButton } from "../components/buttons/navCommandButton";
 import { HashTags } from "../components/blog/blogArticleInfo";
 import { CrumbItem } from "../../@types";
 import { BlogBreadCrumb } from "../components/blog/blogBreadCrumb";
-import { BlogSidePanes } from "../components/blog/blogSidePanes"
-import { BlogArticleNav } from "../components/navs/blogArticleNav"
+import { BlogSidePanes } from "../components/blog/blogSidePanes";
+import { BlogMediaShareButton } from "../components/buttons/blogMediaShareButtons";
+import { BlogArticleNav } from "../components/navs/blogArticleNav";
 import { CommentHosting } from "../components/comment/commentHosting";
 
 const blogArticleTemplate = ({
@@ -69,6 +58,7 @@ const blogArticleTemplate = ({
         <HashTags tags={frontmatter?.tags!} />
       </p>
       <div dangerouslySetInnerHTML={{ __html: html! }} />
+      <BlogMediaShareButton data={data} />
       <BlogArticleNav pageContext={pageContext} />
       <br />
       <CommentHosting data={data} />
