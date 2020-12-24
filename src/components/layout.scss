@@ -127,7 +127,7 @@ div.idBox .layoutBody {
 }
 .articleBody {
   display: block;
-  padding: 10px;
+  padding: 40px 10px 10px 10px;
   background: white;
   border-radius: 6px;
   box-shadow: $ms-depth-shadow-8;
@@ -218,14 +218,16 @@ div.idBox .layoutBody {
   }
 }
 
-@media (min-width: 900px) {
+$article-pane-width: 900px;
+
+@media (min-width: $article-pane-width + 60px) {
   .articleBody {
     display: block;
     padding: 40px;
     background: white;
     border-radius: 6px;
     box-shadow: $ms-depth-shadow-8;
-    width: 840px;
+    width: $article-pane-width;
     margin-left: 20px;
     margin-right: 20px;
   }
@@ -234,7 +236,7 @@ div.idBox .layoutBody {
   }
   .articleSide {
     display: flex;
-    width: 840px;
+    width: $article-pane-width;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
@@ -269,7 +271,7 @@ div.idBox .layoutBody {
     margin: 0 -8%;
   }
 }
-@media (min-width: 1170px) {
+@media (min-width: 1270px) {
   .articleFrame {
     display: table;
     margin: 0 auto;
@@ -283,7 +285,7 @@ div.idBox .layoutBody {
     background: white;
     border-radius: 6px;
     box-shadow: $ms-depth-shadow-8;
-    width: 840px;
+    width: $article-pane-width;
   }
   .articleSpace {
     display: table-cell;

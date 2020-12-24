@@ -10,7 +10,7 @@ import { NavCommandButton } from "./navCommandButton";
 export const NextButton = (props: { frontmatter: MarkdownRemarkFrontmatter }) => {
     return (
         <NavCommandButton href={props.frontmatter.slug!}>
-            Next <ChevronRightIcon />
+            Next&nbsp;&nbsp; <ChevronRightIcon />
         </NavCommandButton>
     )
 };
