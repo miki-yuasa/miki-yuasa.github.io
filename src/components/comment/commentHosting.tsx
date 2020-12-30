@@ -5,9 +5,9 @@ import { BlogArticleBySlugQuery } from '../../../@types/graphql-types';
 
 export function CommentHosting(props: { data: BlogArticleBySlugQuery }) {
 
-    const { markdownRemark } = props.data; // data.markdownRemark holds your post data
+    const { mdx } = props.data; // data.mdx holds your post data
 
-    const frontmatter = markdownRemark?.frontmatter;
+    const frontmatter = mdx?.frontmatter;
 
     return (
         <Disqus

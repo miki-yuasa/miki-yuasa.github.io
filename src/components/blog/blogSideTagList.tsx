@@ -9,7 +9,7 @@ import { itemObj } from "../../../@types";
 export const BlogSideTagList = () => {
   const data: BlogTagListQuery = useStaticQuery(graphql`
     query BlogTagList {
-      allMarkdownRemark(
+      allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 1000
       ) {
@@ -24,7 +24,7 @@ export const BlogSideTagList = () => {
     }
   `);
 
-  const articles = data.allMarkdownRemark.edges;
+  const articles = data.allMdx.edges;
 
   const catTagListTemp: string[] = [];
 

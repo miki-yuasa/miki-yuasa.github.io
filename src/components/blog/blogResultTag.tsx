@@ -16,7 +16,7 @@ export const BlogResPageTemplate = (props: {
 }) => {
   const tagName = props.pageContext.slug;
 
-  const articles: Article[] = props.data.allMarkdownRemark.edges;
+  const articles: Article[] = props.data.allMdx.edges;
 
   const iconName: string = "tagSolid";
 

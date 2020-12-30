@@ -18,7 +18,7 @@ const BlogTop = () => {
         }
       }
 
-      allMarkdownRemark(
+      allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 1000
       ) {
@@ -37,7 +37,7 @@ const BlogTop = () => {
     }
   `);
 
-  const articles = data.allMarkdownRemark.edges;
+  const articles = data.allMdx.edges;
 
   const itemsWithHref: CrumbItem[] = [
     { text: "Landing Page", href: "/" },

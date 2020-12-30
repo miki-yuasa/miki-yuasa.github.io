@@ -4,7 +4,7 @@ import { Nav, INavLink, INavStyles, INavLinkGroup } from 'office-ui-fabric-react
 import { BlogArticleBySlugQuery } from "../../../@types/graphql-types";
 
 export const BlogTocPane = (props: { data: BlogArticleBySlugQuery }) => {
-    const toc = props.data.markdownRemark?.tableOfContents?.items;
+    const toc = props.data.mdx?.tableOfContents?.items;
 
     const tocHeading = toc
 }

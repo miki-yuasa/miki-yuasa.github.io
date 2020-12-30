@@ -27,7 +27,7 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(
+    allMdx(
       filter: { frontmatter: { tags: { eq: $slug } } }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 1000

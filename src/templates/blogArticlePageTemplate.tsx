@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Image from "gatsby-image";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import {
   BlogArticleBySlugQuery,
@@ -22,13 +23,13 @@ const blogArticleTemplate = ({
   data: BlogArticleBySlugQuery;
   pageContext: SitePageContext;
 }) => {
-  const { markdownRemark } = data; // data.markdownRemark holds your post data
+  const { mdx } = data; // data.mdx holds your post data
 
-  const frontmatter = markdownRemark?.frontmatter;
+  const frontmatter = mdx?.frontmatter;
 
   const imagePath = frontmatter?.image && frontmatter?.image?.childImageSharp?.fluid?.src!;
 
-  const html = markdownRemark?.html;
+  const html = mdx?.body;
 
   const itemsWithHref: CrumbItem[] = [
     { text: "Landing Page", href: "/" },
@@ -59,7 +60,7 @@ const blogArticleTemplate = ({
       <p>
         <HashTags tags={frontmatter?.tags!} />
       </p>
-      <div dangerouslySetInnerHTML={{ __html: html! }} />
+      <MDXRenderer>{html}</MDXRenderer>
       <BlogMediaShareButton data={data} />
       <BlogArticleNav pageContext={pageContext} />
       <br />
@@ -85,13 +86,9 @@ export default blogArticleTemplate;
 
 export const pageQuery = graphql`
   query BlogArticleBySlug($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
-      tableOfContents(
-        absolute: false,
-        pathToSlugField: "frontmatter.slug",
-        maxDepth: 2
-        )
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      body
+      tableOfContents,
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         slug

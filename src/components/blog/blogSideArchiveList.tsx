@@ -9,7 +9,7 @@ import { itemObj } from "../../../@types";
 export const BlogSideArchiveList = () => {
   const data: BlogArchiveListQuery = useStaticQuery(graphql`
     query BlogArchiveList {
-      allMarkdownRemark(
+      allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 1000
       ) {
@@ -24,7 +24,7 @@ export const BlogSideArchiveList = () => {
     }
   `);
 
-  const articles = data.allMarkdownRemark.edges;
+  const articles = data.allMdx.edges;
 
   const yearMonObjListTemp: itemObj[] = articles.map((article) => {
     const dateStr: string[] = article.node.frontmatter?.date.split("-");

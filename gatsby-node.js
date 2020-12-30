@@ -28,7 +28,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const result = await graphql(`
     {
-      allMarkdownRemark(
+      allMdx(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
@@ -55,7 +55,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  const articles = result.data.allMarkdownRemark.edges;
+  const articles = result.data.allMdx.edges;
 
   // individual article page
   articles.forEach((article, index) => {

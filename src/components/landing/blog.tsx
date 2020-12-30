@@ -12,7 +12,7 @@ import "../layout.scss";
 export default function Blog() {
   const data: BlogCardListQuery = useStaticQuery(graphql`
     query BlogCardList {
-      allMarkdownRemark(
+      allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 5
       ) {
@@ -38,7 +38,7 @@ export default function Blog() {
     }
   `);
 
-  const articleCards: JSX.Element[] = data.allMarkdownRemark.edges.map(
+  const articleCards: JSX.Element[] = data.allMdx.edges.map(
     (edge) => {
       const frontmatter = edge.node.frontmatter;
 

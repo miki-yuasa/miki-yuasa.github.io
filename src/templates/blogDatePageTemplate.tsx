@@ -27,7 +27,7 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(
+    allMdx(
       filter: {
         frontmatter: { date: { gte: $periodStartDate, lt: $periodEndDate } }
       }

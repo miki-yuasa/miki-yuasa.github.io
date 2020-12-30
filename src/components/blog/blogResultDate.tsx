@@ -41,7 +41,7 @@ export const BlogResDatePageTemplate = (props: {
       </a>
     );
 
-  const articles: Article[] = props.data.allMarkdownRemark.edges;
+  const articles: Article[] = props.data.allMdx.edges;
 
   const iconName: string = "Calendar";
 
