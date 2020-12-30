@@ -87,7 +87,11 @@ export const pageQuery = graphql`
   query BlogArticleBySlug($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
-      tableOfContents(pathToSlugField: "frontmatter.slug")
+      tableOfContents(
+        absolute: false,
+        pathToSlugField: "frontmatter.slug",
+        maxDepth: 2
+        )
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         slug
