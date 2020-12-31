@@ -12,6 +12,7 @@ import { HashTags } from "../components/blog/blogArticleInfo";
 import { CrumbItem } from "../../@types";
 import { BlogBreadCrumb } from "../components/blog/blogBreadCrumb";
 import { BlogSidePanes } from "../components/blog/blogSidePanes";
+import { BlogTocPane } from "../components/navs/blogTocPane"
 import { BlogMediaShareButton } from "../components/buttons/blogMediaShareButtons";
 import { BlogArticleNav } from "../components/navs/blogArticleNav";
 import { CommentHosting } from "../components/comment/commentHosting";
@@ -60,7 +61,7 @@ const blogArticleTemplate = ({
       <p>
         <HashTags tags={frontmatter?.tags!} />
       </p>
-      <MDXRenderer>{html}</MDXRenderer>
+      <MDXRenderer>{html!}</MDXRenderer>
       <BlogMediaShareButton data={data} />
       <BlogArticleNav pageContext={pageContext} />
       <br />
@@ -76,7 +77,7 @@ const blogArticleTemplate = ({
       description={frontmatter?.description}
       lang={lang}
       body={body}
-      side={<BlogSidePanes />}
+      side={<><BlogSidePanes /> <BlogTocPane mdx={mdx!} /></>}
       image={imagePath!}
     />
   );
