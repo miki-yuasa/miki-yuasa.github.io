@@ -296,10 +296,11 @@ $article-pane-width: 900px;
   }
   .articleSide {
     display: table-cell;
-    width: 250px;
-    position: absolute;
-    margin: 0;
-    padding: 0;
+    max-width: 250px;
+    //position: absolute;
+    //margin: 0;
+    //padding: 0;
+    //height: 100%; 
   }
   .articleSidePane {
     display: block;
@@ -315,6 +316,7 @@ $article-pane-width: 900px;
     border-radius: 6px;
     margin-bottom: 20px;
     position: sticky;
+    top: 0;
   }
   .articleSidePaneSpace {
     display: none;
