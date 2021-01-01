@@ -276,14 +276,14 @@ $article-pane-width: 900px;
 }
 @media (min-width: 1270px) {
   .articleFrame {
-    display: table;
+    display: flex;
     margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 40px;
     width: 1110px;
     z-index: -20;
   }
   .articleBody {
-    display: table-cell;
+  //  display: table-cell;
     padding: 40px;
     background: white;
     border-radius: 6px;
@@ -291,24 +291,36 @@ $article-pane-width: 900px;
     width: $article-pane-width;
   }
   .articleSpace {
-    display: table-cell;
-    width: 20px;
+ //   display: table-cell;
+  //  width: 20px;
   }
   .articleSide {
-    display: table-cell;
+  //  display: table-cell;
     max-width: 250px;
-    //position: absolute;
-    //margin: 0;
+    margin-top: 0px;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    //align-items: flex-start;
+    align-self: flex-start;
     //padding: 0;
-    //height: 100%; 
+    height: 100%; 
+    position: sticky;
   }
+  /*
   .articleSidePane {
     display: block;
     box-shadow: $ms-depth-shadow-8;
     background: white;
     border-radius: 6px;
     margin-bottom: 20px;
+    height: auto;
+    width: 250px;
+    //max-height: 300px;
   }
+    */
+
   .articleSidePaneToc {
     display: block;
     box-shadow: $ms-depth-shadow-8;
@@ -317,6 +329,7 @@ $article-pane-width: 900px;
     margin-bottom: 20px;
     position: sticky;
     top: 0;
+    max-height: 500px;
   }
   .articleSidePaneSpace {
     display: none;

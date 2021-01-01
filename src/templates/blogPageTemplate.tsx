@@ -2,6 +2,7 @@ import React from "react";
 import { DefaultPalette } from "@fluentui/react";
 
 import { BlogHeader } from "../components/blog/blogHeader";
+import { BlogSidePanes } from "../components/blog/blogSidePanes";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
@@ -10,8 +11,8 @@ export const BlogPageTemplate = (props: {
   description?: string;
   lang?: string;
   body: JSX.Element | JSX.Element[];
-  side: JSX.Element;
-  image: string;
+  side?: JSX.Element;
+  image?: string;
 }) => {
   return (
     <div style={{ background: DefaultPalette.neutralLighter }}>
@@ -27,6 +28,7 @@ export const BlogPageTemplate = (props: {
           <div className="articleSpace"> </div>
           <div className="articleSide">{props.side}</div>
         </div>
+        <BlogSidePanes />
         <div style={{ height: "150px" }} />
       </Layout>
     </div>
