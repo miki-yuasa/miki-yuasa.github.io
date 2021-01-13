@@ -294,24 +294,31 @@ $article-pane-width: 900px;
     width: 1110px;
     z-index: -20;
   }
-  /*
   .articleBody {
   //  display: table-cell;
+   /*
     padding: 40px;
     background: white;
     border-radius: 6px;
     box-shadow: $ms-depth-shadow-8;
+    */
     width: $article-pane-width;
+    margin-left: 0;
+    margin-right: 0;
   }
+    /*
+
   .articleSpace {
  //   display: table-cell;
   //  width: 20px;
   }
- 
+ */
   .articleSide {
   //  display: table-cell;
-    max-width: 250px;
+ //   max-width: 250px;
     margin-top: 0px;
+    padding-top: 20px;
+    /*
     padding-top: 0px;
     display: flex;
     flex-direction: column;
@@ -321,8 +328,9 @@ $article-pane-width: 900px;
     //padding: 0;
     height: 100%; 
     position: sticky;
+    */
   }
-  */
+  
   /*
   .articleSidePane {
     display: block;
@@ -344,7 +352,8 @@ $article-pane-width: 900px;
     margin-bottom: 20px;
     position: sticky;
     top: 0;
-    max-height: 500px;
+    max-height: 400px;
+    width: 250px;
   }
   .articleSidePaneSpace {
     display: none;

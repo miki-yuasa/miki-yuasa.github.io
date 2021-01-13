@@ -10,9 +10,6 @@ export const BlogTocPane = (props: { data: BlogArticleBySlugQuery }) => {
         return (<></>);
     }
     else {
-
-
-
         const tocOrdered = tocItems.map(tocItem => {
             if (tocItem.links === undefined) {
                 return {
