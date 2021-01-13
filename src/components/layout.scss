@@ -351,7 +351,7 @@ $article-pane-width: 900px;
     margin-bottom: 20px;
     position: sticky;
     top: 0;
-    max-height: 400px;
+    max-height: 380px;
     width: 250px;
     padding-top: 30px;
   }
@@ -821,6 +821,7 @@ h1 {
   padding-bottom: .5rem;
   border-bottom: 1px solid #ccc;
   font-weight: bold;
+  padding-top: 0.7rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-family: "Lato", Arial, Helvetica, sans-serif;
