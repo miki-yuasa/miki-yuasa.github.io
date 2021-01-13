@@ -317,7 +317,6 @@ $article-pane-width: 900px;
   //  display: table-cell;
  //   max-width: 250px;
     margin-top: 0px;
-    padding-top: 20px;
     /*
     padding-top: 0px;
     display: flex;
@@ -354,6 +353,7 @@ $article-pane-width: 900px;
     top: 0;
     max-height: 400px;
     width: 250px;
+    padding-top: 30px;
   }
   .articleSidePaneSpace {
     display: none;
