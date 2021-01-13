@@ -33,7 +33,7 @@ export const BlogMediaShareButton = (props: { data: BlogArticleBySlugQuery }) =>
             </div>
 
             <div className="articleMediaButton">
-                <TwitterShareButton title={articleTitle} via="cbdbcp" url={articleUrl}>
+                <TwitterShareButton title={articleTitle} url={articleUrl}>
                     <TwitterIcon size={32} round />
                 </TwitterShareButton>
             </div>
