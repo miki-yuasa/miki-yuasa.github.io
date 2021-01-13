@@ -138,6 +138,11 @@ div.idBox .layoutBody {
 .articleSpace {
   display: none;
 }
+.articleBottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
 .articleSide {
   display: inline-flex;
   justify-content: space-between;
@@ -234,8 +239,14 @@ $article-pane-width: 900px;
     margin-left: 20px;
     margin-right: 20px;
   }
+  .articleBottom {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
   .articleSpace {
     display: none;
+    justify-content: space-between;
   }
   .articleSide {
     display: flex;
@@ -275,6 +286,7 @@ $article-pane-width: 900px;
   }
 }
 @media (min-width: 1270px) {
+   
   .articleFrame {
     display: flex;
     margin: 0 auto;
@@ -282,6 +294,7 @@ $article-pane-width: 900px;
     width: 1110px;
     z-index: -20;
   }
+  /*
   .articleBody {
   //  display: table-cell;
     padding: 40px;
@@ -294,6 +307,7 @@ $article-pane-width: 900px;
  //   display: table-cell;
   //  width: 20px;
   }
+ 
   .articleSide {
   //  display: table-cell;
     max-width: 250px;
@@ -308,6 +322,7 @@ $article-pane-width: 900px;
     height: 100%; 
     position: sticky;
   }
+  */
   /*
   .articleSidePane {
     display: block;

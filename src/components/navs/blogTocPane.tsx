@@ -1,10 +1,10 @@
 import React from "react";
 import { Nav, INavLink, INavStyles, INavLinkGroup } from 'office-ui-fabric-react/lib/Nav';
 
-import { Mdx } from "../../../@types/graphql-types";
+import { BlogArticleBySlugQuery } from "../../../@types/graphql-types";
 
-export const BlogTocPane = (props: { mdx: Mdx }) => {
-    const tocItems = props.mdx?.tableOfContents?.items;
+export const BlogTocPane = (props: { data: BlogArticleBySlugQuery }) => {
+    const tocItems = props.data.mdx?.tableOfContents?.items;
 
     if (tocItems === undefined) {
         return (<></>);

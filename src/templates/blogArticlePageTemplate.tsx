@@ -77,7 +77,7 @@ const blogArticleTemplate = ({
       description={frontmatter?.description}
       lang={lang}
       body={body}
-      side={<> <BlogTocPane mdx={mdx!} /><BlogSidePanes /></>}
+      side={<> <BlogTocPane data={data} /></>}
       image={imagePath!}
     />
   );

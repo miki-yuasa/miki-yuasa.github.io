@@ -59,7 +59,6 @@ const BlogTop = () => {
       title={`Miki's Blog Top Page`}
       description={`The top page of Miki's blog`}
       body={body}
-      side={<BlogSidePanes />}
     />
   );
 };
