@@ -86,7 +86,6 @@ export const BlogResPageTemplate = (props: {
       title={title}
       description={description}
       body={body}
-      side={<BlogSidePanes />}
     />
   );
 };

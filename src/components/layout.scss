@@ -214,6 +214,10 @@ div.idBox .layoutBody {
     margin-left: 10px;
     margin-right: 10px;
   }
+  .articleBottom {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   .articleSide {
     padding: 10px;
   }
@@ -305,6 +309,11 @@ $article-pane-width: 900px;
     width: $article-pane-width;
     margin-left: 0;
     margin-right: 0;
+  }
+  .articleBottom {
+    display: flex;
+    margin-left: 0px;
+    margin-right: 0px;
   }
     /*
 
