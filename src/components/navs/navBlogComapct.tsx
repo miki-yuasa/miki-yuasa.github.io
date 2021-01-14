@@ -85,7 +85,7 @@ export function NavBlogCompact() {
     <Stack horizontal styles={stackStyles} tokens={innerStackTokens}>
       <Stack.Item disableShrink styles={nonShrinkingStackItemStylesBlogTop}>
         <CommandButton
-          text="Miki's Blog"
+          text="Mikihisa's Blog"
           href="/blog/blog-top"
           styles={blogHomeButtonStyles}
         />
@@ -98,8 +98,8 @@ export function NavBlogCompact() {
       </Stack.Item>
       <Stack.Item disableShrink styles={nonShrinkingStackItemStylesReturnHome}>
         <NavCommandButton
-          text="Landing Page"
-          title="Return to the landing page"
+          text="Profile"
+          title="Return to Profile"
           href="/"
         />
       </Stack.Item>

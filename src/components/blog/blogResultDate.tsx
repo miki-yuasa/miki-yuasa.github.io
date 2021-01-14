@@ -48,7 +48,7 @@ export const BlogResDatePageTemplate = (props: {
   const itemsFirst: CrumbItem[] = [
     { text: "Landing Page", href: "/" },
     { text: "Blog Top", href: "/blog/blog-top" },
-    { text: "Archives" },
+    { text: "Archives", href: "#archives" },
   ];
 
   const itemsWithHref: CrumbItem[] = isMonth

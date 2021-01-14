@@ -5,7 +5,6 @@ import {
   BlogTagArticleListQuery,
   SitePageContext,
 } from "../../../@types/graphql-types";
-import { BlogSidePanes } from "./blogSidePanes";
 import { BlogResultBody } from "./blogResultBody";
 import { Article, CrumbItem } from "../../../@types";
 import { BlogBreadCrumb } from "./blogBreadCrumb";
@@ -48,7 +47,7 @@ export const BlogResPageTemplate = (props: {
   const itemsFirst: CrumbItem[] = [
     { text: "Landing Page", href: "/" },
     { text: "Blog Top", href: "/blog/blog-top" },
-    { text: "Tags" },
+    { text: "Tags", href: "#tags" },
   ];
 
   const itemsWithHref: CrumbItem[] = isTag

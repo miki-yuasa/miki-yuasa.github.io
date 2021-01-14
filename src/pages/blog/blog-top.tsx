@@ -39,7 +39,7 @@ const BlogTop = () => {
   const articles = data.allMdx.edges;
 
   const itemsWithHref: CrumbItem[] = [
-    { text: "Landing Page", href: "/" },
+    { text: "Home Page", href: "/" },
     { text: "Blog Top" },
   ];
 

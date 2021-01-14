@@ -6,10 +6,10 @@ import { BlogSideArchiveList } from "./blogSideArchiveList";
 export const BlogSidePanes = () => {
   return (
     <>
-      <div className="articleSidePane">
+      <div className="articleSidePane" id='tags'>
         <BlogSideTagList />
       </div>
-      <div className="articleSidePane">
+      <div className="articleSidePane" id="archives">
         <BlogSideArchiveList />
       </div>
     </>
