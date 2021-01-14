@@ -1,7 +1,6 @@
 import React from "react";
 import { DefaultPalette } from "@fluentui/react";
 
-import CV from "./CV_Mikihisa_Yuasa.pdf";
 import SectionTemplate from "../../templates/sectionTemplate";
 import "../layout.scss";
 
@@ -12,7 +11,7 @@ export default function Contact() {
       <p>
         CV can be downloaded from{" "}
         <a
-          href={CV}
+          href='/CV_Mikihisa_Yuasa.pdf'
           target="_blank"
           rel="noreferrer"
           style={{ color: DefaultPalette.neutralPrimary }}

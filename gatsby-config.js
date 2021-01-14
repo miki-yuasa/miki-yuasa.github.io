@@ -5,6 +5,7 @@ module.exports = {
     author: `Mikihisa Yuasa`,
     url: "https://mikyu.bitbucket.io",
     siteUrl: "https://mikyu.bitbucket.io",
+    image: "/assets/homebg_fhd_filtered.png"
   },
   flags: {
     //PRESERVE_WEBPACK_CACHE: true,

@@ -4,7 +4,6 @@ import { graphql, useStaticQuery } from "gatsby";
 import { BlogPageTemplate } from "../../templates/blogPageTemplate";
 import { BlogListArticles } from "../../components/blog/blogListArticles";
 import { BlogArticleListQuery } from "../../../@types/graphql-types";
-import { BlogSidePanes } from "../../components/blog/blogSidePanes";
 import { BlogBreadCrumb } from "../../components/blog/blogBreadCrumb";
 import { CrumbItem } from "../../../@types";
 
@@ -56,8 +55,8 @@ const BlogTop = () => {
 
   return (
     <BlogPageTemplate
-      title={`Miki's Blog Top Page`}
-      description={`The top page of Miki's blog`}
+      title={`Mikihisa's Blog Top Page`}
+      description={`The top page of Mikihisa's blog`}
       body={body}
     />
   );

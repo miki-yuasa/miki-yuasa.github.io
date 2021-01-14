@@ -43,7 +43,7 @@ const Layout = (props: { children: React.ReactNode; header?: JSX.Element }) => {
         <footer>
           Last updated: {data.site.buildTime}
           <br />
-          Copyright © {new Date().getFullYear()} Mikihisa Yuasa | All Rights
+          Copyright © 2020 - {new Date().getFullYear()} Mikihisa Yuasa | All Rights
           Reserved
           <br />
           Built with {` `}{" "}

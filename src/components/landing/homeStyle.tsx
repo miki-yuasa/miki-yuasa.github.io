@@ -5,7 +5,6 @@ import BackgroundImage from "gatsby-background-image";
 
 import MediaButton from "../buttons/mediaButton";
 import DownloadButton from "../buttons/dlButton";
-import CV from "./CV_Mikihisa_Yuasa.pdf";
 
 const BackgroundSection = () => (
   <StaticQuery
@@ -41,7 +40,7 @@ const BackgroundSection = () => (
               Wisconsin-Madison.
             </p>
 
-            <DownloadButton href={CV} title="Download CV" />
+            <DownloadButton href='/CV_Mikihisa_Yuasa.pdf' title="Download CV" />
 
             <br />
             <br />

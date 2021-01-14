@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import { DefaultPalette } from "@fluentui/react";
 
 import Image from "../image";
-import CV from "./CV_Mikihisa_Yuasa.pdf";
 import "../layout.scss";
 
 export default function About() {
@@ -71,7 +70,7 @@ export default function About() {
                 <dt>CV:</dt>
                 <dd>
                   <a
-                    href={CV}
+                    href='/CV_Mikihisa_Yuasa.pdf'
                     target="_blank"
                     rel="noreferrer"
                     style={{ color: DefaultPalette.neutralLight }}
