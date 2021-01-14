@@ -6,7 +6,7 @@
   font-family: en_num;
   src: url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
   unicode-range: U+0000-00ff;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 $theme-color: $ms-color-themePrimary;
@@ -64,16 +64,19 @@ div.idBox .layoutBody {
   margin-top: -80px;
   padding-top: 80px;
 }
+
+$section_font_size: 0.9rem;
+
 .sectionParent {
   font-family: "Lato", Helvetica, sans-serif;
-  font-size: 1rem;
+  font-size: $section_font_size;
   padding-top: 60px;
   padding-bottom: 60px;
   background: $ms-color-neutralLighter;
 }
 .sectionParentAbout {
   font-family: "Lato", Helvetica, sans-serif;
-  font-size: 1rem;
+  font-size: $section_font_size;
   padding-top: 60px;
   padding-bottom: 120px;
   background: $ms-color-neutralDark;
@@ -398,6 +401,7 @@ footer {
   text-align: center;
   font-family: "Lato", Helvetica, sans-serif;
   padding: 30px;
+  font-size: $section_font_size;
 }
 header.wide {
   display: none;
@@ -427,7 +431,7 @@ header.wide {
   border-radius: 0% 0% 4px 4px;
   box-shadow: $ms-depth-shadow-16;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   header.wide {
     display: block;
     background: white;

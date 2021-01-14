@@ -3586,7 +3586,7 @@ export type BlogCardListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type BlogCardListQuery = { allMdx: { edges: Array<{ node: { frontmatter?: Maybe<(
-          Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>
+          Pick<MdxFrontmatter, 'date' | 'title' | 'tags' | 'slug'>
           & { image?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_WithWebp_TracedSvgFragment> }> }> }
         )> } }> } };
 

@@ -7,6 +7,7 @@ import SEO from "../components/seo";
 import Home from "../components/landing/home";
 import About from "../components/landing/about";
 import Research from "../components/landing/research";
+import Publication from "../components/landing/publications"
 import Software from "../components/landing/software";
 import Blog from "../components/landing/blog";
 import Contact from "../components/landing/contact";
@@ -47,6 +48,7 @@ const IndexPage = (props: { data: IndexPageQuery }) => (
     <Home />
     <About />
     <Research />
+    <Publication />
     <Software />
     <Blog />
     <Contact />

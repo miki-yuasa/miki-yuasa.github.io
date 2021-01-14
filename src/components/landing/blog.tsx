@@ -21,7 +21,6 @@ export default function Blog() {
             frontmatter {
               date(formatString: "YYYY-MM-DD")
               title
-              description
               tags
               slug
               image {

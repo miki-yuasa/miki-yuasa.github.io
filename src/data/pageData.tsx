@@ -11,6 +11,9 @@ const pageData: Page[] = [
     name: "Research",
   },
   {
+    name: "Publications"
+  },
+  {
     name: "Software",
   },
   {
