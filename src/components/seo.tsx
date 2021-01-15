@@ -5,12 +5,20 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, title }) {
+import defaultOGImage from "../pages/blog/blog-articles/2020/taiyaki.jpg"
+
+function SEO(props: {
+  description?: string;
+  lang: string;
+  meta?: [];
+  title?: string;
+  image?: string;
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -24,16 +32,19 @@ function SEO({ description, lang, meta, title }) {
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = props.description || site.siteMetadata.description;
+
+  const ogImageUrl = site.siteMetadata.url + (props.image || defaultOGImage);
+
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: props.lang,
       }}
-      title={title}
+      title={props.title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
@@ -42,7 +53,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: props.title,
         },
         {
           property: `og:description`,
@@ -53,39 +64,54 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
-          name: `twitter:card`,
+          property: `og:image`,
+          content: ogImageUrl,
+        },
+        {
+          property: `twitter:card`,
           content: `summary`,
         },
         {
-          name: `twitter:creator`,
+          property: `twitter:creator`,
           content: site.siteMetadata.author,
         },
         {
-          name: `twitter:title`,
-          content: title,
+          property: `twitter:title`,
+          content: props.title,
         },
         {
-          name: `twitter:description`,
+          property: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+        {
+          property: `twitter:image`,
+          content: ogImageUrl,
+        },
+        {
+          property: `image`,
+          content: ogImageUrl,
+        }
+      ].concat(props.meta!)}
     >
-      <meta name="google-site-verification" content="tzF2_DyfEXHKGCEugl6gKsG3x_TALojEYEmkj_rlcLA" />
+      <meta
+        name="google-site-verification"
+        content="tzF2_DyfEXHKGCEugl6gKsG3x_TALojEYEmkj_rlcLA"
+      />
     </Helmet>
-  )
+  );
 }
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-}
+};
 
-export default SEO
+export default SEO;

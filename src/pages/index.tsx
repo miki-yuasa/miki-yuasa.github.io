@@ -4,11 +4,15 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Home from "./Home/home";
-import About from "./About/about";
-import Research from "./Research/research";
-import Software from "./Software/software";
-import Contact from "./Contact/contact";
+import Home from "../components/landing/home";
+import About from "../components/landing/about";
+import Research from "../components/landing/research";
+import Publication from "../components/landing/publications"
+import Software from "../components/landing/software";
+import Blog from "../components/landing/blog";
+import Contact from "../components/landing/contact";
+import { IndexPageQuery } from "../../@types/graphql-types";
+import "../components/layout.scss";
 
 loadTheme({
   defaultFontStyle: { fontFamily: "Lato, Helvetica" },
@@ -38,13 +42,15 @@ loadTheme({
   },
 });
 
-const IndexPage = ({ data }) => (
+const IndexPage = (props: { data: IndexPageQuery }) => (
   <Layout>
-    <SEO title={data.site.siteMetadata.title} />
+    <SEO title={props.data.site?.siteMetadata?.title!} />
     <Home />
     <About />
     <Research />
+    <Publication />
     <Software />
+    <Blog />
     <Contact />
   </Layout>
 );
@@ -52,10 +58,11 @@ const IndexPage = ({ data }) => (
 export default IndexPage;
 
 export const query = graphql`
-  query IndexPageQuery {
+  query IndexPage {
     site {
       siteMetadata {
         title
+        description
       }
     }
   }
