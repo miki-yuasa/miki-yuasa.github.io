@@ -24,6 +24,6 @@ export const PrevButton = (props: { frontmatter: MarkdownRemarkFrontmatter }) =>
 };
 
 export const BlogTopButton = () => {
-    return <NavCommandButton href="/blog/blog-top">Blog Top</NavCommandButton>
+    return <NavCommandButton href="/blog">Blog Top</NavCommandButton>
 
 };

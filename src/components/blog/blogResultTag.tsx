@@ -45,8 +45,8 @@ export const BlogResPageTemplate = (props: {
     );
 
   const itemsFirst: CrumbItem[] = [
-    { text: "Landing Page", href: "/" },
-    { text: "Blog Top", href: "/blog/blog-top" },
+    { text: "Home", href: "/" },
+    { text: "Blog", href: "/blog" },
     { text: "Tags", href: "#tags" },
   ];
 

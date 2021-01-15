@@ -71,7 +71,7 @@ export default function Blog() {
       </p>
       <div className="docCard">{articleCards}</div>
       <p style={{ marginTop: 20 }}>
-        <NavCommandButton href="/blog/blog-top" styles={buttonStyles}>
+        <NavCommandButton href="/blog" styles={buttonStyles}>
           <b>
             <DoubleChevronRightIcon /> Find out more......
           </b>

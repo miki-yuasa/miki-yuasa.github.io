@@ -11,7 +11,6 @@ import { BlogPageTemplate } from "./blogPageTemplate";
 import { HashTags } from "../components/blog/blogArticleInfo";
 import { CrumbItem } from "../../@types";
 import { BlogBreadCrumb } from "../components/blog/blogBreadCrumb";
-import { BlogSidePanes } from "../components/blog/blogSidePanes";
 import { BlogTocPane } from "../components/navs/blogTocPane"
 import { BlogMediaShareButton } from "../components/buttons/blogMediaShareButtons";
 import { BlogArticleNav } from "../components/navs/blogArticleNav";
@@ -33,8 +32,8 @@ const blogArticleTemplate = ({
   const html = mdx?.body;
 
   const itemsWithHref: CrumbItem[] = [
-    { text: "Landing Page", href: "/" },
-    { text: "Blog Top", href: "/blog/blog-top" },
+    { text: "Home", href: "/" },
+    { text: "Blog", href: "/blog" },
     { text: "Articles" },
     { text: frontmatter?.title! },
   ];

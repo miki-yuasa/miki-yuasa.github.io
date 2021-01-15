@@ -30,6 +30,18 @@ type itemsObj = {
   items: string[];
 };
 
+type CountedItemObj = {
+  key: string;
+  item: string;
+  totalCount: number;
+};
+
+type CountedItemsObj = {
+  key: string;
+  items: string[];
+  totalCount: number;
+};
+
 type GroupedInfo = {
   key: string;
   items: string[];

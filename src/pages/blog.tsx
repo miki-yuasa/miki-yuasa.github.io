@@ -1,11 +1,11 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { BlogPageTemplate } from "../../templates/blogPageTemplate";
-import { BlogListArticles } from "../../components/blog/blogListArticles";
-import { BlogArticleListQuery } from "../../../@types/graphql-types";
-import { BlogBreadCrumb } from "../../components/blog/blogBreadCrumb";
-import { CrumbItem } from "../../../@types";
+import { BlogPageTemplate } from "../templates/blogPageTemplate";
+import { BlogListArticles } from "../components/blog/blogListArticles";
+import { BlogArticleListQuery } from "../../@types/graphql-types";
+import { BlogBreadCrumb } from "../components/blog/blogBreadCrumb";
+import { CrumbItem } from "../../@types";
 
 const BlogTop = () => {
   const data: BlogArticleListQuery = useStaticQuery(graphql`
@@ -39,8 +39,8 @@ const BlogTop = () => {
   const articles = data.allMdx.edges;
 
   const itemsWithHref: CrumbItem[] = [
-    { text: "Home Page", href: "/" },
-    { text: "Blog Top" },
+    { text: "Home", href: "/" },
+    { text: "Blog" },
   ];
 
   const body = (
@@ -55,7 +55,7 @@ const BlogTop = () => {
 
   return (
     <BlogPageTemplate
-      title={`Mikihisa's Blog Top Page`}
+      title={`Mikihisa's Blog`}
       description={`The top page of Mikihisa's blog`}
       body={body}
     />

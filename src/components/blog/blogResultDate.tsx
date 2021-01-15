@@ -5,7 +5,6 @@ import {
   BlogTagArticleListQuery,
   SitePageContext,
 } from "../../../@types/graphql-types";
-import { BlogSidePanes } from "./blogSidePanes";
 import { BlogResultBody } from "./blogResultBody";
 import { Article, CrumbItem } from "../../../@types";
 import { BlogBreadCrumb } from "./blogBreadCrumb";
@@ -46,8 +45,8 @@ export const BlogResDatePageTemplate = (props: {
   const iconName: string = "Calendar";
 
   const itemsFirst: CrumbItem[] = [
-    { text: "Landing Page", href: "/" },
-    { text: "Blog Top", href: "/blog/blog-top" },
+    { text: "Home", href: "/" },
+    { text: "Blog", href: "/blog" },
     { text: "Archives", href: "#archives" },
   ];
 

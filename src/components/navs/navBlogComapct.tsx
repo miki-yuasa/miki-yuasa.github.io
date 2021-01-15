@@ -50,7 +50,7 @@ const nonShrinkingStackItemStylesBlogTop: IStackItemStyles = {
     height: itemHeight,
     justifyContent: "center",
     overflow: "hidden",
-    width: 200,
+    width: 250,
   },
 };
 
@@ -86,7 +86,7 @@ export function NavBlogCompact() {
       <Stack.Item disableShrink styles={nonShrinkingStackItemStylesBlogTop}>
         <CommandButton
           text="Mikihisa's Blog"
-          href="/blog/blog-top"
+          href="/blog/"
           styles={blogHomeButtonStyles}
         />
       </Stack.Item>
@@ -98,8 +98,8 @@ export function NavBlogCompact() {
       </Stack.Item>
       <Stack.Item disableShrink styles={nonShrinkingStackItemStylesReturnHome}>
         <NavCommandButton
-          text="Profile"
-          title="Return to Profile"
+          text="Home"
+          title="Return to Home"
           href="/"
         />
       </Stack.Item>

@@ -22,7 +22,7 @@ export default function Software() {
     <SectionTemplate title="Software">
       <p>
         These links are for the software repositories of my past research and
-        personal projects hosted on Bitbucket. The codes for some on-going
+        personal projects hosted on GitHub and Bitbucket. The codes for some on-going
         projects have restricted access for internal use.
       </p>
       <div className="docCard">{repoList}</div>
