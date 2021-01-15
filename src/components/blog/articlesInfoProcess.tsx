@@ -1,5 +1,4 @@
 import React from "react";
-import { DefaultPalette } from "@fluentui/react";
 
 import {
   FolderIcon,
@@ -109,10 +108,8 @@ export function getFormatedTagList(itemObjArray: CountedItemsObj[]) {
 
 export function getFormattedList({
   itemObjArray,
-  tagged,
 }: {
   itemObjArray: itemsObj[];
-  tagged: boolean;
 }) {
 
   const outList: React.ReactNode[] = itemObjArray
@@ -120,9 +117,7 @@ export function getFormattedList({
       return a.key > b.key ? 1 : -1;
     })
     .map((itemObj) => {
-      const toKey: string = tagged
-        ? `/blog/tags/${itemObj.key.toLowerCase()}`
-        : `/blog/archives/${itemObj.key.toLowerCase()}`;
+      const toKey: string = `/blog/archives/${itemObj.key.toLowerCase()}`;
 
       const itemList: React.ReactNode[] = itemObj.items
         .sort((a, b) => {
@@ -130,7 +125,7 @@ export function getFormattedList({
         })
         .map((item) => {
           const toItem: string = `${toKey}/${item.toLowerCase()}/`;
-          const itemIcon = tagged ? <TagIcon /> : <CalendarIcon />;
+          const itemIcon = <CalendarIcon />;
           return (
             <li>
               {itemIcon}
