@@ -7,11 +7,11 @@ import { ConferencePaperList, PosterList, AwardList } from "../lists/publication
 export default function Publication() {
     return (
         <SectionTemplate title="Publications">
-            <b>Conference Papers:</b>
+            <strong>Conference Papers:</strong>
             <ConferencePaperList />
-            <p><b>Posters:</b></p>
+            <strong>Posters:</strong>
             <PosterList />
-            <p><b>Awards:</b></p>
+            <strong>Awards:</strong>
             <AwardList />
 
         Further details can be found in <NewTabLink href='/CV_Mikihisa_Yuasa.pdf'>
