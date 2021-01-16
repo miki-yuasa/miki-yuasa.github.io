@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Mikihisa Yuasa・湯淺 幹久・ユアサ ミキヒサ`,
-    description: `Personal website of Mikihisa Yuasa`,
+    title: `Mikihisa Yuasa・湯淺 幹久`,
+    description: `Portfolio website of Mikihisa Yuasa`,
     author: `Mikihisa Yuasa`,
     url: "https://mikyu.bitbucket.io",
     siteUrl: "https://mikyu.bitbucket.io",
-    image: "/assets/homebg_fhd_filtered.png"
+    image: "/images/defaultImage.png"
   },
   flags: {
     //PRESERVE_WEBPACK_CACHE: true,
@@ -173,12 +173,12 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Mikihisa Yuasa Portfolio`,
-        short_name: `miki_starter`,
+        short_name: `miki_portfolio`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/logo_icon.png`, // This path is relative to the root of the site.
       },
     },
     {

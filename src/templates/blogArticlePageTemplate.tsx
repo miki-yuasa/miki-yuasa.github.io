@@ -27,8 +27,6 @@ const blogArticleTemplate = ({
 
   const frontmatter = mdx?.frontmatter;
 
-  const imagePath = frontmatter?.image && frontmatter?.image?.childImageSharp?.fluid?.src!;
-
   const html = mdx?.body;
 
   const itemsWithHref: CrumbItem[] = [
@@ -68,7 +66,7 @@ const blogArticleTemplate = ({
     </>
   );
 
-  const lang = frontmatter?.language?.toLocaleLowerCase().substr(0, 2);
+  const lang = frontmatter?.language!;
 
   return (
     <BlogPageTemplate
@@ -77,7 +75,7 @@ const blogArticleTemplate = ({
       lang={lang}
       body={body}
       side={<> <BlogTocPane data={data} /></>}
-      image={imagePath!}
+      image={frontmatter?.image?.childImageSharp?.fluid?.src!}
     />
   );
 };
