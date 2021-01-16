@@ -13,6 +13,7 @@ import { initializeIcons } from "@fluentui/react/lib/Icons";
 
 import Header from "./header";
 import "./layout.scss";
+import { NewTabLink } from "./links/defaultLink";
 
 const Layout = (props: { children: React.ReactNode; header?: JSX.Element }) => {
   initializeIcons();
@@ -47,23 +48,19 @@ const Layout = (props: { children: React.ReactNode; header?: JSX.Element }) => {
           Reserved
           <br />
           Built with {` `}{" "}
-          <a
+          <NewTabLink
             className="footer"
             href="https://www.gatsbyjs.org"
-            target="_blank"
-            rel="noreferrer"
           >
             <em>Gatsby</em>
-          </a>{" "}
+          </NewTabLink>{" "}
           and{" "}
-          <a
+          <NewTabLink
             className="footer"
             href="https://www.microsoft.com/design/fluent/#/"
-            target="_blank"
-            rel="noreferrer"
           >
             <em>Fluent Design System</em>
-          </a>
+          </NewTabLink>
           .
         </footer>
       </div>

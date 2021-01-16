@@ -764,7 +764,7 @@ html {
   font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
-}
+}zzzzzzz
 * {
   box-sizing: inherit;
 }
@@ -775,7 +775,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  color: $ms-color-neutralDark;
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -1019,6 +1019,9 @@ ul {
 .sidePane {
   list-style-type: none;
   margin-left: 0rem;
+}
+.noBullets {
+  list-style-type: none;
 }
 ol {
   margin-left: 1.45rem;

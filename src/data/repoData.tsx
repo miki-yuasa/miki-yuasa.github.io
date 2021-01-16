@@ -2,15 +2,8 @@ import { Repo } from "../../@types";
 
 const repoData: Repo[] = [
   {
-    name: "mikyu.bitbucket.io",
-    onClickHref: "https://bitbucket.org/mikyu/mikyu.bitbucket.io/",
-    description:
-      "Hosting repository for this static website for my personal portfolio.",
-    noAccess: false,
-  },
-  {
-    onClickHref: "https://bitbucket.org/mikyu/mikyu_portfolio_dev/",
-    name: "mikyu_portfolio_dev",
+    onClickHref: "https://github.com/miki-yuasa/portfolio_dev",
+    name: "portfolio_dev",
     description: "Development repository for this personal portfolio website.",
     noAccess: false,
   },

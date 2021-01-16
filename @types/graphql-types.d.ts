@@ -2546,8 +2546,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___url'
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___image'
-  | 'port'
-  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -3616,6 +3614,7 @@ export type BlogArticleListQueryVariables = Exact<{ [key: string]: never; }>;
 export type BlogArticleListQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, allMdx: { edges: Array<{ node: { frontmatter?: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
 
 export type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+
 
 export type IndexPageQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
