@@ -30,9 +30,9 @@ const BackgroundSection = () => (
           backgroundColor={`#040e18`}
         >
           <div className="homeBackgroundedSection">
-            <h2 className="home">Hi there!</h2>
+            <h2 className="home">Hi there! I'm</h2>
             <br />
-            <h1 className="home">I'm Mikihisa Yuasa</h1>
+            <h1 className="home">Mikihisa Yuasa</h1>
             <br />
             <p className="shortIntro">
               {" "}

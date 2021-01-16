@@ -12,4 +12,4 @@ export function NewTabLink(props: { children: React.ReactNode, className: string
     )
 }
 
-NewTabLink.defaultProps = { className: "neutralDark" }
+NewTabLink.defaultProps = { className: "defaultUnderline" }

@@ -552,6 +552,18 @@ a.neutralDark:hover{
   color: $theme-color;
   text-decoration: none;
 }
+.defaultUnderline:link{
+  color: $ms-color-neutralDark;
+  text-decoration: underline;
+}
+.defaultUnderline:visited{
+  color: $ms-color-neutralSecondary;
+  text-decoration: underline;
+}
+.defaultUnderline:hover{
+  color: $theme-color;
+  text-decoration: underline;
+}
 a.articleInfo:link{
   color: $ms-color-neutralSecondaryAlt;
   text-decoration: none;

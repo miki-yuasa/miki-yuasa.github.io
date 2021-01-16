@@ -10,7 +10,7 @@ export const conferencePaperData: Publication[] = [
         links: [
             {
                 text: "Link",
-                link: "http://meetings.aps.org/Meeting/DFD20/Session/U01.8"
+                href: "http://meetings.aps.org/Meeting/DFD20/Session/U01.8"
             }
         ]
     }
@@ -27,7 +27,7 @@ export const posterData: Publication[] = [
     {
         authors: ["Yuasa, M."],
         year: 2018,
-        title: "Save the World by Discovering New Asteroid",
+        title: "Save the world by discovering new asteroid",
         journal: "20th Annual Undergraduate Symposium at the University of Wisconsin-Madison",
         details: "Madison, WI, United States"
     }

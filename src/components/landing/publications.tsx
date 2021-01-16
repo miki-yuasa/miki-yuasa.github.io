@@ -14,8 +14,7 @@ export default function Publication() {
             <p><b>Awards:</b></p>
             <AwardList />
 
-        Further details can be found in
-            <NewTabLink href='/CV_Mikihisa_Yuasa.pdf'>
+        Further details can be found in <NewTabLink href='/CV_Mikihisa_Yuasa.pdf'>
                 <strong>CV</strong>
             </NewTabLink>.
 

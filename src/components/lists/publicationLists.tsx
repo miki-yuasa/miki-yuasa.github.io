@@ -2,13 +2,21 @@ import React from "react"
 import { Award, Publication } from "../../../@types"
 
 import { conferencePaperData, posterData, awardData } from "../../data/publicationData"
+import { NewTabLink } from "../links/defaultLink";
 
 function listPublications(publications: Publication[]) {
     const publicationList = publications.map(publication => {
         const authors = publication.authors.join(" ");
+        const links = publication.links
+            ? <>[{publication.links.map((link, index) => {
+                const comma = index + 1 === publication.links?.length ? "" : ", ";
+                return <><NewTabLink href={link.href}>{link.text}</NewTabLink>{comma}</>
+            })}]</>
+            : <></>
+            ;
         return (
             <li>
-                {`${authors}, "`}<strong>{publication.title}</strong>{`," `}<i>{publication.journal}</i>{`, ${publication.details}, ${publication.year}`}
+                {`${authors}, "`}<strong>{publication.title}</strong>{`," `}<i>{publication.journal}</i>{`, ${publication.details}, ${publication.year} `} {links}
             </li>
         )
     });

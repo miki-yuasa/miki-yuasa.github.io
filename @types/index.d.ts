@@ -29,8 +29,7 @@ type Award = {
 
 type PubLink = {
   text: string;
-  link: string;
-  pediod?: boolean;
+  href: string;
 };
 
 type ArticleConfig = {
