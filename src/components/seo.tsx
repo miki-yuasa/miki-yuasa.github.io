@@ -89,7 +89,7 @@ function SEO(props: {
         },
         {
           name: "google-site-verification",
-          content: "tzF2_DyfEXHKGCEugl6gKsG3x_TALojEYEmkj_rlcLA"
+          content: "VeyonYBHvM3ZkJLFouPajohUlzpNC39CB04iXfgZsRo"
         }
       ].concat(props.meta!)}
     >
