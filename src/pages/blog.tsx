@@ -55,7 +55,7 @@ const BlogTop = () => {
 
   return (
     <BlogPageTemplate
-      title={`Mikihisa's Blog`}
+      title={`Blog`}
       description={`The top page of Mikihisa's blog`}
       body={body}
     />

@@ -44,7 +44,7 @@ loadTheme({
 
 const IndexPage = (props: { data: IndexPageQuery }) => (
   <Layout>
-    <SEO title={props.data.site?.siteMetadata?.title!} />
+    <SEO title="Home" description={props.data.site?.siteMetadata?.description} />
     <Home />
     <About />
     <Research />

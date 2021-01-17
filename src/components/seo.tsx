@@ -72,10 +72,6 @@ function SEO(props: {
           content: `summary`,
         },
         {
-          property: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
           property: `twitter:title`,
           content: props.title,
         },
@@ -90,13 +86,13 @@ function SEO(props: {
         {
           property: `image`,
           content: ogImageUrl,
+        },
+        {
+          name: "google-site-verification",
+          content: "tzF2_DyfEXHKGCEugl6gKsG3x_TALojEYEmkj_rlcLA"
         }
       ].concat(props.meta!)}
     >
-      <meta
-        name="google-site-verification"
-        content="tzF2_DyfEXHKGCEugl6gKsG3x_TALojEYEmkj_rlcLA"
-      />
     </Helmet>
   );
 }

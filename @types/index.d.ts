@@ -12,6 +12,26 @@ type Repo = {
 };
 type Page = { name: string };
 
+type Publication = {
+  authors: string[];
+  year: number;
+  title: string;
+  journal: string;
+  details: string;
+  links?: PubLink[];
+};
+
+type Award = {
+  years: string;
+  name: string;
+  amount?: string;
+}
+
+type PubLink = {
+  text: string;
+  href: string;
+};
+
 type ArticleConfig = {
   keywords: number;
   tags: number;

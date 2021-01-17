@@ -552,6 +552,18 @@ a.neutralDark:hover{
   color: $theme-color;
   text-decoration: none;
 }
+.defaultUnderline:link{
+  color: $ms-color-neutralDark;
+  text-decoration: underline;
+}
+.defaultUnderline:visited{
+  color: $ms-color-neutralSecondary;
+  text-decoration: underline;
+}
+.defaultUnderline:hover{
+  color: $theme-color;
+  text-decoration: underline;
+}
 a.articleInfo:link{
   color: $ms-color-neutralSecondaryAlt;
   text-decoration: none;
@@ -775,7 +787,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  color: $ms-color-neutralDark;
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -1020,6 +1032,9 @@ ul {
   list-style-type: none;
   margin-left: 0rem;
 }
+.noBullets {
+  list-style-type: none;
+}
 ol {
   margin-left: 1.45rem;
   margin-right: 0;
@@ -1187,7 +1202,7 @@ th {
   font-weight: bold;
 }
 li {
-  // margin-bottom: calc(1.45rem / 2);
+   margin-bottom: calc(1.45rem / 2);
 }
 .sidePane {
   list-style-type: none;
