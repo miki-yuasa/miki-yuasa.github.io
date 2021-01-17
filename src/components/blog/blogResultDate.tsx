@@ -1,13 +1,13 @@
 import React from "react";
-
-import { BlogPageTemplate } from "../../templates/blogPageTemplate";
+import { Article, CrumbItem } from "../../../@types";
 import {
   BlogTagArticleListQuery,
-  SitePageContext,
+  SitePageContext
 } from "../../../@types/graphql-types";
-import { BlogResultBody } from "./blogResultBody";
-import { Article, CrumbItem } from "../../../@types";
+import { BlogPageTemplate } from "../../templates/blogPageTemplate";
 import { BlogBreadCrumb } from "./blogBreadCrumb";
+import { BlogResultBody } from "./blogResultBody";
+
 
 export const BlogResDatePageTemplate = (props: {
   data: BlogTagArticleListQuery;

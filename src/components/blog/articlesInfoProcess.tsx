@@ -1,11 +1,10 @@
 import React from "react";
-
+import { CountedItemObj, CountedItemsObj, itemObj, itemsObj } from "../../../@types";
 import {
-  FolderIcon,
-  TagIcon,
-  CalendarIcon,
+  CalendarIcon, FolderIcon,
+  TagIcon
 } from "../../components/icons/infoIcons";
-import { itemsObj, itemObj, CountedItemObj, CountedItemsObj } from "../../../@types";
+
 
 export function sepCatTag(catTag: string) {
   const strArray: string[] = catTag.split("/");

@@ -6,7 +6,7 @@ export function NewTabLink(props: { children: React.ReactNode, className: string
             className={props.className}
             href={props.href}
             target="_blank"
-            rel="noreferer">
+            rel="noreferrer">
             {props.children}
         </a>
     )

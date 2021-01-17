@@ -7,7 +7,6 @@ import { ArticleCard } from "../cards/articleCard";
 import { DoubleChevronRightIcon } from "../icons/infoIcons";
 import { NavCommandButton } from "../buttons/navCommandButton";
 import { BlogCardListQuery } from "../../../@types/graphql-types";
-import "../layout.scss";
 
 export default function Blog() {
   const data: BlogCardListQuery = useStaticQuery(graphql`

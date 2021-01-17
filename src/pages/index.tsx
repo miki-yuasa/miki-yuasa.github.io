@@ -12,7 +12,6 @@ import Software from "../components/landing/software";
 import Blog from "../components/landing/blog";
 import Contact from "../components/landing/contact";
 import { IndexPageQuery } from "../../@types/graphql-types";
-import "../components/layout.scss";
 
 loadTheme({
   defaultFontStyle: { fontFamily: "Lato, Helvetica" },

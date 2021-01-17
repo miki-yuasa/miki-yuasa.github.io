@@ -1,8 +1,8 @@
-import React from "react";
 import { FontIcon, mergeStyles } from "@fluentui/react";
-
+import React from "react";
 import { Article } from "../../../@types";
 import { BlogListArticles } from "./blogListArticles";
+
 
 export const BlogResultBody = (props: {
   iconName: string;
