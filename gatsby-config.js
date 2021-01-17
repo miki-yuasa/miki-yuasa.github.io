@@ -3,8 +3,8 @@ module.exports = {
     title: `Mikihisa Yuasa・湯淺 幹久`,
     description: `Portfolio website of Mikihisa Yuasa`,
     author: `Mikihisa Yuasa`,
-    url: "https://mikyu.bitbucket.io",
-    siteUrl: "https://mikyu.bitbucket.io",
+    url: "https://miki-yuasa.github.io",
+    siteUrl: "https://miki-yuasa.github.io",
     image: "/images/defaultImage.png"
   },
   flags: {
@@ -191,7 +191,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `mikyu-bitbucket-io`
+        shortname: `miki-yuasa-github-io`
       }
     },
     `gatsby-plugin-sass`,
