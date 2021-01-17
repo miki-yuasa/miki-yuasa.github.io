@@ -6,10 +6,12 @@
   font-family: en_num;
   src: url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
   unicode-range: U+0000-00ff;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 $theme-color: $ms-color-themePrimary;
+$font_size_large: 0.9rem;
+$font_size_small:1rem;
 
 html {
   font-family: sans-serif;
@@ -64,19 +66,16 @@ div.idBox .layoutBody {
   margin-top: -80px;
   padding-top: 80px;
 }
-
-$section_font_size: 1rem;
-
 .sectionParent {
   font-family: "Lato", Helvetica, sans-serif;
-  font-size: $section_font_size;
+  font-size: $font_size_small;
   padding-top: 60px;
   padding-bottom: 60px;
   background: $ms-color-neutralLighter;
 }
 .sectionParentAbout {
   font-family: "Lato", Helvetica, sans-serif;
-  font-size: $section_font_size;
+  font-size: $font_size_small;
   padding-top: 60px;
   padding-bottom: 120px;
   background: $ms-color-neutralDark;
@@ -206,6 +205,12 @@ $section_font_size: 1rem;
   .sectionBody {
     padding: 0 10%;
     box-sizing: border-box;
+  }
+  .sectionParent {
+    font-size: $font_size_large;
+  }
+  .sectionParentAbout {
+    font-size: $font_size_large;
   }
   .searchWide {
     display: block;
@@ -401,7 +406,12 @@ footer {
   text-align: center;
   font-family: "Lato", Helvetica, sans-serif;
   padding: 30px;
-  font-size: $section_font_size;
+  font-size: $font_size_small;
+}
+@media (min-width: 600px) {
+  footer{
+    font-size: $font_size_large;
+  }
 }
 header.wide {
   display: none;
@@ -482,7 +492,12 @@ menu,
 nav,
 section {
   font-family: en_num, "Noto Sans JP", sans-serif;
-  font-size: 1rem;
+  font-size: $font_size_small;
+}
+@media (min-width: 600px){
+  section {
+    font-size: $font_size_large;
+  }
 }
 summary {
   display: block;
@@ -1109,12 +1124,17 @@ table {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  font-size: 1rem;
+  font-size: $font_size_small;
   line-height: 1.45rem;
   border-collapse: collapse;
   width: 100%;
   box-sizing: border-box;
   word-wrap: break-word;
+}
+@media (min-width: 600px){
+  table {
+    font-size: $font_size_large;
+  }
 }
 fieldset {
   margin-left: 0;
