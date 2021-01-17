@@ -16,7 +16,7 @@ import { BlogArticleBySlugQuery } from "../../../@types/graphql-types";
 export const BlogMediaShareButton = (props: { data: BlogArticleBySlugQuery }) => {
     const articleTitle = props.data.mdx?.frontmatter?.title;
 
-    const articleUrl = `https://mikyu.bitbucket.io/blog/articles/${props.data.mdx?.frontmatter?.slug}`;
+    const articleUrl = `https://miki-yuasa.github.io/blog/articles/${props.data.mdx?.frontmatter?.slug}`;
 
     return (
         <div className="articleMediaButtons">

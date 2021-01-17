@@ -6,7 +6,7 @@
   font-family: en_num;
   src: url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
   unicode-range: U+0000-00ff;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 $theme-color: $ms-color-themePrimary;
@@ -65,7 +65,7 @@ div.idBox .layoutBody {
   padding-top: 80px;
 }
 
-$section_font_size: 0.9rem;
+$section_font_size: 1rem;
 
 .sectionParent {
   font-family: "Lato", Helvetica, sans-serif;
@@ -482,7 +482,7 @@ menu,
 nav,
 section {
   font-family: en_num, "Noto Sans JP", sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 summary {
   display: block;

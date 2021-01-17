@@ -22,7 +22,7 @@ export function NavCommandButton(props: {
 
 const navCommandButtonStyles: IButtonStyles = {
   root: {
-    fontSize: "0.9rem",
+    fontSize: "1rem",
   },
 };
 

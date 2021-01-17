@@ -13,7 +13,7 @@ export function CommentHosting(props: { data: BlogArticleBySlugQuery }) {
         <Disqus
             config={{
                 /* Replace PAGE_URL with your post's canonical URL variable */
-                url: `https://mikyu.bitbucket.io/blog/articles/${frontmatter?.slug}`,
+                url: `https://miki-yuasa.github.io/blog/articles/${frontmatter?.slug}`,
                 /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
                 identifier: frontmatter?.slug,
                 /* Replace PAGE_TITLE with the title of the page */
