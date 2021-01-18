@@ -2,8 +2,8 @@ import { Repo } from "../../@types";
 
 const repoData: Repo[] = [
   {
-    onClickHref: "https://github.com/miki-yuasa/portfolio_dev",
-    name: "portfolio_dev",
+    onClickHref: "https://github.com/miki-yuasa/miki-yuasa.github.io",
+    name: "miki-yuasa.github.io",
     description: "Development repository for this personal portfolio website.",
     noAccess: false,
   },
