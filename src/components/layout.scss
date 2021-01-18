@@ -126,6 +126,7 @@ div.idBox .layoutBody {
   padding-top: 50px;
   width: auto;
   z-index: -20;
+  font-size: $font_size_small;
 }
 .articleBody {
   display: block;
@@ -217,6 +218,9 @@ div.idBox .layoutBody {
   }
   .searchCompact {
     display: none;
+  }
+  .articleFrame{
+    font-size: $font_size_large;
   }
   .articleBody {
     margin-left: 10px;
@@ -839,6 +843,9 @@ h1 {
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   line-height: 1.1;
+}
+.h1BlogTitle{
+  font-size: xx-large;
 }
 .home {   
   margin-left: 0;

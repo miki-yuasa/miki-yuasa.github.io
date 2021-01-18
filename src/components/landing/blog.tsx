@@ -51,7 +51,7 @@ export default function Blog() {
           href={`blog/articles/${frontmatter?.slug!}`}
           imageSrc={frontmatter?.image?.childImageSharp?.fluid?.src!}
           date={frontmatter?.date}
-          tags={simpleTags.join(",")!}
+          tags={simpleTags.join(", ")!}
         />
       );
     }
