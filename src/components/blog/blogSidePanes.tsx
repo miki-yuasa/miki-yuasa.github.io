@@ -1,7 +1,7 @@
 import React from "react";
-
-import { BlogSideTagList } from "./blogSideTagList";
 import { BlogSideArchiveList } from "./blogSideArchiveList";
+import { BlogSideTagList } from "./blogSideTagList";
+
 
 export const BlogSidePanes = () => {
   return (

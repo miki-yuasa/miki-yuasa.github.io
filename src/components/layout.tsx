@@ -18,7 +18,7 @@ import { NewTabLink } from "./links/defaultLink";
 const Layout = (props: { children: React.ReactNode; header?: JSX.Element }) => {
   initializeIcons();
 
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<GatsbyTypes.infoAndSiteTitleQueryQuery>(graphql`
     query infoAndSiteTitleQuery {
       site {
         siteMetadata {

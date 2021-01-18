@@ -50,7 +50,7 @@ const nonShrinkingStackItemStylesBlogTop: IStackItemStyles = {
     height: itemHeight,
     justifyContent: "center",
     overflow: "hidden",
-    width: 250,
+    width: 'auto',
   },
 };
 

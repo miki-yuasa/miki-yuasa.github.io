@@ -3,7 +3,6 @@ import React from "react";
 import SectionTemplate from "../../templates/sectionTemplate";
 import RepoCard from "../cards/repoCard";
 import { getRepoData } from "../../data/repoData";
-import "../layout.scss";
 
 export default function Software() {
   const repoData = getRepoData();

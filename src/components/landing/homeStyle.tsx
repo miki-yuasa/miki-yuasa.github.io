@@ -7,7 +7,7 @@ import MediaButton from "../buttons/mediaButton";
 import DownloadButton from "../buttons/dlButton";
 
 const BackgroundSection = () => (
-  <StaticQuery
+  <StaticQuery<GatsbyTypes.Query>
     query={graphql`
       query {
         desktop: file(relativePath: { eq: "homebg_fhd_filtered.png" }) {

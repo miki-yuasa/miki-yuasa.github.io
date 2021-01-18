@@ -2,7 +2,6 @@ import React from "react";
 
 import WhiskMorphMp4 from "../../assets/aps_vor_2x.mp4"
 import SectionTemplate from "../../templates/sectionTemplate";
-import "../layout.scss";
 
 export default function Research() {
   return (

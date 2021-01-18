@@ -1,12 +1,11 @@
-import React from "react";
 import {
-  PrimaryButton,
   IButtonStyles,
-  mergeStyles,
+  mergeStyles, PrimaryButton
 } from "@fluentui/react";
 import { Depths } from "@fluentui/theme";
-
+import React from "react";
 import { DownloadIcon } from "../icons/infoIcons";
+
 
 export default function DownloadButton(props: { href: string; title: string }) {
 

@@ -50,13 +50,6 @@ module.exports = {
         path: `${__dirname}/gatsby-config.js`,
       },
     },
-    {
-      resolve: "gatsby-plugin-graphql-codegen",
-      options: {
-        fileName: `@types/graphql-types.d.ts`,
-        codegenConfig: { maybeValue: "T | undefined" },
-      },
-    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-mdx`,
@@ -200,5 +193,11 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     //`gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-plugin-typegen",
+      options: {
+        outputPath: `@types/graphql-types.d.ts`,
+      },
+    }
   ],
 };

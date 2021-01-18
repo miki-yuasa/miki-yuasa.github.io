@@ -16,7 +16,7 @@ function listPublications(publications: Publication[]) {
             ;
         return (
             <li>
-                {`${authors}"`}<strong>{publication.title}</strong>{`," `}<i>{publication.journal}</i>{`, ${publication.details}, ${publication.year} `} {links}
+                {`${authors}"`}<strong>{publication.title}</strong>{`," `}<i>{publication.journal}</i>{`, ${publication.details}, ${publication.year}. `} {links}
             </li>
         )
     });
@@ -32,7 +32,7 @@ function listAwards(awards: Award[]) {
     const awardList = awards.map(award => {
         return (
             <li>
-                {`${award.years}, ${award.name}. ${award.amount}`}
+                {`${award.years} `} <strong>{award.name}</strong>{`. ${award.amount}`}
             </li>
         )
     });

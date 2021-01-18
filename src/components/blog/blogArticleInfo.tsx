@@ -1,8 +1,8 @@
-import React from "react";
 import { DefaultPalette } from "@fluentui/react";
-
-import { CalendarIcon, TagIcon } from "../icons/infoIcons";
+import React from "react";
 import { Maybe } from "../../../@types/graphql-types";
+import { CalendarIcon, TagIcon } from "../icons/infoIcons";
+
 
 export function PublishedDate(props: { date: Date }) {
   return (

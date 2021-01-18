@@ -1,7 +1,7 @@
 import React from "react";
-
-import { NavBlogWide } from "../navs/navBlogWide";
 import { NavBlogCompact } from "../navs/navBlogComapct";
+import { NavBlogWide } from "../navs/navBlogWide";
+
 
 export function BlogHeader() {
   return (

@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
-
-import NavWide from "../components/navs/navWide";
+import React, { useEffect, useState } from "react";
 import NavCompact from "../components/navs/navCompact";
+import NavWide from "../components/navs/navWide";
 import { getPageData } from "../data/pageData";
-import "./layout.scss";
 
 const Header = () => {
   const [selectedKey, setSelectedKey] = useState({});

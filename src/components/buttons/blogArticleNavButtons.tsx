@@ -1,11 +1,10 @@
 import React from "react";
 import { MarkdownRemarkFrontmatter } from "../../../@types/graphql-types";
-
 import {
-    ChevronRightIcon,
-    ChevronLeftIcon,
+    ChevronLeftIcon, ChevronRightIcon
 } from "../icons/infoIcons";
 import { NavCommandButton } from "./navCommandButton";
+
 
 export const NextButton = (props: { frontmatter: MarkdownRemarkFrontmatter }) => {
     return (

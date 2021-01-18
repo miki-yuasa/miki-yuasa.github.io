@@ -8,7 +8,7 @@ import { BlogBreadCrumb } from "../components/blog/blogBreadCrumb";
 import { CrumbItem } from "../../@types";
 
 const BlogTop = () => {
-  const data: BlogArticleListQuery = useStaticQuery(graphql`
+  const data: BlogArticleListQuery = useStaticQuery<GatsbyTypes.BlogArticleListQuery>(graphql`
     query BlogArticleList {
       site {
         siteMetadata {

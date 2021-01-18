@@ -53,7 +53,7 @@ const blogArticleTemplate = ({
         <Image fluid={frontmatter?.image?.childImageSharp?.fluid!} />
       </div>
       <p> </p>
-      <h1>{frontmatter?.title}</h1>
+      <h1 className="h1BlogTitle">{frontmatter?.title}</h1>
       <h3>{frontmatter?.date}</h3>
       <p>
         <HashTags tags={frontmatter?.tags!} />

@@ -1,13 +1,13 @@
-import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-
-import { sepCatTag, groupTags, getFormatedTagList } from "./articlesInfoProcess";
-import { BlogSidePaneTitle } from "./blogSidePaneTitle";
-import { BlogTagListQuery } from "../../../@types/graphql-types";
+import React from "react";
 import { CountedItemObj } from "../../../@types";
+import { BlogTagListQuery } from "../../../@types/graphql-types";
+import { getFormatedTagList, groupTags, sepCatTag } from "./articlesInfoProcess";
+import { BlogSidePaneTitle } from "./blogSidePaneTitle";
+
 
 export const BlogSideTagList = () => {
-  const data: BlogTagListQuery = useStaticQuery(graphql`
+  const data: BlogTagListQuery = useStaticQuery<GatsbyTypes.BlogTagListQuery>(graphql`
     query BlogTagList {
       allMdx(
         sort: { fields: [frontmatter___date], order: DESC }

@@ -7,10 +7,9 @@ import { ArticleCard } from "../cards/articleCard";
 import { DoubleChevronRightIcon } from "../icons/infoIcons";
 import { NavCommandButton } from "../buttons/navCommandButton";
 import { BlogCardListQuery } from "../../../@types/graphql-types";
-import "../layout.scss";
 
 export default function Blog() {
-  const data: BlogCardListQuery = useStaticQuery(graphql`
+  const data: BlogCardListQuery = useStaticQuery<GatsbyTypes.BlogCardListQuery>(graphql`
     query BlogCardList {
       allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
@@ -52,7 +51,7 @@ export default function Blog() {
           href={`blog/articles/${frontmatter?.slug!}`}
           imageSrc={frontmatter?.image?.childImageSharp?.fluid?.src!}
           date={frontmatter?.date}
-          tags={simpleTags.join(",")!}
+          tags={simpleTags.join(", ")!}
         />
       );
     }

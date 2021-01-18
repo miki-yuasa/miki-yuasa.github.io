@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import { DefaultPalette } from "@fluentui/react";
 
 import Image from "../image";
-import "../layout.scss";
 
 export default function About() {
   return (

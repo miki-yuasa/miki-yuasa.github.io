@@ -1,13 +1,13 @@
-import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-
+import React from "react";
+import { itemObj } from "../../../@types";
+import { BlogArchiveListQuery } from "../../../@types/graphql-types";
 import { getFormattedList, group } from "./articlesInfoProcess";
 import { BlogSidePaneTitle } from "./blogSidePaneTitle";
-import { BlogArchiveListQuery } from "../../../@types/graphql-types";
-import { itemObj } from "../../../@types";
+
 
 export const BlogSideArchiveList = () => {
-  const data: BlogArchiveListQuery = useStaticQuery(graphql`
+  const data: BlogArchiveListQuery = useStaticQuery<GatsbyTypes.BlogArchiveListQuery>(graphql`
     query BlogArchiveList {
       allMdx(
         sort: { fields: [frontmatter___date], order: DESC }

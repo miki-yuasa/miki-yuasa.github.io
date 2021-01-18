@@ -1,7 +1,6 @@
 import React from "react";
 
 import SectionTemplate from "../../templates/sectionTemplate";
-import "../layout.scss";
 import { NewTabLink } from "../links/defaultLink";
 
 export default function Contact() {
