@@ -7,7 +7,7 @@ import { BlogSidePaneTitle } from "./blogSidePaneTitle";
 
 
 export const BlogSideTagList = () => {
-  const data: BlogTagListQuery = useStaticQuery(graphql`
+  const data: BlogTagListQuery = useStaticQuery<GatsbyTypes.BlogTagListQuery>(graphql`
     query BlogTagList {
       allMdx(
         sort: { fields: [frontmatter___date], order: DESC }

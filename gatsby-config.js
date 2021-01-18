@@ -51,10 +51,9 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-graphql-codegen",
+      resolve: "gatsby-plugin-typegen",
       options: {
-        fileName: `@types/graphql-types.d.ts`,
-        codegenConfig: { maybeValue: "T | undefined" },
+        outputPath: `@types/graphql-types.d.ts`,
       },
     },
     `gatsby-plugin-sharp`,

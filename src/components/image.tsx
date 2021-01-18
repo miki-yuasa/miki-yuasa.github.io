@@ -5,7 +5,7 @@ import { ImageQuery } from "../../@types/graphql-types";
 
 // 画像ファイルパスをプロパティに取るようなコンポーネントを定義
 const Image = (props: { filename: string; style: object }) => {
-  const data = useStaticQuery<ImageQuery>(
+  const data = useStaticQuery<GatsbyTypes.ImageQuery>(
     graphql`
       query Image {
         images: allFile {

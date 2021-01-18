@@ -9,7 +9,7 @@ import { NavCommandButton } from "../buttons/navCommandButton";
 import { BlogCardListQuery } from "../../../@types/graphql-types";
 
 export default function Blog() {
-  const data: BlogCardListQuery = useStaticQuery(graphql`
+  const data: BlogCardListQuery = useStaticQuery<GatsbyTypes.BlogCardListQuery>(graphql`
     query BlogCardList {
       allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
