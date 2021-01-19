@@ -85,17 +85,10 @@ export const BlogTocPane = (props: { data: BlogArticleBySlugQuery }) => {
             }
         ]
 
-        const navStyles: Partial<INavStyles> = {
-            root: {
-                boxSizing: 'border-box',
-            },
-        };
-
         return (
             <div className="articleSidePaneToc">
                 <Nav
                     ariaLabel="Nav Table of Contents"
-                    styles={navStyles}
                     groups={navLinkGroups}
                     selectedKey={String(selectedKey)}
                 />

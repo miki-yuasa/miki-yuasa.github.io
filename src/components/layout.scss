@@ -1251,8 +1251,12 @@ li {
 .sidePane {
   list-style-type: none;
 }
+.ms-Nav-navItem.navItem-92 {
+  margin-bottom: 0;
+}
 ol li {
   padding-left: 0;
+  margin-bottom: calc(1.45rem / 2);
 }
 ul li {
   padding-left: 0;
