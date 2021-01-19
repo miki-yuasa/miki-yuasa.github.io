@@ -24,7 +24,7 @@ export default function Blog() {
               slug
               image {
                 childImageSharp {
-                  fluid(maxWidth: 320, maxHeight: 200, quality: 50) {
+                  fluid(maxWidth: 320, maxHeight: 200, quality: 80) {
                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
                   }
                 }
@@ -45,13 +45,17 @@ export default function Blog() {
         return simpleTag;
       })!;
 
+      const tagString: string = simpleTags.length >= 4
+        ? simpleTags.slice(0, 3).join(", ") + " ..."
+        : simpleTags.join(", ");
+
       return (
         <ArticleCard
           title={frontmatter?.title!}
           href={`blog/articles/${frontmatter?.slug!}`}
           imageSrc={frontmatter?.image?.childImageSharp?.fluid?.src!}
           date={frontmatter?.date}
-          tags={simpleTags.join(", ")!}
+          tags={tagString}
         />
       );
     }
