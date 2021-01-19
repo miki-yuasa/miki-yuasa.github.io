@@ -1150,7 +1150,10 @@ table {
   width: auto;
   border-collapse: collapse;
   border-spacing: 10px;
-  margin:0 auto;
+  margin-top:0;
+  margin-bottom: 1.45rem;
+  margin-right: auto;
+  margin-left: auto;
   box-shadow: $ms-depth-shadow-8;
   border-radius: 6px;
 }
