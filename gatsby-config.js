@@ -34,14 +34,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/pages/blog/blog-articles`,
+        path: `${__dirname}/src/posts/blog-articles`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/pages/blog/blog-articles`,
+        name: `pages`,
+        path: `${__dirname}/src/posts/blog-articles`,
       },
     },
     {
