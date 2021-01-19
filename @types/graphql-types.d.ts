@@ -2212,6 +2212,8 @@ type Query_allDirectoryArgs = {
 type Query_siteArgs = {
   buildTime: Maybe<DateQueryOperatorInput>;
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+  port: Maybe<IntQueryOperatorInput>;
+  host: Maybe<StringQueryOperatorInput>;
   polyfill: Maybe<BooleanQueryOperatorInput>;
   pathPrefix: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -2350,6 +2352,8 @@ type Query_allSitePluginArgs = {
 type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
+  readonly port: Maybe<Scalars['Int']>;
+  readonly host: Maybe<Scalars['String']>;
   readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly pathPrefix: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
@@ -2556,6 +2560,8 @@ enum SiteFieldsEnum {
   siteMetadata___url = 'siteMetadata.url',
   siteMetadata___siteUrl = 'siteMetadata.siteUrl',
   siteMetadata___image = 'siteMetadata.image',
+  port = 'port',
+  host = 'host',
   polyfill = 'polyfill',
   pathPrefix = 'pathPrefix',
   id = 'id',
@@ -2649,6 +2655,8 @@ enum SiteFieldsEnum {
 type SiteFilterInput = {
   readonly buildTime: Maybe<DateQueryOperatorInput>;
   readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+  readonly port: Maybe<IntQueryOperatorInput>;
+  readonly host: Maybe<StringQueryOperatorInput>;
   readonly polyfill: Maybe<BooleanQueryOperatorInput>;
   readonly pathPrefix: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
@@ -2715,7 +2723,6 @@ type SitePageContext = {
   readonly displayMonth: Maybe<Scalars['String']>;
   readonly periodStartDate: Maybe<Scalars['Date']>;
   readonly periodEndDate: Maybe<Scalars['Date']>;
-  readonly frontmatter: Maybe<SitePageContextFrontmatter>;
 };
 
 type SitePageContextFilterInput = {
@@ -2729,31 +2736,6 @@ type SitePageContextFilterInput = {
   readonly displayMonth: Maybe<StringQueryOperatorInput>;
   readonly periodStartDate: Maybe<DateQueryOperatorInput>;
   readonly periodEndDate: Maybe<DateQueryOperatorInput>;
-  readonly frontmatter: Maybe<SitePageContextFrontmatterFilterInput>;
-};
-
-type SitePageContextFrontmatter = {
-  readonly slug: Maybe<Scalars['String']>;
-  readonly date: Maybe<Scalars['Date']>;
-  readonly title: Maybe<Scalars['String']>;
-  readonly image: Maybe<Scalars['String']>;
-  readonly keywords: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly categories: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly language: Maybe<Scalars['String']>;
-  readonly description: Maybe<Scalars['String']>;
-};
-
-type SitePageContextFrontmatterFilterInput = {
-  readonly slug: Maybe<StringQueryOperatorInput>;
-  readonly date: Maybe<DateQueryOperatorInput>;
-  readonly title: Maybe<StringQueryOperatorInput>;
-  readonly image: Maybe<StringQueryOperatorInput>;
-  readonly keywords: Maybe<StringQueryOperatorInput>;
-  readonly categories: Maybe<StringQueryOperatorInput>;
-  readonly tags: Maybe<StringQueryOperatorInput>;
-  readonly language: Maybe<StringQueryOperatorInput>;
-  readonly description: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePageContextLatestArticles = {
@@ -2980,15 +2962,6 @@ enum SitePageFieldsEnum {
   context___displayMonth = 'context.displayMonth',
   context___periodStartDate = 'context.periodStartDate',
   context___periodEndDate = 'context.periodEndDate',
-  context___frontmatter___slug = 'context.frontmatter.slug',
-  context___frontmatter___date = 'context.frontmatter.date',
-  context___frontmatter___title = 'context.frontmatter.title',
-  context___frontmatter___image = 'context.frontmatter.image',
-  context___frontmatter___keywords = 'context.frontmatter.keywords',
-  context___frontmatter___categories = 'context.frontmatter.categories',
-  context___frontmatter___tags = 'context.frontmatter.tags',
-  context___frontmatter___language = 'context.frontmatter.language',
-  context___frontmatter___description = 'context.frontmatter.description',
   pluginCreator___id = 'pluginCreator.id',
   pluginCreator___parent___id = 'pluginCreator.parent.id',
   pluginCreator___parent___parent___id = 'pluginCreator.parent.parent.id',
@@ -3570,6 +3543,56 @@ type WebPOptions = {
   readonly quality: Maybe<Scalars['Int']>;
 };
 
+type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type BlogArticleBySlugQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+type BlogArticleBySlugQuery = { readonly mdx: Maybe<(
+    Pick<Mdx, 'body' | 'tableOfContents'>
+    & { readonly frontmatter: Maybe<(
+      Pick<MdxFrontmatter, 'date' | 'slug' | 'title' | 'tags' | 'keywords' | 'description' | 'language'>
+      & { readonly image: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<(
+            Pick<ImageSharpFluid, 'src'>
+            & GatsbyImageSharpFluid_withWebp_tracedSVGFragment
+          )> }> }> }
+    )> }
+  )> };
+
+type BlogTagArticleListQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+type BlogTagArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
+
+type BlogCatArticleListQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+type BlogCatArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
+
+type BlogDateArticleListQueryVariables = Exact<{
+  periodStartDate: Maybe<Scalars['Date']>;
+  periodEndDate: Maybe<Scalars['Date']>;
+}>;
+
+
+type BlogDateArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
+
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
+type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type IndexPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+
 type BlogArchiveListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3614,54 +3637,6 @@ type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 type Unnamed_2_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author' | 'url'>> }> };
 
-type BlogArticleListQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BlogArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
-
-type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type IndexPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
-
-type BlogArticleBySlugQueryVariables = Exact<{
-  slug: Scalars['String'];
-}>;
-
-
-type BlogArticleBySlugQuery = { readonly mdx: Maybe<(
-    Pick<Mdx, 'body' | 'tableOfContents'>
-    & { readonly frontmatter: Maybe<(
-      Pick<MdxFrontmatter, 'date' | 'slug' | 'title' | 'tags' | 'keywords' | 'description' | 'language'>
-      & { readonly image: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<(
-            Pick<ImageSharpFluid, 'src'>
-            & GatsbyImageSharpFluid_withWebp_tracedSVGFragment
-          )> }> }> }
-    )> }
-  )> };
-
-type BlogCatArticleListQueryVariables = Exact<{
-  slug: Scalars['String'];
-}>;
-
-
-type BlogCatArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
-
-type BlogDateArticleListQueryVariables = Exact<{
-  periodStartDate: Maybe<Scalars['Date']>;
-  periodEndDate: Maybe<Scalars['Date']>;
-}>;
-
-
-type BlogDateArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
-
-type BlogTagArticleListQueryVariables = Exact<{
-  slug: Scalars['String'];
-}>;
-
-
-type BlogTagArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
-
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 type GatsbyImageSharpFixed_tracedSVGFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
@@ -3681,8 +3656,6 @@ type GatsbyImageSharpFluidLimitPresentationSizeFragment = { maxHeight: ImageShar
 type GatsbyImageSharpFluid_tracedSVGFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebpFragment = Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
