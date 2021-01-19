@@ -2723,7 +2723,6 @@ type SitePageContext = {
   readonly displayMonth: Maybe<Scalars['String']>;
   readonly periodStartDate: Maybe<Scalars['Date']>;
   readonly periodEndDate: Maybe<Scalars['Date']>;
-  readonly frontmatter: Maybe<SitePageContextFrontmatter>;
 };
 
 type SitePageContextFilterInput = {
@@ -2737,31 +2736,6 @@ type SitePageContextFilterInput = {
   readonly displayMonth: Maybe<StringQueryOperatorInput>;
   readonly periodStartDate: Maybe<DateQueryOperatorInput>;
   readonly periodEndDate: Maybe<DateQueryOperatorInput>;
-  readonly frontmatter: Maybe<SitePageContextFrontmatterFilterInput>;
-};
-
-type SitePageContextFrontmatter = {
-  readonly slug: Maybe<Scalars['String']>;
-  readonly date: Maybe<Scalars['Date']>;
-  readonly title: Maybe<Scalars['String']>;
-  readonly image: Maybe<Scalars['String']>;
-  readonly keywords: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly categories: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly language: Maybe<Scalars['String']>;
-  readonly description: Maybe<Scalars['String']>;
-};
-
-type SitePageContextFrontmatterFilterInput = {
-  readonly slug: Maybe<StringQueryOperatorInput>;
-  readonly date: Maybe<DateQueryOperatorInput>;
-  readonly title: Maybe<StringQueryOperatorInput>;
-  readonly image: Maybe<StringQueryOperatorInput>;
-  readonly keywords: Maybe<StringQueryOperatorInput>;
-  readonly categories: Maybe<StringQueryOperatorInput>;
-  readonly tags: Maybe<StringQueryOperatorInput>;
-  readonly language: Maybe<StringQueryOperatorInput>;
-  readonly description: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePageContextLatestArticles = {
@@ -2988,15 +2962,6 @@ enum SitePageFieldsEnum {
   context___displayMonth = 'context.displayMonth',
   context___periodStartDate = 'context.periodStartDate',
   context___periodEndDate = 'context.periodEndDate',
-  context___frontmatter___slug = 'context.frontmatter.slug',
-  context___frontmatter___date = 'context.frontmatter.date',
-  context___frontmatter___title = 'context.frontmatter.title',
-  context___frontmatter___image = 'context.frontmatter.image',
-  context___frontmatter___keywords = 'context.frontmatter.keywords',
-  context___frontmatter___categories = 'context.frontmatter.categories',
-  context___frontmatter___tags = 'context.frontmatter.tags',
-  context___frontmatter___language = 'context.frontmatter.language',
-  context___frontmatter___description = 'context.frontmatter.description',
   pluginCreator___id = 'pluginCreator.id',
   pluginCreator___parent___id = 'pluginCreator.parent.id',
   pluginCreator___parent___parent___id = 'pluginCreator.parent.parent.id',
