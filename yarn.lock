@@ -1111,12 +1111,12 @@
     tslib "^1.10.0"
 
 "@fluentui/react@^7.155.2":
-  version "7.155.4"
-  resolved "https://registry.yarnpkg.com/@fluentui/react/-/react-7.155.4.tgz#229f7a71d01da108586bb3ef1cff7afa0d248242"
-  integrity sha512-a5I+Q7mrBYvr31tWH0DhAHbXIFPuuUV14ajktFknhw5DOKtUf/zfbF7iW8eGmZKQhZoPxup19m8VAjN+XASEKQ==
+  version "7.156.0"
+  resolved "https://registry.yarnpkg.com/@fluentui/react/-/react-7.156.0.tgz#f2f157348d155cae711ada915312f06ebe834ead"
+  integrity sha512-+ZNi++L+s4sNEHnQfAeBBvr+HHE45psZNubRvsWRVsNRVMrv/vlGGDOS7Z324GrvaZppHfYi36fFssmhqE61vw==
   dependencies:
     "@uifabric/set-version" "^7.0.23"
-    office-ui-fabric-react "^7.155.4"
+    office-ui-fabric-react "^7.156.0"
     tslib "^1.10.0"
 
 "@fluentui/set-version@^8.0.0-beta.0":
@@ -7184,9 +7184,9 @@ gatsby-plugin-sass@^2.3.16:
     sass-loader "^7.3.1"
 
 gatsby-plugin-sharp@^2.11.1:
-  version "2.13.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.13.0.tgz#d754a7751f4f3fbc44920565b1b6b68deb38db0e"
-  integrity sha512-hfg8+vBkhsJxRWNUFU2C/gsnSAZNa0YuhyLSqod58ep/kOR9hwYRX9vMoD9GaKVDPJxX/MrgEgwelawi4Th+ug==
+  version "2.13.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.13.1.tgz#31e9c9db5f500ffdc5e5c28850ddbeac718bcfda"
+  integrity sha512-giWDcw58OFy7SP4kzgCd2qXxdWJkKXE03EviOxIjD2wjOxym+eUfUximxgbWjLT6dL9Vog3e/Pre57iVDPbPLA==
   dependencies:
     "@babel/runtime" "^7.12.5"
     async "^3.2.0"
@@ -11212,10 +11212,10 @@ obuf@^1.0.0, obuf@^1.1.2:
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
   integrity sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==
 
-office-ui-fabric-react@^7.155.4:
-  version "7.155.4"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.155.4.tgz#ea3115b004496c86f22a4f05511e678610982a11"
-  integrity sha512-KGHCxoI3+UTTHBGu5NDO1dNWq8SwNdLiFWfZmwVcNH0KIq7r4BaOWAc38GPhbl321WjaoXW+WKxewiBXq1++4Q==
+office-ui-fabric-react@^7.156.0:
+  version "7.156.0"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.156.0.tgz#28c999a8f97cc8c34bd525b838337abd255f7cc5"
+  integrity sha512-e9EwmkTGRjt+PJiRqB2ZU+8dTOUtDzNcOhiZmyI7Rvmz1XK3LhNDgoExbMQfAuDFEr2TcyvrOidwTAAkoRyWYw==
   dependencies:
     "@fluentui/date-time-utilities" "^7.9.0"
     "@fluentui/react-focus" "^7.17.1"
