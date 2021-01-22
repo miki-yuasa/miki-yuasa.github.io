@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Nav, INavStyles, INavLinkGroup } from 'office-ui-fabric-react/lib/Nav';
+import { Nav, INavLink, INavLinkGroup } from "@fluentui/react";
 
 import { BlogArticleBySlugQuery } from "../../../@types/graphql-types";
 
@@ -10,7 +10,7 @@ export const BlogTocPane = (props: { data: BlogArticleBySlugQuery }) => {
         return (<></>);
     }
     else {
-        const tocOrdered = tocItems.map(tocItem => {
+        const tocOrdered: INavLink[] = tocItems.map(tocItem => {
             if (tocItem.links === undefined) {
                 return {
                     url: tocItem.url,
@@ -31,6 +31,8 @@ export const BlogTocPane = (props: { data: BlogArticleBySlugQuery }) => {
                 }
             }
         });
+
+        const height: number = 60 + 44 * tocOrdered.length;
 
         const [selectedKey, setSelectedKey] = useState({});
 
@@ -86,7 +88,7 @@ export const BlogTocPane = (props: { data: BlogArticleBySlugQuery }) => {
         ]
 
         return (
-            <div className="articleSidePaneToc">
+            <div className="articleSidePaneToc" style={{ height: height }}>
                 <Nav
                     ariaLabel="Nav Table of Contents"
                     groups={navLinkGroups}
