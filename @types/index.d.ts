@@ -58,8 +58,7 @@ type CountedItemObj = {
 
 type CountedItemsObj = {
   key: string;
-  items: string[];
-  totalCount: number;
+  itemCounts: ItemCount[];
 };
 
 type ItemCount = {
