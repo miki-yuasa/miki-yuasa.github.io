@@ -41,11 +41,11 @@ type ArticleConfig = {
 
 type TagOrDate = "tag" | "date";
 
-type itemObj = {
+type ItemObj = {
   key: string;
   item: string;
 };
-type itemsObj = {
+type ItemsObj = {
   key: string;
   items: string[];
 };
@@ -59,6 +59,11 @@ type CountedItemObj = {
 type CountedItemsObj = {
   key: string;
   items: string[];
+  totalCount: number;
+};
+
+type ItemCount = {
+  item: string;
   totalCount: number;
 };
 

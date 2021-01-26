@@ -1,5 +1,5 @@
 import React from "react";
-import { CountedItemObj, CountedItemsObj, itemObj, itemsObj } from "../../../@types";
+import { CountedItemObj, CountedItemsObj, ItemObj, ItemsObj } from "../../../@types";
 import {
   CalendarIcon, FolderIcon,
   TagIcon
@@ -14,8 +14,8 @@ export function sepCatTag(catTag: string) {
   return { key, item };
 }
 
-export function group(objArray: itemObj[]) {
-  const groupedArray: itemsObj[] = [];
+export function group(objArray: ItemObj[]) {
+  const groupedArray: ItemsObj[] = [];
 
   objArray.forEach((obj) => {
     const ind: number = groupedArray.findIndex(
@@ -54,6 +54,8 @@ export function groupTags(objArray: CountedItemObj[]) {
       });
     }
   });
+
+  console.log(groupedArray);
 
   return groupedArray;
 }
@@ -108,7 +110,7 @@ export function getFormatedTagList(itemObjArray: CountedItemsObj[]) {
 export function getFormattedList({
   itemObjArray,
 }: {
-  itemObjArray: itemsObj[];
+  itemObjArray: ItemsObj[];
 }) {
 
   const outList: React.ReactNode[] = itemObjArray
