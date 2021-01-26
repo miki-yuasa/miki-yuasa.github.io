@@ -116,14 +116,14 @@ export function getFormattedList({
 
   const outList: React.ReactNode[] = itemObjArray
     .sort((a, b) => {
-      return a.key > b.key ? 1 : -1;
+      return a.key < b.key ? 1 : -1;
     })
     .map((itemObj) => {
       const toKey: string = `/blog/archives/${itemObj.key.toLowerCase()}`;
 
       const itemList: React.ReactNode[] = itemObj.items
         .sort((a, b) => {
-          return a > b ? 1 : -1;
+          return a < b ? 1 : -1;
         })
         .map((item) => {
           const toItem: string = `${toKey}/${item.toLowerCase()}/`;
