@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: miki-yuasa.github.io
+Token: 5c5a06cb7f8c47f5b137d15ca2eafe8ab9dc8bdadf69dbb3cd05c85bf0b17d82
