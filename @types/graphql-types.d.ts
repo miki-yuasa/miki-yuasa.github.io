@@ -1125,6 +1125,7 @@ type ImagePlaceholder =
   | 'blurred'
   | 'none';
 
+
 type ImageSharp = Node & {
   readonly fixed: Maybe<ImageSharpFixed>;
   /** @deprecated Resolutions was deprecated in Gatsby v2. It's been renamed to "fixed" https://example.com/write-docs-and-fix-this-example-link */
@@ -2226,15 +2227,15 @@ type Query_sitePageArgs = {
   internalComponentName: Maybe<StringQueryOperatorInput>;
   componentChunkName: Maybe<StringQueryOperatorInput>;
   matchPath: Maybe<StringQueryOperatorInput>;
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
   context: Maybe<SitePageContextFilterInput>;
   pluginCreator: Maybe<SitePluginFilterInput>;
   pluginCreatorId: Maybe<StringQueryOperatorInput>;
   componentPath: Maybe<StringQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
 };
 
 
@@ -2667,15 +2668,15 @@ type SitePage = Node & {
   readonly internalComponentName: Scalars['String'];
   readonly componentChunkName: Scalars['String'];
   readonly matchPath: Maybe<Scalars['String']>;
-  readonly id: Scalars['ID'];
-  readonly parent: Maybe<Node>;
-  readonly children: ReadonlyArray<Node>;
-  readonly internal: Internal;
   readonly isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>;
   readonly context: Maybe<SitePageContext>;
   readonly pluginCreator: Maybe<SitePlugin>;
   readonly pluginCreatorId: Maybe<Scalars['String']>;
   readonly componentPath: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly parent: Maybe<Node>;
+  readonly children: ReadonlyArray<Node>;
+  readonly internal: Internal;
 };
 
 type SitePageConnection = {
@@ -2710,7 +2711,30 @@ type SitePageContext = {
   readonly displayMonth: Maybe<Scalars['String']>;
   readonly periodStartDate: Maybe<Scalars['Date']>;
   readonly periodEndDate: Maybe<Scalars['Date']>;
-  readonly frontmatter: Maybe<SitePageContextFrontmatter>;
+};
+
+
+type SitePageContext_displayYearArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+
+type SitePageContext_periodStartDateArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+
+type SitePageContext_periodEndDateArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
 };
 
 type SitePageContextFilterInput = {
@@ -2724,37 +2748,20 @@ type SitePageContextFilterInput = {
   readonly displayMonth: Maybe<StringQueryOperatorInput>;
   readonly periodStartDate: Maybe<DateQueryOperatorInput>;
   readonly periodEndDate: Maybe<DateQueryOperatorInput>;
-  readonly frontmatter: Maybe<SitePageContextFrontmatterFilterInput>;
-};
-
-type SitePageContextFrontmatter = {
-  readonly slug: Maybe<Scalars['String']>;
-  readonly date: Maybe<Scalars['Date']>;
-  readonly title: Maybe<Scalars['String']>;
-  readonly image: Maybe<Scalars['String']>;
-  readonly keywords: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly categories: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly language: Maybe<Scalars['String']>;
-  readonly description: Maybe<Scalars['String']>;
-};
-
-type SitePageContextFrontmatterFilterInput = {
-  readonly slug: Maybe<StringQueryOperatorInput>;
-  readonly date: Maybe<DateQueryOperatorInput>;
-  readonly title: Maybe<StringQueryOperatorInput>;
-  readonly image: Maybe<StringQueryOperatorInput>;
-  readonly keywords: Maybe<StringQueryOperatorInput>;
-  readonly categories: Maybe<StringQueryOperatorInput>;
-  readonly tags: Maybe<StringQueryOperatorInput>;
-  readonly language: Maybe<StringQueryOperatorInput>;
-  readonly description: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePageContextLatestArticles = {
   readonly title: Maybe<Scalars['String']>;
   readonly slug: Maybe<Scalars['String']>;
   readonly date: Maybe<Scalars['Date']>;
+};
+
+
+type SitePageContextLatestArticles_dateArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
 };
 
 type SitePageContextLatestArticlesFilterInput = {
@@ -2784,6 +2791,22 @@ type SitePageContextNextFrontmatter = {
   readonly slug: Maybe<Scalars['String']>;
   readonly keywords: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly language: Maybe<Scalars['String']>;
+};
+
+
+type SitePageContextNextFrontmatter_dateArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+
+type SitePageContextNextFrontmatter_yearArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
 };
 
 type SitePageContextNextFrontmatterFilterInput = {
@@ -2816,6 +2839,22 @@ type SitePageContextPreviousFrontmatter = {
   readonly language: Maybe<Scalars['String']>;
 };
 
+
+type SitePageContextPreviousFrontmatter_dateArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+
+type SitePageContextPreviousFrontmatter_yearArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
 type SitePageContextPreviousFrontmatterFilterInput = {
   readonly title: Maybe<StringQueryOperatorInput>;
   readonly date: Maybe<DateQueryOperatorInput>;
@@ -2832,6 +2871,14 @@ type SitePageContextRelatedArticles = {
   readonly slug: Maybe<Scalars['String']>;
   readonly date: Maybe<Scalars['Date']>;
   readonly score: Maybe<Scalars['Int']>;
+};
+
+
+type SitePageContextRelatedArticles_dateArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
 };
 
 type SitePageContextRelatedArticlesFilterInput = {
@@ -3100,15 +3147,15 @@ type SitePageFilterInput = {
   readonly internalComponentName: Maybe<StringQueryOperatorInput>;
   readonly componentChunkName: Maybe<StringQueryOperatorInput>;
   readonly matchPath: Maybe<StringQueryOperatorInput>;
-  readonly id: Maybe<StringQueryOperatorInput>;
-  readonly parent: Maybe<NodeFilterInput>;
-  readonly children: Maybe<NodeFilterListInput>;
-  readonly internal: Maybe<InternalFilterInput>;
   readonly isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
   readonly context: Maybe<SitePageContextFilterInput>;
   readonly pluginCreator: Maybe<SitePluginFilterInput>;
   readonly pluginCreatorId: Maybe<StringQueryOperatorInput>;
   readonly componentPath: Maybe<StringQueryOperatorInput>;
+  readonly id: Maybe<StringQueryOperatorInput>;
+  readonly parent: Maybe<NodeFilterInput>;
+  readonly children: Maybe<NodeFilterListInput>;
+  readonly internal: Maybe<InternalFilterInput>;
 };
 
 type SitePageGroupConnection = {

@@ -34,14 +34,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/pages/blog/blog-articles`,
+        path: `${__dirname}/src/posts/blog-articles`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/pages/blog/blog-articles`,
+        name: `pages`,
+        path: `${__dirname}/src/posts/blog-articles`,
       },
     },
     {
@@ -62,6 +62,7 @@ module.exports = {
             options: {
               linkImagesToOriginal: true,
               maxWidth: 600,
+              tracedSVG: true
             },
           },
           {
@@ -88,7 +89,10 @@ module.exports = {
               classMap: {
                 "heading[depth=1]": "h1Blog",
                 "heading[depth=2]": "h2Blog",
-                "link": "linkBlog"
+                "link": "linkBlog",
+                "table": "tableBlog",
+                "tableRow": "trBlog",
+                "tableCell": "tdBlog"
                 // paragraph: "para",
               }
             }

@@ -10,7 +10,7 @@
 }
 
 $theme-color: $ms-color-themePrimary;
-$font_size_large: 0.9rem;
+$font_size_large: 0.85rem;
 $font_size_small:1rem;
 
 html {
@@ -372,7 +372,7 @@ $article-pane-width: 900px;
     margin-bottom: 20px;
     position: sticky;
     top: 0;
-    max-height: 380px;
+    //max-height: 380px;
     width: 250px;
     padding-top: 30px;
   }
@@ -687,6 +687,9 @@ sup {
 }
 img {
   border-style: none;
+}
+.imgBlog{
+  box-shadow: $ms-depth-shadow-8;
 }
 svg:not(:root) {
   overflow: hidden;
@@ -1143,6 +1146,20 @@ table {
     font-size: $font_size_large;
   }
 }
+.tableBlog{
+  width: auto;
+  border-collapse: collapse;
+  border-spacing: 10px;
+  margin-top:0;
+  margin-bottom: 1.45rem;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: $ms-depth-shadow-8;
+  border-radius: 6px;
+}
+tr.trBlog:nth-child(odd){
+  background-color: #eee;
+}
 fieldset {
   margin-left: 0;
   margin-right: 0;
@@ -1234,8 +1251,12 @@ li {
 .sidePane {
   list-style-type: none;
 }
+.ms-Nav-navItem.navItem-92 {
+  margin-bottom: 0;
+}
 ol li {
   padding-left: 0;
+  margin-bottom: calc(1.45rem / 2);
 }
 ul li {
   padding-left: 0;
@@ -1291,7 +1312,6 @@ abbr[title] {
 thead {
   text-align: left;
 }
-td,
 th {
   text-align: left;
   border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
@@ -1306,11 +1326,16 @@ th {
 }
 th:first-child,
 td:first-child {
-  padding-left: 0;
+  padding-left: 10;
 }
 th:last-child,
 td:last-child {
-  padding-right: 0;
+  padding-right: 10;
+}
+.tdBlog
+{
+  padding: 10px 10px;
+  text-align: center;
 }
 tt,
 code {

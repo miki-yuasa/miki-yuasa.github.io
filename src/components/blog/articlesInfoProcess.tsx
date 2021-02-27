@@ -1,5 +1,5 @@
 import React from "react";
-import { CountedItemObj, CountedItemsObj, itemObj, itemsObj } from "../../../@types";
+import { CountedItemObj, CountedItemsObj, ItemCount, ItemObj, ItemsObj } from "../../../@types";
 import {
   CalendarIcon, FolderIcon,
   TagIcon
@@ -14,8 +14,8 @@ export function sepCatTag(catTag: string) {
   return { key, item };
 }
 
-export function group(objArray: itemObj[]) {
-  const groupedArray: itemsObj[] = [];
+export function group(objArray: ItemObj[]) {
+  const groupedArray: ItemsObj[] = [];
 
   objArray.forEach((obj) => {
     const ind: number = groupedArray.findIndex(
@@ -44,16 +44,19 @@ export function groupTags(objArray: CountedItemObj[]) {
     );
 
     if (ind !== -1) {
-      groupedArray[ind].items.push(obj.item);
-      groupedArray[ind].totalCount += obj.totalCount;
+      groupedArray[ind].itemCounts.push({
+        item: obj.item,
+        totalCount: obj.totalCount
+      });
     } else {
       groupedArray.push({
         key: obj.key,
-        items: [obj.item],
-        totalCount: obj.totalCount
+        itemCounts: [{ item: obj.item, totalCount: obj.totalCount }]
       });
     }
   });
+
+  console.log(groupedArray);
 
   return groupedArray;
 }
@@ -67,12 +70,12 @@ export function getFormatedTagList(itemObjArray: CountedItemsObj[]) {
     .map((itemObj) => {
       const toKey: string = `/blog/tags/${itemObj.key.toLowerCase()}`;
 
-      const itemList: React.ReactNode[] = itemObj.items
+      const itemList: React.ReactNode[] = itemObj.itemCounts
         .sort((a, b) => {
-          return a > b ? 1 : -1;
+          return a.item > b.item ? 1 : -1;
         })
-        .map((item) => {
-          const toItem: string = `${toKey}/${item.toLowerCase()}/`;
+        .map((itemCount) => {
+          const toItem: string = `${toKey}/${itemCount.item.toLowerCase()}/`;
           const itemIcon = <TagIcon />;
           return (
             <li>
@@ -81,8 +84,8 @@ export function getFormatedTagList(itemObjArray: CountedItemsObj[]) {
                 href={toItem}
                 className="neutralDark"
               >
-                {item}
-              </a> ({itemObj.totalCount})
+                {itemCount.item}
+              </a> ({itemCount.totalCount})
             </li>
           );
         });
@@ -108,19 +111,19 @@ export function getFormatedTagList(itemObjArray: CountedItemsObj[]) {
 export function getFormattedList({
   itemObjArray,
 }: {
-  itemObjArray: itemsObj[];
+  itemObjArray: ItemsObj[];
 }) {
 
   const outList: React.ReactNode[] = itemObjArray
     .sort((a, b) => {
-      return a.key > b.key ? 1 : -1;
+      return a.key < b.key ? 1 : -1;
     })
     .map((itemObj) => {
       const toKey: string = `/blog/archives/${itemObj.key.toLowerCase()}`;
 
       const itemList: React.ReactNode[] = itemObj.items
         .sort((a, b) => {
-          return a > b ? 1 : -1;
+          return a < b ? 1 : -1;
         })
         .map((item) => {
           const toItem: string = `${toKey}/${item.toLowerCase()}/`;
