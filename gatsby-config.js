@@ -10,6 +10,7 @@ module.exports = {
   flags: {
     //PRESERVE_WEBPACK_CACHE: true,
     //QUERY_ON_DEMAND: true,
+    PRESERVE_WEBPACK_CACHE: true
   },
   plugins: [
     `gatsby-plugin-styled-components`,
