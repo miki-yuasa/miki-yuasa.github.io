@@ -32,7 +32,7 @@ export const BlogTocPane = (props: { data: BlogArticleBySlugQuery }) => {
             }
         });
 
-        const height: number = 60 + 44 * tocOrdered.length;
+        const height: number = 60 + 57 * tocOrdered.length;
 
         const [selectedKey, setSelectedKey] = useState({});
 
