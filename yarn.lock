@@ -1866,10 +1866,10 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-2.0.0-next.8.tgz#66ecc27b78e07a3ea2eb1a8fc5a99dfa0ba96690"
   integrity sha512-T0BcXmNzEunFkuxrO8BFw44htvTPuAoKbLvTG41otyZBDV1Rs+JMddcUuaP5vXpTWtgD3grhcrPEwyx88RUumQ==
 
-"@microsoft/load-themed-styles@^1.10.26", "@microsoft/load-themed-styles@^1.8.33":
-  version "1.10.148"
-  resolved "https://registry.yarnpkg.com/@microsoft/load-themed-styles/-/load-themed-styles-1.10.148.tgz#4a0ef6c9494b60830fc279944cf4fa4d2fb8109d"
-  integrity sha512-BhzeF5+LqUMazyjq7Zqu2VSqOFsCwwBA6Ae7UXLjfpb+YJS4mZDLE9b5LsT4AeGREpJNyBZOFsNAAN5BWNgIkg==
+"@microsoft/load-themed-styles@^1.10.26":
+  version "1.10.149"
+  resolved "https://registry.yarnpkg.com/@microsoft/load-themed-styles/-/load-themed-styles-1.10.149.tgz#6fff79ca1dbc87df2a03e932d9f8a9505153f569"
+  integrity sha512-XXd9GWLHAagjzVCnR17Mx3gQmWZbLD9sBFMaWc2h4fs5a1yig3AO274tFQTLsLoU1vwzBOFsI5wveh8baxBiZg==
 
 "@mikaelkristiansson/domready@^1.0.10":
   version "1.0.11"
@@ -7139,13 +7139,6 @@ gatsby-plugin-disqus@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-disqus/-/gatsby-plugin-disqus-1.2.2.tgz#d10e72c2ac0f7205abd7dda2e8cb4ecc0743a824"
   integrity sha512-RWiU8Jtg94kVphjBnxqnF+0txyJ3eZN/9vw/VlMgz0mor1FwULkiiiOyNXAJxbX6tFqYmypnmfa+edQWX/rMpQ==
-
-gatsby-plugin-fabric-ui@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-fabric-ui/-/gatsby-plugin-fabric-ui-1.0.4.tgz#8f767a2c0ad78e606cc4b73a873fec333a738de3"
-  integrity sha512-YL17bOz9EF7XfVE7ECPsx8ejK/sxGSLVFb3PV7yoJTo1dnBKPjvri0J2rv5Xs/NaWtNHiEQgv/Ugl8cE54dFnw==
-  dependencies:
-    "@microsoft/load-themed-styles" "^1.8.33"
 
 gatsby-plugin-layout@^1.3.13:
   version "1.10.0"
