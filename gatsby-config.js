@@ -15,7 +15,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-fabric-ui`,
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
