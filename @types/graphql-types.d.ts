@@ -282,6 +282,7 @@ type Site_buildTimeArgs = {
 
 type SiteFlags = {
   readonly PRESERVE_WEBPACK_CACHE: Maybe<Scalars['Boolean']>;
+  readonly FAST_DEV: Maybe<Scalars['Boolean']>;
 };
 
 type SiteSiteMetadata = {
@@ -2011,6 +2012,7 @@ type SiteSiteMetadataFilterInput = {
 
 type SiteFlagsFilterInput = {
   readonly PRESERVE_WEBPACK_CACHE: Maybe<BooleanQueryOperatorInput>;
+  readonly FAST_DEV: Maybe<BooleanQueryOperatorInput>;
 };
 
 type SiteConnection = {
@@ -2051,6 +2053,7 @@ type SiteFieldsEnum =
   | 'port'
   | 'host'
   | 'flags.PRESERVE_WEBPACK_CACHE'
+  | 'flags.FAST_DEV'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -3130,8 +3133,6 @@ type SitePluginSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
 type BlogArticleBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
@@ -3174,6 +3175,11 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
+type BlogArticleListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BlogArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
 
 type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3243,6 +3249,8 @@ type GatsbyImageSharpFluidLimitPresentationSizeFragment = { maxHeight: ImageShar
 type GatsbyImageSharpFluid_tracedSVGFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebpFragment = Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
