@@ -15,6 +15,7 @@ import { BlogTocPane } from "../components/navs/blogTocPane"
 import { BlogMediaShareButton } from "../components/buttons/blogMediaShareButtons";
 import { BlogArticleNav } from "../components/navs/blogArticleNav";
 import { CommentHosting } from "../components/comment/commentHosting";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const blogArticleTemplate = ({
   data,
