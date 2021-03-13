@@ -21,7 +21,8 @@ export default function DownloadButton(props: { href: string; title: string }) {
       textAlign: "center",
       alignContent: "center",
       alignItems: "center",
-      fontSize: "1.1rem"
+      fontSize: "1.1rem",
+      fontWeight: 'bold'
     },
   };
 
