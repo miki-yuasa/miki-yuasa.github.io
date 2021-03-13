@@ -8,6 +8,7 @@ import {
   IStackTokens,
   IStackItemStyles,
 } from "@fluentui/react";
+import { IoHomeOutline } from "react-icons/io5";
 
 import { ResponsiveSearchBox } from "../search/responsiveSearchBox";
 import { NavCommandButton } from "../buttons/navCommandButton";
@@ -91,17 +92,18 @@ export function NavBlogCompact() {
         />
       </Stack.Item>
       <Stack.Item disableShrink styles={nonShrinkingStackItemStylesSearch}>
-        <ResponsiveSearchBox />
       </Stack.Item>
       <Stack.Item grow styles={stackItemStyles}>
         {" "}
       </Stack.Item>
       <Stack.Item disableShrink styles={nonShrinkingStackItemStylesReturnHome}>
         <NavCommandButton
-          text="Home"
+          text=""
           title="Return to Home"
           href="/"
-        />
+        >
+          <IoHomeOutline fontSize="24" />
+        </NavCommandButton>
       </Stack.Item>
     </Stack>
   );

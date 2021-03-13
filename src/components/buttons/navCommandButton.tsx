@@ -23,7 +23,7 @@ export function NavCommandButton(props: {
 const navCommandButtonStyles: IButtonStyles = {
   root: {
     fontSize: "1rem",
-  },
+  }
 };
 
 NavCommandButton.defaultProps = { navCommandButtonStyles };
