@@ -5,6 +5,7 @@ import {
 import { Depths } from "@fluentui/theme";
 import React from "react";
 import { DownloadIcon } from "../icons/infoIcons";
+import { ArrowDownload24Regular } from "@fluentui/react-icons"
 
 
 export default function DownloadButton(props: { href: string; title: string }) {
@@ -17,6 +18,10 @@ export default function DownloadButton(props: { href: string; title: string }) {
     root: {
       boxShadow: Depths.depth8,
       height: "2.5rem",
+      textAlign: "center",
+      alignContent: "center",
+      alignItems: "center",
+      fontSize: "1.1rem"
     },
   };
 
@@ -29,10 +34,8 @@ export default function DownloadButton(props: { href: string; title: string }) {
       allowDisabledFocus
       styles={downloadButtonStyles}
     >
-      <strong style={{ fontSize: "1.1rem" }}>
-        <DownloadIcon iconClass={downloadIconClass} />
-        {props.title}
-      </strong>
+      <ArrowDownload24Regular primaryFill="white" />
+      &nbsp;{props.title}
     </PrimaryButton>
   );
 }
