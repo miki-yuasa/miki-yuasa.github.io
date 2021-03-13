@@ -2,12 +2,12 @@ import { DefaultPalette } from "@fluentui/react";
 import React from "react";
 import { Maybe } from "../../../@types/graphql-types";
 import { CalendarIcon, TagIcon } from "../icons/infoIcons";
-
+import { Tag16Regular, CalendarLtr16Regular } from "@fluentui/react-icons";
 
 export function PublishedDate(props: { date: Date }) {
   return (
     <div>
-      <CalendarIcon />
+      <CalendarLtr16Regular /> &nbsp;
       {props.date}
     </div>
   );
@@ -22,7 +22,7 @@ export function HashTags(props: { tags: Maybe<string>[] }) {
           color: DefaultPalette.neutralSecondaryAlt,
         }}
       >
-        <TagIcon />
+        <Tag16Regular primaryFill={DefaultPalette.neutralSecondary} /> &nbsp;
         {props.tags.map((e) => {
           const [cat, tag] = e?.split("/")!;
 
@@ -47,7 +47,7 @@ export function HashTags(props: { tags: Maybe<string>[] }) {
         })}
       </div>
     ) : (
-        <div>""</div>
-      );
+      <div>""</div>
+    );
   return tags;
 }
