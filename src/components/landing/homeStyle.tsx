@@ -2,6 +2,9 @@ import React from "react";
 import { graphql, StaticQuery } from "gatsby";
 import styled from "styled-components";
 import BackgroundImage from "gatsby-background-image";
+import { Mail28Regular } from "@fluentui/react-icons";
+import { GoMarkGithub } from "react-icons/go"
+import { IoLogoBitbucket, IoLogoLinkedin } from "react-icons/io5"
 
 import MediaButton from "../buttons/mediaButton";
 import DownloadButton from "../buttons/dlButton";
@@ -44,21 +47,25 @@ const BackgroundSection = () => (
 
             <br />
             <br />
-
             <MediaButton
               href="mailto:mikihisa.yuasa@wisc.edu"
               title="E-mail Address"
-              name="Mail"
+              icon={<Mail28Regular primaryFill='white' />}
+            />
+            <MediaButton
+              href="https://github.com/miki-yuasa/"
+              title="Github"
+              icon={<GoMarkGithub fontSize="28" />}
             />
             <MediaButton
               href="https://bitbucket.org/mikyu/"
               title="Bitbucket"
-              name="GitGraph"
+              icon={<IoLogoBitbucket fontSize="28" />}
             />
             <MediaButton
               href="https://www.linkedin.com/in/mikihisa-yuasa-3b7199132/"
               title="LinkedIn Profile"
-              name="LinkedInLogo"
+              icon={<IoLogoLinkedin fontSize="28" />}
             />
           </div>
         </BackgroundImage>
