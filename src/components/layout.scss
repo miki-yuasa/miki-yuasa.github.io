@@ -191,6 +191,11 @@ div.idBox .layoutBody {
 .articleMediaButton {
   margin: 0 10px 0 0;
 }
+.ms-DocumentCard.ms-DocumentCard--actionable:hover{
+  border-color: transparent;
+  box-shadow: $ms-depth-shadow-16;
+  border: 0;
+}
 @media (min-width: 600px) {
   div.homeParent {
     margin-right: 0;
