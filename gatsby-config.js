@@ -51,6 +51,7 @@ module.exports = {
         path: `${__dirname}/gatsby-config.js`,
       },
     },
+    'gatsby-plugin-image',
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-mdx`,

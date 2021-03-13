@@ -1,9 +1,7 @@
 import React from "react";
 import { CountedItemObj, CountedItemsObj, ItemCount, ItemObj, ItemsObj } from "../../../@types";
-import {
-  CalendarIcon, FolderIcon,
-  TagIcon
-} from "../../components/icons/infoIcons";
+import { CalendarIcon, FolderIcon, TagIcon } from "../../components/icons/infoIcons";
+import { Tag16Regular, Folder16Regular, CalendarLtr16Regular } from "@fluentui/react-icons";
 
 
 export function sepCatTag(catTag: string) {
@@ -76,10 +74,10 @@ export function getFormatedTagList(itemObjArray: CountedItemsObj[]) {
         })
         .map((itemCount) => {
           const toItem: string = `${toKey}/${itemCount.item.toLowerCase()}/`;
-          const itemIcon = <TagIcon />;
+          const itemIcon = <Tag16Regular />;
           return (
             <li>
-              {itemIcon}
+              {itemIcon} &nbsp;
               <a
                 href={toItem}
                 className="neutralDark"
@@ -92,7 +90,7 @@ export function getFormatedTagList(itemObjArray: CountedItemsObj[]) {
 
       return (
         <li>
-          <FolderIcon />
+          <Folder16Regular /> &nbsp;
           <a
             href={toKey}
             className="neutralDark"
@@ -127,10 +125,10 @@ export function getFormattedList({
         })
         .map((item) => {
           const toItem: string = `${toKey}/${item.toLowerCase()}/`;
-          const itemIcon = <CalendarIcon />;
+          const itemIcon = <CalendarLtr16Regular />;
           return (
             <li>
-              {itemIcon}
+              {itemIcon} &nbsp;
               <a
                 href={toItem}
                 className="neutralDark"
@@ -143,7 +141,7 @@ export function getFormattedList({
 
       return (
         <li>
-          <FolderIcon />
+          <Folder16Regular /> &nbsp;
           <a
             href={toKey}
             className="neutralDark"

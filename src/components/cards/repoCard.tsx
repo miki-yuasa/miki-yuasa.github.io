@@ -18,7 +18,8 @@ export default function RepoCard(props: Repo) {
       boxShadow: Depths.depth8,
       paddingTop: 18,
       paddingBottom: 10,
-    },
+      border: 0
+    }
   };
 
   const accessText: string = props.noAccess ? "No open access yet" : " ";

@@ -28,6 +28,7 @@ export function ArticleCard(props: {
       boxShadow: Depths.depth8,
       paddingTop: 0,
       paddingBottom: 10,
+      border: 0,
     },
   };
 
