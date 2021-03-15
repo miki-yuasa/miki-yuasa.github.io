@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { IButtonStyles } from "@fluentui/react";
+import { getSrc } from "gatsby-plugin-image"
 
 import SectionTemplate from "../../templates/sectionTemplate";
 import { ArticleCard } from "../cards/articleCard";
@@ -24,9 +25,12 @@ export default function Blog() {
               slug
               image {
                 childImageSharp {
-                  fluid(maxWidth: 320, maxHeight: 200, quality: 80) {
-                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                  }
+                  gatsbyImageData(
+                    layout:CONSTRAINED, 
+                    width:320, 
+                    height:200, 
+                    placeholder:TRACED_SVG, 
+                    quality:80)
                 }
               }
             }
@@ -53,7 +57,7 @@ export default function Blog() {
         <ArticleCard
           title={frontmatter?.title!}
           href={`blog/articles/${frontmatter?.slug!}`}
-          imageSrc={frontmatter?.image?.childImageSharp?.fluid?.src!}
+          imageSrc={getSrc(frontmatter?.image?.childImageSharp)!}
           date={frontmatter?.date}
           tags={tagString}
         />

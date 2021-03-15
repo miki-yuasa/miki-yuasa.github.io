@@ -3339,8 +3339,6 @@ type SitePluginSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
 type BlogArticleBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
@@ -3350,10 +3348,7 @@ type BlogArticleBySlugQuery = { readonly mdx: Maybe<(
     Pick<Mdx, 'body' | 'tableOfContents'>
     & { readonly frontmatter: Maybe<(
       Pick<MdxFrontmatter, 'date' | 'slug' | 'title' | 'tags' | 'keywords' | 'description' | 'language'>
-      & { readonly image: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<(
-            Pick<ImageSharpFluid, 'src'>
-            & GatsbyImageSharpFluid_withWebp_tracedSVGFragment
-          )> }> }> }
+      & { readonly image: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
     )> }
   )> };
 
@@ -3412,7 +3407,7 @@ type BlogCardListQueryVariables = Exact<{ [key: string]: never; }>;
 
 type BlogCardListQuery = { readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
           Pick<MdxFrontmatter, 'date' | 'title' | 'tags' | 'slug'>
-          & { readonly image: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebp_tracedSVGFragment> }> }> }
+          & { readonly image: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
         )> } }> } };
 
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
@@ -3452,6 +3447,8 @@ type GatsbyImageSharpFluidLimitPresentationSizeFragment = { maxHeight: ImageShar
 type GatsbyImageSharpFluid_tracedSVGFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebpFragment = Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
