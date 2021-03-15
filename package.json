@@ -42,7 +42,6 @@
     "gatsby-remark-images": "^4.0.0",
     "gatsby-remark-prismjs": "^4.0.0",
     "gatsby-remark-relative-images": "^2.0.2",
-    "gatsby-remark-toc": "^1.2.0",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
     "graphql": "^15.5.0",
