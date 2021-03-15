@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { DefaultPalette } from "@fluentui/react";
-
-import Image from "../image";
+import { StaticImage } from "gatsby-plugin-image";
 
 export default function About() {
   return (
@@ -16,7 +15,7 @@ export default function About() {
             <h2 className="sectionHeader">About</h2>
           </div>
           <div className="profile">
-            <Image filename="profile.jpg" style={{ borderRadius: "40px" }} />
+            <StaticImage src="../../assets/profile.jpg" alt="profile_icon" style={{ borderRadius: "40px" }} />
           </div>
           <div
             className="sectionBody"
@@ -29,7 +28,7 @@ export default function About() {
                 <dt>School:</dt>
                 <dd>
                   Senior undergraduate at the Department of
-                  Engineering-Mechanics, College of Engineering, University of
+                  Engineering Mechanics, College of Engineering, University of
                   Wisconsin-Madison{" "}
                 </dd>
                 <dt>Labs:</dt>
