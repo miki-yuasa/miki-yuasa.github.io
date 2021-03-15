@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { DefaultPalette } from "@fluentui/react";
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -34,25 +33,25 @@ export default function About() {
                 <dt>Labs:</dt>
                 <dd>
                   Professor{" "}
-                  <Link
-                    to="https://directory.engr.wisc.edu/ep/Faculty/Franck_Jennifer/"
+                  <a
+                    href="https://directory.engr.wisc.edu/ep/Faculty/Franck_Jennifer/"
                     target="_blank"
                     rel="noreferrer"
                     style={{ color: DefaultPalette.neutralQuaternary }}
                   >
                     Jennifer Franck
-                  </Link>
+                  </a>
                   's Computational Fluid Dynamics (CFD) Lab
                   <br />
                   Professor{" "}
-                  <Link
-                    to="https://topslab.wisc.edu/about/people/bin-ran/"
+                  <a
+                    href="https://topslab.wisc.edu/about/people/bin-ran/"
                     target="_blank"
                     rel="noreferrer"
                     style={{ color: DefaultPalette.neutralQuaternary }}
                   >
                     Bin Ran
-                  </Link>
+                  </a>
                   's Connected Automated Vehicles and Highway (CAVH) Lab
                 </dd>
                 <dt>Keywords:</dt>
