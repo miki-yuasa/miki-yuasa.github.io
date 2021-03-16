@@ -3,13 +3,14 @@ import {
   ActionButton,
   IButtonStyles,
   DefaultPalette,
-  FontIcon,
+  DefaultButton,
+  PrimaryButton,
   mergeStyles
 } from "@fluentui/react";
 import { Depths } from "@fluentui/theme";
 
 export default function MediaButton(props: {
-  name: string;
+  icon: JSX.Element;
   href: string;
   title: string;
 }) {
@@ -23,7 +24,14 @@ export default function MediaButton(props: {
   });
   const mediaButtonStyles: IButtonStyles = {
     root: {
-      width: "70px",
+      width: "60px",
+      textAlign: "center",
+      alignContent: "center",
+      alignItems: "center",
+      color: "white",
+      background: 'none',
+      border: 'none',
+      height: '40px'
     },
     rootHovered: {
       background: DefaultPalette.themePrimary,
@@ -32,7 +40,7 @@ export default function MediaButton(props: {
   };
 
   return (
-    <ActionButton
+    <PrimaryButton
       href={props.href}
       title={props.title}
       target="_blank"
@@ -40,7 +48,7 @@ export default function MediaButton(props: {
       allowDisabledFocus
       styles={mediaButtonStyles}
     >
-      <FontIcon iconName={props.name} className={iconClass} />
-    </ActionButton>
+      {props.icon}
+    </PrimaryButton>
   );
 }

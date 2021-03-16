@@ -10,11 +10,11 @@ module.exports = {
   flags: {
     //PRESERVE_WEBPACK_CACHE: true,
     //QUERY_ON_DEMAND: true,
+    PRESERVE_WEBPACK_CACHE: true,
+    FAST_DEV: true
   },
   plugins: [
-    `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-fabric-ui`,
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
@@ -34,14 +34,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/pages/blog/blog-articles`,
+        path: `${__dirname}/src/posts/blog-articles`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/pages/blog/blog-articles`,
+        name: `pages`,
+        path: `${__dirname}/src/posts/blog-articles`,
       },
     },
     {
@@ -50,6 +50,7 @@ module.exports = {
         path: `${__dirname}/gatsby-config.js`,
       },
     },
+    'gatsby-plugin-image',
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-mdx`,
@@ -62,25 +63,8 @@ module.exports = {
             options: {
               linkImagesToOriginal: true,
               maxWidth: 600,
+              tracedSVG: true
             },
-          },
-          {
-            resolve: `gatsby-remark-image-attributes`,
-            options: {
-
-              // ?Boolean=true
-              //   If true (the default), all CSS
-              //   property names will be recognized
-              //   as styleAttribute.
-              styleAttributes: true,
-
-              // ?Boolean=false
-              //   If true, all attributes that
-              //   aren't styleAttributes, will be
-              //   added as data-* attributes to the
-              //   image.
-              dataAttributes: false
-            }
           },
           {
             resolve: `gatsby-remark-classes`,
@@ -88,7 +72,10 @@ module.exports = {
               classMap: {
                 "heading[depth=1]": "h1Blog",
                 "heading[depth=2]": "h2Blog",
-                "link": "linkBlog"
+                "link": "linkBlog",
+                "table": "tableBlog",
+                "tableRow": "trBlog",
+                "tableCell": "tdBlog"
                 // paragraph: "para",
               }
             }

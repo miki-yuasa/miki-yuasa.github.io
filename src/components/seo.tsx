@@ -9,7 +9,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
-import defaultOGImage from "../pages/blog/blog-articles/2020/taiyaki.jpg";
+import defaultOGImage from "../posts/blog-articles/2020/taiyaki.jpg";
 
 
 function SEO(props: {

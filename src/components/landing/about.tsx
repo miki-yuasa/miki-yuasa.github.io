@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "gatsby";
 import { DefaultPalette } from "@fluentui/react";
-
-import Image from "../image";
+import { StaticImage } from "gatsby-plugin-image";
 
 export default function About() {
   return (
@@ -16,7 +14,7 @@ export default function About() {
             <h2 className="sectionHeader">About</h2>
           </div>
           <div className="profile">
-            <Image filename="profile.jpg" style={{ borderRadius: "40px" }} />
+            <StaticImage src="../../assets/profile.jpg" alt="profile_icon" style={{ borderRadius: "40px" }} />
           </div>
           <div
             className="sectionBody"
@@ -29,31 +27,31 @@ export default function About() {
                 <dt>School:</dt>
                 <dd>
                   Senior undergraduate at the Department of
-                  Engineering-Mechanics, College of Engineering, University of
+                  Engineering Mechanics, College of Engineering, University of
                   Wisconsin-Madison{" "}
                 </dd>
                 <dt>Labs:</dt>
                 <dd>
                   Professor{" "}
-                  <Link
-                    to="https://directory.engr.wisc.edu/ep/Faculty/Franck_Jennifer/"
+                  <a
+                    href="https://directory.engr.wisc.edu/ep/Faculty/Franck_Jennifer/"
                     target="_blank"
                     rel="noreferrer"
                     style={{ color: DefaultPalette.neutralQuaternary }}
                   >
                     Jennifer Franck
-                  </Link>
+                  </a>
                   's Computational Fluid Dynamics (CFD) Lab
                   <br />
                   Professor{" "}
-                  <Link
-                    to="https://topslab.wisc.edu/about/people/bin-ran/"
+                  <a
+                    href="https://topslab.wisc.edu/about/people/bin-ran/"
                     target="_blank"
                     rel="noreferrer"
                     style={{ color: DefaultPalette.neutralQuaternary }}
                   >
                     Bin Ran
-                  </Link>
+                  </a>
                   's Connected Automated Vehicles and Highway (CAVH) Lab
                 </dd>
                 <dt>Keywords:</dt>

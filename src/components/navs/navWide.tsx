@@ -23,6 +23,8 @@ export default function NavWide(props: { selectedKey: string }) {
     linkContent: {},
     text: {},
     icon: {},
+    linkInMenu: {},
+    overflowMenuButton: {}
   };
 
   const pageData = getPageData();

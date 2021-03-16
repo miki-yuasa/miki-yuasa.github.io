@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Image from "gatsby-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { GatsbyImage, getSrc } from "gatsby-plugin-image"
 
 import {
   BlogArticleBySlugQuery,
@@ -50,7 +50,7 @@ const blogArticleTemplate = ({
           paddingLeft: "10%",
         }}
       >
-        <Image fluid={frontmatter?.image?.childImageSharp?.fluid!} />
+        <GatsbyImage image={frontmatter?.image?.childImageSharp?.gatsbyImageData!} alt="altsub" />
       </div>
       <p> </p>
       <h1 className="h1BlogTitle">{frontmatter?.title}</h1>
@@ -75,7 +75,7 @@ const blogArticleTemplate = ({
       lang={lang}
       body={body}
       side={<> <BlogTocPane data={data} /></>}
-      image={frontmatter?.image?.childImageSharp?.fluid?.src!}
+      image={getSrc(frontmatter?.image?.childImageSharp!)}
     />
   );
 };
@@ -97,10 +97,7 @@ export const pageQuery = graphql`
         language
         image {
           childImageSharp {
-            fluid(maxWidth: 760, maxHeight: 450, quality: 50) {
-              src,
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
+            gatsbyImageData(layout:CONSTRAINED, width:760, height:450, placeholder:TRACED_SVG)
           }
         }
       }

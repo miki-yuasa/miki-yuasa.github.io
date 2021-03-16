@@ -8,7 +8,7 @@ import { NavCommandButton } from "./navCommandButton";
 
 export const NextButton = (props: { frontmatter: MarkdownRemarkFrontmatter }) => {
     return (
-        <NavCommandButton href={props.frontmatter.slug!}>
+        <NavCommandButton href={"/blog/articles/" + props.frontmatter.slug!}>
             Next&nbsp;&nbsp; <ChevronRightIcon />
         </NavCommandButton>
     )
@@ -16,7 +16,7 @@ export const NextButton = (props: { frontmatter: MarkdownRemarkFrontmatter }) =>
 
 export const PrevButton = (props: { frontmatter: MarkdownRemarkFrontmatter }) => {
     return (
-        <NavCommandButton href={props.frontmatter.slug!}>
+        <NavCommandButton href={"/blog/articles/" + props.frontmatter.slug!}>
             <ChevronLeftIcon /> Previous
         </NavCommandButton>
     )
