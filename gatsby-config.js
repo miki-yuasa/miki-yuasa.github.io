@@ -14,7 +14,6 @@ module.exports = {
     FAST_DEV: true
   },
   plugins: [
-    `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-typescript`,
