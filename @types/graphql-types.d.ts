@@ -3315,10 +3315,23 @@ type SitePluginSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type BlogCardListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BlogCardListQuery = { readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
+          Pick<MdxFrontmatter, 'date' | 'title' | 'tags' | 'slug'>
+          & { readonly image: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
+        )> } }> } };
+
 type BlogTagListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type BlogTagListQuery = { readonly allMdx: { readonly group: ReadonlyArray<Pick<MdxGroupConnection, 'fieldValue' | 'totalCount'>> } };
+
+type BlogArchiveListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BlogArchiveListQuery = { readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date'>> } }> } };
 
 type homemikigitmikiYuasaGithubIosrccomponentslandinghomeTsx4201544539QueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3333,23 +3346,27 @@ type infoAndSiteTitleQueryQuery = { readonly site: Maybe<(
     & { readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }
   )> };
 
-type BlogCardListQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BlogCardListQuery = { readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
-          Pick<MdxFrontmatter, 'date' | 'title' | 'tags' | 'slug'>
-          & { readonly image: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
-        )> } }> } };
-
 type homemikigitmikiYuasaGithubIosrccomponentsseoTsx3141419394QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type homemikigitmikiYuasaGithubIosrccomponentsseoTsx3141419394Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author' | 'url'>> }> };
 
-type BlogArchiveListQueryVariables = Exact<{ [key: string]: never; }>;
+type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type BlogArchiveListQuery = { readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date'>> } }> } };
+type IndexPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+
+type BlogArticleListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BlogArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
+
+type BlogCatArticleListQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+type BlogCatArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
 
 type BlogArticleBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
@@ -3363,13 +3380,6 @@ type BlogArticleBySlugQuery = { readonly mdx: Maybe<(
       & { readonly image: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
     )> }
   )> };
-
-type BlogCatArticleListQueryVariables = Exact<{
-  slug: Scalars['String'];
-}>;
-
-
-type BlogCatArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
 
 type BlogDateArticleListQueryVariables = Exact<{
   periodStartDate: Maybe<Scalars['Date']>;
@@ -3416,10 +3426,5 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
-
-type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type IndexPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
 }
