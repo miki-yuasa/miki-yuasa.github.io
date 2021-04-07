@@ -163,6 +163,13 @@ div.idBox .layoutBody {
 .articleSidePaneToc {
   display: none;
 }
+.articleCenterToc{
+  background: none;
+  margin: 0 auto;
+  width: 60%;
+  box-shadow: $ms-depth-shadow-8;
+  border-radius: 6px;
+}
 .articleSidePaneItem {
   padding: 20px 10px 10px 20px;
 }
@@ -387,6 +394,9 @@ $article-pane-width: 900px;
   .articleSidePaneItem {
     display: absolute;
     padding: 20px 20px 13px 20px;
+  }
+  .articleCenterToc{
+    display: none;
   }
 }
 @media (min-width: 1300px) {
@@ -1251,7 +1261,7 @@ th {
   font-weight: bold;
 }
 li {
-   margin-bottom: calc(1.45rem / 2);
+   //margin-bottom: calc(1.45rem / 2);
 }
 .sidePane {
   list-style-type: none;
