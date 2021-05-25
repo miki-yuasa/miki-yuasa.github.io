@@ -2,7 +2,6 @@ import React from "react";
 import {
   Pivot,
   PivotItem,
-  PivotLinkSize,
   IPivotStyles,
 } from "@fluentui/react";
 
@@ -17,37 +16,25 @@ export default function NavWide(props: { selectedKey: string }) {
         },
       },
     },
-    root: {},
-    link: {},
-    count: {},
-    linkContent: {},
-    text: {},
-    icon: {},
-    linkInMenu: {},
-    overflowMenuButton: {}
   };
 
   const pageData = getPageData();
-  let pivotItemList = [];
-
-  for (let i in pageData) {
-    let hrefStr: string = "/#" + pageData[i].name.toLowerCase();
-    pivotItemList.push(
-      <PivotItem
-        headerText={pageData[i].name}
-        headerButtonProps={{ href: hrefStr }}
-        itemKey={String(i)}
-      />
-    );
-  }
+  const pivotItemList = pageData.map((page, i) => {
+    return <PivotItem
+      headerText={page.name}
+      headerButtonProps={{ href: "#" + page.name.toLowerCase() }}
+      itemKey={String(i)}
+    />
+  })
 
   return (
     <Pivot
       aria-label="Basic Pivot Example"
       styles={pivotStyles}
-      linkSize={PivotLinkSize.large}
+      linkSize='large'
       headersOnly
       selectedKey={props.selectedKey}
+      linkFormat='links'
     >
       {pivotItemList}
     </Pivot>
