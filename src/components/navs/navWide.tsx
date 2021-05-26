@@ -1,42 +1,30 @@
 import React from "react";
-import {
-  Pivot,
-  PivotItem,
-  IPivotStyles,
-} from "@fluentui/react";
 
 import { getPageData } from "../../data/pageData";
+import { NavTabButton } from "../buttons/navTabButton"
 
-export default function NavWide(props: { selectedKey: string }) {
-  const pivotStyles: IPivotStyles = {
-    linkIsSelected: {
-      selectors: {
-        ":before": {
-          height: "4px", // was previously defaulted at 2px
-        },
-      },
-    },
-  };
-
+export default function NavWide(props: {
+  selectedKey: number
+}) {
   const pageData = getPageData();
   const pivotItemList = pageData.map((page, i) => {
-    return <PivotItem
-      headerText={page.name}
-      headerButtonProps={{ href: "#" + page.name.toLowerCase() }}
-      itemKey={String(i)}
-    />
+    if (i === props.selectedKey) {
+      return <NavTabButton
+        text={page.name}
+        href={"#" + page.name.toLowerCase()}
+        isSelected={true} />
+    }
+    else {
+      return <NavTabButton
+        text={page.name}
+        href={"#" + page.name.toLowerCase()} />
+    }
+
   })
 
   return (
-    <Pivot
-      aria-label="Basic Pivot Example"
-      styles={pivotStyles}
-      linkSize='large'
-      headersOnly
-      selectedKey={props.selectedKey}
-      linkFormat='links'
-    >
+    <div>
       {pivotItemList}
-    </Pivot>
+    </div>
   );
 }

@@ -264,6 +264,8 @@ type Site = Node & {
   readonly port: Maybe<Scalars['Int']>;
   readonly host: Maybe<Scalars['String']>;
   readonly flags: Maybe<SiteFlags>;
+  readonly polyfill: Maybe<Scalars['Boolean']>;
+  readonly pathPrefix: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
@@ -1031,6 +1033,8 @@ type Query_siteArgs = {
   port: Maybe<IntQueryOperatorInput>;
   host: Maybe<StringQueryOperatorInput>;
   flags: Maybe<SiteFlagsFilterInput>;
+  polyfill: Maybe<BooleanQueryOperatorInput>;
+  pathPrefix: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
@@ -2288,6 +2292,8 @@ type SiteFieldsEnum =
   | 'port'
   | 'host'
   | 'flags.PRESERVE_WEBPACK_CACHE'
+  | 'polyfill'
+  | 'pathPrefix'
   | 'id'
   | 'parent.id'
   | 'parent.parent.id'
@@ -2390,6 +2396,8 @@ type SiteFilterInput = {
   readonly port: Maybe<IntQueryOperatorInput>;
   readonly host: Maybe<StringQueryOperatorInput>;
   readonly flags: Maybe<SiteFlagsFilterInput>;
+  readonly polyfill: Maybe<BooleanQueryOperatorInput>;
+  readonly pathPrefix: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
@@ -4098,6 +4106,11 @@ type BlogTagArticleListQueryVariables = Exact<{
 
 type BlogTagArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
 
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'apiRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 type GatsbyImageSharpFixed_tracedSVGFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
@@ -4123,10 +4136,5 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'apiRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
 }

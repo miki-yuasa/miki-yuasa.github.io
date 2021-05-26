@@ -49,9 +49,13 @@ export default function Blog() {
         return simpleTag;
       })!;
 
-      const tagString: string = simpleTags.length >= 4
+      const tagString_tmp: string = simpleTags.length >= 4
         ? simpleTags.slice(0, 3).join(", ") + " ..."
         : simpleTags.join(", ");
+
+      const tagString: string = tagString_tmp.length <= 37
+        ? tagString_tmp
+        : simpleTags.slice(0, 2).join(", ") + " ...";
 
       return (
         <ArticleCard
