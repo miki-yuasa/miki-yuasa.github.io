@@ -42,7 +42,7 @@ export default function Home() {
             <br />
             <p className="shortIntro">
               {" "}
-              Reinforcement Learning Graduate Assistant at the University of
+              Reinforcement Learning Graduate Research Assistant at the University of
               Illinois Urbana-Champaign.
             </p>
 
