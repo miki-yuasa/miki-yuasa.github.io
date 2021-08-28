@@ -2,10 +2,9 @@ import React from "react";
 import { DefaultPalette } from "@fluentui/react";
 import { StaticImage } from "gatsby-plugin-image";
 
-import { getProfileData } from "../../data/profileData"
+import { profileData } from "../../data/profileData"
 import { listLabs } from "../lists/labList"
-
-const profileData = getProfileData();
+import { NewTabLink } from "../links/defaultLink";
 
 export default function About() {
   return (
@@ -39,14 +38,9 @@ export default function About() {
                 <dd>{profileData.email}</dd>
                 <dt>CV:</dt>
                 <dd>
-                  <a
-                    href='/CV_Mikihisa_Yuasa.pdf'
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{ color: DefaultPalette.neutralLight }}
-                  >
+                  <NewTabLink className='about' href='/CV_Mikihisa_Yuasa.pdf'>
                     <strong>Download from Here!</strong>
-                  </a>
+                  </NewTabLink>
                 </dd>
               </dl>
             </form>

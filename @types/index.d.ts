@@ -32,10 +32,12 @@ type Page = { name: string };
 type Publication = {
   authors: string[];
   year: number;
+  month?: number;
   title: string;
   journal: string;
   details: string;
   links?: PubLink[];
+  pending?: boolean;
 };
 
 type Award = {

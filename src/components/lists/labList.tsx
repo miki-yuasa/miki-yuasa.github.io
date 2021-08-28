@@ -1,17 +1,12 @@
 import React from "react"
+
 import { Lab } from "../../../@types"
+import { NewTabLink } from "../links/defaultLink";
 
 function labListElement(lab: Lab) {
     return <>
         {lab.piTitle + " "}
-        <a
-            className='labList'
-            href={lab.href}
-            target="_blank"
-            rel='noreferrer'
-        >
-            {lab.pi}
-        </a>
+        <NewTabLink className='about' href={lab.href}>{lab.pi}</NewTabLink>
         's {" " + lab.name}, {lab.affiliation}
         <br />
     </>;

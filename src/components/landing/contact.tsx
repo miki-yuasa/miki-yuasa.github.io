@@ -2,10 +2,9 @@ import React from "react";
 
 import SectionTemplate from "../../templates/sectionTemplate";
 import { NewTabLink } from "../links/defaultLink";
-import { getProfileData } from "../../data/profileData"
+import { profileData } from "../../data/profileData"
 
 export default function Contact() {
-  const profileData = getProfileData();
   return (
     <SectionTemplate title="Contact">
       <p>Email: {profileData.email}</p>

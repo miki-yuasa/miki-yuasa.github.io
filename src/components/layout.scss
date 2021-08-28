@@ -563,27 +563,27 @@ a.articleList:hover {
 a:hover {
   outline-width: 0;
 }
-a.footer:link {
+.footer:link {
   color: $ms-color-neutralTertiary;
   text-decoration: none;
 }
-a.footer:visited {
+.footer:visited {
   color: $ms-color-neutralTertiary;
   text-decoration: none;
 }
-a.footer:hover {
+.footer:hover {
   color: $theme-color;
   text-decoration: none;
 }
-a.neutralDark:link{
+.neutralDark:link{
   color: $ms-color-neutralDark;
   text-decoration: none;
 }
-a.neutralDark:visited{
+.neutralDark:visited{
   color: $ms-color-neutralDark;
   text-decoration: none;
 }
-a.neutralDark:hover{
+.neutralDark:hover{
   color: $theme-color;
   text-decoration: none;
 }
@@ -708,7 +708,7 @@ a.navButton{
     color: $ms-color-neutralDark;
   }
 }
-.labList {
+.about {
   color: $ms-color-neutralQuaternary
 }
 abbr[title] {

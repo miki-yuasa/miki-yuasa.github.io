@@ -8,7 +8,7 @@ import { IoLogoBitbucket, IoLogoLinkedin } from "react-icons/io5"
 
 import MediaButton from "../buttons/mediaButton";
 import DownloadButton from "../buttons/dlButton";
-import { getProfileData } from "../../data/profileData"
+import { profileData } from "../../data/profileData"
 
 export default function Home() {
   const { placeholderImage } = useStaticQuery(
@@ -29,7 +29,6 @@ export default function Home() {
     `
   )
   const pluginImage = getImage(placeholderImage);
-  const profileData = getProfileData();
 
   return (
     <div className="idBox" id="home">
