@@ -1,6 +1,7 @@
 import React from "react";
 import { DefaultPalette } from "@fluentui/react";
 import { StaticImage } from "gatsby-plugin-image";
+
 import { getProfileData } from "../../data/profileData"
 import { listLabs } from "../lists/labList"
 
@@ -29,12 +30,9 @@ export default function About() {
                 <dt>Name:</dt>
                 <dd>{profileData.name}</dd>
                 <dt>Affiliation:</dt>
-                <dd>
-                  {profileData.affiliation + " "}
-                </dd>
+                <dd>{profileData.affiliation + " "}</dd>
                 <dt>Labs:</dt>
-                <dd>
-                  {listLabs(profileData.labs)}</dd>
+                <dd>{listLabs(profileData.labs)}</dd>
                 <dt>Keywords:</dt>
                 <dd>{profileData.keywords}</dd>
                 <dt>Email:</dt>

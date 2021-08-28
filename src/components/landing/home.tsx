@@ -8,6 +8,7 @@ import { IoLogoBitbucket, IoLogoLinkedin } from "react-icons/io5"
 
 import MediaButton from "../buttons/mediaButton";
 import DownloadButton from "../buttons/dlButton";
+import { getProfileData } from "../../data/profileData"
 
 export default function Home() {
   const { placeholderImage } = useStaticQuery(
@@ -28,6 +29,7 @@ export default function Home() {
     `
   )
   const pluginImage = getImage(placeholderImage);
+  const profileData = getProfileData();
 
   return (
     <div className="idBox" id="home">
@@ -38,12 +40,12 @@ export default function Home() {
           <div className="homeBackgroundedSection">
             <h2 className="home">Hi there! I'm</h2>
             <br />
-            <h1 className="home">Mikihisa Yuasa</h1>
+            <h1 className="home">{profileData.name}</h1>
             <br />
             <p className="shortIntro">
               {" "}
               Reinforcement Learning Graduate Research Assistant at the University of
-              Illinois Urbana-Champaign.
+              Illinois Urbana-Champaign
             </p>
 
             <DownloadButton href='/CV_Mikihisa_Yuasa.pdf' title="Download CV" />
@@ -51,7 +53,7 @@ export default function Home() {
             <br />
             <br />
             <MediaButton
-              href="mailto:mikihisa.yuasa@wisc.edu"
+              href={"mailto:" + profileData.email}
               title="E-mail Address"
               icon={<Mail28Regular primaryFill='white' />}
             />

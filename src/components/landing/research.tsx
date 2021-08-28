@@ -6,6 +6,20 @@ import SectionTemplate from "../../templates/sectionTemplate";
 export default function Research() {
   return (
     <SectionTemplate title="Research">
+      <p>
+        I'm interested in application of reinforcement learning, especially multi agent reinforcement learning (MARL), to real world settings such as transportation automation or robotic urban search-and-rescue missions.
+      </p>
+
+      <p>
+        Some topics on which I am working with Professor Huy Tran at Tran Research Goup are:
+      </p>
+      <ol>
+        <li>
+          MARL Real World Application: testing MARL theories on real robot vehicles.
+        </li>
+      </ol>
+
+      <h4>Previous Udergraduate Research:</h4>
       <div className="video">
         <video controls>
           <source src={WhiskMorphMp4} type="video/mp4" />

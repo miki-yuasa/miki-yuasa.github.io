@@ -2,11 +2,13 @@ import React from "react";
 
 import SectionTemplate from "../../templates/sectionTemplate";
 import { NewTabLink } from "../links/defaultLink";
+import { getProfileData } from "../../data/profileData"
 
 export default function Contact() {
+  const profileData = getProfileData();
   return (
     <SectionTemplate title="Contact">
-      <p>Email: mikihisa(dot)yuasa(at)wisc(dot)edu</p>
+      <p>Email: {profileData.email}</p>
       <p>
         CV can be downloaded from{" "}
         <NewTabLink
