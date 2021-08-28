@@ -42,8 +42,8 @@ export default function Home() {
             <br />
             <p className="shortIntro">
               {" "}
-              An engineering undergraduate at the University of
-              Wisconsin-Madison.
+              Reinforcement Learning Graduate Assistant at the University of
+              Illinois Urbana-Champaign.
             </p>
 
             <DownloadButton href='/CV_Mikihisa_Yuasa.pdf' title="Download CV" />
