@@ -2,6 +2,10 @@ import React from "react";
 import { DefaultPalette } from "@fluentui/react";
 import { StaticImage } from "gatsby-plugin-image";
 
+import { profileData } from "../../data/profileData"
+import { listLabs } from "../lists/labList"
+import { NewTabLink } from "../links/defaultLink";
+
 export default function About() {
   return (
     <div className="idBox" id="about">
@@ -23,57 +27,20 @@ export default function About() {
             <form>
               <dl>
                 <dt>Name:</dt>
-                <dd>Mikihisa Yuasa</dd>
-                <dt>School:</dt>
-                <dd>
-                  Senior undergraduate at the Department of
-                  Engineering Mechanics, College of Engineering, University of
-                  Wisconsin-Madison{" "}
-                </dd>
+                <dd>{profileData.name}</dd>
+                <dt>Affiliation:</dt>
+                <dd>{profileData.affiliation + " "}</dd>
                 <dt>Labs:</dt>
-                <dd>
-                  Professor{" "}
-                  <a
-                    href="https://directory.engr.wisc.edu/ep/Faculty/Franck_Jennifer/"
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{ color: DefaultPalette.neutralQuaternary }}
-                  >
-                    Jennifer Franck
-                  </a>
-                  's Computational Fluid Dynamics (CFD) Lab
-                  <br />
-                  Professor{" "}
-                  <a
-                    href="https://topslab.wisc.edu/about/people/bin-ran/"
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{ color: DefaultPalette.neutralQuaternary }}
-                  >
-                    Bin Ran
-                  </a>
-                  's Connected Automated Vehicles and Highway (CAVH) Lab
-                </dd>
+                <dd>{listLabs(profileData.labs)}</dd>
                 <dt>Keywords:</dt>
-                <dd>
-                  Dynamic Control, Computational Fluid Dynamics, Mesh
-                  Generation, Flow Control, Connected Automated Vehicles and
-                  Highway, Aerial/Ground Unmanned Vehicles, Intelligent
-                  Transportation, Computing, Biomimicry, Harbor Seal Whisker,
-                  Conformal Mapping
-                </dd>
+                <dd>{profileData.keywords}</dd>
                 <dt>Email:</dt>
-                <dd>mikihisa(dot)yuasa(at)wisc(dot)edu</dd>
+                <dd>{profileData.email}</dd>
                 <dt>CV:</dt>
                 <dd>
-                  <a
-                    href='/CV_Mikihisa_Yuasa.pdf'
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{ color: DefaultPalette.neutralLight }}
-                  >
+                  <NewTabLink className='about' href='/CV_Mikihisa_Yuasa.pdf'>
                     <strong>Download from Here!</strong>
-                  </a>
+                  </NewTabLink>
                 </dd>
               </dl>
             </form>

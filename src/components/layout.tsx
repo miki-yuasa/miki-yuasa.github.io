@@ -30,19 +30,13 @@ const Layout = (props: { children: React.ReactNode; header?: JSX.Element }) => {
       }
     }
   `);
-
-  if (typeof window !== "undefined") {
-    // eslint-disable-next-line global-require
-    require("smooth-scroll")('a[href*="#"]');
-  }
-
   return (
     <div style={{ background: DefaultPalette.neutralLighter }}>
       {props.header}
       <div className="layoutBody">
         <main>{props.children}</main>
         <footer>
-          Last updated: {data.site.buildTime}
+          Last updated: {data.site!.buildTime}
           <br />
           Copyright © 2020 - {new Date().getFullYear()} Mikihisa Yuasa | All Rights
           Reserved

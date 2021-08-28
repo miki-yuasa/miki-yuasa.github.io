@@ -59,7 +59,9 @@ const Header = () => {
         <NavCompact />
       </header>
       <header className="wide">
-        <NavWide selectedKey={String(selectedKey)} />
+        <NavWide
+          selectedKey={selectedKey}
+        />
       </header>
     </>
   );

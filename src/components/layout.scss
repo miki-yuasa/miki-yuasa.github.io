@@ -17,6 +17,7 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -134,9 +135,9 @@ div.idBox .layoutBody {
   background: white;
   border-radius: 6px;
   box-shadow: $ms-depth-shadow-8;
-  width: 94vw;
-  margin-left: auto;
-  margin-right: auto;
+  //width: 94vw;
+  margin-left: 0;
+  margin-right: 0;
 }
 .articleSpace {
   display: none;
@@ -562,27 +563,27 @@ a.articleList:hover {
 a:hover {
   outline-width: 0;
 }
-a.footer:link {
+.footer:link {
   color: $ms-color-neutralTertiary;
   text-decoration: none;
 }
-a.footer:visited {
+.footer:visited {
   color: $ms-color-neutralTertiary;
   text-decoration: none;
 }
-a.footer:hover {
+.footer:hover {
   color: $theme-color;
   text-decoration: none;
 }
-a.neutralDark:link{
+.neutralDark:link{
   color: $ms-color-neutralDark;
   text-decoration: none;
 }
-a.neutralDark:visited{
+.neutralDark:visited{
   color: $ms-color-neutralDark;
   text-decoration: none;
 }
-a.neutralDark:hover{
+.neutralDark:hover{
   color: $theme-color;
   text-decoration: none;
 }
@@ -662,6 +663,53 @@ a.linkBlog:hover{
   color: $theme-color;
   text-decoration: none;
   display: inline;
+}
+a.navButton{
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: $ms-color-neutralDark;
+  font-family: "Lato", Helvetica, sans-serif;
+  font-size: large;
+  padding: 0 8px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  margin-right: 8px;
+  &.selected{
+    font-weight: bold;
+    &::after{
+      position: absolute;
+      bottom: 0;
+      left: 8px;
+      right: 8px;
+      height: 4px;
+      transition: left 0.267s cubic-bezier(0.1, 0.25, 0.75, 0.9) 0s, right 0.267s cubic-bezier(0.1, 0.25, 0.75, 0.9) 0s;
+      background: $ms-color-themePrimary;
+      content: '';
+    }
+    &:hover{
+      //background: $ms-color-neutralLighter;
+      &::after{
+        transform: scale(1, 1);
+        left:0;
+        right: 0;
+      }
+    }
+  
+  }
+  &:hover{
+    background: $ms-color-neutralLighter;
+  } 
+  &:active{
+    background: $ms-color-neutralLight;
+  }
+  &:visited{
+    color: $ms-color-neutralDark;
+  }
+}
+.about {
+  color: $ms-color-neutralQuaternary
 }
 abbr[title] {
   border-bottom: none;

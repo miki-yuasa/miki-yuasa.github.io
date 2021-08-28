@@ -8,10 +8,11 @@ module.exports = {
     image: "/images/defaultImage.png"
   },
   flags: {
-    //PRESERVE_WEBPACK_CACHE: true,
     //QUERY_ON_DEMAND: true,
     PRESERVE_WEBPACK_CACHE: true,
-    FAST_DEV: true
+    FAST_DEV: true,
+    //PARALLEL_SOURCING: true,
+    LMDB_STORE: true
   },
   plugins: [
     `gatsby-transformer-sharp`,

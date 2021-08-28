@@ -4,6 +4,23 @@ declare module "*.ico";
 declare module "*.png";
 declare module "*.pdf";
 
+type Lab = {
+  name: string;
+  pi: string;
+  piTitle: string;
+  href: string;
+  affiliation: string;
+  workingStatus: 'previous' | 'current';
+}
+
+type Profile = {
+  name: string;
+  affiliation: string;
+  labs: Lab[];
+  keywords: string;
+  email: string;
+};
+
 type Repo = {
   name: string;
   onClickHref?: string;
@@ -15,10 +32,12 @@ type Page = { name: string };
 type Publication = {
   authors: string[];
   year: number;
+  month?: number;
   title: string;
   journal: string;
   details: string;
   links?: PubLink[];
+  pending?: boolean;
 };
 
 type Award = {

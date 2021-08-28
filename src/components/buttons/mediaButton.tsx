@@ -1,9 +1,7 @@
 import React from "react";
 import {
-  ActionButton,
   IButtonStyles,
   DefaultPalette,
-  DefaultButton,
   PrimaryButton,
   mergeStyles
 } from "@fluentui/react";
@@ -15,13 +13,6 @@ export default function MediaButton(props: {
   title: string;
 }) {
 
-  const iconClass = mergeStyles({
-    fontSize: "1.3rem",
-    margin: "0px 10 0 19px",
-    stroke: "white",
-    fill: "white",
-    color: "white"
-  });
   const mediaButtonStyles: IButtonStyles = {
     root: {
       width: "60px",

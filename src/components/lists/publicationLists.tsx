@@ -1,7 +1,7 @@
 import React from "react"
 import { Award, Publication } from "../../../@types"
 
-import { conferencePaperData, posterData, awardData } from "../../data/publicationData"
+import { journalPaperData, conferencePaperData, posterData, awardData } from "../../data/publicationData"
 import { NewTabLink } from "../links/defaultLink";
 
 function listPublications(publications: Publication[]) {
@@ -14,9 +14,13 @@ function listPublications(publications: Publication[]) {
             })}]</>
             : <></>
             ;
+        const listItem = publication.pending
+            ? <>{`[Under Review] ${authors} "`}<strong>{publication.title}</strong>{`" (Submitted ${('00' + publication.month).slice(-2)}/${publication.year}).`} {links}</>
+            : <>{`${authors} "`}<strong>{publication.title}</strong>{`," `}<i>{publication.journal}</i>{`, ${publication.details}, ${publication.year}. `} {links}</>
+            ;
         return (
             <li>
-                {`${authors}"`}<strong>{publication.title}</strong>{`," `}<i>{publication.journal}</i>{`, ${publication.details}, ${publication.year}. `} {links}
+                {listItem}
             </li>
         )
     });
@@ -42,6 +46,10 @@ function listAwards(awards: Award[]) {
             {awardList}
         </ul>
     );
+}
+
+export function JournalPaperList() {
+    return listPublications(journalPaperData);
 }
 
 export function ConferencePaperList() {
