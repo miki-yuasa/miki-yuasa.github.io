@@ -44,6 +44,7 @@
     "gbimage-bridge": "^0.1.1",
     "graphql": "^15.5.0",
     "intersection-observer": "^0.12.0",
+    "lmdb-store": "^1.6.6",
     "mini-css-extract-plugin": "^2.2.0",
     "node-sass": "^6.0.0",
     "prismjs": "^1.21.0",
