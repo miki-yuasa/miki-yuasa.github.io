@@ -44,7 +44,7 @@
     "gbimage-bridge": "^0.1.1",
     "graphql": "^15.5.0",
     "intersection-observer": "^0.12.0",
-    "mini-css-extract-plugin": "^1.0.0",
+    "mini-css-extract-plugin": "^2.2.0",
     "node-sass": "^6.0.0",
     "prismjs": "^1.21.0",
     "prop-types": "^15.7.2",
@@ -58,13 +58,13 @@
     "react-share": "^4.3.1",
     "sass": "^1.32.8",
     "ts-node": "^10.0.0",
-    "typescript": "4.3.2",
+    "typescript": "4.4.2",
     "webpack": "^5.26.0"
   },
   "devDependencies": {
-    "@types/node": "^15.6.1",
+    "@types/node": "^16.7.4",
     "gh-pages": "^3.1.0",
-    "prettier": "2.3.0"
+    "prettier": "2.3.2"
   },
   "keywords": [
     "gatsby"
