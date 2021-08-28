@@ -7,7 +7,7 @@ import { GoMarkGithub } from "react-icons/go"
 import { IoLogoBitbucket, IoLogoLinkedin } from "react-icons/io5"
 
 import MediaButton from "../buttons/mediaButton";
-import DownloadButton from "../buttons/dlButton";
+import { DownloadButton, EmphButton } from "../buttons/emphButtons";
 import { profileData } from "../../data/profileData"
 
 export default function Home() {
@@ -46,8 +46,13 @@ export default function Home() {
               Reinforcement Learning Graduate Research Assistant at the University of
               Illinois Urbana-Champaign
             </p>
-
-            <DownloadButton href='/CV_Mikihisa_Yuasa.pdf' title="Download CV" />
+            <div style={{
+              display: "flex", verticalAlign: 'center', justifyContent: 'center'
+            }}>
+              <DownloadButton href='/CV_Mikihisa_Yuasa.pdf' title="Download CV" />
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <EmphButton href='https://scholar.google.com/citations?user=NiRKTWkAAAAJ&hl=ja' title="Google Scholar" />
+            </div>
 
             <br />
             <br />
