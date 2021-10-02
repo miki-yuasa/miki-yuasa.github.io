@@ -15,7 +15,7 @@ function listPublications(publications: Publication[]) {
             : <></>
             ;
         const listItem = publication.pending
-            ? <>{`[Under Review] ${authors} "`}<strong>{publication.title}</strong>{`" (Submitted ${('00' + publication.month).slice(-2)}/${publication.year}).`} {links}</>
+            ? <>{`[Under Review] ${authors} "`}<strong>{publication.title}</strong>{`," `}<i>{publication.journal}</i>{`. (Submitted ${('00' + publication.month).slice(-2)}/${publication.year}).`} {links}</>
             : <>{`${authors} "`}<strong>{publication.title}</strong>{`," `}<i>{publication.journal}</i>{`, ${publication.details}, ${publication.year}. `} {links}</>
             ;
         return (
