@@ -24,7 +24,7 @@ export default function Software() {
         personal projects hosted on GitHub and Bitbucket. The codes for some on-going
         projects have restricted access for internal use.
       </p>
-      <div className="docCard software">{repoList}</div>
+      <div className="docCard">{repoList}</div>
     </SectionTemplate>
   );
 }

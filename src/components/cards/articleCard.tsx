@@ -29,6 +29,7 @@ export function ArticleCard(props: {
       paddingTop: 0,
       paddingBottom: 10,
       border: 0,
+      flexShrink: 0
     },
   };
 
