@@ -109,6 +109,11 @@ div.idBox .layoutBody {
   text-align: center;
   margin: 0 auto;
   vertical-align: middle;
+  &.software{
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+  }
 }
 .video {
   text-align: center;

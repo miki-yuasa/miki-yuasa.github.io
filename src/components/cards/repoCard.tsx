@@ -12,13 +12,13 @@ import { Repo } from "../../../@types";
 export default function RepoCard(props: Repo) {
   const cardStyles: IDocumentCardStyles = {
     root: {
-      display: "inline-block",
       margin: 10,
       width: 320,
       boxShadow: Depths.depth8,
       paddingTop: 18,
       paddingBottom: 10,
-      border: 0
+      border: 0,
+      flexShrink: 0
     }
   };
 
