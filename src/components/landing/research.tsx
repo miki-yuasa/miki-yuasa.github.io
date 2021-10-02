@@ -7,7 +7,7 @@ export default function Research() {
   return (
     <SectionTemplate title="Research">
       <p>
-        I'm interested in application of reinforcement learning, especially multi agent reinforcement learning (MARL), to real world settings such as transportation automation, urban air mobility, or robotic urban search-and-rescue missions.
+        I'm interested in developing core reinforcement learning (RL) methodologies for safety-critical applications in the real world, such as connected automated vehicles, smart cities, urban air mobility, and urban search-and-rescue missions.
       </p>
 
       <p>
@@ -15,7 +15,10 @@ export default function Research() {
       </p>
       <ol>
         <li>
-          MARL Real World Application: testing MARL theories on real robot vehicles.
+          Safe and Verfiable RL Development: developing a RL theory and framework to verifiably satisfy sefety specifications of RL agents using formal logic.
+        </li>
+        <li>
+          Multi-Agent RL (MARL) Applications: testing MARL theories on real robot vehicles.
         </li>
       </ol>
       <br />

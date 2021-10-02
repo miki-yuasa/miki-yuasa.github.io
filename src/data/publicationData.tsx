@@ -5,7 +5,7 @@ export const journalPaperData: Publication[] = [
         authors: ["Yuasa, M.", "Lyons, K.", "Franck, J. A."],
         year: 2021,
         month: 1,
-        title: "Simulations of flow over a bio-inspired undulated cylinder with dynamically morphing topography	",
+        title: "Simulations of flow over a bio-inspired undulated cylinder with dynamically morphing topography",
         journal: "Journal of Fluids and Structures",
         details: "",
         pending: true

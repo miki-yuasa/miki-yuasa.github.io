@@ -36,7 +36,7 @@ export default function navCompact() {
 
   const menuIconClass = mergeStyles({
     fontSize: "1.5rem",
-    margin: "0px 4px 0px 6.2px",
+    margin: "0px 6px 0px 6.2px",
     background: DefaultPalette.white,
   });
 
@@ -52,7 +52,7 @@ export default function navCompact() {
     items: item,
     styles: {
       root: {
-        marginRight: "-90px",
+        marginRight: "-85px",
         paddingRight: "0px",
       },
     },

@@ -2,7 +2,7 @@ import { Profile } from '../../@types'
 
 export const profileData: Profile = {
     name: 'Mikihisa Yuasa',
-    affiliation: 'Graduate reasearch assistant at the Department of Aerospace Engineering, University of Illinois Urbana-Champaign',
+    affiliation: '1st-year graduate reasearch assistant at the Department of Aerospace Engineering, University of Illinois Urbana-Champaign',
     labs: [
         {
             name: 'Tran Research Group',
@@ -29,6 +29,6 @@ export const profileData: Profile = {
             workingStatus: 'previous'
         }
     ],
-    keywords: 'Deep Reinforcement Learning, Multi-Agent Reinforcement Learning, Urban Air mobility, Search-and-Rescure, Connected Automated Vehicles and Highway, Aerial/Ground Unmanned Vehicles, Intelligent Transportation, Computing,Dynamic Control, Computational Fluid Dynamics, Mesh Generation, Flow Control,  Biomimicry, Harbor Seal Whisker, Conformal Mapping',
+    keywords: 'Deep Reinforcement Learning, Safe & Verifiable Reinforcement Learning, Multi-Agent Reinforcement Learning, Urban Air Mobility, Search-and-Rescure, Connected Automated Vehicles and Highway, Aerial/Ground Unmanned Vehicles, Intelligent Transportation, Computing,Dynamic Control, Computational Fluid Dynamics, Mesh Generation, Flow Control,  Biomimicry, Harbor Seal Whisker, Conformal Mapping',
     email: 'myuasa2(at)illinois(dot)edu'
 }
