@@ -16,23 +16,23 @@ export function BlogBreadCrumb(props: { crumbItems: CrumbItem[] }) {
     const decoration = crumb.href === undefined ? "none" : "underline";
 
     const linkStyle = isLast
-      ? "crumbLast"
+      ? "crumb last"
       : crumb.href === undefined
-        ? "crumbNone"
+        ? "crumb none"
         : "crumb";
 
     const linkComplete = isLast ? (
       <>{crumb.text}</>
     ) : (
-        <>
-          <a href={crumb.href!} className={linkStyle}>
-            {crumb.text}
-          </a>
-          <span style={{ color: DefaultPalette.neutralSecondaryAlt }}>
-            {" > "}
-          </span>
-        </>
-      );
+      <>
+        <a href={crumb.href!} className={linkStyle}>
+          {crumb.text}
+        </a>
+        <span style={{ color: DefaultPalette.neutralSecondaryAlt }}>
+          {" > "}
+        </span>
+      </>
+    );
 
     return linkComplete;
   });

@@ -28,14 +28,14 @@ export function HashTags(props: { tags: Maybe<string>[] }) {
 
           return (
             <>
-              <a className="articleInfo"
+              <a className="article info"
                 href={`/blog/tags/${cat?.toLocaleLowerCase()}/`}
                 key={cat}
               >
                 {`${cat}`}
               </a>
               {" / "}
-              <a className="articleInfo"
+              <a className="article info"
                 href={`/blog/tags/${e?.toLocaleLowerCase()}/`}
                 key={e}
               >

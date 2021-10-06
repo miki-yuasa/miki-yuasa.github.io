@@ -17,7 +17,7 @@ export function BlogListArticles(props: {
         <HashTags tags={props.frontmatter.tags!} />
         <h3 style={{ marginTop: "8px" }}>
           <a
-            className="articleList"
+            className="article list"
             href={`/blog/articles/${props.frontmatter.slug!}`}
           >
             {props.frontmatter.title}
@@ -30,7 +30,7 @@ export function BlogListArticles(props: {
             __html: content!,
           }}
         />
-        <div className="articleInfo">
+        <div className="article info">
           <PublishedDate date={props.frontmatter.date} />
         </div>
       </section>
