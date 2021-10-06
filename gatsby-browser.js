@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 
-import "./src/components/layout.scss";
+import "./src/scss/layout.scss";
 import "@fluentui/react/dist/sass/_References.scss";
 import "prismjs/themes/prism.css";
 

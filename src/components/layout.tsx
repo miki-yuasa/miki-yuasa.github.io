@@ -12,7 +12,7 @@ import { DefaultPalette } from "@fluentui/react";
 import { initializeIcons } from "@fluentui/react/lib/Icons";
 
 import Header from "./header";
-import "./layout.scss";
+import "../scss/layout.scss";
 import { NewTabLink } from "./links/defaultLink";
 
 const Layout = (props: { children: React.ReactNode; header?: JSX.Element }) => {
