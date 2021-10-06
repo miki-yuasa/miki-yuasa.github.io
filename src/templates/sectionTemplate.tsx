@@ -4,22 +4,18 @@ export default function SectionTemplate(props: { title: string, children: React.
 
     const sectionID: string = props.title.toLowerCase();
 
-    const masterName: string = sectionID === 'research'
-        ? 'sectionMasterResearch'
-        : 'sectionMaster';
-
     return (
         <div className='idBox' id={sectionID}>
-            <div className={masterName}>
-                <div className='sectionParent'>
-                    <div className='sectionHeader'>
-                        <h2 className='sectionHeader'>{props.title}</h2>
+            <div className='section master'>
+                <div className='section parent '>
+                    <div className='section header'>
+                        <h2 className='section header'>{props.title}</h2>
                     </div>
-                    <div className='sectionBody'>
+                    <div className='section body'>
                         {props.children}
                     </div>
                 </div>
-                <div className='sectionSeparator' >
+                <div className='section separator' >
                     <hr className='separator' />
                 </div>
             </div>

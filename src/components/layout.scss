@@ -35,89 +35,83 @@ form dl dt {
 form dl dd {
   padding: 5px 0;
 }
-div.idBox .layoutBody {
-  margin: auto;
-  position: relative;
-  background: $ms-color-neutralLighter;
+div {
+  &.layoutBody{
+    margin: auto;
+    position: relative;
+    background: $ms-color-neutralLighter;
+  }
+  &.homeParent {
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 0;
+    color: $ms-color-neutralLight;
+    height: auto;
+    width: auto;
+    font-family: "Lato", Helvetica, sans-serif;
+    text-align: center;
+  }
+  &.homeBackgroundedSection {
+    position: "relative";
+    min-height: 350px;
+    margin-top: 0px;
+    padding-top: 13%;
+    padding-bottom: 13%;
+  }
+  &.section {
+    &.master{
+      background: $ms-color-neutralLighter;
+      margin-top: -80px;
+      padding-top: 80px;
+    }
+    &.parent{
+      font-family: "Lato", Helvetica, sans-serif;
+      font-size: $font_size_small;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      background: $ms-color-neutralLighter;
+      &.about{
+        padding-bottom: 120px;
+        background: $ms-color-neutralDark;
+      }
+    }
+    &.header {
+      text-align: center;
+      padding: 0 0;
+    }
+    &.body {
+      padding: 0 2%;
+      box-sizing: border-box;
+    }
+    &.separator {
+      text-align: center;
+      margin: 0 auto;
+      width: 70%;
+      background: $ms-color-neutralLighter;
+      &.about {
+        background: $ms-color-neutralDark;
+      }
+    }
+  }
+  &.profile {
+    max-width: 110px;
+    margin: 0.4rem auto 1rem auto;
+  }
+  &.docCard {
+    text-align: center;
+    margin: 0 auto;
+    vertical-align: middle;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+  }
+  &.video {
+    text-align: center;
+    margin: 1.2rem auto;
+    vertical-align: middle;
+  }
 }
-.homeParent {
-  margin-right: 0;
-  margin-left: 0;
-  padding-top: 0;
-  color: $ms-color-neutralLight;
-  height: auto;
-  width: auto;
-  font-family: "Lato", Helvetica, sans-serif;
-  text-align: center;
-}
-.homeBackgroundedSection {
-  position: "relative";
-  min-height: 350px;
-  margin-top: 0px;
-  padding-top: 13%;
-  padding-bottom: 13%;
-}
-.sectionMaster {
-  background: $ms-color-neutralLighter;
-  margin-top: -80px;
-  padding-top: 80px;
-}
-.sectionMasterResearch {
-  background: $ms-color-neutralLighter;
-  margin-top: -80px;
-  padding-top: 80px;
-}
-.sectionParent {
-  font-family: "Lato", Helvetica, sans-serif;
-  font-size: $font_size_small;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background: $ms-color-neutralLighter;
-}
-.sectionParentAbout {
-  font-family: "Lato", Helvetica, sans-serif;
-  font-size: $font_size_small;
-  padding-top: 60px;
-  padding-bottom: 120px;
-  background: $ms-color-neutralDark;
-}
-.sectionHeader {
-  text-align: center;
-  padding: 0 0;
-}
-.sectionBody {
-  padding: 0 2%;
-  box-sizing: border-box;
-}
-.sectionSeparator {
-  text-align: center;
-  margin: 0 auto;
-  width: 70%;
-  background: $ms-color-neutralLighter;
-}
-.sectionSeparatorAbout {
-  text-align: center;
-  margin: 0 auto;
-  width: 70%;
-  background: $ms-color-neutralDark;
-}
-.profile {
-  max-width: 110px;
-  margin: 0.4rem auto 1rem auto;
-}
-.docCard {
-  text-align: center;
-  margin: 0 auto;
-  vertical-align: middle;
-  display: flex;
-  justify-content: space-between;
-  overflow-x: scroll;
-}
-.video {
-  text-align: center;
-  margin: 1.2rem auto;
-  vertical-align: middle;
-}
+
 .searchWide {
   display: none;
 }
