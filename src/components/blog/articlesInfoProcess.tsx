@@ -102,7 +102,7 @@ export function getFormatedTagList(itemObjArray: CountedItemsObj[]) {
       );
     });
 
-  return <ul className="sidePane">{outList}</ul>;
+  return <ul className="side-pane">{outList}</ul>;
 };
 
 
@@ -153,5 +153,5 @@ export function getFormattedList({
       );
     });
 
-  return <ul className="sidePane">{outList}</ul>;
+  return <ul className="side-pane">{outList}</ul>;
 }

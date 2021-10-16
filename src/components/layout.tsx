@@ -33,7 +33,7 @@ const Layout = (props: { children: React.ReactNode; header?: JSX.Element }) => {
   return (
     <div style={{ background: DefaultPalette.neutralLighter }}>
       {props.header}
-      <div className="layoutBody">
+      <div className="layout-body">
         <main>{props.children}</main>
         <footer>
           Last updated: {data.site!.buildTime}

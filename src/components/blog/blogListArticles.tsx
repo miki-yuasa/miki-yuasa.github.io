@@ -12,7 +12,7 @@ export function BlogListArticles(props: {
       ? `${description?.substr(0, 210)!}...`
       : description;
   return (
-    <div className="articleListItem">
+    <div className="article item list">
       <div>
         <HashTags tags={props.frontmatter.tags!} />
         <h3 style={{ marginTop: "8px" }}>

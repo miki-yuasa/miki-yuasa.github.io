@@ -87,7 +87,7 @@ export const BlogTocPane = (props: { data: BlogArticleBySlugQuery }) => {
         ]
 
         return (
-            <div className="articleSidePaneToc" style={{ height: height }}>
+            <div className="article toc side-pane" style={{ height: height }}>
                 <Nav
                     ariaLabel="Nav Table of Contents"
                     groups={navLinkGroups}
@@ -152,7 +152,7 @@ export const BlogTocCenter = (props: { data: BlogArticleBySlugQuery }) => {
         ]
 
         return (
-            <div className="articleCenterToc" >
+            <div className="article toc center" >
                 <Nav
                     ariaLabel="Nav Table of Contents"
                     groups={navLinkGroups}

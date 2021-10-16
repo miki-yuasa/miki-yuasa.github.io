@@ -53,7 +53,7 @@ const blogArticleTemplate = ({
         <GatsbyImage image={frontmatter?.image?.childImageSharp?.gatsbyImageData!} alt="altsub" />
       </div>
       <p> </p>
-      <h1 className="h1BlogTitle">{frontmatter?.title}</h1>
+      <h1 className="blog-title">{frontmatter?.title}</h1>
       <h3>{frontmatter?.date}</h3>
       <p>
         <HashTags tags={frontmatter?.tags!} />

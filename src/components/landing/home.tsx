@@ -32,16 +32,16 @@ export default function Home() {
 
   return (
     <div className="idBox" id="home">
-      <div className="homeParent">
+      <div className="home parent">
         <BgImage
           image={pluginImage}
         >
-          <div className="homeBackgroundedSection">
+          <div className="home background">
             <h2 className="home">Hi there! I'm</h2>
             <br />
             <h1 className="home">{profileData.name}</h1>
             <br />
-            <p className="shortIntro">
+            <p className="short-intro">
               {" "}
               Reinforcement Learning Graduate Research Assistant at the University of
               Illinois Urbana-Champaign

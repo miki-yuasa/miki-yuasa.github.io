@@ -77,7 +77,7 @@ export default function Blog() {
 
   return (
     <SectionTemplate title="Blog">
-      <div className="docCard">{articleCards}</div>
+      <div className="doc-card">{articleCards}</div>
       <p style={{ marginTop: 20 }}>
         <NavCommandButton href="/blog" styles={buttonStyles}>
           <b>
