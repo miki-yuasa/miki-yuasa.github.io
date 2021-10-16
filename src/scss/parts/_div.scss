@@ -1,3 +1,5 @@
+$article-top-space: 120px;
+
 div {
     &.layout-body{
       margin: auto;
@@ -131,38 +133,47 @@ div {
         @include mq(blog-sm){
           font-size: $font-size-lg;
         }
-        @include mq(blog-md){
+        @include mq(blog-lg){
           display: flex;
-          padding-top: 40px;
           width: 1110px;
+          padding-top: 0px;
         }
       }
       &.body {
         display: block;
         padding: 40px 5px 10px 5px;
         background: white;
-        border-radius: 6px;
+        border-radius: $border-radius;
         box-shadow: $ms-depth-shadow-8;
         margin-left: 0;
         margin-right: 0;
         @include mq(blog-sm){
-          margin-left: 10px;
-          margin-right: 10px;
+          padding-left: 10px;
+          padding-right: 10px;
         }
         @include mq(blog-md){
           padding: 40px;
           width: $article-pane-width;
-          margin-left: 20px;
-          margin-right: 20px;
+          padding-left: 20px;
+          padding-right: 20px;
         }
-        @include mq(blog-md){
+        @include mq(blog-lg){
           width: $article-pane-width;
+          padding-left: 20px;
+          padding-right: 20px;
+          margin-top: $article-top-space;
         }
       }
       &.space {
-        display: none;
+        display: flex;
+        gap:20px;
+        justify-content: space-between; 
         @include mq(blog-md){
-         justify-content: space-between; 
+          width: $article-pane-width;
+          gap:40px;
+        }
+        &.side-pane{
+          display: none;
         }
       }
       &.bottom {
@@ -177,10 +188,17 @@ div {
           margin-left: 20px;
           margin-right: 20px;  
         }
-        @include mq(blog-md){
+        @include mq(blog-lg){
           margin-left: 0px;
           margin-right: 0px; 
         }
+      }
+      &.main-picture{
+        max-width: 760px;
+        max-height: 450px;
+        padding-top: 5%;
+        padding-right: 10%;
+        padding-left: 10%;
       }
       &.side{
         display: inline-flex;
@@ -197,34 +215,44 @@ div {
           margin-right: 20px;
           padding: 0;
         }
-        @include mq(blog-md){
+        @include mq(blog-lg){
           margin-top: 0px;
+          padding-top: 0px;
+          display:flex;
+          flex-flow: column;
+          justify-content: start;
+          margin-left: 40px;
         }
       }
       &.pane{
         &.side{
           box-shadow: $ms-depth-shadow-8;
           background: white;
-          border-radius: 6px;
-          margin-bottom: 20px;
+          border-radius: $border-radius;
+          margin: 20px 0px 0px 0px;
           flex-basis:calc(50% - 5px);
   
           @include mq(blog-sm){
             flex-basis:calc(50% - 10px);
+            margin: 20px 0px 0px 0px;
+          }
+          @include mq(blog-md){
+            flex-basis:calc(50% - 10px);
+            margin: 40px 0px 0px 0px;
           }
         }
       }
       &.toc{
         &.side-pane{
           display: none;
-          @include mq(blog-md){
+          @include mq(blog-lg){
             display: block;
             box-shadow: $ms-depth-shadow-8;
             background: white;
-            border-radius: 6px;
+            border-radius: $border-radius;
             margin-bottom: 20px;
             position: sticky;
-            top: 0;
+            top: $article-top-space;
             width: 250px;
             padding-top: 30px;
           }
@@ -234,8 +262,8 @@ div {
           margin: 0 auto;
           width: 60%;
           box-shadow: $ms-depth-shadow-8;
-          border-radius: 6px;
-          @include mq(blog-md){
+          border-radius: $border-radius;
+          @include mq(blog-lg){
             display: none;
           }
         }
@@ -247,7 +275,7 @@ div {
             display: flexbox;
             padding: 20px 20px 10px 40px;
           }
-          @include mq(blog-md){
+          @include mq(blog-lg){
             display: absolute;
             padding: 20px 20px 13px 20px;
           }

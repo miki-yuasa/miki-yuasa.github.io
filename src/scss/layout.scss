@@ -13,6 +13,7 @@ $theme-color: $ms-color-themePrimary !default;
 $font-size-lg: 0.85rem !default;
 $font-size-sm:1rem !default;
 $article-pane-width: 900px !default;
+$border-radius: 6px !default;
 
 $breakpoints: (
   'sm': 'screen and (min-width: 600px)',
@@ -20,8 +21,8 @@ $breakpoints: (
   'lg': 'screen and (min-width: 1300px)',
   'header': 'screen and (min-width: 700px)',
   'blog-sm': 'screen and (min-width: 600px)',
-  'blog-md': 'screen and (min-width: $article-pane-width + 60px)',
-  'blog-lg': 'screen and (min-width: 1270px)',
+  'blog-md': 'screen and (min-width: 960px)',
+  'blog-lg': 'screen and (min-width: 1290px)',
   'blog-header': 'screen and (min-width: 1170px)',
 ) !default;
 
@@ -86,7 +87,7 @@ header{
       height: 80px;
       overflow: hidden;
       padding: 0.8rem 1.0875rem 0.8rem;
-      border-radius: 0% 0% 4px 4px;
+      border-radius: 0% 0% $border-radius $border-radius;
       z-index: 20;
       -webkit-backdrop-filter: blur(4px);
       -moz-backdrop-filter: blur(4px);
@@ -118,10 +119,11 @@ header{
         background: white;
         text-align: center;
         top: 0;
+        padding: 0px;
         width: 100%;
         height: 80px;
         overflow: hidden;
-        border-radius: 0% 0% 8px 8px;
+        border-radius: 0% 0% $border-radius $border-radius;
         z-index: 20;
         -webkit-backdrop-filter: blur(4px);
         -moz-backdrop-filter: blur(4px);
@@ -133,14 +135,16 @@ header{
     }
     &.compact{
       display: block;
+      height: 80px;
       top: 0;
       overflow: hidden;
       z-index: 20;
       right: 0px;
       text-align: right;
       width: 100%;
-      border-radius: 0% 0% 4px 4px;
+      border-radius: 0% 0% $border-radius $border-radius;
       box-shadow: $ms-depth-shadow-16;
+      padding: 0px;
       @include mq(blog-header){
         display: none;
       }
@@ -462,7 +466,7 @@ pre {
   font-size: 0.85rem;
   line-height: 1.42;
   background: hsla(0, 0%, 0%, 0.04);
-  border-radius: 3px;
+  border-radius: $border-radius;
   overflow: auto;
   word-wrap: normal;
   padding: 1.45rem;
@@ -496,7 +500,7 @@ table {
     margin-right: auto;
     margin-left: auto;
     box-shadow: $ms-depth-shadow-8;
-    border-radius: 6px;
+    border-radius: $border-radius;
   }
 }
 
@@ -681,7 +685,7 @@ td:last-child {
 tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
-  border-radius: 3px;
+  border-radius: $border-radius;
   font-family: "SFMono-Regular", Consolas, "Lato Mono", "Droid Sans Mono",
     "Liberation Mono", Menlo, Courier, monospace;
   padding: 0;

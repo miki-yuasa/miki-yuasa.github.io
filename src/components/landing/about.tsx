@@ -15,7 +15,7 @@ export default function About() {
             className="section header"
             style={{ color: DefaultPalette.neutralLight }}
           >
-            <h2 className="section header">About</h2>
+            <h2 className="section">About</h2>
           </div>
           <div className="profile">
             <StaticImage src="../../assets/profile.jpg" alt="profile_icon" style={{ borderRadius: "40px" }} />

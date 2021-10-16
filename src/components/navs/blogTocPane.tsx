@@ -152,7 +152,7 @@ export const BlogTocCenter = (props: { data: BlogArticleBySlugQuery }) => {
         ]
 
         return (
-            <div className="article toc center" >
+            <div className="articleCenterToc" >
                 <Nav
                     ariaLabel="Nav Table of Contents"
                     groups={navLinkGroups}

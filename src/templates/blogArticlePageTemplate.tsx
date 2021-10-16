@@ -41,15 +41,7 @@ const blogArticleTemplate = ({
       <p>
         <BlogBreadCrumb crumbItems={itemsWithHref} />
       </p>
-      <div
-        style={{
-          maxWidth: "760px",
-          maxHeight: "450px",
-          paddingTop: "5%",
-          paddingRight: "10%",
-          paddingLeft: "10%",
-        }}
-      >
+      <div className="article main-picture">
         <GatsbyImage image={frontmatter?.image?.childImageSharp?.gatsbyImageData!} alt="altsub" />
       </div>
       <p> </p>
