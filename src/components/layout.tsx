@@ -12,7 +12,7 @@ import { DefaultPalette } from "@fluentui/react";
 import { initializeIcons } from "@fluentui/react/lib/Icons";
 
 import Header from "./header";
-import "./layout.scss";
+import "../scss/layout.scss";
 import { NewTabLink } from "./links/defaultLink";
 
 const Layout = (props: { children: React.ReactNode; header?: JSX.Element }) => {
@@ -33,7 +33,7 @@ const Layout = (props: { children: React.ReactNode; header?: JSX.Element }) => {
   return (
     <div style={{ background: DefaultPalette.neutralLighter }}>
       {props.header}
-      <div className="layoutBody">
+      <div className="layout-body">
         <main>{props.children}</main>
         <footer>
           Last updated: {data.site!.buildTime}

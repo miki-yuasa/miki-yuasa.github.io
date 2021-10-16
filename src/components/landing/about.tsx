@@ -9,19 +9,19 @@ import { NewTabLink } from "../links/defaultLink";
 export default function About() {
   return (
     <div className="idBox" id="about">
-      <div className="sectionMaster">
-        <div className="sectionParentAbout">
+      <div className="section master">
+        <div className="section parent about">
           <div
-            className="sectionHeader"
+            className="section header"
             style={{ color: DefaultPalette.neutralLight }}
           >
-            <h2 className="sectionHeader">About</h2>
+            <h2 className="section">About</h2>
           </div>
           <div className="profile">
             <StaticImage src="../../assets/profile.jpg" alt="profile_icon" style={{ borderRadius: "40px" }} />
           </div>
           <div
-            className="sectionBody"
+            className="section body"
             style={{ color: DefaultPalette.neutralQuaternary }}
           >
             <form>

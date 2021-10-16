@@ -404,14 +404,14 @@ type SitePluginPluginOptions = {
   readonly outputPath: Maybe<Scalars['String']>;
   readonly target: Maybe<Scalars['String']>;
   readonly rel: Maybe<Scalars['String']>;
-  readonly base64Width: Maybe<Scalars['Int']>;
-  readonly stripMetadata: Maybe<Scalars['Boolean']>;
-  readonly defaultQuality: Maybe<Scalars['Int']>;
-  readonly failOnError: Maybe<Scalars['Boolean']>;
   readonly extensions: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly lessBabel: Maybe<Scalars['Boolean']>;
   readonly mediaTypes: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly root: Maybe<Scalars['String']>;
+  readonly base64Width: Maybe<Scalars['Int']>;
+  readonly stripMetadata: Maybe<Scalars['Boolean']>;
+  readonly defaultQuality: Maybe<Scalars['Int']>;
+  readonly failOnError: Maybe<Scalars['Boolean']>;
   readonly shortname: Maybe<Scalars['String']>;
   readonly short_name: Maybe<Scalars['String']>;
   readonly start_url: Maybe<Scalars['String']>;
@@ -438,12 +438,12 @@ type SitePluginPackageJson = {
   readonly name: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly version: Maybe<Scalars['String']>;
+  readonly main: Maybe<Scalars['String']>;
   readonly keywords: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly license: Maybe<Scalars['String']>;
   readonly dependencies: Maybe<ReadonlyArray<Maybe<SitePluginPackageJsonDependencies>>>;
   readonly devDependencies: Maybe<ReadonlyArray<Maybe<SitePluginPackageJsonDevDependencies>>>;
   readonly peerDependencies: Maybe<ReadonlyArray<Maybe<SitePluginPackageJsonPeerDependencies>>>;
-  readonly main: Maybe<Scalars['String']>;
 };
 
 type SitePluginPackageJsonDependencies = {
@@ -2649,14 +2649,14 @@ type SitePluginPluginOptionsFilterInput = {
   readonly outputPath: Maybe<StringQueryOperatorInput>;
   readonly target: Maybe<StringQueryOperatorInput>;
   readonly rel: Maybe<StringQueryOperatorInput>;
-  readonly base64Width: Maybe<IntQueryOperatorInput>;
-  readonly stripMetadata: Maybe<BooleanQueryOperatorInput>;
-  readonly defaultQuality: Maybe<IntQueryOperatorInput>;
-  readonly failOnError: Maybe<BooleanQueryOperatorInput>;
   readonly extensions: Maybe<StringQueryOperatorInput>;
   readonly lessBabel: Maybe<BooleanQueryOperatorInput>;
   readonly mediaTypes: Maybe<StringQueryOperatorInput>;
   readonly root: Maybe<StringQueryOperatorInput>;
+  readonly base64Width: Maybe<IntQueryOperatorInput>;
+  readonly stripMetadata: Maybe<BooleanQueryOperatorInput>;
+  readonly defaultQuality: Maybe<IntQueryOperatorInput>;
+  readonly failOnError: Maybe<BooleanQueryOperatorInput>;
   readonly shortname: Maybe<StringQueryOperatorInput>;
   readonly short_name: Maybe<StringQueryOperatorInput>;
   readonly start_url: Maybe<StringQueryOperatorInput>;
@@ -2683,12 +2683,12 @@ type SitePluginPackageJsonFilterInput = {
   readonly name: Maybe<StringQueryOperatorInput>;
   readonly description: Maybe<StringQueryOperatorInput>;
   readonly version: Maybe<StringQueryOperatorInput>;
+  readonly main: Maybe<StringQueryOperatorInput>;
   readonly keywords: Maybe<StringQueryOperatorInput>;
   readonly license: Maybe<StringQueryOperatorInput>;
   readonly dependencies: Maybe<SitePluginPackageJsonDependenciesFilterListInput>;
   readonly devDependencies: Maybe<SitePluginPackageJsonDevDependenciesFilterListInput>;
   readonly peerDependencies: Maybe<SitePluginPackageJsonPeerDependenciesFilterListInput>;
-  readonly main: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePluginPackageJsonDependenciesFilterListInput = {
@@ -2900,14 +2900,14 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.outputPath'
   | 'pluginCreator.pluginOptions.target'
   | 'pluginCreator.pluginOptions.rel'
-  | 'pluginCreator.pluginOptions.base64Width'
-  | 'pluginCreator.pluginOptions.stripMetadata'
-  | 'pluginCreator.pluginOptions.defaultQuality'
-  | 'pluginCreator.pluginOptions.failOnError'
   | 'pluginCreator.pluginOptions.extensions'
   | 'pluginCreator.pluginOptions.lessBabel'
   | 'pluginCreator.pluginOptions.mediaTypes'
   | 'pluginCreator.pluginOptions.root'
+  | 'pluginCreator.pluginOptions.base64Width'
+  | 'pluginCreator.pluginOptions.stripMetadata'
+  | 'pluginCreator.pluginOptions.defaultQuality'
+  | 'pluginCreator.pluginOptions.failOnError'
   | 'pluginCreator.pluginOptions.shortname'
   | 'pluginCreator.pluginOptions.short_name'
   | 'pluginCreator.pluginOptions.start_url'
@@ -2931,6 +2931,7 @@ type SitePageFieldsEnum =
   | 'pluginCreator.packageJson.name'
   | 'pluginCreator.packageJson.description'
   | 'pluginCreator.packageJson.version'
+  | 'pluginCreator.packageJson.main'
   | 'pluginCreator.packageJson.keywords'
   | 'pluginCreator.packageJson.license'
   | 'pluginCreator.packageJson.dependencies'
@@ -2942,7 +2943,6 @@ type SitePageFieldsEnum =
   | 'pluginCreator.packageJson.peerDependencies'
   | 'pluginCreator.packageJson.peerDependencies.name'
   | 'pluginCreator.packageJson.peerDependencies.version'
-  | 'pluginCreator.packageJson.main'
   | 'pluginCreator.id'
   | 'pluginCreator.parent.id'
   | 'pluginCreator.parent.parent.id'
@@ -3104,14 +3104,14 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.outputPath'
   | 'pluginOptions.target'
   | 'pluginOptions.rel'
-  | 'pluginOptions.base64Width'
-  | 'pluginOptions.stripMetadata'
-  | 'pluginOptions.defaultQuality'
-  | 'pluginOptions.failOnError'
   | 'pluginOptions.extensions'
   | 'pluginOptions.lessBabel'
   | 'pluginOptions.mediaTypes'
   | 'pluginOptions.root'
+  | 'pluginOptions.base64Width'
+  | 'pluginOptions.stripMetadata'
+  | 'pluginOptions.defaultQuality'
+  | 'pluginOptions.failOnError'
   | 'pluginOptions.shortname'
   | 'pluginOptions.short_name'
   | 'pluginOptions.start_url'
@@ -3135,6 +3135,7 @@ type SitePluginFieldsEnum =
   | 'packageJson.name'
   | 'packageJson.description'
   | 'packageJson.version'
+  | 'packageJson.main'
   | 'packageJson.keywords'
   | 'packageJson.license'
   | 'packageJson.dependencies'
@@ -3146,7 +3147,6 @@ type SitePluginFieldsEnum =
   | 'packageJson.peerDependencies'
   | 'packageJson.peerDependencies.name'
   | 'packageJson.peerDependencies.version'
-  | 'packageJson.main'
   | 'id'
   | 'parent.id'
   | 'parent.parent.id'
@@ -3966,20 +3966,20 @@ type BlogArchiveListQueryVariables = Exact<{ [key: string]: never; }>;
 
 type BlogArchiveListQuery = { readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date'>> } }> } };
 
-type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+type cUsersmik09DevelopmentgitmikiYuasaGithubIosrccomponentsseoTsx3141419394QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_1_Query = { readonly placeholderImage: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> };
-
-type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type Unnamed_2_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author' | 'url'>> }> };
+type cUsersmik09DevelopmentgitmikiYuasaGithubIosrccomponentsseoTsx3141419394Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author' | 'url'>> }> };
 
 type BlogTagListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type BlogTagListQuery = { readonly allMdx: { readonly group: ReadonlyArray<Pick<MdxGroupConnection, 'fieldValue' | 'totalCount'>> } };
+
+type cUsersmik09DevelopmentgitmikiYuasaGithubIosrccomponentslandinghomeTsx4201544539QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type cUsersmik09DevelopmentgitmikiYuasaGithubIosrccomponentslandinghomeTsx4201544539Query = { readonly placeholderImage: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> };
 
 type infoAndSiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3988,6 +3988,11 @@ type infoAndSiteTitleQueryQuery = { readonly site: Maybe<(
     Pick<Site, 'buildTime'>
     & { readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }
   )> };
+
+type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type IndexPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
 type BlogArticleBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
@@ -4002,25 +4007,12 @@ type BlogArticleBySlugQuery = { readonly mdx: Maybe<(
     )> }
   )> };
 
-type BlogCardListQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BlogCardListQuery = { readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
-          Pick<MdxFrontmatter, 'date' | 'title' | 'tags' | 'slug'>
-          & { readonly image: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
-        )> } }> } };
-
 type BlogCatArticleListQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
 type BlogCatArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
-
-type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type IndexPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
 type BlogDateArticleListQueryVariables = Exact<{
   periodStartDate: Maybe<Scalars['Date']>;
@@ -4030,12 +4022,13 @@ type BlogDateArticleListQueryVariables = Exact<{
 
 type BlogDateArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
 
-type BlogTagArticleListQueryVariables = Exact<{
-  slug: Scalars['String'];
-}>;
+type BlogCardListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type BlogTagArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
+type BlogCardListQuery = { readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
+          Pick<MdxFrontmatter, 'date' | 'title' | 'tags' | 'slug'>
+          & { readonly image: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
+        )> } }> } };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -4062,6 +4055,13 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type BlogTagArticleListQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+type BlogTagArticleListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'slug'>> } }> } };
 
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 

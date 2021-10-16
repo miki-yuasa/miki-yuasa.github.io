@@ -26,7 +26,7 @@ function listPublications(publications: Publication[]) {
     });
 
     return (
-        <ul className='noBullets'>
+        <ul className='no-bullets'>
             {publicationList}
         </ul>
     );
@@ -42,7 +42,7 @@ function listAwards(awards: Award[]) {
     });
 
     return (
-        <ul className='noBullets'>
+        <ul className='no-bullets'>
             {awardList}
         </ul>
     );

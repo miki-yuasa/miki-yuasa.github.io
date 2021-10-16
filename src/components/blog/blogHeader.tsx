@@ -6,10 +6,10 @@ import { NavBlogWide } from "../navs/navBlogWide";
 export function BlogHeader() {
   return (
     <>
-      <header className="wideBlog">
+      <header className="blog wide">
         <NavBlogWide />
       </header>
-      <header className="compactBlog">
+      <header className="blog compact">
         <NavBlogCompact />
       </header>
     </>

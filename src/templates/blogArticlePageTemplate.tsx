@@ -41,19 +41,11 @@ const blogArticleTemplate = ({
       <p>
         <BlogBreadCrumb crumbItems={itemsWithHref} />
       </p>
-      <div
-        style={{
-          maxWidth: "760px",
-          maxHeight: "450px",
-          paddingTop: "5%",
-          paddingRight: "10%",
-          paddingLeft: "10%",
-        }}
-      >
+      <div className="article main-picture">
         <GatsbyImage image={frontmatter?.image?.childImageSharp?.gatsbyImageData!} alt="altsub" />
       </div>
       <p> </p>
-      <h1 className="h1BlogTitle">{frontmatter?.title}</h1>
+      <h1 className="blog-title">{frontmatter?.title}</h1>
       <h3>{frontmatter?.date}</h3>
       <p>
         <HashTags tags={frontmatter?.tags!} />

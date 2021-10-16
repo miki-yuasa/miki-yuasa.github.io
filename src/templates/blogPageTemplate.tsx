@@ -23,15 +23,15 @@ export const BlogPageTemplate = (props: {
           lang={props.lang}
           image={props.image}
         />
-        <div className="articleFrame">
+        <div className="article frame">
           <div>
-            <div className="articleBody">{props.body}</div>
-            <div className="articleBottom">
+            <div className="article body">{props.body}</div>
+            <div className="article space">
               <BlogSidePanes />
             </div>
           </div>
-          <div className="articleSpace"> </div>
-          <div className="articleSide">{props.side}</div>
+          <div className="article bottom"> </div>
+          <div className="article side">{props.side}</div>
         </div>
         <div style={{ height: "150px" }} />
       </Layout>

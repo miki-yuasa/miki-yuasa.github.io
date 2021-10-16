@@ -71,10 +71,10 @@ module.exports = {
             resolve: `gatsby-remark-classes`,
             options: {
               classMap: {
-                "heading[depth=1]": "h1Blog",
-                "heading[depth=2]": "h2Blog",
-                "link": "linkBlog",
-                "table": "tableBlog",
+                "heading[depth=1]": "blog",
+                "heading[depth=2]": "blog",
+                "link": "link blog",
+                "table": "table-blog",
                 "tableRow": "trBlog",
                 "tableCell": "tdBlog"
                 // paragraph: "para",

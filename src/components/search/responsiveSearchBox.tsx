@@ -56,10 +56,10 @@ export function ResponsiveSearchBox() {
   }));
   return (
     <>
-      <div className="searchWide">
+      <div className="search wide">
         <SearchBox placeholder={placeHolderText} />
       </div>
-      <div className="searchCompact">
+      <div className="search compact">
         <IconButton
           menuProps={menuProps}
           iconProps={searchIcon}
