@@ -151,6 +151,14 @@ header{
     }
   }
 }
+span{
+  &.gatsby-resp-image-wrapper{
+    max-width: 300px;
+    @include mq(blog-sm){
+      max-width: 600px;
+    }
+  }
+}
 main,
 menu,
 nav,
