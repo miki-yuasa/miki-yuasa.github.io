@@ -199,6 +199,18 @@ div {
         padding-top: 5%;
         padding-right: 10%;
         padding-left: 10%;
+        @include mq(blog-sm){
+          max-width: 400px;
+          max-height: 450px;
+        }
+        @include mq(blog-md){
+          max-width: 600px;
+          max-height: 450px; 
+        }
+        @include mq(blog-lg){
+          max-width: 760px;
+          max-height: 450px;
+        }
       }
       &.side{
         display: inline-flex;
