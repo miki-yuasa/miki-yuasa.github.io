@@ -3,12 +3,15 @@ import { Award, Publication } from "../../@types";
 export const journalPaperData: Publication[] = [
     {
         authors: ["Yuasa, M.", "Lyons, K.", "Franck, J. A."],
-        year: 2021,
-        month: 1,
+        year: 2022,
+        month: 5,
         title: "Simulations of flow over a bio-inspired undulated cylinder with dynamically morphing topography",
         journal: "Journal of Fluids and Structures",
-        details: "",
-        pending: true
+        details: "111 (0889-9746)",
+        links: [{
+            text: "doi",
+            href: "https://doi.org/10.1016/j.jfluidstructs.2022.103567"
+        }]
     }
 ]
 
