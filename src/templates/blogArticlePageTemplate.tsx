@@ -6,7 +6,7 @@ import { GatsbyImage, getSrc } from "gatsby-plugin-image"
 import {
   BlogArticleBySlugQuery,
   SitePageContext,
-} from "../../@types/graphql-types";
+} from "@types/graphql-types";
 import { BlogPageTemplate } from "./blogPageTemplate";
 import { HashTags } from "../components/blog/blogArticleInfo";
 import { CrumbItem } from "../../@types";

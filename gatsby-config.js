@@ -61,8 +61,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              linkImagesToOriginal: true,
-              maxWidth: 600,
+              linkImagesToOriginal: false,
+              maxWidth: 450,
               tracedSVG: true
             },
           },
@@ -177,14 +177,27 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
+    'gatsby-remark-check-links',
+    `gatsby-remark-images-medium-zoom`,
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    //`gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-typegen",
       options: {
         outputPath: `@types/graphql-types.d.ts`,
       },
-    }
+    },
+
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: "https://miki-yuasa.github.io",
+        stripQueryString: true,
+      },
+    },
   ],
 };

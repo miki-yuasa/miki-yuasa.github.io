@@ -7,7 +7,7 @@
 // You can delete this file if you're not using it
 
 import "./src/scss/layout.scss";
-import "@fluentui/react/dist/sass/_References.scss";
+//import "@fluentui/react/dist/sass/_References.scss";
 import "prismjs/themes/prism.css";
 
 const ReactDOM = require("react-dom");

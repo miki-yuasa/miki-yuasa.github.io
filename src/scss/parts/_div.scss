@@ -1,325 +1,400 @@
 $article-top-space: 120px;
 
 div {
-    &.layout-body{
-      margin: auto;
-      position: relative;
-      background: $ms-color-neutralLighter;
-    }
-    &.home{
-      &.parent{
-        margin-right: 0;
-        margin-left: 0;
-        padding-top: 0;
-        color: $ms-color-neutralLight;
-        height: auto;
-        width: auto;
-        font-family: "Lato", Helvetica, sans-serif;
-        text-align: center;
-        @include mq(sm) {
-          padding-top: 75px;
-          min-height: 500px;
-        }
-        @include mq(md){
-          padding-top: 60px;
-          min-height: 500px;
-        }
+  &.layout-body {
+    margin: auto;
+    position: relative;
+    background: $ms-color-neutralLighter;
+  }
+
+  &.home {
+    &.parent {
+      margin-right: 0;
+      margin-left: 0;
+      padding-top: 0;
+      color: $ms-color-neutralLight;
+      height: auto;
+      width: auto;
+      font-family: "Lato", Helvetica, sans-serif;
+      text-align: center;
+
+      @include mq(sm) {
+        padding-top: 75px;
+        min-height: 500px;
       }
-      &.background{
-        position: "relative";
-        min-height: 350px;
-        margin-top: 0px;
-        padding-top: 13%;
-        padding-bottom: 13%;
-      }
-    }
-    &.section {
-      &.master{
-        background: $ms-color-neutralLighter;
-        margin-top: -80px;
-        padding-top: 80px;
-      }
-      &.parent{
-        font-family: "Lato", Helvetica, sans-serif;
-        font-size: $font-size-sm;
+
+      @include mq(md) {
         padding-top: 60px;
-        padding-bottom: 60px;
-        background: $ms-color-neutralLighter;
-        @include mq(sm){
-          font-size: $font-size-lg;
-        }
-        &.about{
-          padding-bottom: 120px;
-          background: $ms-color-neutralDark;
-        }
-      }
-      &.header {
-        text-align: center;
-        padding: 0 0;
-        @include mq(md){
-          text-align: left;
-          padding: 0 20%;
-        }
-      }
-      &.body {
-        padding: 0 2%;
-        box-sizing: border-box;
-        @include mq(sm){
-          padding: 0 10%;
-        }
-        @include mq(md){
-          padding: 0 20%;
-        }
-      }
-      &.separator {
-        text-align: center;
-        margin: 0 auto;
-        width: 70%;
-        background: $ms-color-neutralLighter;
-        &.about {
-          background: $ms-color-neutralDark;
-        }
+        min-height: 500px;
       }
     }
-    &.profile {
-      max-width: 110px;
-      margin: 0.4rem auto 1rem auto;
-      @include mq(md){
-        margin: 0.4rem auto 1rem 18.8%;   
+
+    &.background {
+      position: "relative";
+      min-height: 350px;
+      margin-top: 0px;
+      padding-top: 13%;
+      padding-bottom: 13%;
+    }
+  }
+
+  &.section {
+    &.master {
+      background: $ms-color-neutralLighter;
+      margin-top: -80px;
+      padding-top: 80px;
+    }
+
+    &.parent {
+      font-family: "Lato", Helvetica, sans-serif;
+      font-size: $font-size-sm;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      background: $ms-color-neutralLighter;
+
+      @include mq(sm) {
+        font-size: $font-size-lg;
       }
-      @include mq(lg){
-        margin: 0.4rem auto 1rem 19.2%;
+
+      &.about {
+        padding-bottom: 120px;
+        background: $ms-color-neutralDark;
       }
     }
-    &.doc-card {
+
+    &.header {
+      text-align: center;
+      padding: 0 0;
+
+      @include mq(md) {
+        text-align: left;
+        padding: 0 20%;
+      }
+    }
+
+    &.body {
+      padding: 0 2%;
+      box-sizing: border-box;
+
+      @include mq(sm) {
+        padding: 0 10%;
+      }
+
+      @include mq(md) {
+        padding: 0 20%;
+      }
+    }
+
+    &.separator {
       text-align: center;
       margin: 0 auto;
-      vertical-align: middle;
+      width: 70%;
+      background: $ms-color-neutralLighter;
+
+      &.about {
+        background: $ms-color-neutralDark;
+      }
+    }
+  }
+
+  &.profile {
+    max-width: 110px;
+    margin: 0.4rem auto 1rem auto;
+
+    @include mq(md) {
+      margin: 0.4rem auto 1rem 18.8%;
+    }
+
+    @include mq(lg) {
+      margin: 0.4rem auto 1rem 19.2%;
+    }
+  }
+
+  &.doc-card {
+    text-align: center;
+    margin: 0 auto;
+    vertical-align: middle;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+
+    @include mq(md) {
+      text-align: center;
+      margin: 0 -8%;
+    }
+  }
+
+  &.video {
+    text-align: center;
+    margin: 1.2rem auto;
+    vertical-align: middle;
+  }
+
+  &.search {
+    &.wide {
+      display: none;
+
+      @include mq(sm) {
+        display: block;
+      }
+    }
+
+    &.compact {
+      display: block;
+
+      @include mq(sm) {
+        display: none;
+      }
+    }
+  }
+
+  &.article {
+    &.frame {
+      display: table;
+      margin: 0 auto;
+      padding-top: 50px;
+      width: auto;
+      z-index: -20;
+      font-size: $font-size-sm;
+
+      @include mq(blog-sm) {
+        font-size: $font-size-lg;
+      }
+
+      @include mq(blog-lg) {
+        display: flex;
+        width: 1110px;
+        padding-top: 0px;
+      }
+    }
+
+    &.body {
+      display: block;
+      padding: 40px 5px 10px 5px;
+      background: white;
+      border-radius: $border-radius;
+      box-shadow: $ms-depth-shadow-8;
+      margin-left: 0;
+      margin-right: 0;
+
+      @include mq(blog-sm) {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      @include mq(blog-md) {
+        padding: 40px;
+        width: $article-pane-width;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      @include mq(blog-lg) {
+        width: $article-pane-width;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: $article-top-space;
+      }
+    }
+
+    &.space {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+
+      @include mq(blog-md) {
+        width: $article-pane-width;
+        gap: 40px;
+      }
+
+      &.side-pane {
+        display: none;
+      }
+    }
+
+    &.bottom {
       display: flex;
       justify-content: space-between;
-      overflow-x: scroll;
-      @include mq(md){
-        text-align: center;
-        margin: 0 -8%;
+      margin-top: 20px;
+
+      @include mq(blog-sm) {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      @include mq(blog-md) {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      @include mq(blog-lg) {
+        margin-left: 0px;
+        margin-right: 0px;
       }
     }
-    &.video {
-      text-align: center;
-      margin: 1.2rem auto;
-      vertical-align: middle;
-    }
-    &.search {
-      &.wide {
-        display: none;
-        @include mq(sm){
-          display: block;
-        }
+
+    &.main-picture {
+      max-width: 760px;
+      max-height: 450px;
+      padding-top: 5%;
+      padding-right: 10%;
+      padding-left: 10%;
+
+      @include mq(blog-sm) {
+        max-width: 400px;
+        max-height: 450px;
       }
-      &.compact {
-        display: block;
-        @include mq(sm){
-          display: none;
-        }
+
+      @include mq(blog-md) {
+        max-width: 600px;
+        max-height: 450px;
       }
-    }
-    &.article {
-      &.frame {
-        display: table;
-        margin: 0 auto;
-        padding-top: 50px;
-        width: auto;
-        z-index: -20;
-        font-size: $font-size-sm;
-        @include mq(blog-sm){
-          font-size: $font-size-lg;
-        }
-        @include mq(blog-lg){
-          display: flex;
-          width: 1110px;
-          padding-top: 0px;
-        }
-      }
-      &.body {
-        display: block;
-        padding: 40px 5px 10px 5px;
-        background: white;
-        border-radius: $border-radius;
-        box-shadow: $ms-depth-shadow-8;
-        margin-left: 0;
-        margin-right: 0;
-        @include mq(blog-sm){
-          padding-left: 10px;
-          padding-right: 10px;
-        }
-        @include mq(blog-md){
-          padding: 40px;
-          width: $article-pane-width;
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-        @include mq(blog-lg){
-          width: $article-pane-width;
-          padding-left: 20px;
-          padding-right: 20px;
-          margin-top: $article-top-space;
-        }
-      }
-      &.space {
-        display: flex;
-        gap:20px;
-        justify-content: space-between; 
-        @include mq(blog-md){
-          width: $article-pane-width;
-          gap:40px;
-        }
-        &.side-pane{
-          display: none;
-        }
-      }
-      &.bottom {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-        @include mq(blog-sm){
-          margin-left: 10px;
-          margin-right: 10px;
-        }
-        @include mq(blog-md){
-          margin-left: 20px;
-          margin-right: 20px;  
-        }
-        @include mq(blog-lg){
-          margin-left: 0px;
-          margin-right: 0px; 
-        }
-      }
-      &.main-picture{
+
+      @include mq(blog-lg) {
         max-width: 760px;
         max-height: 450px;
-        padding-top: 5%;
-        padding-right: 10%;
-        padding-left: 10%;
       }
-      &.side{
-        display: inline-flex;
-        justify-content: space-between;
-        width: 100%;
-        margin-top: 20px;
-        padding: 5px;
-        @include mq(blog-sm){
-          padding: 10px;
+    }
+
+    &.side {
+      display: inline-flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 20px;
+      padding: 5px;
+
+      @include mq(blog-sm) {
+        padding: 10px;
+      }
+
+      @include mq(blog-md) {
+        width: $article-pane-width;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 0;
+      }
+
+      @include mq(blog-lg) {
+        margin-top: 0px;
+        padding-top: 0px;
+        display: flex;
+        flex-flow: column;
+        justify-content: start;
+        margin-left: 40px;
+      }
+    }
+
+    &.pane {
+      &.side {
+        box-shadow: $ms-depth-shadow-8;
+        background: white;
+        border-radius: $border-radius;
+        margin: 20px 0px 0px 0px;
+        flex-basis: calc(50% - 5px);
+
+        @include mq(blog-sm) {
+          flex-basis: calc(50% - 10px);
+          margin: 20px 0px 0px 0px;
         }
-        @include mq(blog-md){
-          width: $article-pane-width;
-          margin-left: 20px;
-          margin-right: 20px;
-          padding: 0;
-        }
-        @include mq(blog-lg){
-          margin-top: 0px;
-          padding-top: 0px;
-          display:flex;
-          flex-flow: column;
-          justify-content: start;
-          margin-left: 40px;
+
+        @include mq(blog-md) {
+          flex-basis: calc(50% - 10px);
+          margin: 40px 0px 0px 0px;
         }
       }
-      &.pane{
-        &.side{
+    }
+
+    &.toc {
+      &.side-pane {
+        display: none;
+
+        @include mq(blog-lg) {
+          display: block;
           box-shadow: $ms-depth-shadow-8;
           background: white;
           border-radius: $border-radius;
-          margin: 20px 0px 0px 0px;
-          flex-basis:calc(50% - 5px);
-  
-          @include mq(blog-sm){
-            flex-basis:calc(50% - 10px);
-            margin: 20px 0px 0px 0px;
-          }
-          @include mq(blog-md){
-            flex-basis:calc(50% - 10px);
-            margin: 40px 0px 0px 0px;
-          }
+          margin-bottom: 20px;
+          position: sticky;
+          top: $article-top-space;
+          width: 250px;
+          padding-top: 30px;
         }
       }
-      &.toc{
-        &.side-pane{
+
+      &.center {
+        background: none;
+        margin: 0 auto;
+        width: 60%;
+        box-shadow: $ms-depth-shadow-8;
+        border-radius: $border-radius;
+
+        @include mq(blog-lg) {
           display: none;
-          @include mq(blog-lg){
-            display: block;
-            box-shadow: $ms-depth-shadow-8;
-            background: white;
-            border-radius: $border-radius;
-            margin-bottom: 20px;
-            position: sticky;
-            top: $article-top-space;
-            width: 250px;
-            padding-top: 30px;
-          }
-        }
-        &.center{
-          background: none;
-          margin: 0 auto;
-          width: 60%;
-          box-shadow: $ms-depth-shadow-8;
-          border-radius: $border-radius;
-          @include mq(blog-lg){
-            display: none;
-          }
-        }
-      }
-      &.item{
-        &.side-pane{
-          padding: 20px 10px 10px 20px;
-          @include mq(blog-sm){
-            display: flexbox;
-            padding: 20px 20px 10px 40px;
-          }
-          @include mq(blog-lg){
-            display: absolute;
-            padding: 20px 20px 13px 20px;
-          }
-        }
-        &.list{
-          border-bottom: 2px solid $ms-color-neutralLight;
-          padding: 30px 0 30px 0;
-        }
-      }
-      &.title{
-        &.side-pane{
-          margin-top: 0.25rem;
-          margin-bottom: 0.5rem;
-          font-weight: bold;
-        }
-      }
-      &.info{
-        display: flex;
-        justify-content: space-between;
-      }
-      &.button{
-        &.previous-next{
-          display: flex;
-          justify-content: space-between;
-        }
-        &.media-group{
-          display: flex;
-          margin-top: 20px;
-          margin-bottom: 30px;
-        }
-        &.media{
-          margin: 0 10px 0 0;
         }
       }
     }
-    &.ms-DocumentCard{
-      &.ms-DocumentCard{
-        &--actionable{
-          &:hover{
-            border-color: transparent;
-            box-shadow: $ms-depth-shadow-16;
-            border: 0;
-          }
+
+    &.item {
+      &.side-pane {
+        padding: 20px 10px 10px 20px;
+
+        @include mq(blog-sm) {
+          display: flexbox;
+          padding: 20px 20px 10px 40px;
+        }
+
+        @include mq(blog-lg) {
+          display: absolute;
+          padding: 20px 20px 13px 20px;
+        }
+      }
+
+      &.list {
+        border-bottom: 2px solid $ms-color-neutralLight;
+        padding: 30px 0 30px 0;
+      }
+    }
+
+    &.title {
+      &.side-pane {
+        margin-top: 0.25rem;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+    }
+
+    &.info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &.button {
+      &.previous-next {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &.media-group {
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+
+      &.media {
+        margin: 0 10px 0 0;
+      }
+    }
+  }
+
+  &.ms-DocumentCard {
+    &.ms-DocumentCard {
+      &--actionable {
+        &:hover {
+          border-color: transparent;
+          box-shadow: $ms-depth-shadow-16;
+          border: 0;
         }
       }
     }
   }
+}
