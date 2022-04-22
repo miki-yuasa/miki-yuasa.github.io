@@ -50,7 +50,6 @@ const IndexPage = (props: { data: IndexPageQuery }) => (
     <Publication />
     <Software />
     <Blog />
-    <Contact />
   </Layout>
 );
 
