@@ -19,9 +19,6 @@ const pageData: Page[] = [
   {
     name: "Blog",
   },
-  {
-    name: "Contact",
-  },
 ];
 
 export function getPageData() {
