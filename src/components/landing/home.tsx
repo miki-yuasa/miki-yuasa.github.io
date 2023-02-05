@@ -43,7 +43,7 @@ export default function Home() {
             <br />
             <p className="short-intro">
               {" "}
-              Ph.D. Student Researching Reinforcement Learning at the University of
+              Ph.D. Student researching Reinforcement Learning at the University of
               Illinois Urbana-Champaign
             </p>
             <div style={{
