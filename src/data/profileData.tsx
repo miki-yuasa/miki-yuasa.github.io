@@ -2,7 +2,7 @@ import { Profile } from '../../@types'
 
 export const profileData: Profile = {
     name: 'Mikihisa Yuasa',
-    affiliation: '1st-year graduate reasearch assistant at the Department of Aerospace Engineering, University of Illinois Urbana-Champaign',
+    affiliation: 'Ph.D. student at the Department of Aerospace Engineering, University of Illinois Urbana-Champaign',
     labs: [
         {
             name: 'Tran Research Group',

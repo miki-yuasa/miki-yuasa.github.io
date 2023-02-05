@@ -6,6 +6,7 @@ import SectionTemplate from "../../templates/sectionTemplate";
 export default function Research() {
   return (
     <SectionTemplate title="Research">
+      <h4>Current Graduate Research:</h4>
       <p>
         I'm interested in developing core reinforcement learning (RL) methodologies for safety-critical applications in the real world, such as connected automated vehicles, smart cities, urban air mobility, and urban search-and-rescue missions.
       </p>
@@ -15,10 +16,13 @@ export default function Research() {
       </p>
       <ol>
         <li>
-          Safe and Verfiable RL Development: developing a RL theory and framework to verifiably satisfy sefety specifications of RL agents using formal logic.
+          Developed safe and verifiable AI and deep reinforcement learning framework using formal methods
         </li>
         <li>
-          Multi-Agent RL (MARL) Applications: testing MARL theories on real robot vehicles.
+          Designed a neural network from scratch, which infers robot behaviors in human-readable forms
+        </li>
+        <li>
+          Applying the framework for motion planning of robots and autonomous vehicles (Sim2Real)
         </li>
       </ol>
       <br />
