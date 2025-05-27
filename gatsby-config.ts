@@ -3,7 +3,9 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `miki-yuasa.github.io`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://miki-yuasa.github.io`,
+    description: `Mikihisa Yuasa's personal website, showcasing my research in explainable AI and reinforcement learning policies for robot systems.`,
+    image: `/images/profile.jpg`, // Default image for SEO
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

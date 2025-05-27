@@ -6,6 +6,7 @@ import { GitHub, LinkedIn, School, Email } from "@mui/icons-material";
 import Grid from "@mui/material/Grid";
 
 import { Layout } from "../components/Layout"
+import { SEO } from "../components/SEO"
 import { MediaButton, MediaButtonProps } from "../components/Buttons/MediaButton";
 
 const linkStyle = {
@@ -25,6 +26,7 @@ const mediaLinks: MediaButtonProps[] = [
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
+      <SEO title="Home" description="Welcome to my personal website!" />
       <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', mb: 2 }}>
         <Box sx={{ flex: 1 }} key="intro">
           <Typography variant="h4" gutterBottom>
