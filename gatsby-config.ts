@@ -32,6 +32,13 @@ const config: GatsbyConfig = {
       __key: "pages"
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/contents/projects/`,
+        name: `projects`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
