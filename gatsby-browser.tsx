@@ -16,8 +16,10 @@ const theme = createTheme({
     // You can add palette, typography, etc. here as needed
     // Color palette example
     palette: {
+        mode: 'light', // or 'dark'
         primary: {
-            main: '#007bbb', // Konpeki blue
+            main: '#0095d9', // Ao blue
+            light: "'#0094c8'"
         },
         secondary: {
             main: '#a22041', // Shinku red
