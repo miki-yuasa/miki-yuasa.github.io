@@ -10,7 +10,7 @@ export const ModeToggleButton: React.FC = () => {
     return (
         <Tooltip title={isDark ? "Switch to light mode" : "Switch to dark mode"}>
             <IconButton
-                color="inherit"
+                color="primary"
                 onClick={() => setMode(isDark ? 'light' : 'dark')}
                 aria-label="toggle color mode"
                 sx={{ ml: 1 }}

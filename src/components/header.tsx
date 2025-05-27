@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
+import Container from '@mui/material/Container'
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { ModeToggleButton } from "./Buttons/ThemeToggleButton";
@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
     const fullTrigger = { xs: 'none', md: 'flex' };
 
     return (
-        <AppBar color='transparent' position="sticky" elevation={1} >
+        <AppBar color='transparent' position="sticky" elevation={0} >
             <Container maxWidth="md">
                 <Toolbar disableGutters>
                     <Typography
@@ -63,9 +63,11 @@ export const Header: React.FC = () => {
                                 key={page.name}
                                 href={page.url}
                                 onClick={handleCloseNavMenu}
-                                sx={{ display: 'block' }}
+                                sx={{ display: 'block', textTransform: 'none' }}
                             >
-                                {page.name}
+                                <Typography textAlign='center'>
+                                    {page.name}
+                                </Typography>
                             </Button>
                         ))}
                     </Box>
@@ -86,9 +88,10 @@ export const Header: React.FC = () => {
                                 color: 'primary.main',
                                 borderColor: 'grey.500',
                                 minWidth: 0,
-                                px: 0.7,
+                                px: 0.5,
                                 py: 0.5,
                                 ml: 1,
+                                justifyContent: 'center',
                                 borderRadius: 3.2,
                                 '&:hover': {
                                     color: 'primary.main',
@@ -108,6 +111,13 @@ export const Header: React.FC = () => {
                             onClose={handleCloseNavMenu}
                             sx={{
                                 display: { xs: 'block', md: 'none' },
+                            }}
+                            slotProps={{
+                                paper: {
+                                    sx: {
+                                        borderRadius: 3.2,
+                                    }
+                                },
                             }}
                         >
                             {pages.map((page) => (

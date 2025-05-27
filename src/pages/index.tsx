@@ -1,8 +1,9 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image";
-import { Typography, Link, Box, Stack } from "@mui/material"
+import { Typography, Link, Box } from "@mui/material"
 import { GitHub, LinkedIn, School, Email } from "@mui/icons-material";
+import Grid from "@mui/material/Grid";
 
 import { Layout } from "../components/Layout"
 import { MediaButton, MediaButtonProps } from "../components/Buttons/MediaButton";
@@ -41,11 +42,13 @@ const IndexPage: React.FC<PageProps> = () => {
         </Box>
       </Box>
       {/* Social Media Links */}
-      <Stack direction="row" spacing={1} mb={4} justifyContent="center" width="100%">
+      <Grid container spacing={2} mb={4} justifyContent="center" alignItems="center">
         {mediaLinks.map((media) => (
-          <MediaButton key={media.name} name={media.name} url={media.url} icon={media.icon} />
+          <Grid key={media.name} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <MediaButton name={media.name} url={media.url} icon={media.icon} />
+          </Grid>
         ))}
-      </Stack>
+      </Grid>
     </Layout >
   )
 }

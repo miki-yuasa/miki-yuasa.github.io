@@ -20,7 +20,7 @@ const theme = createTheme({
     colorSchemes: {
         light: {
             palette: {
-                primary: { main: '#007bbb' },
+                primary: { main: '#336774' },
                 secondary: { main: '#a22041' },
                 warning: { main: '#f8b500' },
                 info: { main: '#59b9c6' },
