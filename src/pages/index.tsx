@@ -4,8 +4,8 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Typography, Link, Box, Stack } from "@mui/material"
 import { GitHub, LinkedIn, School, Email } from "@mui/icons-material";
 
-import { Layout } from "../components/layout"
-import { MediaButton, MediaButtonProps } from "../components/MediaButton";
+import { Layout } from "../components/Layout"
+import { MediaButton, MediaButtonProps } from "../components/Buttons";
 
 const linkStyle = {
   underline: "hover" as const,
