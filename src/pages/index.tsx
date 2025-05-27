@@ -1,7 +1,11 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
-import { Typography, Link } from "@mui/material"
+import { StaticImage } from "gatsby-plugin-image";
+import { Typography, Link, Box, Stack } from "@mui/material"
+import { GitHub, LinkedIn, School, Email } from "@mui/icons-material";
+
 import { Layout } from "../components/layout"
+import { MediaButton, MediaButtonProps } from "../components/MediaButton";
 
 const linkStyle = {
   underline: "hover" as const,
@@ -9,19 +13,39 @@ const linkStyle = {
   rel: "noopener noreferrer" as const,
 }
 
+
+const mediaLinks: MediaButtonProps[] = [
+  { name: "Email", url: "mailto:myuasa2@illinois.edu", icon: Email },
+  { name: "GitHub", url: "https://github.com/miki-yuasa", icon: GitHub },
+  { name: "Google Scholar", url: "https://scholar.google.com/citations?user=NiRKTWkAAAAJ", icon: School },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/mikihisa-yuasa/", icon: LinkedIn },
+]
+
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
-      <Typography variant="h4" gutterBottom>
-        Mikihisa Yuasa
-      </Typography>
-      <Typography variant="body1" gutterBottom>
-        I am a PhD student focusing on explainable AI (XAI) & reinforcement learning policies for robot systems, advised by Professor Huy T. Tran at the{' '}
-        <Link href="https://tran.aerospace.illinois.edu/"{...linkStyle}>Lab for Intelligent Robots and Agents (LIRA)</Link>,{' '}
-        <Link href="https://aerospace.illinois.edu/"  {...linkStyle}>Department of Aerospace Engineering</Link> at the{' '}
-        <Link href="https://illinois.edu/" {...linkStyle}>University of Illinois Urbana-Champaign</Link>.
-      </Typography>
-
+      <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', mb: 2 }}>
+        <Box sx={{ flex: 1 }} key="intro">
+          <Typography variant="h4" gutterBottom>
+            Mikihisa Yuasa
+          </Typography>
+          <Typography variant="body2" gutterBottom>
+            I am a PhD student focusing on explainable AI (XAI) & reinforcement learning policies for robot systems, advised by Professor Huy T. Tran at the{' '}
+            <Link href="https://tran.aerospace.illinois.edu/" {...linkStyle}>Lab for Intelligent Robots and Agents (LIRA)</Link>,{' '}
+            <Link href="https://aerospace.illinois.edu/"  {...linkStyle}>Department of Aerospace Engineering</Link> at the{' '}
+            <Link href="https://illinois.edu/" {...linkStyle}>University of Illinois Urbana-Champaign</Link>.
+          </Typography>
+        </Box>
+        <Box sx={{ ml: 4, minWidth: 80, maxWidth: { xs: 120, sm: 140, md: 160, lg: 180, xl: 200 }, display: { xs: 'block', sm: 'block' } }} key='profile-pic'>
+          <StaticImage src="../images/profile.jpg" alt="profile_icon" style={{ borderRadius: "40px" }} />
+        </Box>
+      </Box>
+      {/* Social Media Links */}
+      <Stack direction="row" spacing={1} mb={4} justifyContent="center" width="100%">
+        {mediaLinks.map((media) => (
+          <MediaButton key={media.name} name={media.name} url={media.url} icon={media.icon} />
+        ))}
+      </Stack>
     </Layout >
   )
 }

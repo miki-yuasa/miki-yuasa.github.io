@@ -14,6 +14,24 @@ const theme = createTheme({
         },
     },
     // You can add palette, typography, etc. here as needed
+    // Color palette example
+    palette: {
+        primary: {
+            main: '#007bbb', // Konpeki blue
+        },
+        secondary: {
+            main: '#a22041', // Shinku red
+        },
+        warning: {
+            main: '#f8b500', // Yamabuki yellow
+        },
+        info: {
+            main: '#59b9c6', // Shimbashi blue
+        },
+        success: {
+            main: '#028760', // Tokiwa midori green
+        },
+    },
 });
 
 export const wrapRootElement = ({ element }) => (
