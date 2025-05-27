@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@mui/material";
-import { GitHub, LinkedIn, School, SvgIconComponent } from "@mui/icons-material";
+import { SvgIconComponent } from "@mui/icons-material";
+
 
 export type MediaButtonProps = {
     name: string;

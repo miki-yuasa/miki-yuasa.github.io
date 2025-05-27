@@ -5,7 +5,7 @@ import { Typography, Link, Box, Stack } from "@mui/material"
 import { GitHub, LinkedIn, School, Email } from "@mui/icons-material";
 
 import { Layout } from "../components/Layout"
-import { MediaButton, MediaButtonProps } from "../components/Buttons";
+import { MediaButton, MediaButtonProps } from "../components/Buttons/MediaButton";
 
 const linkStyle = {
   underline: "hover" as const,

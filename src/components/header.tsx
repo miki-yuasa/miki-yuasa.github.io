@@ -9,8 +9,17 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import { ModeToggleButton } from "./Buttons/ThemeToggleButton";
 
-const pages = ['Home', 'Projects', 'Articles'];
+export type PageProps = {
+    name: string;
+    url: string;
+};
+const pages: PageProps[] = [
+    { name: 'Home', url: '/' },
+    { name: 'Projects', url: '/projects' },
+    { name: 'Articles', url: '/articles' },
+];
 
 export const Header: React.FC = () => {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -23,34 +32,16 @@ export const Header: React.FC = () => {
         setAnchorElNav(null);
     };
 
-    const siteName: string = "Mikihisa Yuasa";
+    const siteName: string = "";
     const compactTrigger = { xs: 'flex', md: 'none' };
     const fullTrigger = { xs: 'none', md: 'flex' };
 
     return (
-        <AppBar position="static">
+        <AppBar color='transparent' position="sticky" elevation={1} >
             <Container maxWidth="md">
                 <Toolbar disableGutters>
                     <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            mr: 2,
-                            display: fullTrigger,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        {siteName}
-                    </Typography>
-
-                    <Typography
-                        variant="h6"
+                        // variant="h6"
                         noWrap
                         component="a"
                         href="/"
@@ -66,18 +57,47 @@ export const Header: React.FC = () => {
                     >
                         {siteName}
                     </Typography>
+                    <Box sx={{ flexGrow: 1, display: fullTrigger }}>
+                        {pages.map((page) => (
+                            <Button
+                                key={page.name}
+                                href={page.url}
+                                onClick={handleCloseNavMenu}
+                                sx={{ display: 'block' }}
+                            >
+                                {page.name}
+                            </Button>
+                        ))}
+                    </Box>
+                    <Box sx={{ flexGrow: 0, justifyContent: 'flex-end' }}>
+                        <ModeToggleButton />
+                    </Box>
 
-                    <Box sx={{ flexGrow: 1, display: compactTrigger, justifyContent: 'flex-end' }}>
-                        <IconButton
+                    <Box sx={{ flexGrow: 0, display: compactTrigger, justifyContent: 'flex-end' }}>
+                        <Button
                             size="large"
                             aria-label="menu"
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
                             color="inherit"
+                            variant='outlined'
+                            sx={{
+                                color: 'primary.main',
+                                borderColor: 'grey.500',
+                                minWidth: 0,
+                                px: 0.7,
+                                py: 0.5,
+                                ml: 1,
+                                borderRadius: 3.2,
+                                '&:hover': {
+                                    color: 'primary.main',
+                                    borderColor: 'primary.main',
+                                },
+                            }}
                         >
                             <MenuIcon />
-                        </IconButton>
+                        </Button>
                         <Menu
                             id="menu-appbar"
                             anchorEl={anchorElNav}
@@ -91,24 +111,11 @@ export const Header: React.FC = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu} component="a" href={`/${page.toLowerCase()}`}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem key={page.name} onClick={handleCloseNavMenu} component="a" href={page.url}>
+                                    <Typography textAlign="center">{page.name}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
-                    </Box>
-
-                    <Box sx={{ flexGrow: 1, display: fullTrigger }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                href={`/${page.toLowerCase()}`}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
                     </Box>
                 </Toolbar>
             </Container>
