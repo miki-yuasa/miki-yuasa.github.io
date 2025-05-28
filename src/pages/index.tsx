@@ -1,7 +1,8 @@
 import * as React from "react";
+import { graphql } from "gatsby";
 import type { HeadFC, PageProps } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import { Typography, Link, Box } from "@mui/material";
+import { Typography, Link, Box, List, ListItem } from "@mui/material";
 import { GitHub, LinkedIn, School, Email } from "@mui/icons-material";
 import Grid from "@mui/material/Grid";
 
@@ -11,6 +12,7 @@ import {
   MediaButton,
   MediaButtonProps,
 } from "../components/Buttons/MediaButton";
+import { ProjectCards } from "../components/Lists/ProjectCards";
 
 const linkStyle = {
   underline: "hover" as const,
@@ -33,7 +35,44 @@ const mediaLinks: MediaButtonProps[] = [
   },
 ];
 
-const IndexPage: React.FC<PageProps> = () => {
+export const query = graphql`
+  query ResearchProjects {
+    allMdx(
+      filter: { frontmatter: { slug: { regex: "/research/" } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
+      nodes {
+        frontmatter {
+          title
+          slug
+          date(formatString: "YYYY-MM-DD")
+          abstract
+          links {
+            paper
+            arxiv
+            github
+            demo
+          }
+          authors {
+            name
+            url
+            affiliation
+          }
+          venue
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(width: 160, placeholder: BLURRED)
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const IndexPage: React.FC<PageProps<{ allMdx: { nodes: any[] } }>> = ({
+  data,
+}) => {
   return (
     <Layout>
       <SEO title="Home" description="Welcome to my personal website!" />
@@ -103,9 +142,43 @@ const IndexPage: React.FC<PageProps> = () => {
       <Typography id="research" variant="h5" gutterBottom>
         Research
       </Typography>
+      <Typography variant="body2" gutterBottom>
+        My research interests are:
+        <Box component="ul">
+          <li>
+            <strong>Explainable Reinforcement Learning for Robotics</strong>
+            <br />
+            Neuro-symbolic and logic-based methods for interpretable, verifiable
+            RL in robotics.
+          </li>
+          <li>
+            <strong>
+              Language-Conditioned Policy Generation and Zero-Shot
+              Generalization
+            </strong>
+            <br />
+            Scalable models to generate RL policies from language for zero-shot
+            generalization.
+          </li>
+          <li>
+            <strong>
+              AI/ML Systems for Human-Robot Collaboration and Real-World
+              Deployment
+            </strong>
+            <br />
+            RL for teamwork and MLOps pipelines for real-world autonomous
+            systems.
+          </li>
+        </Box>
+      </Typography>
       <Typography variant="h6" gutterBottom>
         Selected Publications & Preprints
       </Typography>
+      {data?.allMdx?.nodes && (
+        <ProjectCards
+          projects={data.allMdx.nodes.map((node) => node.frontmatter)}
+        />
+      )}
     </Layout>
   );
 };
