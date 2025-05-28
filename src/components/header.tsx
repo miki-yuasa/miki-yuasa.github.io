@@ -37,7 +37,10 @@ export const Header: React.FC = () => {
     const fullTrigger = { xs: 'none', md: 'flex' };
 
     return (
-        <AppBar color='transparent' position="sticky" elevation={0} sx={{ backdropFilter: "blur(20px)" }}>
+        <AppBar color='transparent'
+            position="sticky"
+            elevation={0}
+            sx={{ backdropFilter: "blur(30px)", backgroundColor: 'rgba(255,255,255,0.7)' }}>
             <Container maxWidth="md">
                 <Toolbar disableGutters>
                     <Typography
