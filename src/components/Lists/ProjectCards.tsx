@@ -30,6 +30,7 @@ const linkStyle = {
   underline: "hover" as const,
   target: "_blank" as const,
   rel: "noopener noreferrer" as const,
+  variant: "body2" as const,
 };
 
 // Vertical cards to display projects
@@ -38,7 +39,7 @@ export const ProjectCards: React.FC<{
 }> = ({ projects }) => (
   <Box>
     {projects.map((project) => (
-      <Card key={project.slug} sx={{ mb: 3, boxShadow: 0 }}>
+      <Card key={project.slug} sx={{ mb: 2, boxShadow: 0 }}>
         <Box sx={{ display: "flex", alignItems: "center", minHeight: 180 }}>
           {project.featuredImage?.childImageSharp?.gatsbyImageData && (
             <Box
@@ -46,7 +47,7 @@ export const ProjectCards: React.FC<{
                 minWidth: 200,
                 maxWidth: 200,
                 maxHeight: 180,
-                mr: 2,
+                ml: 2,
                 flexShrink: 0,
                 display: "flex",
                 alignItems: "center",
@@ -85,15 +86,22 @@ export const ProjectCards: React.FC<{
               </Typography>
             )}
             {project.venue && (
-              <Typography
-                variant="body2"
-                sx={{ fontStyle: "italic" }}
-                gutterBottom
-              >
-                {project.venue}
-              </Typography>
+              <>
+                <Typography
+                  variant="body2"
+                  sx={{ fontStyle: "italic" }}
+                  gutterBottom
+                >
+                  {project.venue}
+                  {` (${new Date(project.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                  })}) `}
+                </Typography>
+              </>
             )}
-
+            <Typography variant="body2" color="text.secondary" gutterBottom>
+              {project.abstract}
+            </Typography>
             {/* Optionally, add links or authors if present */}
             {project.links && (
               <Box
@@ -107,7 +115,12 @@ export const ProjectCards: React.FC<{
               >
                 {[
                   project.slug && (
-                    <Link href={project.slug} {...linkStyle} key="project">
+                    <Link
+                      href={project.slug}
+                      underline="hover"
+                      key="project"
+                      variant="body2"
+                    >
                       Project Page
                     </Link>
                   ),
@@ -118,7 +131,7 @@ export const ProjectCards: React.FC<{
                   ),
                   project.links.arxiv && (
                     <Link href={project.links.arxiv} {...linkStyle} key="arxiv">
-                      ArXiv
+                      arXiv
                     </Link>
                   ),
                   project.links.github && (

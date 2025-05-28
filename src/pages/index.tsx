@@ -142,43 +142,53 @@ const IndexPage: React.FC<PageProps<{ allMdx: { nodes: any[] } }>> = ({
       <Typography id="research" variant="h5" gutterBottom>
         Research
       </Typography>
-      <Typography variant="body2" gutterBottom>
-        My research interests are:
-        <Box component="ul">
-          <li>
-            <strong>Explainable Reinforcement Learning for Robotics</strong>
-            <br />
-            Neuro-symbolic and logic-based methods for interpretable, verifiable
-            RL in robotics.
-          </li>
-          <li>
-            <strong>
-              Language-Conditioned Policy Generation and Zero-Shot
-              Generalization
-            </strong>
-            <br />
-            Scalable models to generate RL policies from language for zero-shot
-            generalization.
-          </li>
-          <li>
-            <strong>
-              AI/ML Systems for Human-Robot Collaboration and Real-World
-              Deployment
-            </strong>
-            <br />
-            RL for teamwork and MLOps pipelines for real-world autonomous
-            systems.
-          </li>
-        </Box>
-      </Typography>
-      <Typography variant="h6" gutterBottom>
-        Selected Publications & Preprints
-      </Typography>
-      {data?.allMdx?.nodes && (
-        <ProjectCards
-          projects={data.allMdx.nodes.map((node) => node.frontmatter)}
-        />
-      )}
+      <Box>
+        <Typography variant="body2" gutterBottom>
+          My research interests are:
+          <Box component="ul">
+            <li>
+              <strong>Explainable Reinforcement Learning for Robotics</strong>
+              <br />
+              Neuro-symbolic and logic-based methods for interpretable,
+              verifiable RL in robotics.
+            </li>
+            <li>
+              <strong>
+                Language-Conditioned Policy Generation and Zero-Shot
+                Generalization
+              </strong>
+              <br />
+              Scalable models to generate RL policies from language for
+              zero-shot generalization.
+            </li>
+            <li>
+              <strong>
+                AI/ML Systems for Human-Robot Collaboration and Real-World
+                Deployment
+              </strong>
+              <br />
+              RL for teamwork and MLOps pipelines for real-world autonomous
+              systems.
+            </li>
+          </Box>
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          I'm always happy to collaborate with graduate/undergraduate students.
+          Please drop me an email if you want to work with me. I'm looking for
+          <b> part-time/full-time internship opportunities</b>. Feel free to
+          reach out if you're interested in my research.
+        </Typography>
+      </Box>
+      <Box sx={{ mt: 4 }}>
+        <Typography variant="h6" gutterBottom>
+          Selected Publications & Preprints
+        </Typography>
+        {data?.allMdx?.nodes && (
+          <ProjectCards
+            projects={data.allMdx.nodes.map((node) => node.frontmatter)}
+          />
+        )}
+      </Box>
     </Layout>
   );
 };

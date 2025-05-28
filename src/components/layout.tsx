@@ -50,7 +50,7 @@ const theme = createTheme({
         warning: { main: "#f8b500" },
         info: { main: "#59b9c6" },
         success: { main: "#028760" },
-        greyBackground: { main: "#595857" },
+        greyBackground: { main: "#524e4d" },
       },
     },
   },

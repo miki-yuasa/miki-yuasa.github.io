@@ -59,10 +59,11 @@ type ProjectTemplateProps = {
 };
 
 const ProjectTemplate = ({ data, children }: ProjectTemplateProps) => {
-  const { title, slug, authors, abstract, links, venue } = data.mdx.frontmatter;
+  const { title, slug, date, authors, abstract, links, venue } =
+    data.mdx.frontmatter;
   const mediaButtons = [
     { name: "Paper", url: links.paper, icon: Article },
-    { name: "ArXiv", url: links.arxiv, icon: ArXiv },
+    { name: "arXiv", url: links.arxiv, icon: ArXiv },
     { name: "GitHub", url: links.github, icon: GitHub },
     { name: "Demo", url: links.demo, icon: YouTube },
   ].filter((link) => link.url) as MediaButtonProps[];
@@ -84,15 +85,27 @@ const ProjectTemplate = ({ data, children }: ProjectTemplateProps) => {
         {title}
       </Typography>
       {venue !== "" ? (
-        <Typography
-          align="center"
-          variant="h5"
-          gutterBottom
-          color="secondary"
-          sx={{ fontWeight: 600, fontStyle: "italic" }}
-        >
-          {venue}
-        </Typography>
+        <>
+          <Typography
+            align="center"
+            variant="h5"
+            gutterBottom
+            color="secondary"
+            sx={{ fontWeight: 600, fontStyle: "italic" }}
+          >
+            {venue}
+          </Typography>
+          <Typography
+            align="center"
+            variant="h6"
+            color="text.secondary"
+            sx={{ mb: 1 }}
+          >
+            {new Date(date).toLocaleDateString("en-US", {
+              year: "numeric",
+            })}
+          </Typography>
+        </>
       ) : (
         <> </>
       )}
