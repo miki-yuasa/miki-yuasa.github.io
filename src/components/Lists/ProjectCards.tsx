@@ -42,8 +42,11 @@ export const ProjectCards: React.FC<{
           }}
         >
           {project.featuredImage?.childImageSharp?.gatsbyImageData && (
-            <Box
+            <Link
+              href={project.slug}
+              underline="none"
               sx={{
+                display: "block",
                 minWidth: { xs: "100%", sm: 200 },
                 maxWidth: { xs: 200, sm: 200 },
                 maxHeight: 180,
@@ -52,26 +55,34 @@ export const ProjectCards: React.FC<{
                 mr: { xs: 2, sm: 0 },
                 mb: { xs: 2, sm: 0 },
                 flexShrink: 0,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
               }}
+              aria-label={project.title + " project page"}
             >
-              <GatsbyImage
-                image={
-                  getImage(
-                    project.featuredImage.childImageSharp.gatsbyImageData
-                  )!
-                }
-                alt={project.title + " featured"}
-                style={{
-                  borderRadius: 8,
-                  maxHeight: "180px",
-                  maxWidth: "300px",
+              <Box
+                sx={{
                   width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
-              />
-            </Box>
+              >
+                <GatsbyImage
+                  image={
+                    getImage(
+                      project.featuredImage.childImageSharp.gatsbyImageData
+                    )!
+                  }
+                  alt={project.title + " featured"}
+                  style={{
+                    borderRadius: 8,
+                    maxHeight: "180px",
+                    maxWidth: "300px",
+                    width: "100%",
+                  }}
+                />
+              </Box>
+            </Link>
           )}
           <CardContent sx={{ flex: 1 }}>
             <Typography variant="body1" fontWeight={700} gutterBottom>
