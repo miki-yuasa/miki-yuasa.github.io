@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { GitHub, Article, YouTube } from "@mui/icons-material";
-import { Typography, Link } from "@mui/material";
+import { Typography, Link, Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
 
 import { Layout } from "../components/Layout";
@@ -51,10 +51,16 @@ type LinkProps = {
   demo?: string;
 };
 
+type ImageProps = {
+  path: { relativePath: string; absolutePath: string };
+  maxWidth: number;
+};
+
 type DataProps = {
   mdx: {
     frontmatter: {
       title: string;
+      slug: string;
       date: string;
       authors: AuthorProps[];
       links: LinkProps;
@@ -78,7 +84,7 @@ type ProjectTemplateProps = {
 };
 
 const ProjectTemplate = ({ data, children }: ProjectTemplateProps) => {
-  const { title, date, authors, abstract, links, venue } = data.mdx.frontmatter;
+  const { title, slug, authors, abstract, links, venue } = data.mdx.frontmatter;
   const mediaButtons = [
     { name: "Paper", url: links.paper, icon: Article },
     { name: "ArXiv", url: links.arxiv, icon: ArXiv },
@@ -88,7 +94,7 @@ const ProjectTemplate = ({ data, children }: ProjectTemplateProps) => {
 
   const uniqueAffiliations = getUniqueAffiliations(authors);
 
-  console.log("childre", children);
+  const shortcodes = { Box };
 
   return (
     <Layout>
@@ -178,11 +184,16 @@ const ProjectTemplate = ({ data, children }: ProjectTemplateProps) => {
             key={media.name}
             sx={{ display: "flex", justifyContent: "center" }}
           >
-            <MediaButton name={media.name} url={media.url} icon={media.icon} />
+            <MediaButton
+              name={media.name}
+              url={media.url}
+              icon={media.icon}
+              variant="contained"
+            />
           </Grid>
         ))}
       </Grid>
-      <MDXProvider>{children}</MDXProvider>
+      <MDXProvider components={shortcodes}>{children}</MDXProvider>
     </Layout>
   );
 };
