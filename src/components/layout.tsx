@@ -4,13 +4,7 @@ import Box from "@mui/material/Box";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import CssBaseline from "@mui/material/CssBaseline";
-import {
-  ThemeProvider,
-  createTheme,
-  useColorScheme,
-} from "@mui/material/styles";
-import { Button } from "@mui/material";
-import { Palette, PaletteOptions } from "@mui/material/styles";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 // Extend the palette to include greyBackground
 declare module "@mui/material/styles" {
@@ -55,19 +49,6 @@ const theme = createTheme({
     },
   },
 });
-
-function ModeToggle() {
-  const { mode, setMode } = useColorScheme();
-  return (
-    <Button
-      onClick={() => {
-        setMode(mode === "light" ? "dark" : "light");
-      }}
-    >
-      {mode === "light" ? "Turn dark" : "Turn light"}
-    </Button>
-  );
-}
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({
   children,

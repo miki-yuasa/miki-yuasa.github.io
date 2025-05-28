@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  Link,
-} from "@mui/material";
+import { Box, Card, CardContent, Typography, Link } from "@mui/material";
 import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 
 import { AuthorProps, LinkProps } from "../../types";
@@ -40,32 +33,56 @@ export const ProjectCards: React.FC<{
   <Box>
     {projects.map((project) => (
       <Card key={project.slug} sx={{ mb: 2, boxShadow: 0 }}>
-        <Box sx={{ display: "flex", alignItems: "center", minHeight: 180 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+            alignItems: { xs: "stretch", sm: "center" },
+            minHeight: 180,
+          }}
+        >
           {project.featuredImage?.childImageSharp?.gatsbyImageData && (
-            <Box
+            <Link
+              href={project.slug}
+              underline="none"
               sx={{
-                minWidth: 200,
-                maxWidth: 200,
+                display: "block",
+                minWidth: { xs: "100%", sm: 200 },
+                maxWidth: { xs: 200, sm: 200 },
                 maxHeight: 180,
-                ml: 2,
+                height: { xs: 180, sm: "auto" },
+                ml: { xs: 0, sm: 2 },
+                mr: { xs: 2, sm: 0 },
+                mb: { xs: 2, sm: 0 },
                 flexShrink: 0,
-                display: "flex",
-                alignItems: "center",
               }}
+              aria-label={project.title + " project page"}
             >
-              <GatsbyImage
-                image={
-                  getImage(
-                    project.featuredImage.childImageSharp.gatsbyImageData
-                  )!
-                }
-                alt={project.title + " featured"}
-                style={{
-                  borderRadius: 8,
-                  maxHeight: "180px",
+              <Box
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
-              />
-            </Box>
+              >
+                <GatsbyImage
+                  image={
+                    getImage(
+                      project.featuredImage.childImageSharp.gatsbyImageData
+                    )!
+                  }
+                  alt={project.title + " featured"}
+                  style={{
+                    borderRadius: 8,
+                    maxHeight: "180px",
+                    maxWidth: "300px",
+                    width: "100%",
+                  }}
+                />
+              </Box>
+            </Link>
           )}
           <CardContent sx={{ flex: 1 }}>
             <Typography variant="body1" fontWeight={700} gutterBottom>
