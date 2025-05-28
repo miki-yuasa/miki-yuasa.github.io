@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  Link,
-} from "@mui/material";
+import { Box, Card, CardContent, Typography, Link } from "@mui/material";
 import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 
 import { AuthorProps, LinkProps } from "../../types";
@@ -40,17 +33,28 @@ export const ProjectCards: React.FC<{
   <Box>
     {projects.map((project) => (
       <Card key={project.slug} sx={{ mb: 2, boxShadow: 0 }}>
-        <Box sx={{ display: "flex", alignItems: "center", minHeight: 180 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+            alignItems: { xs: "stretch", sm: "center" },
+            minHeight: 180,
+          }}
+        >
           {project.featuredImage?.childImageSharp?.gatsbyImageData && (
             <Box
               sx={{
-                minWidth: 200,
-                maxWidth: 200,
+                minWidth: { xs: "100%", sm: 200 },
+                maxWidth: { xs: 200, sm: 200 },
                 maxHeight: 180,
-                ml: 2,
+                height: { xs: 180, sm: "auto" },
+                ml: { xs: 0, sm: 2 },
+                mr: { xs: 2, sm: 0 },
+                mb: { xs: 2, sm: 0 },
                 flexShrink: 0,
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "center",
               }}
             >
               <GatsbyImage
@@ -63,6 +67,8 @@ export const ProjectCards: React.FC<{
                 style={{
                   borderRadius: 8,
                   maxHeight: "180px",
+                  maxWidth: "300px",
+                  width: "100%",
                 }}
               />
             </Box>
