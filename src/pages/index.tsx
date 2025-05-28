@@ -100,6 +100,12 @@ const IndexPage: React.FC<PageProps> = () => {
           </Grid>
         ))}
       </Grid>
+      <Typography id="research" variant="h5" gutterBottom>
+        Research
+      </Typography>
+      <Typography variant="h6" gutterBottom>
+        Selected Publications & Preprints
+      </Typography>
     </Layout>
   );
 };

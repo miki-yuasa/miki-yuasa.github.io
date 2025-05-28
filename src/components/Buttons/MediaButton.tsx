@@ -1,12 +1,14 @@
 import React from "react";
 import { Button } from "@mui/material";
 import { SvgIconComponent } from "@mui/icons-material";
+import { SxProps, Theme } from "@mui/material/styles";
 
 export type MediaButtonProps = {
   name: string;
   url: string;
   icon: SvgIconComponent;
   variant?: "text" | "outlined" | "contained";
+  sx?: SxProps<Theme>;
 };
 
 export const MediaButton: React.FC<MediaButtonProps> = ({
@@ -14,6 +16,7 @@ export const MediaButton: React.FC<MediaButtonProps> = ({
   url,
   icon,
   variant,
+  sx,
 }) => {
   const IconComponent = icon;
 
@@ -34,6 +37,7 @@ export const MediaButton: React.FC<MediaButtonProps> = ({
         whiteSpace: "nowrap",
         width: 180,
         borderRadius: 4,
+        ...sx,
       }}
       variant={variant || "outlined"}
       aria-label={name}

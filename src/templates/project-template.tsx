@@ -12,6 +12,7 @@ import {
   MediaButtonProps,
 } from "../components/Buttons/MediaButton";
 import { ArXiv } from "../components/Icons";
+import { ProjectProps, AuthorProps } from "../types";
 
 export const query = graphql`
   query ProjectById($id: String!) {
@@ -38,35 +39,9 @@ export const query = graphql`
   }
 `;
 
-type AuthorProps = {
-  name: string;
-  url?: string;
-  affiliation: string;
-};
-
-type LinkProps = {
-  paper?: string;
-  arxiv?: string;
-  github?: string;
-  demo?: string;
-};
-
-type ImageProps = {
-  path: { relativePath: string; absolutePath: string };
-  maxWidth: number;
-};
-
 type DataProps = {
   mdx: {
-    frontmatter: {
-      title: string;
-      slug: string;
-      date: string;
-      authors: AuthorProps[];
-      links: LinkProps;
-      venue: string;
-      abstract: string;
-    };
+    frontmatter: ProjectProps;
     body: string;
   };
 };
@@ -189,6 +164,7 @@ const ProjectTemplate = ({ data, children }: ProjectTemplateProps) => {
               url={media.url}
               icon={media.icon}
               variant="contained"
+              sx={{ width: 120 }}
             />
           </Grid>
         ))}

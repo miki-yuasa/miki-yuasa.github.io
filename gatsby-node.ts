@@ -6,7 +6,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   actions,
   reporter,
 }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
 
   const result = await graphql<{
     allMdx: {
@@ -47,9 +47,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   const projects = result.data?.allMdx.edges!;
 
-  // Print the projects to the console for debugging
-  console.log("Projects found:", projects);
-
   projects.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.slug,
@@ -60,5 +57,10 @@ export const createPages: GatsbyNode["createPages"] = async ({
         id: node.id,
       },
     });
+  });
+
+  createRedirect({
+    fromPath: `/research`,
+    toPath: `/#research`,
   });
 };

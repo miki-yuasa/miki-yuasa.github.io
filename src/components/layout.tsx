@@ -10,6 +10,17 @@ import {
   useColorScheme,
 } from "@mui/material/styles";
 import { Button } from "@mui/material";
+import { Palette, PaletteOptions } from "@mui/material/styles";
+
+// Extend the palette to include greyBackground
+declare module "@mui/material/styles" {
+  interface Palette {
+    greyBackground: Palette["primary"];
+  }
+  interface PaletteOptions {
+    greyBackground?: PaletteOptions["primary"];
+  }
+}
 
 const theme = createTheme({
   breakpoints: {
@@ -29,15 +40,17 @@ const theme = createTheme({
         warning: { main: "#f8b500" },
         info: { main: "#59b9c6" },
         success: { main: "#028760" },
+        greyBackground: { main: "#e5e4e6" },
       },
     },
     dark: {
       palette: {
-        primary: { main: "#a0d8ef" },
+        primary: { main: "#89c3eb" },
         secondary: { main: "#c53d43" },
         warning: { main: "#f8b500" },
         info: { main: "#59b9c6" },
         success: { main: "#028760" },
+        greyBackground: { main: "#595857" },
       },
     },
   },
