@@ -1,73 +1,87 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react";
-import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
-import { DefaultPalette } from "@fluentui/react";
-import { initializeIcons } from "@fluentui/react/lib/Icons";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+import CssBaseline from "@mui/material/CssBaseline";
+import {
+  ThemeProvider,
+  createTheme,
+  useColorScheme,
+} from "@mui/material/styles";
+import { Button } from "@mui/material";
+import { Palette, PaletteOptions } from "@mui/material/styles";
 
-import Header from "./header";
-import "../scss/layout.scss";
-import { NewTabLink } from "./links/defaultLink";
+// Extend the palette to include greyBackground
+declare module "@mui/material/styles" {
+  interface Palette {
+    greyBackground: Palette["primary"];
+  }
+  interface PaletteOptions {
+    greyBackground?: PaletteOptions["primary"];
+  }
+}
 
-const Layout = (props: { children: React.ReactNode; header?: JSX.Element }) => {
-  initializeIcons();
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
+  colorSchemes: {
+    light: {
+      palette: {
+        primary: { main: "#336774" },
+        secondary: { main: "#c53d43" },
+        warning: { main: "#f8b500" },
+        info: { main: "#59b9c6" },
+        success: { main: "#028760" },
+        greyBackground: { main: "#e5e4e6" },
+      },
+    },
+    dark: {
+      palette: {
+        primary: { main: "#89c3eb" },
+        secondary: { main: "#c53d43" },
+        warning: { main: "#f8b500" },
+        info: { main: "#59b9c6" },
+        success: { main: "#028760" },
+        greyBackground: { main: "#524e4d" },
+      },
+    },
+  },
+});
 
-  const data = useStaticQuery<GatsbyTypes.infoAndSiteTitleQueryQuery>(graphql`
-    query infoAndSiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-      site {
-        buildTime(formatString: "MM/DD/YYYY")
-      }
-    }
-  `);
+function ModeToggle() {
+  const { mode, setMode } = useColorScheme();
   return (
-    <div style={{ background: DefaultPalette.neutralLighter }}>
-      {props.header}
-      <div className="layout-body">
-        <main>{props.children}</main>
-        <footer>
-          Last updated: {data.site!.buildTime}
-          <br />
-          Copyright © 2020 - {new Date().getFullYear()} Mikihisa Yuasa | All Rights
-          Reserved
-          <br />
-          Built with {` `}{" "}
-          <NewTabLink
-            className="footer"
-            href="https://www.gatsbyjs.org"
-          >
-            <em>Gatsby</em>
-          </NewTabLink>{" "}
-          and{" "}
-          <NewTabLink
-            className="footer"
-            href="https://www.microsoft.com/design/fluent/#/"
-          >
-            <em>Fluent Design System</em>
-          </NewTabLink>
-          .
-        </footer>
-      </div>
-    </div>
+    <Button
+      onClick={() => {
+        setMode(mode === "light" ? "dark" : "light");
+      }}
+    >
+      {mode === "light" ? "Turn dark" : "Turn light"}
+    </Button>
+  );
+}
+
+export const Layout: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box display="flex" flexDirection="column" minHeight="100vh">
+        <Header />
+        <Container maxWidth="md" sx={{ flex: 1, py: 4 }}>
+          {children}
+        </Container>
+        <Footer />
+      </Box>
+    </ThemeProvider>
   );
 };
-
-Layout.defaultProps = {
-  header: <Header />,
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-export default Layout;

@@ -1,67 +1,198 @@
-import React from "react";
-import { loadTheme } from "@fluentui/react";
+import * as React from "react";
 import { graphql } from "gatsby";
+import type { HeadFC, PageProps } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
+import { Typography, Link, Box, List, ListItem } from "@mui/material";
+import { GitHub, LinkedIn, School, Email } from "@mui/icons-material";
+import Grid from "@mui/material/Grid";
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Home from "../components/landing/home";
-import About from "../components/landing/about";
-import Research from "../components/landing/research";
-import Publication from "../components/landing/publications"
-import Software from "../components/landing/software";
-import Blog from "../components/landing/blog";
-import Contact from "../components/landing/contact";
-import { IndexPageQuery } from "../../@types/graphql-types";
+import { Layout } from "../components/Layout";
+import { SEO } from "../components/SEO";
+import {
+  MediaButton,
+  MediaButtonProps,
+} from "../components/Buttons/MediaButton";
+import { ProjectCards } from "../components/Lists/ProjectCards";
 
-loadTheme({
-  defaultFontStyle: { fontFamily: "Lato, Helvetica" },
-  palette: {
-    themePrimary: "#0078d4",
-    themeLighterAlt: "#eff6fc",
-    themeLighter: "#deecf9",
-    themeLight: "#c7e0f4",
-    themeTertiary: "#71afe5",
-    themeSecondary: "#2b88d8",
-    themeDarkAlt: "#106ebe",
-    themeDark: "#005a9e",
-    themeDarker: "#004578",
-    neutralLighterAlt: "#f8f8f8",
-    neutralLighter: "#f4f4f4",
-    neutralLight: "#eaeaea",
-    neutralQuaternaryAlt: "#dadada",
-    neutralQuaternary: "#d0d0d0",
-    neutralTertiaryAlt: "#c8c8c8",
-    neutralTertiary: "#c2c2c2",
-    neutralSecondary: "#858585",
-    neutralPrimaryAlt: "#4b4b4b",
-    neutralPrimary: "#333333",
-    neutralDark: "#272727",
-    black: "#1d1d1d",
-    white: "#ffffff",
+const linkStyle = {
+  underline: "hover" as const,
+  target: "_blank" as const,
+  rel: "noopener noreferrer" as const,
+};
+
+const mediaLinks: MediaButtonProps[] = [
+  { name: "Email", url: "mailto:myuasa2@illinois.edu", icon: Email },
+  { name: "GitHub", url: "https://github.com/miki-yuasa", icon: GitHub },
+  {
+    name: "Google Scholar",
+    url: "https://scholar.google.com/citations?user=NiRKTWkAAAAJ",
+    icon: School,
   },
-});
-
-const IndexPage = (props: { data: IndexPageQuery }) => (
-  <Layout>
-    <SEO title="Home" description={props.data.site?.siteMetadata?.description} />
-    <Home />
-    <About />
-    <Research />
-    <Publication />
-    <Software />
-    <Blog />
-  </Layout>
-);
-
-export default IndexPage;
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/mikihisa-yuasa/",
+    icon: LinkedIn,
+  },
+];
 
 export const query = graphql`
-  query IndexPage {
-    site {
-      siteMetadata {
-        title
-        description
+  query ResearchProjects {
+    allMdx(
+      filter: { frontmatter: { slug: { regex: "/research/" } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
+      nodes {
+        frontmatter {
+          title
+          slug
+          date(formatString: "YYYY-MM-DD")
+          abstract
+          links {
+            paper
+            arxiv
+            github
+            demo
+          }
+          authors {
+            name
+            url
+            affiliation
+          }
+          venue
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(width: 160, placeholder: BLURRED)
+            }
+          }
+        }
       }
     }
   }
 `;
+
+const IndexPage: React.FC<PageProps<{ allMdx: { nodes: any[] } }>> = ({
+  data,
+}) => {
+  return (
+    <Layout>
+      <SEO title="Home" description="Welcome to my personal website!" />
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
+          mb: 2,
+        }}
+      >
+        <Box sx={{ flex: 1 }} key="intro">
+          <Typography variant="h4" gutterBottom>
+            Mikihisa Yuasa
+          </Typography>
+          <Typography variant="body2" gutterBottom>
+            I am a PhD student focusing on explainable AI (XAI) & reinforcement
+            learning policies for robot systems, advised by Professor Huy T.
+            Tran at the{" "}
+            <Link href="https://tran.aerospace.illinois.edu/" {...linkStyle}>
+              Lab for Intelligent Robots and Agents (LIRA)
+            </Link>
+            ,{" "}
+            <Link href="https://aerospace.illinois.edu/" {...linkStyle}>
+              Department of Aerospace Engineering
+            </Link>{" "}
+            at the{" "}
+            <Link href="https://illinois.edu/" {...linkStyle}>
+              University of Illinois Urbana-Champaign
+            </Link>
+            .
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            ml: 4,
+            minWidth: 80,
+            maxWidth: { xs: 120, sm: 140, md: 160, lg: 180, xl: 200 },
+            display: { xs: "block", sm: "block" },
+          }}
+          key="profile-pic"
+        >
+          <StaticImage
+            src="../images/profile.jpg"
+            alt="profile_icon"
+            style={{ borderRadius: "40px" }}
+          />
+        </Box>
+      </Box>
+      {/* Social Media Links */}
+      <Grid
+        container
+        spacing={2}
+        mb={4}
+        justifyContent="center"
+        alignItems="center"
+      >
+        {mediaLinks.map((media) => (
+          <Grid
+            key={media.name}
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
+            <MediaButton name={media.name} url={media.url} icon={media.icon} />
+          </Grid>
+        ))}
+      </Grid>
+      <Typography id="research" variant="h5" gutterBottom>
+        Research
+      </Typography>
+      <Box>
+        <Typography variant="body2" gutterBottom>
+          My research interests are:
+          <Box component="ul">
+            <li>
+              <strong>Explainable Reinforcement Learning for Robotics</strong>
+              <br />
+              Neuro-symbolic and logic-based methods for interpretable,
+              verifiable RL in robotics.
+            </li>
+            <li>
+              <strong>
+                Language-Conditioned Policy Generation and Zero-Shot
+                Generalization
+              </strong>
+              <br />
+              Scalable models to generate RL policies from language for
+              zero-shot generalization.
+            </li>
+            <li>
+              <strong>
+                AI/ML Systems for Human-Robot Collaboration and Real-World
+                Deployment
+              </strong>
+              <br />
+              RL for teamwork and MLOps pipelines for real-world autonomous
+              systems.
+            </li>
+          </Box>
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          I'm always happy to collaborate with graduate/undergraduate students.
+          Please drop me an email if you want to work with me. I'm looking for
+          <b> part-time/full-time internship opportunities</b>. Feel free to
+          reach out if you're interested in my research.
+        </Typography>
+      </Box>
+      <Box sx={{ mt: 4 }}>
+        <Typography variant="h6" gutterBottom>
+          Selected Publications & Preprints
+        </Typography>
+        {data?.allMdx?.nodes && (
+          <ProjectCards
+            projects={data.allMdx.nodes.map((node) => node.frontmatter)}
+          />
+        )}
+      </Box>
+    </Layout>
+  );
+};
+
+export default IndexPage;
+
+export const Head: HeadFC = () => <title>Home Page</title>;
