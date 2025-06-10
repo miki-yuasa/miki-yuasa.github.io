@@ -1,48 +1,53 @@
-import React, { ReactNode } from "react";
-import { NextSeo } from "next-seo";
+import React, { ReactNode } from "react"
+import { graphql, useStaticQuery } from "gatsby"
 
 export type SEOProps = {
-  title?: string;
-  description?: string;
-  image?: string;
-  url?: string;
-  children?: ReactNode;
-};
+  title?: string
+  description?: string
+  pathname?: string
+  children?: ReactNode
+}
+const useSiteMetadata = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          image
+          siteUrl
+        }
+      }
+    }
+  `)
 
-export const SEO: React.FC<SEOProps> = ({
-  title,
-  description,
-  image,
-  url,
-  children,
-}) => {
+  return data.site.siteMetadata
+}
+
+export const SEO: React.FC<SEOProps> = ({ title, description, pathname, children }) => {
+  const { title: defaultTitle, description: defaultDescription, image, siteUrl, twitterUsername } = useSiteMetadata()
+
+  const seo = {
+    title: title || defaultTitle,
+    description: description || defaultDescription,
+    image: `${siteUrl}${image}`,
+    url: `${siteUrl}${pathname || ``}`,
+    twitterUsername,
+  }
+
   return (
     <>
-      <NextSeo
-        title={title}
-        description={description}
-        canonical={url}
-        openGraph={{
-          url,
-          title,
-          description,
-          images: image
-            ? ([
-                {
-                  url: image,
-                  width: 800,
-                  height: 600,
-                  alt: title,
-                },
-              ] as const)
-            : undefined,
-          site_name: title,
-        }}
-        twitter={{
-          cardType: `summary_large_image`,
-        }}
-      />
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description} />
+      <meta name="image" content={seo.image} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:url" content={seo.url} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
+      <meta name="twitter:creator" content={seo.twitterUsername} />
+      <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>" />
       {children}
     </>
-  );
-};
+  )
+}
