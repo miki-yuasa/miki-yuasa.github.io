@@ -1,12 +1,9 @@
 import * as React from "react";
-import { graphql } from "gatsby";
-import type { HeadFC, PageProps } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 import { Typography, Link, Box, List, ListItem } from "@mui/material";
 import { GitHub, LinkedIn, School, Email } from "@mui/icons-material";
 import Grid from "@mui/material/Grid";
 
-import { Layout } from "../components/Layout";
+import { Layout } from "../components/layout";
 import { SEO } from "../components/SEO";
 import {
   MediaButton,
@@ -35,44 +32,7 @@ const mediaLinks: MediaButtonProps[] = [
   },
 ];
 
-export const query = graphql`
-  query ResearchProjects {
-    allMdx(
-      filter: { frontmatter: { slug: { regex: "/research/" } } }
-      sort: { frontmatter: { date: DESC } }
-    ) {
-      nodes {
-        frontmatter {
-          title
-          slug
-          date(formatString: "YYYY-MM-DD")
-          abstract
-          links {
-            paper
-            arxiv
-            github
-            demo
-          }
-          authors {
-            name
-            url
-            affiliation
-          }
-          venue
-          featuredImage {
-            childImageSharp {
-              gatsbyImageData(width: 160, placeholder: BLURRED)
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-const IndexPage: React.FC<PageProps<{ allMdx: { nodes: any[] } }>> = ({
-  data,
-}) => {
+export default function Home() {
   return (
     <Layout>
       <SEO title="Home" description="Welcome to my personal website!" />
@@ -115,11 +75,11 @@ const IndexPage: React.FC<PageProps<{ allMdx: { nodes: any[] } }>> = ({
           }}
           key="profile-pic"
         >
-          <StaticImage
+          {/* <StaticImage
             src="../images/profile.jpg"
             alt="profile_icon"
             style={{ borderRadius: "40px" }}
-          />
+          /> */}
         </Box>
       </Box>
       {/* Social Media Links */}
@@ -183,16 +143,12 @@ const IndexPage: React.FC<PageProps<{ allMdx: { nodes: any[] } }>> = ({
         <Typography variant="h6" gutterBottom>
           Selected Publications & Preprints
         </Typography>
-        {data?.allMdx?.nodes && (
+        {/* {data?.allMdx?.nodes && (
           <ProjectCards
             projects={data.allMdx.nodes.map((node) => node.frontmatter)}
           />
-        )}
+        )} */}
       </Box>
     </Layout>
   );
-};
-
-export default IndexPage;
-
-export const Head: HeadFC = () => <title>Home Page</title>;
+}
