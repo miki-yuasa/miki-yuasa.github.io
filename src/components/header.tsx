@@ -1,68 +1,151 @@
-import React, { useEffect, useState } from "react";
-import NavCompact from "../components/navs/navCompact";
-import NavWide from "../components/navs/navWide";
-import { getPageData } from "../data/pageData";
+import React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import { ModeToggleButton } from "./Buttons/ThemeToggleButton";
 
-const Header = () => {
-  const [selectedKey, setSelectedKey] = useState({});
+export type PageProps = {
+  name: string;
+  url: string;
+};
+const pages: PageProps[] = [
+  { name: "Home", url: "/" },
+  { name: "Research", url: "/#research" },
+];
 
-  const options = {
-    root: null, // 今回はビューポートをルート要素とする
-    rootMargin: "-50% 0px", // ビューポートの中心を判定基準にする
-    threshold: 0, // 閾値は0
+export const Header: React.FC = () => {
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
+
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
   };
 
-  const pageData = getPageData();
-  const pageIndexNames = pageData.map((pageDataItem) => {
-    return pageDataItem.name.toLocaleLowerCase();
-  });
-  console.log("page data");
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
-  function doWhenIntersect(entries: IntersectionObserverEntry[]) {
-    // 交差検知をしたもののなかで、isIntersectingがtrueのDOMを色を変える関数に渡す
-    entries.forEach((entry) => {
-      console.log("this is doWhenIntersect");
-      if (entry.isIntersecting) {
-        activateIndex(entry.target);
-      }
-    });
-  }
-
-  function activateIndex(element: Element) {
-    let pageKey: number = pageIndexNames.indexOf(element.id);
-    console.log(element.id);
-    setSelectedKey(pageKey);
-  }
-
-  useEffect(() => {
-    console.log("this is inside document");
-
-    const boxes = document.querySelectorAll("div.idBox");
-    console.log("new observer");
-
-    const observer = new IntersectionObserver(doWhenIntersect, options);
-    console.log("for each box");
-    console.log(boxes);
-
-    boxes.forEach((box) => {
-      console.log("observe a box");
-
-      observer.observe(box);
-      console.log("after observe a box");
-      // それぞれのboxを監視する
-    });
-  });
+  const siteName: string = "";
+  const compactTrigger = { xs: "flex", md: "none" };
+  const fullTrigger = { xs: "none", md: "flex" };
 
   return (
-    <>
-      <header className="compact">
-        <NavCompact />
-      </header>
-      <header className="wide">
-        <NavWide selectedKey={String(selectedKey)} />
-      </header>
-    </>
+    <AppBar
+      color="transparent"
+      position="sticky"
+      elevation={0}
+      sx={{
+        backdropFilter: "blur(30px)",
+        backgroundColor: "background",
+      }}
+    >
+      <Container maxWidth="md">
+        <Toolbar disableGutters>
+          <Typography
+            // variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              flexGrow: 1,
+              display: compactTrigger,
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            {siteName}
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: fullTrigger }}>
+            {pages.map((page) => (
+              <Button
+                key={page.name}
+                href={page.url}
+                onClick={handleCloseNavMenu}
+                sx={{ display: "block", textTransform: "none" }}
+              >
+                <Typography textAlign="center">{page.name}</Typography>
+              </Button>
+            ))}
+          </Box>
+          <Box sx={{ flexGrow: 0, justifyContent: "flex-end" }}>
+            <ModeToggleButton />
+          </Box>
+
+          <Box
+            sx={{
+              flexGrow: 0,
+              display: compactTrigger,
+              justifyContent: "flex-end",
+            }}
+          >
+            <Button
+              size="large"
+              aria-label="menu"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+              variant="outlined"
+              sx={{
+                color: "primary.main",
+                borderColor: "grey.500",
+                minWidth: 0,
+                px: 0.5,
+                py: 0.5,
+                ml: 1,
+                justifyContent: "center",
+                borderRadius: 3.2,
+                "&:hover": {
+                  color: "primary.main",
+                  borderColor: "primary.main",
+                },
+              }}
+            >
+              <MenuIcon />
+            </Button>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+              keepMounted
+              transformOrigin={{ vertical: "top", horizontal: "left" }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" },
+              }}
+              slotProps={{
+                paper: {
+                  sx: {
+                    borderRadius: 3.2,
+                  },
+                },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem
+                  key={page.name}
+                  onClick={handleCloseNavMenu}
+                  component="a"
+                  href={page.url}
+                >
+                  <Typography textAlign="center">{page.name}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 };
-
-export default Header;
