@@ -1,12 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
-import {
-  getAllDirPosts,
-  markdownToHtml,
-  getPostBySlug,
-  ResearchPost,
-} from "@/lib/mdx";
+import { getAllDirPosts, getPostBySlug, ResearchPost } from "@/lib/mdx";
 import { Box, Typography, Link } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Article from "@mui/icons-material/Article";
