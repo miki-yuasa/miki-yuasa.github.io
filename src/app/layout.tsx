@@ -1,6 +1,6 @@
 "use client";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
