@@ -5,6 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
@@ -111,7 +112,7 @@ export const Header: React.FC = () => {
                 },
               }}
             >
-              <MenuIcon />
+              {Boolean(anchorElNav) ? <CloseIcon /> : <MenuIcon />}
             </Button>
             <Menu
               id="menu-appbar"
