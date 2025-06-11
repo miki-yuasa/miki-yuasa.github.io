@@ -9,7 +9,8 @@ import {
   MediaButton,
   MediaButtonProps,
 } from "../components/Buttons/MediaButton";
-// import { ProjectCards } from "../components/Lists/ProjectCards";
+import { ProjectCards } from "../components/Lists/ProjectCards";
+import { getAllDirPosts, ResearchPost } from "../lib/mdx";
 
 const linkStyle = {
   underline: "hover" as const,
@@ -33,6 +34,23 @@ const mediaLinks: MediaButtonProps[] = [
 ];
 
 export default function Home() {
+  // Get research posts from contents/research
+  const researchPosts = getAllDirPosts<ResearchPost>("contents/research");
+
+  console.log("Research Posts:", researchPosts);
+
+  // Map ResearchPost[] to ProjectProps[] for ProjectCards
+  const projectCardsData = researchPosts.map((post) => ({
+    title: post.title,
+    slug: "research/" + post.slug,
+    date: post.date,
+    abstract: post.abstract,
+    links: post.links,
+    venue: post.venue || "",
+    authors: post.authors,
+    featuredImage: post.featuredImage,
+  }));
+
   return (
     <>
       <SEO title="Home" description="Welcome to my personal website!" />
@@ -151,6 +169,13 @@ export default function Home() {
           <b> part-time/full-time internship opportunities</b>. Feel free to
           reach out if you're interested in my research.
         </Typography>
+      </Box>
+      {/* ProjectCards for research posts */}
+      <Box sx={{ mt: 4 }}>
+        <Typography variant="h6" gutterBottom>
+          Selected Publications & Preprints
+        </Typography>
+        <ProjectCards projects={projectCardsData} />
       </Box>
     </>
   );

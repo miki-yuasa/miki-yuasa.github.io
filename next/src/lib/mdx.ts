@@ -61,6 +61,7 @@ export function getPostBySlug<T extends Post>(
     `${realSlug}`,
     `${realSlug}.mdx`
   );
+  console.log("Reading post from:", fullPath);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
@@ -69,13 +70,17 @@ export function getPostBySlug<T extends Post>(
 
 export function getDirPostSlugs(postsDirectory: string): string[] {
   const files = fs.readdirSync(join(process.cwd(), postsDirectory));
-  return files
-    .filter((file) => file.endsWith(".md") || file.endsWith(".mdx"))
-    .map((file) => file.replace(/\.mdx?$/, ""));
+  console.log("Files in directory:", files);
+  return (
+    files
+      // .filter((file) => file.endsWith(".md") || file.endsWith(".mdx"))
+      .map((file) => file.replace(/\.mdx?$/, ""))
+  );
 }
 
 export function getAllDirPosts<T extends Post>(postsDirectory: string): T[] {
   const slugs = getDirPostSlugs(postsDirectory);
+  console.log("Post slugs:", slugs);
   const posts = slugs
     .map((slug) => getPostBySlug(postsDirectory, slug))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
