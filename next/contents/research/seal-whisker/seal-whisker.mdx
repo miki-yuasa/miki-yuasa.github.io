@@ -1,0 +1,52 @@
+---
+slug: "/research/seal-whisker"
+date: "2022-05-01"
+title: "Simulations of flow over a bio-inspired undulated cylinder with dynamically morphing topography"
+authors:
+  - name: Mikihisa Yuasa
+    url: "https://miki-yuasa.github.io/"
+    affiliation: "University of Wisconsin-Madison"
+  - name: Kathleen Lyons
+    url: "https://www.researchgate.net/profile/Kathleen-Lyons-3"
+    affiliation: "University of Wisconsin-Madison"
+  - name:  Jennifer A. Franck
+    url: "https://directory.engr.wisc.edu/neep/Faculty/Franck_Jennifer/"
+    affiliation: "University of Wisconsin-Madison"
+links:
+  paper: "https://doi.org/10.1016/j.jfluidstructs.2022.103567"
+  github: ""
+  demo: ""
+venue: "Journal of Fluids and Structures"
+featuredImage: /images/research/seal-whisker/parameters.jpg
+abstract: "We developed a morphing algorithm to explore seal whisker-inspired geometries without manual remeshing. By varying surface parameters in CFD simulations, we uncovered new force trends, enabling efficient design of vibration- and force-reducing devices."
+---
+
+<Box sx={{ maxWidth: "500px", margin: "0 auto" }}>
+![overview](/images/research/seal-whisker/parameters.jpg)
+</Box>
+
+# Abstract
+
+Inspired by the geometric properties of seal whiskers, the addition of spanwise undulations on a cylinder have been shown to lower the mean and oscillatory forces and modify the frequency of flow-induced vibration when compared to smooth cylinders. 
+Previously, computational fluid dynamics (CFD) has been used to characterize the hydrodynamic response with respect to specific geometric features.
+However simulations are time intensive due to complex three-dimensional meshing and computation time, limiting the number of geometric perturbations explored. 
+A method is proposed in which the specific geometric features of this complex topography can be modified during a simulation thereby decreasing the time per geometric modification and removing the need for manual meshing of the complex structure. 
+The surface of the seal whisker inspired geometry is parameterized into seven defining parameters, each of which is directly controlled in order to morph the surface into any realization within the defined parameter space. 
+Once validated, the algorithm is used to explore the undulation amplitudes in the chord and thickness directions, by varying each independently from 0 to 0.3 thicknesses in increments of 0.05 at a Reynolds number of 500. 
+The force and frequency response are examined for this matrix of geometric parameters, yielding detailed force trends not previously investigated. 
+The impact of the bio-inspired morphing algorithm will allow for further optimization and development of force-mitigating underwater devices and other engineering applications in need of vibration suppression, frequency tuning, or force reduction.
+
+# Citation
+<Box sx={{ overflowX: 'auto', maxWidth: '100%', bgcolor: "greyBackground.main", borderRadius: 2, p: 2 }}>
+```
+@article{yuasa_simulations_2022,
+  title = {Simulations of Flow over a Bio-Inspired Undulated Cylinder with Dynamically Morphing Topography},
+  author = {Yuasa, Mikihisa and Lyons, Kathleen and Franck, Jennifer A.},
+  year = {2022},
+  month = may,
+  journal = {Journal of Fluids and Structures},
+  volume = {111},
+  pages = {103567}
+}
+```
+</Box>
