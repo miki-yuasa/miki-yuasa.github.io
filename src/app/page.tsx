@@ -164,10 +164,11 @@ export default function Home() {
           </li>
         </Box>
         <Typography variant="body2" gutterBottom>
-          I'm always happy to collaborate with graduate/undergraduate students.
-          Please drop me an email if you want to work with me. I'm looking for
+          I{`'`}m always happy to collaborate with graduate/undergraduate
+          students. Please drop me an email if you want to work with me. I{`'`}m
+          looking for
           <b> part-time/full-time internship opportunities</b>. Feel free to
-          reach out if you're interested in my research.
+          reach out if you{`'`}re interested in my research.
         </Typography>
       </Box>
       {/* ProjectCards for research posts */}

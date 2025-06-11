@@ -41,7 +41,7 @@ export async function generateStaticParams() {
 }
 
 const components = {
-  img: (props: any) => (
+  img: (props) => (
     <Image
       {...props}
       width={props.width || 800}
@@ -64,7 +64,7 @@ export default async function BlogPost(props: Params) {
   // ファイルシステムから MDX を読み込み
   const params = await props.params;
   const post = getPostBySlug<ResearchPost>("contents/research", params.slug);
-  const { title, slug, date, authors, abstract, links, venue } = post;
+  const { title, date, authors, abstract, links, venue } = post;
 
   const mediaButtons = [
     { name: "Paper", url: links.paper, icon: Article },
@@ -78,8 +78,6 @@ export default async function BlogPost(props: Params) {
   if (!post) {
     return notFound();
   }
-
-  const content = await markdownToHtml(post.content || "");
 
   return (
     <>
