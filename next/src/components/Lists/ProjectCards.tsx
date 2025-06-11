@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Card, CardContent, Typography, Link } from "@mui/material";
-import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
+// import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 
 import { AuthorProps, LinkProps } from "../../types";
 
@@ -14,7 +14,7 @@ export type ProjectProps = {
   authors: AuthorProps[];
   featuredImage: {
     childImageSharp: {
-      gatsbyImageData: ImageDataLike;
+      gatsbyImageData: string;
     };
   };
 };
@@ -67,7 +67,7 @@ export const ProjectCards: React.FC<{
                   justifyContent: "center",
                 }}
               >
-                <GatsbyImage
+                {/* <GatsbyImage
                   image={
                     getImage(
                       project.featuredImage.childImageSharp.gatsbyImageData
@@ -80,7 +80,7 @@ export const ProjectCards: React.FC<{
                     maxWidth: "300px",
                     width: "100%",
                   }}
-                />
+                /> */}
               </Box>
             </Link>
           )}

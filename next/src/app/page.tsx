@@ -1,7 +1,6 @@
 import Image from "next/image";
-import styles from "./page.module.css";
 
-import { Typography, Link, Box, List, ListItem } from "@mui/material";
+import { Typography, Link, Box } from "@mui/material";
 import { GitHub, LinkedIn, School, Email } from "@mui/icons-material";
 import Grid from "@mui/material/Grid";
 
@@ -10,7 +9,7 @@ import {
   MediaButton,
   MediaButtonProps,
 } from "../components/Buttons/MediaButton";
-import { ProjectCards } from "../components/Lists/ProjectCards";
+// import { ProjectCards } from "../components/Lists/ProjectCards";
 
 const linkStyle = {
   underline: "hover" as const,
