@@ -1,6 +1,6 @@
 import React from "react";
+import Image from "next/image";
 import { Box, Card, CardContent, Typography, Link } from "@mui/material";
-import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 
 import { AuthorProps, LinkProps } from "../../types";
 
@@ -12,11 +12,7 @@ export type ProjectProps = {
   links: LinkProps;
   venue: string;
   authors: AuthorProps[];
-  featuredImage: {
-    childImageSharp: {
-      gatsbyImageData: ImageDataLike;
-    };
-  };
+  featuredImage: string;
 };
 
 const linkStyle = {
@@ -41,7 +37,7 @@ export const ProjectCards: React.FC<{
             minHeight: 180,
           }}
         >
-          {project.featuredImage?.childImageSharp?.gatsbyImageData && (
+          {project.featuredImage && (
             <Link
               href={project.slug}
               underline="none"
@@ -67,19 +63,18 @@ export const ProjectCards: React.FC<{
                   justifyContent: "center",
                 }}
               >
-                <GatsbyImage
-                  image={
-                    getImage(
-                      project.featuredImage.childImageSharp.gatsbyImageData
-                    )!
-                  }
+                <Image
+                  src={project.featuredImage}
                   alt={project.title + " featured"}
                   style={{
                     borderRadius: 8,
                     maxHeight: "180px",
                     maxWidth: "300px",
                     width: "100%",
+                    height: "auto",
                   }}
+                  width={300}
+                  height={180}
                 />
               </Box>
             </Link>

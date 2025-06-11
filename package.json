@@ -1,45 +1,41 @@
 {
   "name": "miki-yuasa.github.io",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
-  "description": "miki-yuasa.github.io",
-  "author": "Mikihisa Yuasa",
-  "keywords": [
-    "gatsby"
-  ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
-    "@mui/icons-material": "^7.1.0",
-    "@mui/material": "^7.1.0",
-    "gatsby": "^5.14.1",
-    "gatsby-plugin-google-gtag": "^5.14.0",
-    "gatsby-plugin-image": "^3.14.0",
-    "gatsby-plugin-manifest": "^5.14.0",
-    "gatsby-plugin-mdx": "^5.14.1",
-    "gatsby-plugin-postcss": "^6.14.0",
-    "gatsby-plugin-sharp": "^5.14.0",
-    "gatsby-plugin-sitemap": "^6.14.0",
-    "gatsby-remark-images": "^7.14.0",
-    "gatsby-source-filesystem": "^5.14.0",
-    "gatsby-transformer-sharp": "^5.14.0",
-    "postcss": "^8.5.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@mui/icons-material": "^7.1.1",
+    "@mui/material": "^7.1.1",
+    "@mui/material-nextjs": "^7.1.1",
+    "@types/mdx": "^2.0.13",
+    "gray-matter": "^4.0.3",
+    "grey-matter": "^0.0.0",
+    "next": "15.3.3",
+    "next-mdx-remote-client": "^2.1.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rehype-image-toolkit": "^1.0.3",
+    "rehype-prism-plus": "^2.0.1",
+    "rehype-stringify": "^10.0.1",
+    "remark": "^15.0.1",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
-    "@types/node": "^20.11.19",
-    "@types/react": "^18.2.55",
-    "@types/react-dom": "^18.2.19",
-    "typescript": "^5.3.3"
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "typescript": "^5"
   }
 }

@@ -1,18 +1,16 @@
-import * as React from "react";
-import { graphql } from "gatsby";
-import type { HeadFC, PageProps } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
-import { Typography, Link, Box, List, ListItem } from "@mui/material";
+import Image from "next/image";
+
+import { Typography, Link, Box } from "@mui/material";
 import { GitHub, LinkedIn, School, Email } from "@mui/icons-material";
 import Grid from "@mui/material/Grid";
 
-import { Layout } from "../components/Layout";
 import { SEO } from "../components/SEO";
 import {
   MediaButton,
   MediaButtonProps,
 } from "../components/Buttons/MediaButton";
 import { ProjectCards } from "../components/Lists/ProjectCards";
+import { getAllDirPosts, ResearchPost } from "../lib/mdx";
 
 const linkStyle = {
   underline: "hover" as const,
@@ -35,46 +33,26 @@ const mediaLinks: MediaButtonProps[] = [
   },
 ];
 
-export const query = graphql`
-  query ResearchProjects {
-    allMdx(
-      filter: { frontmatter: { slug: { regex: "/research/" } } }
-      sort: { frontmatter: { date: DESC } }
-    ) {
-      nodes {
-        frontmatter {
-          title
-          slug
-          date(formatString: "YYYY-MM-DD")
-          abstract
-          links {
-            paper
-            arxiv
-            github
-            demo
-          }
-          authors {
-            name
-            url
-            affiliation
-          }
-          venue
-          featuredImage {
-            childImageSharp {
-              gatsbyImageData(width: 160, placeholder: BLURRED)
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+export default function Home() {
+  // Get research posts from contents/research
+  const researchPosts = getAllDirPosts<ResearchPost>("contents/research");
 
-const IndexPage: React.FC<PageProps<{ allMdx: { nodes: any[] } }>> = ({
-  data,
-}) => {
+  console.log("Research Posts:", researchPosts);
+
+  // Map ResearchPost[] to ProjectProps[] for ProjectCards
+  const projectCardsData = researchPosts.map((post) => ({
+    title: post.title,
+    slug: "research/" + post.slug,
+    date: post.date,
+    abstract: post.abstract,
+    links: post.links,
+    venue: post.venue || "",
+    authors: post.authors,
+    featuredImage: post.featuredImage,
+  }));
+
   return (
-    <Layout>
+    <>
       <SEO title="Home" description="Welcome to my personal website!" />
       <Box
         sx={{
@@ -112,13 +90,20 @@ const IndexPage: React.FC<PageProps<{ allMdx: { nodes: any[] } }>> = ({
             minWidth: 80,
             maxWidth: { xs: 120, sm: 140, md: 160, lg: 180, xl: 200 },
             display: { xs: "block", sm: "block" },
+            position: "relative", // Add this
+            aspectRatio: "1 / 1", // Maintain square aspect ratio
+            width: "100%", // Responsive width
+            height: "auto", // Responsive height
           }}
           key="profile-pic"
         >
-          <StaticImage
-            src="../images/profile.jpg"
+          <Image
+            src="/profile.jpg"
             alt="profile_icon"
-            style={{ borderRadius: "40px" }}
+            fill // Makes the image fill the parent box
+            style={{ borderRadius: "40px", objectFit: "cover" }}
+            sizes="(max-width: 600px) 120px, (max-width: 900px) 140px, (max-width: 1200px) 160px, (max-width: 1536px) 180px, 200px"
+            priority
           />
         </Box>
       </Box>
@@ -145,14 +130,18 @@ const IndexPage: React.FC<PageProps<{ allMdx: { nodes: any[] } }>> = ({
       <Box>
         <Typography variant="body2" gutterBottom>
           My research interests are:
-          <Box component="ul">
-            <li>
+        </Typography>
+        <Box component="ul" sx={{ pl: 2, mb: 2 }}>
+          <li>
+            <Typography variant="body2">
               <strong>Explainable Reinforcement Learning for Robotics</strong>
               <br />
               Neuro-symbolic and logic-based methods for interpretable,
               verifiable RL in robotics.
-            </li>
-            <li>
+            </Typography>
+          </li>
+          <li>
+            <Typography variant="body2">
               <strong>
                 Language-Conditioned Policy Generation and Zero-Shot
                 Generalization
@@ -160,8 +149,10 @@ const IndexPage: React.FC<PageProps<{ allMdx: { nodes: any[] } }>> = ({
               <br />
               Scalable models to generate RL policies from language for
               zero-shot generalization.
-            </li>
-            <li>
+            </Typography>
+          </li>
+          <li>
+            <Typography variant="body2">
               <strong>
                 AI/ML Systems for Human-Robot Collaboration and Real-World
                 Deployment
@@ -169,9 +160,9 @@ const IndexPage: React.FC<PageProps<{ allMdx: { nodes: any[] } }>> = ({
               <br />
               RL for teamwork and MLOps pipelines for real-world autonomous
               systems.
-            </li>
-          </Box>
-        </Typography>
+            </Typography>
+          </li>
+        </Box>
         <Typography variant="body2" gutterBottom>
           I'm always happy to collaborate with graduate/undergraduate students.
           Please drop me an email if you want to work with me. I'm looking for
@@ -179,20 +170,13 @@ const IndexPage: React.FC<PageProps<{ allMdx: { nodes: any[] } }>> = ({
           reach out if you're interested in my research.
         </Typography>
       </Box>
+      {/* ProjectCards for research posts */}
       <Box sx={{ mt: 4 }}>
         <Typography variant="h6" gutterBottom>
           Selected Publications & Preprints
         </Typography>
-        {data?.allMdx?.nodes && (
-          <ProjectCards
-            projects={data.allMdx.nodes.map((node) => node.frontmatter)}
-          />
-        )}
+        <ProjectCards projects={projectCardsData} />
       </Box>
-    </Layout>
+    </>
   );
-};
-
-export default IndexPage;
-
-export const Head: HeadFC = () => <title>Home Page</title>;
+}

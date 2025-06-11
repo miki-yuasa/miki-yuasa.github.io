@@ -1,49 +1,29 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { MDXProvider } from "@mdx-js/react";
-import { GitHub, Article, YouTube } from "@mui/icons-material";
-import { Typography, Link, Box } from "@mui/material";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { MDXRemote } from "next-mdx-remote-client/rsc";
+import {
+  getAllDirPosts,
+  markdownToHtml,
+  getPostBySlug,
+  ResearchPost,
+} from "@/lib/mdx";
+import { Box, Typography, Link } from "@mui/material";
 import Grid from "@mui/material/Grid";
-
-import { Layout } from "../components/Layout";
-import { SEO } from "../components/SEO";
+import Article from "@mui/icons-material/Article";
+import GitHub from "@mui/icons-material/GitHub";
+import YouTube from "@mui/icons-material/YouTube";
+import { ArXiv } from "@/components/Icons";
 import {
   MediaButton,
   MediaButtonProps,
-} from "../components/Buttons/MediaButton";
-import { ArXiv } from "../components/Icons";
-import { ProjectProps, AuthorProps } from "../types";
+} from "@/components/Buttons/MediaButton";
+import { AuthorProps } from "@/types";
+import { SEO } from "@/components/SEO";
 
-export const query = graphql`
-  query ProjectById($id: String!) {
-    mdx(id: { eq: $id }) {
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        links {
-          paper
-          arxiv
-          github
-          demo
-        }
-        authors {
-          affiliation
-          name
-          url
-        }
-        slug
-        venue
-        title
-        abstract
-      }
-    }
-  }
-`;
-
-type DataProps = {
-  mdx: {
-    frontmatter: ProjectProps;
-    body: string;
-  };
+type Params = {
+  params: Promise<{
+    slug: string;
+  }>;
 };
 
 const getUniqueAffiliations = (authors: AuthorProps[]) => {
@@ -53,14 +33,39 @@ const getUniqueAffiliations = (authors: AuthorProps[]) => {
   return Array.from(new Set(affiliations));
 };
 
-type ProjectTemplateProps = {
-  data: DataProps;
-  children: React.ReactNode;
+export async function generateStaticParams() {
+  const posts = getAllDirPosts("contents/research");
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+const components = {
+  img: (props: any) => (
+    <Image
+      {...props}
+      width={props.width || 800}
+      height={props.height || 800}
+      style={{
+        maxWidth: "800px",
+        width: "100%",
+        height: "auto",
+        objectFit: "cover",
+        ...props.style,
+      }}
+      layout="responsive"
+      loading="lazy"
+    />
+  ),
+  Box,
 };
 
-const ProjectTemplate = ({ data, children }: ProjectTemplateProps) => {
-  const { title, slug, date, authors, abstract, links, venue } =
-    data.mdx.frontmatter;
+export default async function BlogPost(props: Params) {
+  // ファイルシステムから MDX を読み込み
+  const params = await props.params;
+  const post = getPostBySlug<ResearchPost>("contents/research", params.slug);
+  const { title, slug, date, authors, abstract, links, venue } = post;
+
   const mediaButtons = [
     { name: "Paper", url: links.paper, icon: Article },
     { name: "arXiv", url: links.arxiv, icon: ArXiv },
@@ -70,10 +75,14 @@ const ProjectTemplate = ({ data, children }: ProjectTemplateProps) => {
 
   const uniqueAffiliations = getUniqueAffiliations(authors);
 
-  const shortcodes = { Box };
+  if (!post) {
+    return notFound();
+  }
+
+  const content = await markdownToHtml(post.content || "");
 
   return (
-    <Layout>
+    <>
       <SEO title={title} description={abstract} />
       <Typography
         align="center"
@@ -117,11 +126,7 @@ const ProjectTemplate = ({ data, children }: ProjectTemplateProps) => {
         alignItems="center"
       >
         {authors.map((author, index) => (
-          <Grid
-            item
-            key={index}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
+          <Grid key={index} sx={{ display: "flex", justifyContent: "center" }}>
             <Typography variant="h6" color="text.primary">
               {author.url ? (
                 <Link href={author.url} color="primary">
@@ -147,11 +152,7 @@ const ProjectTemplate = ({ data, children }: ProjectTemplateProps) => {
         alignItems="center"
       >
         {uniqueAffiliations.map((affiliation, index) => (
-          <Grid
-            item
-            key={index}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
+          <Grid key={index} sx={{ display: "flex", justifyContent: "center" }}>
             <Typography variant="h6" color="text.primary">
               <sup>{index + 1}</sup>
               {affiliation}
@@ -168,7 +169,6 @@ const ProjectTemplate = ({ data, children }: ProjectTemplateProps) => {
       >
         {mediaButtons.map((media) => (
           <Grid
-            item
             key={media.name}
             sx={{ display: "flex", justifyContent: "center" }}
           >
@@ -182,9 +182,11 @@ const ProjectTemplate = ({ data, children }: ProjectTemplateProps) => {
           </Grid>
         ))}
       </Grid>
-      <MDXProvider components={shortcodes}>{children}</MDXProvider>
-    </Layout>
+      <MDXRemote
+        source={post.content}
+        options={{ parseFrontmatter: true }}
+        components={components}
+      />
+    </>
   );
-};
-
-export default ProjectTemplate;
+}
