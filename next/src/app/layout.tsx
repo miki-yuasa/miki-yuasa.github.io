@@ -64,7 +64,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>
+          <ThemeProvider theme={theme} defaultMode="system">
             <CssBaseline />
             <Box display="flex" flexDirection="column" minHeight="100vh">
               <Header />

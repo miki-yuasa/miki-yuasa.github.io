@@ -1,24 +1,23 @@
-import { readFile } from "fs/promises";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { join } from "path";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import {
-  getDirPostSlugs,
   getAllDirPosts,
   markdownToHtml,
   getPostBySlug,
   ResearchPost,
 } from "@/lib/mdx";
-import { Box, Typography, Link, Grid } from "@mui/material";
-import { GitHub, Article, YouTube } from "@mui/icons-material";
+import { Box, Typography, Link } from "@mui/material";
+import Grid from "@mui/material/Grid";
+import Article from "@mui/icons-material/Article";
+import GitHub from "@mui/icons-material/GitHub";
+import YouTube from "@mui/icons-material/YouTube";
 import { ArXiv } from "@/components/Icons";
 import {
   MediaButton,
   MediaButtonProps,
 } from "@/components/Buttons/MediaButton";
 import { AuthorProps } from "@/types";
-import Layout from "@/app/layout";
 import { SEO } from "@/components/SEO";
 
 type Params = {
@@ -127,11 +126,7 @@ export default async function BlogPost(props: Params) {
         alignItems="center"
       >
         {authors.map((author, index) => (
-          <Grid
-            item
-            key={index}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
+          <Grid key={index} sx={{ display: "flex", justifyContent: "center" }}>
             <Typography variant="h6" color="text.primary">
               {author.url ? (
                 <Link href={author.url} color="primary">
@@ -157,11 +152,7 @@ export default async function BlogPost(props: Params) {
         alignItems="center"
       >
         {uniqueAffiliations.map((affiliation, index) => (
-          <Grid
-            item
-            key={index}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
+          <Grid key={index} sx={{ display: "flex", justifyContent: "center" }}>
             <Typography variant="h6" color="text.primary">
               <sup>{index + 1}</sup>
               {affiliation}
@@ -178,7 +169,6 @@ export default async function BlogPost(props: Params) {
       >
         {mediaButtons.map((media) => (
           <Grid
-            item
             key={media.name}
             sx={{ display: "flex", justifyContent: "center" }}
           >
