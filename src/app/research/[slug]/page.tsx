@@ -15,6 +15,7 @@ import {
 } from "@/components/Buttons/MediaButton";
 import { AuthorProps } from "@/types";
 import { SEO } from "@/components/SEO";
+import PDFEmbed from "@/components/PDFEmbed";
 
 type Params = {
   params: Promise<{
@@ -40,6 +41,7 @@ const components = {
   img: (props) => (
     <Image
       {...props}
+      alt={props.alt || ""}
       width={props.width || 800}
       height={props.height || 800}
       style={{
@@ -54,6 +56,7 @@ const components = {
     />
   ),
   Box,
+  PDFEmbed,
 };
 
 export default async function BlogPost(props: Params) {
