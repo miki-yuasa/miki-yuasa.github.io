@@ -134,10 +134,13 @@ export default function Home() {
         <Box component="ul" sx={{ pl: 2, mb: 2 }}>
           <li>
             <Typography variant="body2">
-              <strong>Explainable Reinforcement Learning for Robotics</strong>
+              <strong>
+                Explainable Reinforcement Learning Paradigms for Robotics
+              </strong>
               <br />
-              Neuro-symbolic and logic-based methods for interpretable,
-              verifiable RL in robotics.
+              Neuro-symbolic and formal methods for interpretable, verifiable RL
+              algorithms in robotics, including multi-agent RL (MARL) and
+              hierarchical RL (HRL).
             </Typography>
           </li>
           <li>
@@ -164,9 +167,8 @@ export default function Home() {
           </li>
         </Box>
         <Typography variant="body2" gutterBottom>
-          I{`'`}m always happy to collaborate with graduate/undergraduate
-          students. Please drop me an email if you want to work with me. I{`'`}m
-          looking for
+          I{`'`}m always happy to collaborate! Please message me via
+          email/LinkedIn if you are interested. I{`'`}m looking for
           <b> part-time/full-time internship opportunities</b>. Feel free to
           reach out if you{`'`}re interested in my research.
         </Typography>
