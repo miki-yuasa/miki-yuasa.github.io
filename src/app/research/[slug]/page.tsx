@@ -1,14 +1,10 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
-import {
-  getAllDirPosts,
-  markdownToHtml,
-  getPostBySlug,
-  ResearchPost,
-} from "@/lib/mdx";
+import { getAllDirPosts, getPostBySlug, ResearchPost } from "@/lib/mdx";
 import { Box, Typography, Link } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import { CoPresent } from "@mui/icons-material";
 import Article from "@mui/icons-material/Article";
 import GitHub from "@mui/icons-material/GitHub";
 import YouTube from "@mui/icons-material/YouTube";
@@ -19,6 +15,7 @@ import {
 } from "@/components/Buttons/MediaButton";
 import { AuthorProps } from "@/types";
 import { SEO } from "@/components/SEO";
+import PDFEmbed from "@/components/PDFEmbed";
 
 type Params = {
   params: Promise<{
@@ -41,9 +38,10 @@ export async function generateStaticParams() {
 }
 
 const components = {
-  img: (props: any) => (
+  img: (props) => (
     <Image
       {...props}
+      alt={props.alt || ""}
       width={props.width || 800}
       height={props.height || 800}
       style={{
@@ -58,16 +56,18 @@ const components = {
     />
   ),
   Box,
+  PDFEmbed,
 };
 
 export default async function BlogPost(props: Params) {
   // ファイルシステムから MDX を読み込み
   const params = await props.params;
   const post = getPostBySlug<ResearchPost>("contents/research", params.slug);
-  const { title, slug, date, authors, abstract, links, venue } = post;
+  const { title, date, authors, abstract, links, venue } = post;
 
   const mediaButtons = [
     { name: "Paper", url: links.paper, icon: Article },
+    { name: "Poster", url: links.poster, icon: CoPresent },
     { name: "arXiv", url: links.arxiv, icon: ArXiv },
     { name: "GitHub", url: links.github, icon: GitHub },
     { name: "Demo", url: links.demo, icon: YouTube },
@@ -78,8 +78,6 @@ export default async function BlogPost(props: Params) {
   if (!post) {
     return notFound();
   }
-
-  const content = await markdownToHtml(post.content || "");
 
   return (
     <>

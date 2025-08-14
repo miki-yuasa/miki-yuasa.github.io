@@ -9,6 +9,7 @@ export type LinkProps = {
   arxiv?: string;
   github?: string;
   demo?: string;
+  poster?: string;
 };
 
 export type ProjectProps = {

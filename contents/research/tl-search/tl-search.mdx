@@ -14,10 +14,11 @@ authors:
     affiliation: "University of Illinois Urbana-Champaign"
 links:
   paper: "https://ieeexplore.ieee.org/document/10804622"
+  poster: "/posters/tl-search_poster.pdf"
   arxiv: "https://arxiv.org/abs/2309.16960"
   github: "https://github.com/miki-yuasa/tl-search"
   demo: ""
-venue: "IEEE Control Systems Letters"
+venue: "IEEE Control Systems Letters, The 2025 American Control Conference (ACC)"
 featuredImage: /images/research/tl-search/architecture.png
 abstract: "We propose an algorithm that explains reinforcement learning policies using linear temporal logic by comparing their action distributions with those of explanation-driven policies. 
 This approach offers clearer insights and avoids vague explanations, as shown in three simulated tasks."
@@ -33,6 +34,10 @@ Explaining reinforcement learning policies is important for deploying them in re
 We introduce a set of linear temporal logic formulae designed to provide such explanations, and an algorithm for searching through those formulae for the one that best explains a given policy. 
 Our key idea is to compare action distributions from the target policy with those from policies optimized for candidate explanations. 
 This comparison provides more insight into the target policy than existing methods and avoids inference of “catch-all” explanations. We demonstrate our method in a simulated game of capture-the-flag, a car-parking environment, and a robot navigation task.
+
+# Poster
+
+<PDFEmbed src="/posters/tl-search_poster.pdf" title="TL-Search Poster" height="700px" />
 
 # Citation
 <Box sx={{ overflowX: 'auto', maxWidth: '100%', bgcolor: "greyBackground.main", borderRadius: 2, p: 2 }}>

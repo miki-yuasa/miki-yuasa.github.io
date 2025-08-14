@@ -21,6 +21,10 @@ const linkStyle = {
   rel: "noopener noreferrer" as const,
   variant: "body2" as const,
 };
+const emphLinkStyle = {
+  ...linkStyle,
+  fontWeight: "bold" as const,
+};
 
 // Vertical cards to display projects
 export const ProjectCards: React.FC<{
@@ -127,18 +131,22 @@ export const ProjectCards: React.FC<{
               >
                 {[
                   project.slug && (
-                    <Link
-                      href={project.slug}
-                      underline="hover"
-                      key="project"
-                      variant="body2"
-                    >
+                    <Link href={project.slug} {...emphLinkStyle} key="project">
                       Project Page
                     </Link>
                   ),
                   project.links.paper && (
                     <Link href={project.links.paper} {...linkStyle} key="paper">
                       Paper
+                    </Link>
+                  ),
+                  project.links.poster && (
+                    <Link
+                      href={project.links.poster}
+                      {...linkStyle}
+                      key="poster"
+                    >
+                      Poster
                     </Link>
                   ),
                   project.links.arxiv && (

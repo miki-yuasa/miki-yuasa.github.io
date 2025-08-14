@@ -30,6 +30,7 @@ export function getMarkdownFiles(dir: string): string[] {
 
 export type ExternalLink = {
   paper?: string;
+  poster?: string;
   arxiv?: string;
   github?: string;
   demo?: string;
