@@ -4,6 +4,7 @@ import { MDXRemote } from "next-mdx-remote-client/rsc";
 import { getAllDirPosts, getPostBySlug, ResearchPost } from "@/lib/mdx";
 import { Box, Typography, Link } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import { CoPresent } from "@mui/icons-material";
 import Article from "@mui/icons-material/Article";
 import GitHub from "@mui/icons-material/GitHub";
 import YouTube from "@mui/icons-material/YouTube";
@@ -63,6 +64,7 @@ export default async function BlogPost(props: Params) {
 
   const mediaButtons = [
     { name: "Paper", url: links.paper, icon: Article },
+    { name: "Poster", url: links.poster, icon: CoPresent },
     { name: "arXiv", url: links.arxiv, icon: ArXiv },
     { name: "GitHub", url: links.github, icon: GitHub },
     { name: "Demo", url: links.demo, icon: YouTube },
