@@ -180,6 +180,37 @@ export default function Home() {
         </Typography>
         <ProjectCards projects={projectCardsData} />
       </Box>
+      <Typography id="docs" variant="h5" gutterBottom sx={{ mt: 4 }}>
+        Docs
+      </Typography>
+      <Box>
+        <Typography variant="body2" gutterBottom>
+          I also maintain documentation for some of my open-source projects:
+        </Typography>
+        <Box component="ul" sx={{ pl: 2, mb: 2 }}>
+          <li>
+            <Typography variant="body2">
+              <Link
+                href="https://miki-yuasa.github.io/gym-tl-tools/"
+                {...linkStyle}
+              >
+                gym-tl-tools
+              </Link>
+              : Temporal logic wrappers for Gymnasium environments
+            </Typography>
+          </li>
+          <li>
+            <Typography variant="body2">
+              <Link href="https://miki-yuasa.github.io/ruspot/" {...linkStyle}>
+                ruspot
+              </Link>
+              : A Rust-based implementation of the Spot library for Python.
+              Efficient tools for model checking, LTL translation, and automata
+              operations.
+            </Typography>
+          </li>
+        </Box>
+      </Box>
     </>
   );
 }

@@ -18,6 +18,7 @@ export type PageProps = {
 const pages: PageProps[] = [
   { name: "Home", url: "/" },
   { name: "Research", url: "/#research" },
+  { name: "Docs", url: "/#docs" },
 ];
 
 export const Header: React.FC = () => {
