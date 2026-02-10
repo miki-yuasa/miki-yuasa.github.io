@@ -1,6 +1,6 @@
 ---
 slug: "/research/tlnet"
-date: "2025-04-30"
+date: "2026-02-09"
 title: "Neuro-Symbolic Generation of Explanations for Robot Policies with Weighted Signal Temporal Logic"
 authors:
   - name: Mikihisa Yuasa
@@ -13,12 +13,12 @@ authors:
     url: "https://huytrtran.github.io/"
     affiliation: "University of Illinois Urbana-Champaign"
 links:
-  paper: ""
+  paper: "https://ieeexplore.ieee.org/document/11386893"
   poster: "/posters/tlnet_poster.pdf"
   arxiv: "https://arxiv.org/abs/2504.21841"
-  github: ""
+  github: "https://github.com/LIRA-illinois/tlnet"
   demo: ""
-venue: "The 2025 American Control Conference (ACC)"
+venue: "IEEE Robotics & Automation Letters (RA-L), The 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), The 2025 American Control Conference (ACC)"
 featuredImage: /images/research/tlnet/overview.png
 abstract: "
 We present a neuro-symbolic framework that explains robot policies using weighted temporal logic, generating concise, consistent, and strict explanations. 
@@ -32,12 +32,13 @@ Our method improves human-interpretability by simplifying the generated logic ex
 </Box>
 
 # Abstract
-Neural network-based policies have demonstrated success in many robotic applications, but often lack human-explanability, which poses challenges in safety-critical deployments. 
-To address this, we propose a neuro-symbolic explanation framework that generates a weighted signal temporal logic (wSTL) specification to describe a robot policy in a interpretable form. 
-Existing methods typically produce explanations that are verbose and inconsistent, which hinders explainability, and loose, which do not give meaningful insights into the underlying policy. 
-We address these issues by introducing a simplification process consisting of predicate filtering, regularization, and iterative pruning. We also introduce three novel explainability evaluation metrics -- conciseness, consistency, and strictness -- to assess explanation quality beyond conventional classification metrics. 
-Our method is validated in three simulated robotic environments, where it outperforms baselines in generating concise, consistent, and strict wSTL explanations without sacrificing classification accuracy. 
-This work bridges policy learning with formal methods, contributing to safer and more transparent decision-making in robotics. 
+Learning-based policies have demonstrated success in many robotic applications, but often lack explainability. 
+We propose a neuro-symbolic explanation framework that generates a weighted signal temporal logic (wSTL) specification which describes a robot policy in a human-interpretable form. 
+Existing methods typically produce explanations that are verbose and inconsistent, which hinders explainability, and are loose, which limits meaningful insights. 
+We address these issues by introducing a simplification process consisting of predicate filtering, regularization, and iterative pruning. 
+We also introduce three explainability metrics—conciseness, consistency, and strictness—to assess explanation quality beyond conventional classification accuracy. 
+Our method—TLNet—is validated in three simulated robotic environments, where it outperforms baselines in generating concise, consistent, and strict wSTL explanations without sacrificing accuracy. 
+This work bridges policy learning and explainability through formal methods, contributing to more transparent decision-making in robotics.
 
 # Poster
 <PDFEmbed src="/posters/tlnet_poster.pdf" title="TL-Net Poster" height="700px" />
@@ -45,16 +46,16 @@ This work bridges policy learning with formal methods, contributing to safer and
 # Citation
 <Box sx={{ overflowX: 'auto', maxWidth: '100%', bgcolor: "greyBackground.main", borderRadius: 2, p: 2 }}>
 ```
-@misc{yuasa_neurosymbolic_2025,
-  title = {Neuro-{{Symbolic Generation}} of {{Explanations}} for {{Robot Policies}} with {{Weighted Signal Temporal Logic}}},
-  author = {Yuasa, Mikihisa and Sreenivas, Ramavarapu S. and Tran, Huy T.},
-  year = {2025},
-  month = apr,
-  number = {arXiv:2504.21841},
-  eprint = {2504.21841},
-  primaryclass = {cs},
-  publisher = {arXiv},
-  archiveprefix = {arXiv},
-}
+@article{yuasa_neurosymbolic_2026,
+  author={Yuasa, Mikihisa and Sreenivas, Ramavarapu S. and Tran, Huy T.},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={Neuro-Symbolic Generation of Explanations for Robot Policies With Weighted Signal Temporal Logic}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={1-8},
+  keywords={Robots;Neural networks;Trajectory;Accuracy;Logic;Robustness;Measurement;Training;Syntactics;Network architecture;Formal Methods in Robotics and Automation;Reinforcement Learning;Deep Learning Methods;Human-Centered Robotics},
+  doi={10.1109/LRA.2026.3662977}}
+
 ```
 </Box>
