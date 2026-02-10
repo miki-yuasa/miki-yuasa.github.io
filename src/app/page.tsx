@@ -64,7 +64,7 @@ export default function Home() {
       >
         <Box sx={{ flex: 1 }} key="intro">
           <Typography variant="h4" gutterBottom>
-            Mikihisa Yuasa
+            Mikihisa Yuasa 湯淺 幹久
           </Typography>
           <Typography variant="body2" gutterBottom>
             I am a PhD student focusing on explainable AI (XAI) & reinforcement
@@ -169,8 +169,8 @@ export default function Home() {
         <Typography variant="body2" gutterBottom>
           I{`'`}m always happy to collaborate! Please message me via
           email/LinkedIn if you are interested. I{`'`}m looking for
-          <b> part-time/full-time internship opportunities</b>. Feel free to
-          reach out if you{`'`}re interested in my research.
+          <b> internship/full-time opportunities</b>. Feel free to reach out if
+          you{`'`}re interested in my research.
         </Typography>
       </Box>
       {/* ProjectCards for research posts */}
